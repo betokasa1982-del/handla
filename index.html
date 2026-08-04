@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14352B">
+<meta name="description" content="Shared shopping list with a personal price book.">
+<title>Handla</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Handla">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pine:#14352B; --pine-2:#1E4A3C; --lingon:#B3202F; --lingon-dk:#8C1724;
+  --birch:#F3EEE4; --birch-2:#E5DCC9; --ink:#101613; --frost:#7C9689;
+  --display:'Oswald','Arial Narrow',sans-serif;
+  --body:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono','SF Mono',Consolas,monospace;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{background:var(--birch);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45;overscroll-behavior-y:contain}
+.wrap{max-width:540px;margin:0 auto;min-height:100dvh;display:flex;flex-direction:column}
+
+header{background:var(--pine);color:var(--birch);padding:calc(14px + env(safe-area-inset-top)) 18px 0;position:sticky;top:0;z-index:20}
+.brand{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+h1{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:.16em;margin:0;text-transform:uppercase}
+.brand small{font-family:var(--mono);font-size:11px;color:var(--frost);text-align:right;line-height:1.35}
+.brand small b{display:block;font-weight:400;color:var(--birch);opacity:.8}
+nav{display:flex;gap:2px;margin-top:12px}
+nav button{flex:1;background:none;border:0;border-bottom:3px solid transparent;color:var(--frost);
+  font-family:var(--display);font-size:13px;letter-spacing:.11em;text-transform:uppercase;padding:10px 2px 9px;cursor:pointer}
+nav button[aria-selected="true"]{color:var(--birch);border-bottom-color:var(--lingon)}
+nav button:focus-visible{outline:2px solid var(--birch);outline-offset:-2px}
+
+main{flex:1;padding:18px 18px 130px}
+.view[hidden]{display:none}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--pine);
+  opacity:.65;margin:26px 0 8px;display:flex;align-items:center;gap:10px}
+.eyebrow::after{content:"";flex:1;border-top:1px dotted rgba(20,53,43,.35)}
+.eyebrow:first-child{margin-top:0}
+button,input,select,textarea{font-family:inherit;font-size:16px}
+.btn{background:var(--pine);color:var(--birch);border:0;border-radius:2px;font-family:var(--display);
+  letter-spacing:.1em;text-transform:uppercase;font-size:13px;padding:11px 16px;cursor:pointer}
+.btn:active{background:var(--pine-2)}
+.btn[disabled]{opacity:.45;cursor:default}
+.btn.ghost{background:none;color:var(--pine);border:1px solid rgba(20,53,43,.3)}
+.btn.wide{width:100%;display:block;text-align:center;text-decoration:none}
+.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--lingon);outline-offset:2px}
+.muted{color:#5D6B64;font-size:13px}
+
+.addbar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--birch);border-top:1px solid var(--birch-2);
+  padding:10px 18px calc(10px + env(safe-area-inset-bottom))}
+.addbar-inner{max-width:540px;margin:0 auto;display:flex;gap:8px}
+.addbar input[type=text]{flex:1;min-width:0;border:1px solid rgba(20,53,43,.28);border-radius:2px;background:#fff;padding:12px}
+.addbar input[type=number]{width:58px;border:1px solid rgba(20,53,43,.28);border-radius:2px;background:#fff;
+  padding:12px 4px;text-align:center;font-family:var(--mono)}
+.addbar select{width:72px;border:1px solid rgba(20,53,43,.28);border-radius:2px;background:#fff;padding:12px 2px}
+
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--birch-2);border:0;border-radius:20px;padding:6px 12px;font-size:13px;color:var(--pine);cursor:pointer}
+
+ul{list-style:none;margin:0;padding:0}
+li.item{border-bottom:1px dotted rgba(20,53,43,.28)}
+.row{display:flex;align-items:center;gap:10px;padding:11px 2px}
+.tick{width:22px;height:22px;flex:none;border:1.5px solid var(--pine);border-radius:2px;background:none;
+  cursor:pointer;display:grid;place-items:center;padding:0}
+.tick svg{width:14px;height:14px;opacity:0}
+.item.done .tick{background:var(--pine)} .item.done .tick svg{opacity:1}
+.name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.item.done .name{text-decoration:line-through;opacity:.42}
+.qty{font-family:var(--mono);font-size:13px;color:#5D6B64;flex:none}
+.best{font-family:var(--mono);font-size:12px;color:var(--lingon);flex:none}
+.exp{background:none;border:0;padding:6px;cursor:pointer;color:var(--pine);flex:none;line-height:0}
+.exp svg{width:16px;height:16px;transition:transform .15s}
+.item.open .exp svg{transform:rotate(180deg)}
+
+.prices{padding:2px 0 14px 32px;display:none}
+.item.open .prices{display:block}
+.prow{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.prow .slab{width:92px;flex:none;font-family:var(--display);font-size:12px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--pine);line-height:1.15}
+.prow input{border:1px solid rgba(20,53,43,.25);border-radius:2px;background:#fff;padding:7px 6px;
+  font-family:var(--mono);font-size:14px;text-align:right}
+.prow input.p{width:72px}
+.prow input.s{width:60px;text-align:center;font-size:12px}
+.prow .unitp{font-family:var(--mono);font-size:11px;color:#5D6B64;width:70px;flex:none;text-align:right}
+.prow.lowest input.p{border-color:var(--lingon);color:var(--lingon-dk);font-weight:500}
+.prow.lowest .unitp{color:var(--lingon)}
+.prow a{color:var(--pine);opacity:.55;font-size:11px;font-family:var(--mono);text-decoration:none;border-bottom:1px solid}
+.trash{background:none;border:0;color:var(--lingon);font-size:12px;cursor:pointer;padding:4px 0;font-family:var(--mono)}
+
+.tag{background:var(--lingon);color:var(--birch);border-radius:3px;padding:18px 20px 16px;position:relative;overflow:hidden}
+.tag::before,.tag::after{content:"";position:absolute;width:14px;height:14px;background:var(--birch);
+  border-radius:50%;top:50%;transform:translateY(-50%)}
+.tag::before{left:-7px} .tag::after{right:-7px}
+.tag .store{font-family:var(--display);font-size:14px;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+.tag .amount{font-family:var(--display);font-weight:700;font-size:50px;line-height:.95;margin:4px 0 2px}
+.tag .amount span{font-size:21px;letter-spacing:.06em;margin-left:4px}
+.tag .fine{font-family:var(--mono);font-size:11px;line-height:1.6;border-top:1px solid rgba(243,238,228,.35);
+  margin-top:12px;padding-top:9px}
+.tag.empty{background:var(--birch-2);color:var(--pine)}
+.tag.empty .fine{border-top-color:rgba(20,53,43,.25)}
+
+table{width:100%;border-collapse:collapse}
+th{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#5D6B64;
+  text-align:right;font-weight:400;padding-bottom:6px}
+th:first-child{text-align:left}
+td{padding:9px 0;border-top:1px dotted rgba(20,53,43,.28);text-align:right;font-family:var(--mono);font-size:14px}
+td:first-child{text-align:left;font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;font-size:13px}
+tr.win td{color:var(--lingon-dk)}
+tr.win td:first-child::after{content:" \25C4";font-size:9px}
+td.gap{color:#5D6B64;font-size:12px}
+
+.card{border:1px solid var(--birch-2);border-radius:2px;padding:12px;margin-bottom:10px;background:#FBF9F4}
+.card input[type=text],.card input[type=password]{width:100%;border:1px solid rgba(20,53,43,.22);border-radius:2px;
+  padding:8px;margin-top:4px;background:#fff}
+.card input.url,.card input.mono{font-family:var(--mono);font-size:12px}
+.field-label{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#5D6B64;margin-top:8px}
+.field-label:first-child{margin-top:0}
+.sw{display:flex;align-items:center;gap:8px;margin-top:9px;font-size:13px;color:#3D4B44}
+.sw input{width:auto;margin:0}
+
+.note{background:#FBF9F4;border-left:3px solid var(--frost);padding:11px 13px;font-size:13px;line-height:1.5;color:#3D4B44;margin-top:10px}
+.note.warn{border-left-color:var(--lingon)}
+.empty-state{text-align:center;padding:40px 20px;color:#5D6B64}
+.toast{position:fixed;bottom:92px;left:50%;transform:translateX(-50%);background:var(--pine);color:var(--birch);
+  padding:10px 18px;border-radius:2px;font-family:var(--mono);font-size:12px;z-index:60;opacity:0;pointer-events:none;transition:opacity .2s;max-width:88%}
+.toast.show{opacity:1}
+#orderText{width:100%;min-height:150px;border:1px solid rgba(20,53,43,.25);border-radius:2px;background:#fff;
+  padding:11px;font-family:var(--mono);font-size:13px;line-height:1.7;resize:vertical}
+.steps{counter-reset:s;padding:0;margin:12px 0 0}
+.steps li{list-style:none;counter-increment:s;position:relative;padding:0 0 10px 30px;font-size:14px;color:#3D4B44}
+.steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;
+  background:var(--pine);color:var(--birch);font-family:var(--mono);font-size:11px;display:grid;place-items:center}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--frost);margin-right:6px;vertical-align:middle}
+.dot.ok{background:#3E8E5E} .dot.bad{background:var(--lingon)} .dot.busy{background:#D4A017}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand">
+    <h1>Handla</h1>
+    <small><b id="stamp">—</b><span id="syncline">not shared</span></small>
+  </div>
+  <nav role="tablist">
+    <button role="tab" id="tab-list" aria-selected="true" aria-controls="view-list">List</button>
+    <button role="tab" id="tab-compare" aria-selected="false" aria-controls="view-compare">Compare</button>
+    <button role="tab" id="tab-order" aria-selected="false" aria-controls="view-order">Order</button>
+    <button role="tab" id="tab-setup" aria-selected="false" aria-controls="view-setup">Setup</button>
+  </nav>
+</header>
+
+<main>
+
+  <section class="view" id="view-list" role="tabpanel" aria-labelledby="tab-list">
+    <div id="quickWrap" hidden>
+      <div class="eyebrow">Buy again</div>
+      <div class="chips" id="quick"></div>
+    </div>
+    <div id="listBody"></div>
+  </section>
+
+  <section class="view" id="view-compare" role="tabpanel" aria-labelledby="tab-compare" hidden>
+    <div class="eyebrow">Cheapest single store</div>
+    <div id="verdict"></div>
+    <div class="eyebrow">Basket by store</div>
+    <table><thead><tr><th>Store</th><th>Priced</th><th>Total</th><th>vs best</th></tr></thead><tbody id="totals"></tbody></table>
+    <div class="eyebrow">Split the basket</div>
+    <div id="split"></div>
+  </section>
+
+  <section class="view" id="view-order" role="tabpanel" aria-labelledby="tab-order" hidden>
+    <div class="eyebrow">Order for pickup</div>
+    <p class="muted" style="margin-top:0">Willys takes the whole list in one paste. The others are item by item.</p>
+    <select id="orderStore" style="width:100%;padding:11px;border:1px solid rgba(20,53,43,.28);border-radius:2px;background:#fff"></select>
+    <div class="eyebrow">Your list</div>
+    <textarea id="orderText" readonly></textarea>
+    <div style="height:8px"></div>
+    <button class="btn wide" id="copyOrder">Copy list</button>
+    <div style="height:8px"></div>
+    <a class="btn ghost wide" id="orderLink" target="_blank" rel="noopener" href="#">Open the store</a>
+    <div class="eyebrow">How it goes</div>
+    <ol class="steps" id="orderSteps"></ol>
+  </section>
+
+  <section class="view" id="view-setup" role="tabpanel" aria-labelledby="tab-setup" hidden>
+
+    <div class="eyebrow">Share the list</div>
+    <div class="card">
+      <p class="muted" style="margin:0 0 10px"><span class="dot" id="syncdot"></span><span id="syncstatus">Not set up</span></p>
+
+      <div class="field-label">Access token</div>
+      <input type="password" class="mono" id="cfgToken" placeholder="github_pat_… or ghp_…" autocomplete="off" spellcheck="false">
+
+      <div class="field-label">Shared list ID</div>
+      <input type="text" class="mono" id="cfgGist" placeholder="paste an ID, or create one below" autocomplete="off" spellcheck="false">
+
+      <label class="sw"><input type="checkbox" id="cfgOn"> Keep both phones in sync</label>
+
+      <div style="height:10px"></div>
+      <button class="btn wide" id="syncNow">Sync now</button>
+      <div style="height:8px"></div>
+      <button class="btn ghost wide" id="makeGist">Create a new shared list</button>
+    </div>
+    <div class="note">
+      Two phones, one list. Changes merge per item, so you can both add things at the same time
+      without overwriting each other. Whoever edited an item last wins for that item only.
+    </div>
+    <div class="note warn">
+      The token lives only in this browser and is never written into the list itself. Give it the
+      <strong>gist</strong> scope and nothing else — that way it can reach this one list and nothing
+      else in your account. Setup steps are in the README.
+    </div>
+
+    <div class="eyebrow">Install</div>
+    <button class="btn wide" id="installBtn" disabled>Add to home screen</button>
+    <p class="muted" id="installHint" style="margin-top:8px">On iPhone: Share → Add to Home Screen.</p>
+
+    <div class="eyebrow">Your stores</div>
+    <div id="storeList"></div>
+    <button class="btn ghost wide" id="addStore">Add a store</button>
+    <div class="note">
+      Prices in Sweden are set per store, not per chain — two ICA shops a few kilometres apart can
+      differ by double digits on the same basket. That is why these are named shops, not logos.
+    </div>
+
+    <div class="eyebrow">Data</div>
+    <button class="btn ghost wide" id="exportBtn">Copy everything as JSON</button>
+    <div style="height:8px"></div>
+    <button class="btn ghost wide" id="importBtn">Import from JSON</button>
+    <div style="height:8px"></div>
+    <button class="btn ghost wide" id="clearDone">Remove checked items</button>
+  </section>
+
+</main>
+
+<div class="addbar"><div class="addbar-inner">
+  <input type="text" id="newName" placeholder="What's missing?" autocomplete="off" enterkeyhint="done">
+  <input type="number" id="newQty" value="1" min="0" step="0.5" aria-label="Quantity">
+  <select id="newUnit" aria-label="Unit"><option>pcs</option><option>kg</option><option>g</option><option>l</option><option>ml</option><option>pkg</option></select>
+  <button class="btn" id="addBtn">Add</button>
+</div></div>
+
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+const KEY = 'handla:v3';
+const OLDKEY = 'handla:v2';
+const CFGKEY = 'handla:sync';   // stays local, never synced
+const GIST_FILE = 'handla.json';
+
+const $ = s => document.querySelector(s);
+const kr = n => new Intl.NumberFormat('sv-SE',{minimumFractionDigits:2,maximumFractionDigits:2}).format(n);
+const norm = s => String(s).trim().toLowerCase();
+const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmtQty = q => Number.isInteger(Number(q)) ? Number(q) : Number(q).toFixed(1);
+const now = () => Date.now();
+
+/* ---------------- local disk ---------------- */
+const Disk = {
+  get(k){ try{ const v = localStorage.getItem(k); return v?JSON.parse(v):null; }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+};
+
+/* ---------------- taxonomy ---------------- */
+const CATS = [['produce','Fruit & veg'],['bakery','Bread'],['dairy','Dairy & eggs'],['meat','Meat & fish'],
+  ['frozen','Frozen'],['pantry','Pantry'],['drinks','Drinks'],['household','Household'],['other','Other']];
+
+const KEYWORDS = {
+  produce:'tomato tomat tomate banana apple appelsin macã maca potato potatis batata onion lok lök cebola carrot morot cenoura salad sallad alface lettuce cucumber gurka pepino lemon citron limao lime garlic vitlok vitlök alho avocado avokado abacate paprika pepper pimentao broccoli brocoli spinach spenat espinafre mushroom champinjon cogumelo orange apelsin laranja grape vindruvor uva berry bar bär mango ginger ingefara gengibre melon melao zucchini squash kal kål couve pear paron päron pera plum strawberry jordgubb morango blueberry blabar',
+  bakery:'bread brod bröd pao pão bun bulle tortilla wrap baguette knackebrod knäckebröd crispbread cake kaka bolo croissant frallor toast',
+  dairy:'milk mjolk mjölk leite cheese ost queijo yoghurt yogurt iogurte butter smor smör manteiga cream gradde grädde creme egg agg ägg ovo ovos filmjolk kvarg quark cottage requeijao mozzarella parmesan',
+  meat:'chicken kyckling frango beef notkott nötkött carne pork flask fläsk porco mince fars färs moida sausage korv linguica salmon lax salmao fish fisk peixe shrimp rakor räkor camarao bacon ham skinka presunto tuna tonfisk atum turkey kalkon steak',
+  frozen:'frozen fryst congelado ice cream glass sorvete pizza fries pommes fryspizza',
+  pantry:'rice ris arroz pasta macarrao spaghetti noodles flour mjol mjöl farinha sugar socker acucar salt sal oil olja oleo olive vinegar vinager vinagre beans bonor bönor feijao lentil linser canned konserv burk ketchup mustard senap mostarda mayo majonnas coffee kaffe cafe tea te cha cereal flingor musli honey honung mel peanut jordnot amendoim chocolate choklad snack chips cookie kex biscoito spice krydda tempero soup soppa broth buljong sauce sas sås molho couscous quinoa oat havre aveia',
+  drinks:'water vatten agua juice jos suco soda lask läsk refrigerante beer ol öl cerveja wine vin vinho saft cola tonic kombucha',
+  household:'toilet toalett papper paper papel detergent diskmedel detergente soap tval tvål sabao shampoo xampu toothpaste tandkram dente trash sopp lixo pase påse bag cleaner rengoring limpeza laundry tvattmedel diaper bloja fralda foil folie napkin servett guardanapo sponge svamp esponja battery batteri pilha'
+};
+// Fold accents so "feijão", "mjölk" and "água" match their plain spellings.
+const fold = s => String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+const KEYSETS = Object.entries(KEYWORDS).map(([cat,list]) =>
+  [cat, new Set(fold(list).split(' ').filter(Boolean))]);
+
+function commonPrefix(a,b){ let i=0; while(i<a.length && i<b.length && a[i]===b[i]) i++; return i; }
+
+function guessCat(name){
+  const words = fold(name).replace(/[^a-z\s]/g,' ').split(/\s+/).filter(Boolean);
+  // Exact hits win outright, whatever category they sit in.
+  for (const w of words) for (const [cat,keys] of KEYSETS) if (keys.has(w)) return cat;
+  // Then stems, so "bananer" finds "banana" and "korvar" finds "korv".
+  for (const w of words){
+    if (w.length < 4) continue;
+    for (const [cat,keys] of KEYSETS) for (const k of keys){
+      if (k.length < 4) continue;
+      const cp = commonPrefix(w,k);
+      if (cp >= 4 && cp >= Math.min(w.length,k.length) - 3) return cat;
+    }
+  }
+  return 'other';
+}
+
+/* ---------------- pack size -> unit price ---------------- */
+function parseSize(txt){
+  if (!txt) return null;
+  const m = String(txt).toLowerCase().replace(',','.').match(/([\d.]+)\s*(kg|g|l|dl|cl|ml|st|pcs)?/);
+  if (!m) return null;
+  const v = parseFloat(m[1]); if (isNaN(v) || v<=0) return null;
+  const u = m[2] || 'st';
+  if (u==='kg') return {v, base:'kg'};
+  if (u==='g')  return {v:v/1000, base:'kg'};
+  if (u==='l')  return {v, base:'l'};
+  if (u==='dl') return {v:v/10, base:'l'};
+  if (u==='cl') return {v:v/100, base:'l'};
+  if (u==='ml') return {v:v/1000, base:'l'};
+  return {v, base:'st'};
+}
+function unitPrice(price, sizeTxt){
+  const s = parseSize(sizeTxt);
+  if (!s || price==null) return null;
+  return { value: price/s.v, base: s.base };
+}
+
+/* ---------------- defaults ---------------- */
+function defaultStores(){
+  const t = now();
+  return [
+    { id:'willys-varvader', name:'Willys Vårväderstorget', chain:'willys', address:'Vårväderstorget 2, Biskopsgården',
+      url:'https://www.willys.se/sok?q={q}', home:'https://www.willys.se/butik/2816', online:true, mt:t },
+    { id:'ica-sannegarden', name:'ICA Kvantum Sannegården', chain:'ica', address:'Vintergatan 4, Sannegården',
+      url:'https://handla.ica.se/sok?q={q}', home:'https://www.ica.se/butiker/kvantum/goteborg/ica-kvantum-sannegarden-1004293/', online:true, mt:t },
+    { id:'coop-eriksberg', name:'Coop Eriksberg', chain:'coop', address:'Kolhamnsgatan 7, Eriksberg',
+      url:'https://www.coop.se/handla/sok/?q={q}', home:'https://www.coop.se/butiker-erbjudanden/coop/coop-eriksberg/', online:true, mt:t },
+    { id:'xtra-hisingen', name:'X:-tra Länsmanstorget', chain:'xtra', address:'Stackmolnsgatan 2, Länsmansgården',
+      url:'', home:'https://x-tra.se/butiker/hisingen', online:false, mt:t }
+  ];
+}
+const STEPS = {
+  willys:['Copy the list above.','Open Willys and log in.','Go to the list search (Listsök) and paste everything at once.',
+          'Match each row to a product — the list search proposes candidates.','Choose "Hämta i butik" and pick a slot at Vårväderstorget.'],
+  ica:   ['Copy the list above.','Open handla.ica.se and log in with your stammis account.','Pick Kvantum Sannegården as your store.',
+          'Search and add each item — ICA has no bulk paste.','Choose pickup and a time slot at checkout.'],
+  coop:  ['Copy the list above.','Open coop.se and log in.','Set Coop Eriksberg as your store.',
+          'Search and add each item.','Choose pickup at checkout if the store offers it.'],
+  other: ['This shop has no online ordering.','Use the list in the store — it is already sorted by aisle.']
+};
+
+let S = { v:3, items:[], stores:defaultStores(), book:{}, recent:[] };
+let CFG = { token:'', gist:'', on:false };
+let openId = null;
+let dirty = false;
+let syncing = false;
+let lastSyncAt = 0;
+let syncErr = '';
+
+/* ---------------- merge ---------------- */
+function mergeById(a, b){
+  const m = new Map();
+  for (const x of [...(a||[]), ...(b||[])]){
+    if (!x || !x.id) continue;
+    const cur = m.get(x.id);
+    if (!cur || (x.mt||0) > (cur.mt||0)) m.set(x.id, x);
+  }
+  const cut = now() - 30*864e5;
+  return [...m.values()].filter(x => !(x.del && (x.mt||0) < cut));
+}
+function mergeMap(a, b){
+  const out = Object.assign({}, a||{});
+  for (const [k,v] of Object.entries(b||{})) if (!out[k] || (v.mt||0) > (out[k].mt||0)) out[k] = v;
+  return out;
+}
+function mergeRecent(a, b){
+  const m = new Map();
+  for (const x of [...(a||[]), ...(b||[])]){
+    if (!x || !x.n) continue;
+    const k = norm(x.n), cur = m.get(k);
+    if (!cur || (x.mt||0) > (cur.mt||0)) m.set(k, x);
+  }
+  return [...m.values()].sort((p,q)=>(q.mt||0)-(p.mt||0)).slice(0,24);
+}
+function mergeState(local, remote){
+  if (!remote || typeof remote !== 'object') return local;
+  return {
+    v:3,
+    items:  mergeById(local.items,  remote.items),
+    stores: mergeById(local.stores, remote.stores),
+    book:   mergeMap(local.book,    remote.book),
+    recent: mergeRecent(local.recent, remote.recent)
+  };
+}
+
+/* ---------------- selectors ---------------- */
+const liveItems  = () => S.items.filter(i=>!i.del);
+const liveStores = () => S.stores.filter(s=>!s.del);
+const activeItems = () => liveItems().filter(i=>!i.done);
+
+function cell(item, sid){ return (item.prices && item.prices[sid]) || null; }
+function priceOf(item, sid){ const c = cell(item,sid); return c && c.p>0 ? c.p : null; }
+function lineTotal(item, sid){ const p = priceOf(item,sid); return p===null?null:p*(Number(item.qty)||1); }
+
+function bestFor(item){
+  const quoted = liveStores().map(st=>({st, p:priceOf(item,st.id), c:cell(item,st.id)})).filter(x=>x.p!==null);
+  if (!quoted.length) return null;
+  const withUnit = quoted.map(x=>({...x, u:unitPrice(x.p, x.c && x.c.s)})).filter(x=>x.u);
+  const bases = new Set(withUnit.map(x=>x.u.base));
+  if (withUnit.length===quoted.length && bases.size===1){
+    const w = withUnit.reduce((a,b)=> b.u.value<a.u.value?b:a);
+    return { store:w.st, price:w.p, unit:w.u, byUnit:true };
+  }
+  const w = quoted.reduce((a,b)=> b.p<a.p?b:a);
+  return { store:w.st, price:w.p, unit:unitPrice(w.p, w.c && w.c.s), byUnit:false };
+}
+function storeTotals(){
+  const items = activeItems();
+  return liveStores().map(st=>{
+    let sum=0, priced=0;
+    for (const it of items){ const t = lineTotal(it, st.id); if (t!==null){ sum+=t; priced++; } }
+    return { store:st, sum, priced, count:items.length, full: items.length>0 && priced===items.length };
+  });
+}
+
+/* ---------------- persistence ---------------- */
+function save(){ Disk.set(KEY, S); dirty = true; stampNow(); scheduleSync(); }
+function stampNow(){
+  const a = activeItems().length;
+  $('#stamp').textContent = a ? a+' to buy' : 'list clear';
+}
+function toast(m){ const t=$('#toast'); t.textContent=m; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),2200); }
+
+/* ---------------- sync over a private gist ---------------- */
+function saveCfg(){ Disk.set(CFGKEY, CFG); paintSync(); }
+
+async function gh(path, opts){
+  const r = await fetch('https://api.github.com'+path, Object.assign({}, opts, {
+    headers: Object.assign({
+      'Authorization':'Bearer '+CFG.token,
+      'Accept':'application/vnd.github+json',
+      'X-GitHub-Api-Version':'2022-11-28'
+    }, (opts&&opts.headers)||{})
+  }));
+  if (!r.ok){
+    const msg = r.status===401 ? 'token rejected (401)'
+              : r.status===404 ? 'list not found (404)'
+              : r.status===403 ? 'rate limited or scope missing (403)'
+              : 'GitHub error '+r.status;
+    throw new Error(msg);
+  }
+  return r.json();
+}
+
+async function pull(){
+  const g = await gh('/gists/'+CFG.gist, { method:'GET', cache:'no-store' });
+  const f = g.files && g.files[GIST_FILE];
+  if (!f) return null;
+  let text = f.content;
+  if (f.truncated && f.raw_url){ text = await (await fetch(f.raw_url)).text(); }
+  try { return JSON.parse(text); } catch(e){ return null; }
+}
+async function push(state){
+  await gh('/gists/'+CFG.gist, {
+    method:'PATCH',
+    body: JSON.stringify({ files:{ [GIST_FILE]: { content: JSON.stringify(state) } } })
+  });
+}
+
+async function syncNow(silent){
+  if (!CFG.on || !CFG.token || !CFG.gist || syncing) return;
+  if (!navigator.onLine){ syncErr = 'offline'; paintSync(); return; }
+  syncing = true; syncErr = ''; paintSync();
+  try{
+    const remote = await pull();
+    const before = JSON.stringify(S);
+    S = mergeState(S, remote);
+    Disk.set(KEY, S);
+    const after = JSON.stringify(S);
+    if (dirty || after !== JSON.stringify(remote)) { await push(S); dirty = false; }
+    lastSyncAt = now();
+    if (after !== before) renderAll();
+    if (!silent) toast('Synced');
+  }catch(e){
+    syncErr = e.message || 'sync failed';
+    if (!silent) toast(syncErr);
+  }finally{ syncing = false; paintSync(); }
+}
+
+let syncTimer = null;
+function scheduleSync(){
+  if (!CFG.on) return;
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(()=>syncNow(true), 2500);
+}
+
+function paintSync(){
+  const dot = $('#syncdot'), st = $('#syncstatus'), line = $('#syncline');
+  let cls = '', text = 'Not set up', short = 'not shared';
+  if (CFG.on && CFG.token && CFG.gist){
+    if (syncing){ cls='busy'; text='Syncing…'; short='syncing…'; }
+    else if (syncErr){ cls='bad'; text = 'Last attempt: '+syncErr; short = syncErr; }
+    else if (lastSyncAt){
+      cls='ok';
+      const t = new Date(lastSyncAt).toLocaleTimeString('sv-SE',{hour:'2-digit',minute:'2-digit'});
+      text = 'In sync — last at '+t; short = 'synced '+t;
+    } else { cls='ok'; text='Ready'; short='shared'; }
+  } else if (CFG.token && CFG.gist){ text='Configured, sync switched off'; short='sync off'; }
+  if (dot) dot.className = 'dot '+cls;
+  if (st) st.textContent = text;
+  if (line) line.textContent = short;
+}
+
+/* ---------------- render: list ---------------- */
+function renderList(){
+  const body = $('#listBody'); body.innerHTML = '';
+  const used = new Set(liveItems().map(i=>norm(i.name)));
+  const chips = (S.recent||[]).filter(x=>!used.has(norm(x.n))).slice(0,8);
+  $('#quickWrap').hidden = !chips.length;
+  $('#quick').innerHTML = chips.map(x=>`<button class="chip" data-quick="${esc(x.n)}">${esc(x.n)}</button>`).join('');
+
+  const items = liveItems();
+  if (!items.length){
+    body.innerHTML = `<div class="empty-state">
+      <p style="font-family:var(--display);letter-spacing:.14em;text-transform:uppercase">Empty list</p>
+      <p class="muted">Type what ran out at home. Items sort themselves into aisles.</p></div>`;
+    stampNow(); return;
+  }
+  for (const [cat,label] of CATS){
+    const inCat = items.filter(i=>i.cat===cat);
+    if (!inCat.length) continue;
+    inCat.sort((a,b)=>(a.done-b.done)||a.name.localeCompare(b.name,'sv'));
+    const d = document.createElement('div');
+    d.innerHTML = `<div class="eyebrow">${label}</div><ul>${inCat.map(itemRow).join('')}</ul>`;
+    body.appendChild(d);
+  }
+  stampNow();
+}
+function itemRow(it){
+  const best = bestFor(it);
+  const badge = best ? `<span class="best">${kr(best.price)}${best.byUnit?'*':''} · ${esc(best.store.name.split(' ')[0])}</span>` : '';
+  const rows = liveStores().map(st=>{
+    const c = cell(it, st.id) || {};
+    const up = unitPrice(c.p, c.s);
+    const low = best && best.store.id===st.id && liveStores().filter(s=>priceOf(it,s.id)!==null).length>1;
+    const link = st.url ? `<a href="${esc(st.url.replace('{q}',encodeURIComponent(it.name)))}" target="_blank" rel="noopener">find</a>` : '';
+    return `<div class="prow${low?' lowest':''}">
+      <span class="slab">${esc(st.name)}</span>
+      <input class="p" type="number" inputmode="decimal" step="0.01" min="0" placeholder="kr"
+             value="${c.p!=null?c.p:''}" data-cell="${it.id}" data-store="${st.id}" data-f="p" aria-label="Price at ${esc(st.name)}">
+      <input class="s" type="text" placeholder="500 g" value="${esc(c.s!=null?c.s:'')}"
+             data-cell="${it.id}" data-store="${st.id}" data-f="s" aria-label="Pack size at ${esc(st.name)}">
+      <span class="unitp">${up ? kr(up.value)+'/'+up.base : ''}</span>${link}
+    </div>`;
+  }).join('');
+  return `<li class="item${it.done?' done':''}${openId===it.id?' open':''}" data-id="${it.id}">
+    <div class="row">
+      <button class="tick" data-toggle="${it.id}" aria-label="Mark ${esc(it.name)} as bought">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F3EEE4" stroke-width="3.5"><path d="M4 12l6 6L20 5"/></svg></button>
+      <span class="name">${esc(it.name)}</span>${badge}
+      <span class="qty">${fmtQty(it.qty)} ${esc(it.unit)}</span>
+      <button class="exp" data-exp="${it.id}" aria-label="Prices for ${esc(it.name)}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 9l7 7 7-7"/></svg></button>
+    </div>
+    <div class="prices">${rows}<button class="trash" data-del="${it.id}">remove item</button></div>
+  </li>`;
+}
+
+/* ---------------- render: compare ---------------- */
+function renderCompare(){
+  const items = activeItems();
+  const rows = storeTotals().filter(r=>r.priced>0).sort((a,b)=>a.sum-b.sum);
+  const winner = rows.filter(r=>r.full)[0] || rows[0] || null;
+  const tag = $('#verdict');
+
+  if (!winner || !items.length){
+    tag.innerHTML = `<div class="tag empty"><div class="store">No verdict yet</div><div class="amount">&mdash;</div>
+      <div class="fine">Add items, open a row and type the shelf price.<br>Pack size is optional — it unlocks kr/kg comparison.</div></div>`;
+  } else {
+    const next = rows.find(r=>r.store.id!==winner.store.id);
+    const fine = [`${winner.priced} of ${winner.count} items priced`];
+    if (next && next.sum > winner.sum) fine.push(`${kr(next.sum-winner.sum)} kr less than ${next.store.name}`);
+    if (!winner.full) fine.push('partial basket — this total is a floor');
+    tag.innerHTML = `<div class="tag"><div class="store">${esc(winner.store.name)}</div>
+      <div class="amount">${kr(winner.sum)}<span>kr</span></div>
+      <div class="fine">${fine.map(esc).join('<br>')}</div></div>`;
+  }
+
+  $('#totals').innerHTML = storeTotals()
+    .sort((a,b)=> a.priced===0?1 : b.priced===0?-1 : a.sum-b.sum)
+    .map(r=>{
+      if (!r.priced) return `<tr><td>${esc(r.store.name)}</td><td class="gap">0/${r.count}</td><td class="gap">&mdash;</td><td class="gap">&mdash;</td></tr>`;
+      const win = winner && r.store.id===winner.store.id;
+      return `<tr class="${win?'win':''}"><td>${esc(r.store.name)}</td><td class="gap">${r.priced}/${r.count}</td>
+        <td>${kr(r.sum)}</td><td class="gap">${win?'&mdash;':'+'+kr(r.sum-winner.sum)}</td></tr>`;
+    }).join('') || `<tr><td colspan="4" class="gap">Nothing on the list.</td></tr>`;
+
+  const byStore = {}; let splitSum=0, n=0;
+  for (const it of items){
+    const b = bestFor(it); if (!b) continue;
+    (byStore[b.store.id] = byStore[b.store.id] || []).push({ it, price:b.price });
+    splitSum += b.price*(Number(it.qty)||1); n++;
+  }
+  const sp = $('#split');
+  if (!n){ sp.innerHTML = `<p class="muted">Type a price for at least one item.</p>`; return; }
+  const saving = winner ? winner.sum - splitSum : 0;
+  const blocks = Object.entries(byStore).map(([sid,list])=>{
+    const st = liveStores().find(s=>s.id===sid) || {name:'?'};
+    const sum = list.reduce((a,x)=>a+x.price*(Number(x.it.qty)||1),0);
+    return `<div class="eyebrow" style="margin-top:14px">${esc(st.name)} · ${kr(sum)} kr</div><ul>${
+      list.map(x=>`<li class="item"><div class="row"><span class="name">${esc(x.it.name)}</span>
+        <span class="qty">${fmtQty(x.it.qty)} ${esc(x.it.unit)}</span>
+        <span class="best">${kr(x.price*(Number(x.it.qty)||1))}</span></div></li>`).join('')}</ul>`;
+  }).join('');
+  sp.innerHTML = `<p class="muted" style="margin-top:0">Buying each item where it is cheapest costs
+    <strong>${kr(splitSum)} kr</strong>${ saving>0.005
+      ? ` — ${kr(saving)} kr under a single-store run. Worth it only if the second stop is on your way.`
+      : ` — no better than one store, so do one trip.` }</p>${ Object.keys(byStore).length>1 ? blocks : '' }`;
+}
+
+/* ---------------- render: order ---------------- */
+function listText(){ return activeItems().map(i=>`${i.name} ${fmtQty(i.qty)} ${i.unit}`).join('\n'); }
+function renderOrder(){
+  const sel = $('#orderStore'); const cur = sel.value;
+  sel.innerHTML = liveStores().map(st=>`<option value="${st.id}">${esc(st.name)}${st.online?'':' — in store only'}</option>`).join('');
+  if (cur && liveStores().some(s=>s.id===cur)) sel.value = cur;
+  const st = liveStores().find(s=>s.id===sel.value) || liveStores()[0];
+  if (!st) return;
+  $('#orderText').value = listText() || '(nothing on the list yet)';
+  const link = $('#orderLink');
+  link.href = st.chain==='willys' ? 'https://www.willys.se/artikel/listsok' : (st.home || '#');
+  link.textContent = st.chain==='willys' ? 'Open Willys list search' : 'Open '+st.name;
+  $('#orderSteps').innerHTML = (STEPS[st.chain] || STEPS.other).map(s=>`<li>${esc(s)}</li>`).join('');
+}
+
+/* ---------------- render: setup ---------------- */
+function renderStores(){
+  $('#storeList').innerHTML = liveStores().map(st=>`
+    <div class="card">
+      <div class="field-label">Store</div>
+      <input type="text" value="${esc(st.name)}" data-sf="name" data-sid="${st.id}">
+      <div class="field-label">Address</div>
+      <input type="text" value="${esc(st.address||'')}" data-sf="address" data-sid="${st.id}">
+      <div class="field-label">Search URL — {q} is the item</div>
+      <input type="text" class="url" value="${esc(st.url||'')}" data-sf="url" data-sid="${st.id}" spellcheck="false" placeholder="https://…?q={q}">
+      <label class="sw"><input type="checkbox" ${st.online?'checked':''} data-sf="online" data-sid="${st.id}"> Sells online / pickup</label>
+      <button class="trash" data-sdel="${st.id}">remove ${esc(st.name)}</button>
+    </div>`).join('');
+}
+function renderAll(){ renderList(); renderCompare(); renderOrder(); renderStores(); paintSync(); }
+
+/* ---------------- actions ---------------- */
+function addItem(name, qty, unit){
+  name = String(name).trim(); if (!name) return;
+  const ex = liveItems().find(i=>norm(i.name)===norm(name));
+  if (ex){ ex.qty = (Number(ex.qty)||0)+(Number(qty)||1); ex.done=false; ex.mt=now(); }
+  else {
+    const b = S.book[norm(name)];
+    S.items.push({ id:'i'+now().toString(36)+Math.random().toString(36).slice(2,6),
+      name, qty:Number(qty)||1, unit, cat:guessCat(name), done:false,
+      prices: b ? JSON.parse(JSON.stringify(b.prices||{})) : {}, mt:now() });
+  }
+  save(); renderAll();
+}
+function rememberBook(it){
+  if (it.prices && Object.keys(it.prices).length)
+    S.book[norm(it.name)] = { mt:now(), prices: JSON.parse(JSON.stringify(it.prices)) };
+}
+
+$('#addBtn').addEventListener('click', ()=>{
+  addItem($('#newName').value, $('#newQty').value, $('#newUnit').value);
+  $('#newName').value=''; $('#newQty').value='1'; $('#newName').focus();
+});
+$('#newName').addEventListener('keydown', e=>{ if (e.key==='Enter') $('#addBtn').click(); });
+
+document.addEventListener('click', e=>{
+  const t = e.target.closest('[data-toggle],[data-exp],[data-del],[data-quick],[data-sdel]');
+  if (!t) return;
+  if (t.dataset.quick){ addItem(t.dataset.quick,1,'pcs'); return; }
+  if (t.dataset.toggle){
+    const it = S.items.find(i=>i.id===t.dataset.toggle); if (!it) return;
+    it.done = !it.done; it.mt = now();
+    if (it.done){
+      rememberBook(it);
+      S.recent = mergeRecent([{n:it.name, mt:now()}], S.recent);
+    }
+    save(); renderAll(); return;
+  }
+  if (t.dataset.exp){ openId = openId===t.dataset.exp ? null : t.dataset.exp; renderList(); return; }
+  if (t.dataset.del){
+    const it = S.items.find(i=>i.id===t.dataset.del); if (!it) return;
+    rememberBook(it); it.del = true; it.mt = now();
+    save(); renderAll(); return;
+  }
+  if (t.dataset.sdel){
+    if (liveStores().length<=1){ toast('Keep at least one store'); return; }
+    const st = S.stores.find(s=>s.id===t.dataset.sdel); if (!st) return;
+    st.del = true; st.mt = now(); save(); renderAll(); return;
+  }
+});
+
+document.addEventListener('input', e=>{
+  const el = e.target;
+
+  if (el.dataset.cell){
+    const it = S.items.find(i=>i.id===el.dataset.cell); if (!it) return;
+    it.prices = it.prices || {};
+    const sid = el.dataset.store;
+    const c = it.prices[sid] || {};
+    if (el.dataset.f === 'p'){
+      const v = parseFloat(String(el.value).replace(',','.'));
+      if (isNaN(v) || v<=0) delete c.p; else c.p = v;
+    } else {
+      if (!el.value.trim()) delete c.s; else c.s = el.value.trim();
+    }
+    if (c.p==null && c.s==null) delete it.prices[sid]; else it.prices[sid] = c;
+    it.mt = now(); rememberBook(it);
+    save(); renderCompare(); refreshRow(it, el.closest('li.item'));
+    return;
+  }
+
+  if (el.dataset.sid){
+    const st = S.stores.find(s=>s.id===el.dataset.sid); if (!st) return;
+    const f = el.dataset.sf;
+    st[f] = f==='online' ? el.checked : el.value.trim();
+    st.mt = now(); save(); renderList(); renderCompare(); renderOrder();
+    return;
+  }
+
+  if (el.id==='cfgToken'){ CFG.token = el.value.trim(); saveCfg(); return; }
+  if (el.id==='cfgGist'){ CFG.gist  = el.value.trim(); saveCfg(); return; }
+});
+
+document.addEventListener('change', e=>{
+  if (e.target.id==='cfgOn'){
+    CFG.on = e.target.checked; saveCfg();
+    if (CFG.on) syncNow();
+  }
+});
+
+function refreshRow(it, li){
+  if (!li) return;
+  const best = bestFor(it);
+  const badge = li.querySelector('.best');
+  if (badge) badge.textContent = best ? kr(best.price)+(best.byUnit?'*':'')+' · '+best.store.name.split(' ')[0] : '';
+  li.querySelectorAll('.prow').forEach(p=>{
+    const inp = p.querySelector('input.p'); if (!inp) return;
+    const sid = inp.dataset.store, c = cell(it,sid) || {};
+    const up = unitPrice(c.p, c.s);
+    const label = p.querySelector('.unitp');
+    if (label) label.textContent = up ? kr(up.value)+'/'+up.base : '';
+    p.classList.toggle('lowest', !!best && sid===best.store.id && liveStores().filter(s=>priceOf(it,s.id)!==null).length>1);
+  });
+}
+
+$('#orderStore').addEventListener('change', renderOrder);
+
+async function copyText(text, ok){
+  if (!String(text).trim()){ toast('Nothing to copy'); return; }
+  try{ await navigator.clipboard.writeText(text); toast(ok); }
+  catch(e){
+    const ta = document.createElement('textarea'); ta.value = text;
+    ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); toast(ok);
+  }
+}
+$('#copyOrder').addEventListener('click', ()=> copyText(listText(), 'List copied'));
+$('#exportBtn').addEventListener('click', ()=> copyText(JSON.stringify(S,null,2), 'JSON copied'));
+$('#importBtn').addEventListener('click', ()=>{
+  const raw = prompt('Paste an exported Handla JSON:'); if (!raw) return;
+  try{
+    const p = JSON.parse(raw); if (!p.items || !p.stores) throw 0;
+    S = mergeState(S, p); save(); renderAll(); toast('Imported and merged');
+  }catch(e){ toast('That JSON did not parse'); }
+});
+$('#addStore').addEventListener('click', ()=>{
+  S.stores.push({ id:'s'+now().toString(36), name:'New store', chain:'other', address:'', url:'', home:'', online:false, mt:now() });
+  save(); renderStores(); renderOrder();
+});
+$('#clearDone').addEventListener('click', ()=>{
+  const gone = liveItems().filter(i=>i.done);
+  for (const it of gone){ rememberBook(it); it.del = true; it.mt = now(); }
+  save(); renderAll(); toast(gone.length+' removed');
+});
+
+$('#syncNow').addEventListener('click', ()=>{
+  if (!CFG.token || !CFG.gist){ toast('Add a token and a list ID first'); return; }
+  CFG.on = true; $('#cfgOn').checked = true; saveCfg(); syncNow();
+});
+$('#makeGist').addEventListener('click', async ()=>{
+  if (!CFG.token){ toast('Add a token first'); return; }
+  try{
+    const g = await gh('/gists', { method:'POST', body: JSON.stringify({
+      description:'Handla shared list', public:false,
+      files:{ [GIST_FILE]: { content: JSON.stringify(S) } }
+    })});
+    CFG.gist = g.id; CFG.on = true;
+    $('#cfgGist').value = g.id; $('#cfgOn').checked = true;
+    saveCfg(); lastSyncAt = now(); paintSync();
+    toast('Created — copy this ID to the other phone');
+  }catch(e){ toast(e.message); }
+});
+
+/* tabs */
+const TABS = [['tab-list','view-list'],['tab-compare','view-compare'],['tab-order','view-order'],['tab-setup','view-setup']];
+TABS.forEach(([tid,vid])=>{
+  $('#'+tid).addEventListener('click', ()=>{
+    TABS.forEach(([t,v])=>{ const on = t===tid; $('#'+t).setAttribute('aria-selected',on); $('#'+v).hidden = !on; });
+    if (vid==='view-compare') renderCompare();
+    if (vid==='view-order')   renderOrder();
+    if (vid==='view-setup'){ renderStores(); paintSync(); }
+    window.scrollTo(0,0);
+  });
+});
+
+/* install prompt */
+let deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', e=>{
+  e.preventDefault(); deferredPrompt = e;
+  const b = $('#installBtn'); b.disabled = false;
+  $('#installHint').textContent = 'Or use your browser menu → Install app.';
+});
+$('#installBtn').addEventListener('click', async ()=>{
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt(); await deferredPrompt.userChoice;
+  deferredPrompt = null; $('#installBtn').disabled = true;
+});
+
+/* periodic sync */
+document.addEventListener('visibilitychange', ()=>{ if (!document.hidden) syncNow(true); });
+window.addEventListener('online', ()=> syncNow(true));
+setInterval(()=>{ if (!document.hidden) syncNow(true); }, 20000);
+
+/* migration from the pre-sync version */
+function migrate(old){
+  const t = now();
+  const stores = (old.stores||[]).map(s=>Object.assign({mt:t}, s));
+  const items = (old.items||[]).map(i=>Object.assign({mt:t}, i));
+  const book = {};
+  for (const [k,v] of Object.entries(old.book||{})) book[k] = { mt:t, prices: v && v.prices ? v.prices : v };
+  const recent = (old.recent||[]).map((n,idx)=> typeof n==='string' ? {n, mt:t-idx} : n);
+  return { v:3, items, stores: stores.length?stores:defaultStores(), book, recent };
+}
+
+/* boot */
+(function init(){
+  CFG = Object.assign({token:'',gist:'',on:false}, Disk.get(CFGKEY)||{});
+  $('#cfgToken').value = CFG.token || '';
+  $('#cfgGist').value  = CFG.gist  || '';
+  $('#cfgOn').checked  = !!CFG.on;
+
+  const saved = Disk.get(KEY);
+  if (saved && saved.items) S = Object.assign({v:3,items:[],stores:defaultStores(),book:{},recent:[]}, saved);
+  else {
+    const old = Disk.get(OLDKEY);
+    if (old && old.items){ S = migrate(old); Disk.set(KEY, S); }
+  }
+  if (!S.stores || !S.stores.length) S.stores = defaultStores();
+
+  renderAll();
+  if (CFG.on) syncNow(true);
+
+  if ('serviceWorker' in navigator){
+    window.addEventListener('load', ()=>{
+      navigator.serviceWorker.register('sw.js').catch(()=>{});
+    });
+  }
+})();
+</script>
+</body>
+</html>
