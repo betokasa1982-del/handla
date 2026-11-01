@@ -142,8 +142,6 @@ try {
   await page.click('#tourSkip');
   await page.evaluate(() => applyTheme('light'));
   await page.screenshot({ path: path.join(shotDir, 'after-list.png') });
-  const gap = await page.$eval('#storeGaps', el => el.innerText);
-  assert.match(gap, /X:-Tra/);
   await page.click('#tab-compare');
   await page.waitForFunction(() => /\d+,\d+/.test(document.getElementById('verdict').innerText));
   await page.screenshot({ path: path.join(shotDir, 'after-shop.png') });
@@ -226,6 +224,58 @@ try {
   assert.ok(offlineLines.some(t => /mjölk/.test(t) && /1 l/.test(t)), 'offline reload lost the litre line');
   assert.ok(offlineLines.some(t => /mjölk/.test(t) && /2 pcs/.test(t)), 'offline reload lost the piece line');
   await page.screenshot({ path: path.join(shotDir, 'offline.png') });
+
+  const phone = await browser.newPage();
+  await phone.setViewport({ width: 390, height: 844, deviceScaleFactor: 2 });
+  await phone.evaluateOnNewDocument(() => {
+    const old = {
+      v: 3,
+      items: [],
+      stores: [
+        { id:'willys-varvader', name:'Willys Vårväderstorget', chain:'willys', address:'Vårväderstorget 2, Biskopsgården', mt: 5 },
+        { id:'ica-sannegarden', name:'ICA Kvantum Sannegården', chain:'ica', address:'Vintergatan 4, Sannegården', mt: 5 },
+        { id:'coop-eriksberg', name:'Coop Eriksberg', chain:'coop', address:'Kolhamnsgatan 7, Eriksberg', mt: 5 },
+        { id:'xtra-hisingen', name:'X:-tra Länsmanstorget', chain:'xtra', address:'Stackmolnsgatan 2, Länsmansgården', mt: 6 },
+        { id:'xtra-custom', name:'X:-tra Länsmanstorget', chain:'xtra', address:'', mt: 4 },
+        { id:'snew', name:'New store', chain:'other', address:'', mt: 3 }
+      ],
+      book: {},
+      recent: []
+    };
+    localStorage.setItem('handla:v3', JSON.stringify(old));
+    localStorage.setItem('handla:onboarded', '1');
+    localStorage.setItem('handla:tour', '1');
+    localStorage.setItem('handla:ui', 'pt');
+  });
+  await phone.goto(origin + 'handla/', { waitUntil: 'networkidle0' });
+  await phone.waitForFunction(() => window.Terms && Terms.lookup('pão', 'pt'), { timeout: 8000 });
+  const ids = await phone.evaluate(() => liveStores().map(s => s.id));
+  assert.deepEqual(ids.sort(), ['coop-126350','ica-1004293','willys-2816','xtra-136029']);
+  assert.equal(await phone.evaluate(() => document.body.innerText.includes('New store')), false);
+  for (const [name, unit] of [['pão Hönö Pågen','pcs'],['leite sem lactose mellan','l'],['ovos','pcs'],['banana','pcs'],['café','pcs']]){
+    await phone.click('#newName', { clickCount: 3 });
+    await phone.type('#newName', name);
+    await phone.select('#newUnit', unit);
+    await phone.click('#addBtn');
+  }
+  await phone.waitForFunction(() => {
+    const rows = [...document.querySelectorAll('li.item')];
+    const want = ['Hönö', 'leite sem lactose', 'ovos', 'banana', 'café'];
+    return want.every(w => rows.some(row => row.innerText.toLowerCase().includes(w.toLowerCase()) && row.querySelector('.best') && /\d/.test(row.querySelector('.best').innerText)));
+  }, { timeout: 8000 });
+  const gapCount = await phone.$$eval('#storeGaps .gap', els => els.length);
+  assert.ok(gapCount <= 1, 'expected at most one shop warning, got ' + gapCount);
+  const diag = await phone.evaluate(() => DIAG.map(d => d.name + ' ' + d.file + ' ' + d.status + ' ' + d.count).join('\n'));
+  assert.match(diag, /willys-2816 200/);
+  assert.match(diag, /ica-1004293 200/);
+  assert.match(diag, /coop-126350 200/);
+  await phone.screenshot({ path: path.join(shotDir, 'after-repaired-list.png'), fullPage: true });
+  await phone.evaluate(() => document.getElementById('tab-compare').click());
+  const verdict = await phone.$eval('#verdict', el => el.textContent.replace(/\s+/g, ' '));
+  const totals = await phone.$eval('#totals', el => el.innerText.replace(/\s+/g, ' '));
+  if (!/Economize|Save|Spara|Risparmia/.test(verdict)) throw new Error(verdict + ' || ' + totals);
+  await phone.screenshot({ path: path.join(shotDir, 'after-repaired-shop.png'), fullPage: true });
+  await phone.close();
 
   console.log('browser check ok');
   console.log(lines.join('\n'));

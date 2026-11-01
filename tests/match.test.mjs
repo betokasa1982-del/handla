@@ -38,6 +38,28 @@ test('Hönö Pågen is pinned and a plain loaf is not offered', () => {
   } finally { win.close(); }
 });
 
+test('old shop ids, duplicates and New store are repaired', () => {
+  const win = boot();
+  try {
+    win.eval(`
+      S.stores = [
+        { id:'willys-varvader', name:'Willys Vårväderstorget', chain:'willys', address:'Vårväderstorget 2', mt:5 },
+        { id:'ica-sannegarden', name:'ICA Kvantum Sannegården', chain:'ica', address:'Vintergatan 4', mt:5 },
+        { id:'coop-eriksberg', name:'Coop Eriksberg', chain:'coop', address:'Kolhamnsgatan 7', mt:5 },
+        { id:'xtra-hisingen', name:'X:-tra Länsmanstorget', chain:'xtra', address:'Stackmolnsgatan 2', mt:6 },
+        { id:'xtra-custom', name:'X:-tra Länsmanstorget', chain:'xtra', address:'', mt:4 },
+        { id:'snew', name:'New store', chain:'other', address:'', mt:3 }
+      ];
+      S.items = [{ id:'milk', name:'leite', prices:{ 'willys-varvader': { p: 12 } }, chosen:{}, mt:1 }];
+      repairStores(S);
+    `);
+    const ids = win.eval(`JSON.stringify(liveStores().map(s => s.id).sort())`);
+    assert.equal(ids, JSON.stringify(['coop-126350','ica-1004293','willys-2816','xtra-136029']));
+    assert.equal(win.eval(`S.items[0].prices['willys-2816'].p`), 12);
+    assert.equal(win.eval(`liveStores().some(s => s.name === 'New store')`), false);
+  } finally { win.close(); }
+});
+
 test('lactose-free mellanmjölk is remembered for the next leite', () => {
   const win = boot();
   try {
