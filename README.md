@@ -104,18 +104,72 @@ Tokens are shared secrets, so it is worth being deliberate:
 
 Edit `index.html` in the GitHub web editor and commit — Pages redeploys in about
 a minute. If you change any file listed in `SHELL` inside `sw.js`, bump the
-`CACHE` constant (`handla-v3` → `handla-v4`) so phones drop the old cache
+`CACHE` constant (`handla-v5` → `handla-v6`) so phones drop the old cache
 instead of serving a stale copy.
 
 Store search URLs are editable in **Setup** without touching code. `{q}` is
 where the item name goes. If a chain redesigns its site and a *find* link
 breaks, fix it there.
 
+## Automatic prices
+
+The shops do not offer a public price API. A small Python job in GitHub Actions
+reads the same JSON their own websites use, once a night, and commits
+`data/prices.json`. The app loads that file when it opens. No tokens and no API
+keys are stored in the repo.
+
+It runs at 02:00 UTC, which is 03:00 in Stockholm in the winter and 04:00 in the
+summer. You can also run it by hand: Actions → Prices → Run workflow.
+
+What it collects, for each shop in `data/stores.json`:
+
+- this week's offers, when the shop publishes them
+- current prices for the search terms in `data/watchlist.json`
+
+A price you type yourself still wins. An automatic price only fills in when
+that box is empty. It shows up as the grey placeholder in the price field, and
+the basket math uses it. If the same item is on offer at any shop, the row is
+marked **offer**. Under the list, each shop says when its prices were last
+updated, and **(stale)** if the last good copy is more than a day and a half
+old or the latest fetch failed.
+
+The shops near Eriksberg that this is set up for:
+
+| Shop in the app | Where the prices come from |
+|---|---|
+| Willys Hemma Vårväderstorget | Willys store `2816`. Shelf prices work. This Willys Hemma shop does not publish a digital campaign list, so weekly offers are usually empty. The nearest full Willys with offers is Wieselgrensplatsen, store `2102` — change `external_id` if you would rather follow that shop. |
+| ICA Kvantum Sannegården | ICA online store `1004293`. |
+| Coop Eriksberg | Coop store `126350`. Prices here differ from other Coop shops. |
+| X:-tra Länsmanstorget | No public price feed. The job skips it and says so. It does not fail the run. |
+
+### Change a shop or the watchlist
+
+Edit `data/stores.json` or `data/watchlist.json` and commit. The next run picks
+it up. `id` must stay the same as the shop id in the app (`willys-varvader`,
+`ica-sannegarden`, `coop-eriksberg`, `xtra-hisingen`) or the prices will not
+line up with your list.
+
+### When a shop breaks
+
+Each shop is fetched on its own. If one returns nothing, or the prices are
+nonsense, that shop keeps its previous rows, the file marks it stale, and the
+Action fails so GitHub can email you. The other shops are still updated.
+
+The job is polite on purpose: one request at a time, a named User-Agent, and a
+short pause between calls. It retries a few times if a site answers with a
+temporary error. Coop's website prints a public subscription key in the page
+itself; the job reads that key when it runs and does not save it.
+
+If Willys, ICA or Coop change their site and the job starts failing every
+night, the thing to edit is `fetcher/sources.py`. The normalizer and the
+"keep the last good copy" rule are covered by `python3 -m unittest tests.test_prices.py`.
+
 ## Known limits
 
-- No Swedish grocery chain publishes a price API, so prices are the ones you
-  type. The app gets sharper the more trips you log, not automatically.
-- No chain exposes an ordering API either. Willys accepts the whole list in one
+- No chain exposes an ordering API. Willys accepts the whole list in one
   paste through its list search; ICA and Coop are item by item. Payment and the
   pickup slot always happen on the shop's own site.
-- X:-tra has no online shop at all — it is there for price comparison only.
+- X:-tra has no online shop and no price feed. It stays in the app for the
+  trips you price by hand.
+- Automatic prices are pack prices from the shop's site, not a promise that
+  the shelf in front of you matches to the öre. A price you typed is kept.

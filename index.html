@@ -608,21 +608,114 @@ function priceOf(item, sid){
   const p = typeof c.p === 'number' ? c.p : finiteNum(c.p);
   return p !== null && p > 0 ? p : null;
 }
-// Shelf price is per one of this line's unit. Quantities are only combined
-// inside one unit family, so a litre price is never multiplied by a piece count.
-function lineTotal(item, sid){ const p = priceOf(item,sid); return p===null?null:p*(Number(item.qty)||1); }
 
-function bestFor(item){
-  const quoted = liveStores().map(st=>({st, p:priceOf(item,st.id), c:cell(item,st.id)})).filter(x=>x.p!==null);
-  if (!quoted.length) return null;
-  const withUnit = quoted.map(x=>({...x, u:unitPrice(x.p, x.c && x.c.s)})).filter(x=>x.u);
-  const bases = new Set(withUnit.map(x=>x.u.base));
-  if (withUnit.length===quoted.length && bases.size===1){
-    const w = withUnit.reduce((a,b)=> b.u.value<a.u.value?b:a);
-    return { store:w.st, price:w.p, unit:w.u, byUnit:true };
+/* Automatic prices from data/prices.json. A number you typed always wins. */
+const PRICEKEY = 'handla:prices';
+let AUTO = null;
+
+function wordMatches(word, term){
+  if (!word || !term) return false;
+  if (word === term) return true;
+  // Compounds: "gårdsägg", "mellanmjölk", "vetemjöl". "mjöl" must not hit "mjölk".
+  if (term.length >= 3 && word.endsWith(term)) return true;
+  if (term.length >= 4 && word.startsWith(term) && /^(ar|er|or|en|et|na|s)$/.test(word.slice(term.length))) return true;
+  return false;
+}
+function autoMatches(item, sid){
+  if (!AUTO || !Array.isArray(AUTO.products)) return [];
+  const want = norm(item.name);
+  if (!want) return [];
+  return AUTO.products.filter(p => {
+    if (!p || p.store !== sid) return false;
+    if (norm(p.query || '') === want) return true;
+    return norm(p.name || '').split(/[^a-z0-9åäö]+/).some(w => wordMatches(w, want));
+  });
+}
+function bestAuto(item, sid){
+  const hits = autoMatches(item, sid);
+  if (!hits.length) return null;
+  const iu = unitInfo(item.unit);
+  const comparable = hits.filter(h => {
+    const cu = unitInfo(h.compare_unit || '');
+    return h.compare_price > 0 && iu.dim && cu.dim && iu.dim === cu.dim;
+  });
+  const pool = comparable.length ? comparable : hits;
+  return pool.slice().sort((a,b) => {
+    const av = comparable.length ? a.compare_price : a.price;
+    const bv = comparable.length ? b.compare_price : b.price;
+    return av - bv;
+  })[0];
+}
+function itemOnOffer(item){
+  return liveStores().some(st => autoMatches(item, st.id).some(h => h.offer));
+}
+function payQuote(item, sid){
+  const manual = priceOf(item, sid);
+  const pack = cell(item, sid);
+  if (manual !== null){
+    return { price: manual, manual: true, unit: unitPrice(manual, pack && pack.s), offer: false };
   }
-  const w = quoted.reduce((a,b)=> b.p<a.p?b:a);
-  return { store:w.st, price:w.p, unit:unitPrice(w.p, w.c && w.c.s), byUnit:false };
+  const auto = bestAuto(item, sid);
+  if (!auto || !(auto.price > 0)) return null;
+  let unit = null;
+  if (auto.compare_price > 0 && auto.compare_unit){
+    unit = { value: Number(auto.compare_price), base: canonUnit(auto.compare_unit) };
+  }
+  return { price: Number(auto.price), manual: false, unit, offer: !!auto.offer, auto };
+}
+// A typed price is per one of this line's unit. An automatic price is a pack
+// price; when the list is in kg or litres we use the comparison price instead.
+function lineTotal(item, sid){
+  const q = payQuote(item, sid);
+  if (!q) return null;
+  const qty = Number(item.qty) || 1;
+  if (!q.manual && q.unit){
+    const iu = unitInfo(item.unit), cu = unitInfo(q.unit.base);
+    if (iu.dim && cu.dim && iu.dim === cu.dim) return q.unit.value * (qty * iu.f / cu.f);
+  }
+  return q.price * qty;
+}
+function bestFor(item){
+  const quoted = liveStores().map(st=>({st, q:payQuote(item, st.id)})).filter(x=>x.q);
+  if (!quoted.length) return null;
+  const withUnit = quoted.filter(x=>x.q.unit);
+  const bases = new Set(withUnit.map(x=>x.q.unit.base));
+  if (withUnit.length===quoted.length && bases.size===1){
+    const w = withUnit.reduce((a,b)=> b.q.unit.value<a.q.unit.value?b:a);
+    return { store:w.st, price:w.q.price, unit:w.q.unit, byUnit:true, offer:w.q.offer };
+  }
+  const w = quoted.reduce((a,b)=>{
+    const ta = lineTotal(item, a.st.id), tb = lineTotal(item, b.st.id);
+    return tb!=null && (ta==null || tb<ta) ? b : a;
+  });
+  return { store:w.st, price:w.q.price, unit:w.q.unit, byUnit:false, offer:w.q.offer };
+}
+function ago(iso){
+  const t = Date.parse(iso);
+  if (!t) return 'never';
+  const h = (Date.now()-t)/36e5;
+  if (h < 1) return Math.max(1, Math.round(h*60))+' min ago';
+  if (h < 36) return Math.round(h)+' h ago';
+  return Math.round(h/24)+' d ago';
+}
+function priceFreshness(){
+  if (!AUTO || !Array.isArray(AUTO.stores) || !AUTO.stores.length) return '';
+  return 'Auto prices — '+AUTO.stores.map(st=>{
+    const name = String(st.name||'').split(' ')[0] || 'Shop';
+    if (st.status==='unsupported') return name+': no auto prices';
+    const old = !st.fetched_at || (Date.now()-Date.parse(st.fetched_at) > 36*36e5);
+    return name+' '+ago(st.fetched_at)+(st.stale || old ? ' (stale)' : '');
+  }).join(' · ');
+}
+function loadAutoPrices(){
+  try{
+    const cached = Disk.get(PRICEKEY);
+    if (cached && Array.isArray(cached.products)) AUTO = cached;
+  }catch(e){}
+  if (typeof fetch !== 'function') return Promise.resolve();
+  return fetch('data/prices.json', {cache:'no-cache'}).then(r=>r.ok?r.json():null).then(d=>{
+    if (d && Array.isArray(d.products)){ AUTO = d; Disk.set(PRICEKEY, d); renderAll(); }
+  }).catch(()=>{});
 }
 function storeTotals(){
   const items = activeItems();
@@ -728,6 +821,14 @@ function paintSync(){
 /* ---------------- render: list ---------------- */
 function renderList(){
   const body = $('#listBody'); body.innerHTML = '';
+  const fresh = priceFreshness();
+  if (fresh){
+    const note = document.createElement('p');
+    note.className = 'muted';
+    note.style.marginTop = '0';
+    note.textContent = fresh;
+    body.appendChild(note);
+  }
   const used = new Set(liveItems().map(i=>norm(i.name)));
   const chips = (S.recent||[]).filter(x=>!used.has(norm(x.n))).slice(0,8);
   $('#quickWrap').hidden = !chips.length;
@@ -735,9 +836,11 @@ function renderList(){
 
   const items = liveItems();
   if (!items.length){
-    body.innerHTML = `<div class="empty-state">
-      <p style="font-family:var(--display);letter-spacing:.14em;text-transform:uppercase">Empty list</p>
-      <p class="muted">Type what ran out at home. Items sort themselves into aisles.</p></div>`;
+    const d = document.createElement('div');
+    d.className = 'empty-state';
+    d.innerHTML = `<p style="font-family:var(--display);letter-spacing:.14em;text-transform:uppercase">Empty list</p>
+      <p class="muted">Type what ran out at home. Items sort themselves into aisles.</p>`;
+    body.appendChild(d);
     stampNow(); return;
   }
   for (const [cat,label] of CATS){
@@ -753,27 +856,32 @@ function renderList(){
 function itemRow(it){
   const best = bestFor(it);
   const badge = best ? `<span class="best">${kr(best.price)}${best.byUnit?'*':''} · ${esc(best.store.name.split(' ')[0])}</span>` : '';
+  const offerBadge = itemOnOffer(it) ? `<span class="best offer-tag">offer</span>` : '';
   const rows = liveStores().map(st=>{
     const c = cell(it, st.id) || {};
     const up = unitPrice(c.p, c.s);
-    const low = best && best.store.id===st.id && liveStores().filter(s=>priceOf(it,s.id)!==null).length>1;
+    const auto = bestAuto(it, st.id);
+    const low = best && best.store.id===st.id && liveStores().filter(s=>payQuote(it,s.id)).length>1;
     const href = searchHref(st.url, it.name);
     const link = href ? `<a href="${esc(href)}" target="_blank" rel="noopener">find</a>` : '';
     const price = (typeof c.p === 'number' && Number.isFinite(c.p)) ? String(c.p) : '';
+    const placeholder = !price && auto ? String(Math.round(auto.price*100)/100) : 'kr';
+    const unitLabel = up ? kr(up.value)+'/'+esc(up.base)
+      : (auto && auto.compare_price>0 && auto.compare_unit ? kr(auto.compare_price)+'/'+esc(auto.compare_unit) : '');
     return `<div class="prow${low?' lowest':''}">
       <span class="slab">${esc(st.name)}</span>
-      <input class="p" type="number" inputmode="decimal" step="0.01" min="0" placeholder="kr"
+      <input class="p" type="number" inputmode="decimal" step="0.01" min="0" placeholder="${esc(placeholder)}"
              value="${esc(price)}" data-cell="${esc(it.id)}" data-store="${esc(st.id)}" data-f="p" aria-label="Price at ${esc(st.name)}">
       <input class="s" type="text" placeholder="500 g" value="${esc(c.s!=null?c.s:'')}"
              data-cell="${esc(it.id)}" data-store="${esc(st.id)}" data-f="s" aria-label="Pack size at ${esc(st.name)}">
-      <span class="unitp">${up ? kr(up.value)+'/'+esc(up.base) : ''}</span>${link}
+      <span class="unitp">${unitLabel}</span>${link}
     </div>`;
   }).join('');
   return `<li class="item${it.done?' done':''}${openId===it.id?' open':''}" data-id="${esc(it.id)}">
     <div class="row">
       <button class="tick" data-toggle="${esc(it.id)}" aria-label="Mark ${esc(it.name)} as bought">
         <svg viewBox="0 0 24 24" fill="none" stroke="#F3EEE4" stroke-width="3.5"><path d="M4 12l6 6L20 5"/></svg></button>
-      <span class="name">${esc(it.name)}</span>${badge}
+      <span class="name">${esc(it.name)}</span>${offerBadge}${badge}
       <span class="qty">${fmtQty(it.qty)} ${esc(it.unit)}</span>
       <button class="exp" data-exp="${esc(it.id)}" aria-label="Prices for ${esc(it.name)}">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 9l7 7 7-7"/></svg></button>
@@ -814,19 +922,21 @@ function renderCompare(){
   const byStore = Object.create(null); let splitSum=0, n=0;
   for (const it of items){
     const b = bestFor(it); if (!b) continue;
-    (byStore[b.store.id] = byStore[b.store.id] || []).push({ it, price:b.price });
-    splitSum += b.price*(Number(it.qty)||1); n++;
+    const cost = lineTotal(it, b.store.id);
+    if (cost==null) continue;
+    (byStore[b.store.id] = byStore[b.store.id] || []).push({ it, cost });
+    splitSum += cost; n++;
   }
   const sp = $('#split');
   if (!n){ sp.innerHTML = `<p class="muted">Type a price for at least one item.</p>`; return; }
   const saving = winner ? winner.sum - splitSum : 0;
   const blocks = Object.entries(byStore).map(([sid,list])=>{
     const st = liveStores().find(s=>s.id===sid) || {name:'?'};
-    const sum = list.reduce((a,x)=>a+x.price*(Number(x.it.qty)||1),0);
+    const sum = list.reduce((a,x)=>a+x.cost,0);
     return `<div class="eyebrow" style="margin-top:14px">${esc(st.name)} · ${kr(sum)} kr</div><ul>${
       list.map(x=>`<li class="item"><div class="row"><span class="name">${esc(x.it.name)}</span>
         <span class="qty">${fmtQty(x.it.qty)} ${esc(x.it.unit)}</span>
-        <span class="best">${kr(x.price*(Number(x.it.qty)||1))}</span></div></li>`).join('')}</ul>`;
+        <span class="best">${kr(x.cost)}</span></div></li>`).join('')}</ul>`;
   }).join('');
   sp.innerHTML = `<p class="muted" style="margin-top:0">Buying each item where it is cheapest costs
     <strong>${kr(splitSum)} kr</strong>${ saving>0.005
@@ -974,15 +1084,17 @@ document.addEventListener('change', e=>{
 function refreshRow(it, li){
   if (!li) return;
   const best = bestFor(it);
-  const badge = li.querySelector('.best');
+  const badge = li.querySelector('.best:not(.offer-tag)');
   if (badge) badge.textContent = best ? kr(best.price)+(best.byUnit?'*':'')+' · '+best.store.name.split(' ')[0] : '';
   li.querySelectorAll('.prow').forEach(p=>{
     const inp = p.querySelector('input.p'); if (!inp) return;
     const sid = inp.dataset.store, c = cell(it,sid) || {};
     const up = unitPrice(c.p, c.s);
+    const auto = bestAuto(it, sid);
     const label = p.querySelector('.unitp');
-    if (label) label.textContent = up ? kr(up.value)+'/'+up.base : '';
-    p.classList.toggle('lowest', !!best && sid===best.store.id && liveStores().filter(s=>priceOf(it,s.id)!==null).length>1);
+    if (label) label.textContent = up ? kr(up.value)+'/'+up.base
+      : (auto && auto.compare_price>0 && auto.compare_unit ? kr(auto.compare_price)+'/'+auto.compare_unit : '');
+    p.classList.toggle('lowest', !!best && sid===best.store.id && liveStores().filter(s=>payQuote(it,s.id)).length>1);
   });
 }
 
@@ -1066,8 +1178,8 @@ $('#installBtn').addEventListener('click', async ()=>{
 });
 
 /* periodic sync */
-document.addEventListener('visibilitychange', ()=>{ if (!document.hidden) syncNow(true); });
-window.addEventListener('online', ()=> syncNow(true));
+document.addEventListener('visibilitychange', ()=>{ if (!document.hidden){ syncNow(true); loadAutoPrices(); } });
+window.addEventListener('online', ()=>{ syncNow(true); loadAutoPrices(); });
 setInterval(()=>{ if (!document.hidden) syncNow(true); }, 20000);
 
 /* migration from the pre-sync version */
@@ -1098,7 +1210,12 @@ function migrate(old){
   const clean = sanitizeState(S);
   if (clean && !sameData(clean, S)) { S = clean; Disk.set(KEY, S); }
 
+  try{
+    const cached = Disk.get(PRICEKEY);
+    if (cached && Array.isArray(cached.products)) AUTO = cached;
+  }catch(e){}
   renderAll();
+  loadAutoPrices();
   if (CFG.on) syncNow(true);
 
   if ('serviceWorker' in navigator){

@@ -1,0 +1,36 @@
+{
+  "offers_per_store": 40,
+  "matches_per_term": 3,
+  "min_interval_seconds": 0.45,
+  "notes": "Ids are the ones each shop's own website uses. Change external_id if you switch shop. Willys 2816 is Willys Hemma Vårväderstorget, the nearest Willys (about 1.4 km from Eriksberg). It publishes shelf prices but no digital campaign list. Willys Wieselgrensplatsen is 2102 if you want a full Willys with weekly offers. ICA 1004293 is Kvantum Sannegården. Coop 126350 is Coop Eriksberg. X:-tra has no public price feed.",
+  "stores": [
+    {
+      "id": "willys-varvader",
+      "chain": "willys",
+      "name": "Willys Hemma Vårväderstorget",
+      "external_id": "2816",
+      "home": "https://www.willys.se/butik/2816"
+    },
+    {
+      "id": "ica-sannegarden",
+      "chain": "ica",
+      "name": "ICA Kvantum Sannegården",
+      "external_id": "1004293",
+      "home": "https://www.ica.se/butiker/kvantum/goteborg/ica-kvantum-sannegarden-1004293/"
+    },
+    {
+      "id": "coop-eriksberg",
+      "chain": "coop",
+      "name": "Coop Eriksberg",
+      "external_id": "126350",
+      "home": "https://www.coop.se/butiker-erbjudanden/coop/coop-eriksberg/"
+    },
+    {
+      "id": "xtra-hisingen",
+      "chain": "xtra",
+      "name": "X:-tra Länsmanstorget",
+      "external_id": "",
+      "home": "https://x-tra.se/butiker/hisingen"
+    }
+  ]
+}

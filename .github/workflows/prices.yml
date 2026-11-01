@@ -1,0 +1,51 @@
+name: Prices
+
+on:
+  schedule:
+    # 02:00 UTC is 03:00 in Stockholm in winter and 04:00 in summer.
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'fetcher/**'
+      - 'data/stores.json'
+      - 'data/watchlist.json'
+      - 'tests/test_prices.py'
+      - '.github/workflows/prices.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Test the normalizer
+        run: python -m unittest tests.test_prices
+
+      - name: Fetch prices
+        id: fetch
+        run: python -m fetcher
+
+      - name: Commit prices when they changed
+        if: always()
+        run: |
+          git config user.name "handla-prices"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/prices.json
+          if git diff --cached --quiet; then
+            echo "No price changes."
+          else
+            git commit -m "Update store prices"
+            git push
+          fi
+
+      - name: Report a shop that could not be updated
+        if: steps.fetch.outcome == 'failure'
+        run: exit 1
