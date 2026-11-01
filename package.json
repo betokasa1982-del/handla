@@ -1,0 +1,13 @@
+{
+  "name": "handla",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/bugs.test.mjs",
+    "test:browser": "node tests/browser-check.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "^26.1.0",
+    "puppeteer-core": "^25.16.0"
+  }
+}
