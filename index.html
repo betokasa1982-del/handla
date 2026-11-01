@@ -195,6 +195,23 @@ nav.tabs button[aria-selected="true"]{color:var(--accent);background:var(--accen
 .pick small{color:var(--muted);font-size:12px}
 .store-label{font-size:12px;font-weight:700;color:var(--muted);margin:10px 0 4px}
 #tab-order{display:none}
+.mic{position:fixed;right:16px;bottom:calc(var(--nav) + var(--add) + 14px);z-index:35;width:64px;height:64px;border-radius:50%;border:0;background:var(--accent);color:var(--accent-ink);font-size:28px;box-shadow:var(--shadow);cursor:pointer}
+body:not([data-view="list"]) .mic{display:none}
+.mic.live{background:var(--danger);color:#fff}
+.assist{position:fixed;left:0;right:0;bottom:0;z-index:55;display:flex;justify-content:center}
+.assist[hidden]{display:none}
+.assist-card{width:min(480px,100%);max-height:70dvh;overflow:auto;background:var(--surface);color:var(--ink);border-radius:22px 22px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom));box-shadow:var(--shadow)}
+.assist-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.assist-head strong{font-size:18px}
+.mode{font-size:12px;font-weight:700;color:var(--accent)}
+#assistLog{display:flex;flex-direction:column;gap:8px;margin:8px 0}
+.bubble{border-radius:14px;padding:10px 12px;font-size:15px}
+.bubble.user{background:var(--accent-soft);align-self:flex-end}
+.bubble.bot{background:var(--bg);align-self:flex-start}
+.assist-form{display:flex;gap:8px;margin-top:8px}
+.assist-form input{flex:1;min-height:48px;border:1px solid var(--line);border-radius:14px;background:var(--bg);padding:0 12px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip-undo{border:0;background:var(--bg);border-radius:999px;padding:6px 10px;font-weight:700}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -296,6 +313,16 @@ nav.tabs button[aria-selected="true"]{color:var(--accent);background:var(--accen
     </div>
 
     <div class="eyebrow" data-i18n="storesTitle">Your shops</div>
+    <div class="eyebrow" data-i18n="assistTitle">Assistente</div>
+    <div class="card">
+      <input type="url" id="aiUrl" placeholder="https://handla-ai.….workers.dev" autocomplete="off" spellcheck="false">
+      <div style="height:8px"></div>
+      <input type="password" id="aiToken" placeholder="APP_TOKEN" autocomplete="off">
+      <label class="sw"><input type="checkbox" id="aiSpeak"> <span data-i18n="assistListen">Falar</span></label>
+      <div style="height:8px"></div>
+      <button class="btn wide" type="button" id="aiCheck">Testar ligação</button>
+      <p class="muted" id="aiStatus" style="margin:8px 0 0"></p>
+    </div>
     <button class="btn wide" id="repairApp" type="button" data-i18n="repairApp">Repair the app</button>
     <div style="height:8px"></div>
     <details class="card" id="diag">
@@ -341,6 +368,22 @@ nav.tabs button[aria-selected="true"]{color:var(--accent);background:var(--accen
   <select id="newUnit" aria-label="Unit"><option>pcs</option><option>kg</option><option>g</option><option>l</option><option>ml</option><option>pkg</option></select>
   <button class="btn" id="addBtn" aria-label="Add">+</button>
 </div></div>
+<button type="button" class="mic" id="micBtn" aria-label="Speak">🎤</button>
+<div class="assist" id="assist" hidden>
+  <div class="assist-card">
+    <div class="assist-head">
+      <strong data-i18n="assistTitle">Assistente</strong>
+      <span class="mode" id="assistMode">No telefone</span>
+      <button type="button" class="iconbtn" id="assistClose" aria-label="Close">×</button>
+    </div>
+    <div id="assistLog"></div>
+    <div class="chips" id="assistChips"></div>
+    <form class="assist-form" id="assistForm">
+      <input type="text" id="assistText" data-i18n-ph="assistPlaceholder" placeholder="Fale numa frase" autocomplete="off">
+      <button class="btn" type="submit" data-i18n="assistSend">Enviar</button>
+    </form>
+  </div>
+</div>
 
 <div class="onboard" id="onboard" hidden>
   <div class="onboard-inner">
@@ -380,6 +423,7 @@ nav.tabs button[aria-selected="true"]{color:var(--accent);background:var(--accen
 
 <script src="js/ui.cjs"></script>
 <script src="js/terms.cjs"></script>
+<script src="js/assistant.cjs"></script>
 <script>
 'use strict';
 
@@ -2100,6 +2144,215 @@ function persistTerms(){
   } catch (e) {}
 }
 
+/* ---------------- assistant ---------------- */
+const AIKEY = 'handla:ai';
+function aiSettings(){
+  try { return Object.assign({ url:'', token:'', speak:false }, JSON.parse(localStorage.getItem(AIKEY) || '{}')); }
+  catch (e) { return { url:'', token:'', speak:false }; }
+}
+function cleanAiUrl(value){
+  try {
+    const url = new URL(String(value || '').trim());
+    if (url.protocol !== 'https:') return '';
+    return url.origin + url.pathname.replace(/\/$/, '');
+  } catch (e) { return ''; }
+}
+function saveAiSettings(){
+  const next = {
+    url: cleanAiUrl($('#aiUrl') && $('#aiUrl').value),
+    token: ($('#aiToken') && $('#aiToken').value || '').trim(),
+    speak: !!($('#aiSpeak') && $('#aiSpeak').checked)
+  };
+  try { localStorage.setItem(AIKEY, JSON.stringify(next)); } catch (e) {}
+  return next;
+}
+function deviceId(){
+  try {
+    let id = localStorage.getItem('handla:device');
+    if (!id){ id = 'd' + Math.random().toString(36).slice(2, 12); localStorage.setItem('handla:device', id); }
+    return id;
+  } catch (e) { return 'device'; }
+}
+function speechLang(){
+  const lang = itemLang();
+  if (lang === 'sv') return 'sv-SE';
+  if (lang === 'it') return 'it-IT';
+  if (lang === 'en') return 'en-US';
+  return 'pt-BR';
+}
+function paintAssistMode(kind){
+  const el = $('#assistMode');
+  if (!el) return;
+  if (kind === 'down') el.textContent = tr('assistDown');
+  else if (kind === 'ai') el.textContent = tr('assistAi');
+  else el.textContent = tr('assistLocal');
+}
+function projectState(){
+  return {
+    items: (S.items || []).filter(i => i && !i.del).map(i => ({ name:i.name, qty:i.qty, unit:i.unit, done:!!i.done, sv:i.sv, chosen:i.chosen || {} })),
+    stores: liveStores().map(s => ({ id:s.id, name:s.name })),
+    products: (AUTO && AUTO.products) || []
+  };
+}
+function snapshotApp(){
+  return JSON.stringify({ S: S, fav: Disk.get('handla:favs') });
+}
+function restoreApp(raw){
+  const data = JSON.parse(raw);
+  S = data.S;
+  Disk.set(KEY, S);
+  if (data.fav) Disk.set('handla:favs', data.fav);
+  renderAll();
+}
+function applyLive(calls){
+  const chips = [];
+  (calls || []).forEach(c => {
+    const name = Assistant.nameOf(c);
+    const args = Assistant.argsOf(c);
+    if (name === 'add_items'){
+      (args.items || []).forEach(it => {
+        addItem(it.name, it.qty || 1, it.unit || 'pcs');
+        chips.push('+ ' + it.name);
+      });
+    } else if (name === 'remove_items' || name === 'mark_bought'){
+      (args.names || []).forEach(n => {
+        liveItems().forEach(it => {
+          const a = Assistant.fold(it.name), b = Assistant.fold(n);
+          if (!a || !b || (a.indexOf(b) < 0 && b.indexOf(a) < 0)) return;
+          if (name === 'remove_items'){ it.del = true; chips.push('− ' + it.name); }
+          else { it.done = true; chips.push('✓ ' + it.name); }
+          it.mt = now();
+        });
+      });
+      save(); renderAll();
+    }
+  });
+  return chips;
+}
+function showAssistChips(chips, snap){
+  const box = $('#assistChips');
+  if (!box) return;
+  box.textContent = '';
+  chips.forEach(text => {
+    const chip = document.createElement('span');
+    chip.className = 'chip-undo';
+    chip.textContent = text;
+    box.appendChild(chip);
+  });
+  if (snap && chips.length){
+    const undo = document.createElement('button');
+    undo.type = 'button';
+    undo.className = 'chip-undo';
+    undo.textContent = tr('assistUndo');
+    undo.addEventListener('click', () => { restoreApp(snap); box.textContent = ''; });
+    box.appendChild(undo);
+  }
+}
+function assistBubble(role, text){
+  const log = $('#assistLog');
+  if (!log) return;
+  const div = document.createElement('div');
+  div.className = 'bubble ' + role;
+  div.textContent = text;
+  log.appendChild(div);
+}
+function speakReply(text){
+  if (!aiSettings().speak || !window.speechSynthesis || !text) return;
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = speechLang();
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(utter);
+}
+async function remotePlan(text, settings){
+  const messages = [{ role:'user', content:text }];
+  const calls = [];
+  let reply = '';
+  const root = settings.url.replace(/\/$/, '');
+  for (let i = 0; i < 3; i++){
+    const res = await fetch(root + '/chat', {
+      method: 'POST',
+      headers: Object.assign({ 'Content-Type':'application/json' }, settings.token ? { 'X-Handla-Token': settings.token } : {}),
+      body: JSON.stringify({ messages: messages, device: deviceId() })
+    });
+    if (!res.ok) throw new Error('ai '+res.status);
+    const data = await res.json();
+    const msg = data && data.message;
+    if (!msg) throw new Error('ai empty');
+    messages.push(msg);
+    const tools = msg.tool_calls || [];
+    if (!tools.length){ reply = msg.content || ''; break; }
+    tools.forEach(c => calls.push(c));
+    const facts = Assistant.execute(projectState(), tools).facts;
+    tools.forEach(c => messages.push({ role:'tool', tool_call_id: c.id, content: JSON.stringify(facts && Object.keys(facts).length ? facts : { ok:true }) }));
+  }
+  return { calls: calls, reply: reply, lang: Assistant.detectLang(text), mode: 'ai' };
+}
+async function submitAssist(text){
+  text = String(text || '').trim();
+  if (!text || typeof Assistant === 'undefined') return;
+  assistBubble('user', text);
+  const snap = snapshotApp();
+  const settings = aiSettings();
+  let plan;
+  let kind = 'local';
+  if (settings.url){
+    try { plan = await remotePlan(text, settings); kind = 'ai'; }
+    catch (e) { plan = Assistant.parseLocal(text); kind = 'down'; }
+  } else plan = Assistant.parseLocal(text);
+  const chips = applyLive(plan.calls || []);
+  const facts = Assistant.execute(projectState(), (plan.calls || []).filter(c => {
+    const n = Assistant.nameOf(c);
+    return n === 'get_cheapest_plan' || n === 'get_offers' || n === 'search_products';
+  })).facts;
+  const reply = plan.reply || Assistant.describe(plan.lang || 'pt', plan.calls || [], { facts: facts });
+  assistBubble('bot', reply);
+  showAssistChips(chips, snap);
+  paintAssistMode(kind);
+  speakReply(reply);
+}
+function openAssist(){ const el = $('#assist'); if (el) el.hidden = false; paintAssistMode(aiSettings().url ? 'ai' : 'local'); }
+
+$('#micBtn').addEventListener('click', () => {
+  openAssist();
+  const Rec = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!Rec){ $('#assistText').focus(); return; }
+  const rec = new Rec();
+  rec.lang = speechLang();
+  rec.onstart = () => $('#micBtn').classList.add('live');
+  rec.onend = () => $('#micBtn').classList.remove('live');
+  rec.onerror = () => { $('#micBtn').classList.remove('live'); $('#assistText').focus(); };
+  rec.onresult = (event) => {
+    const said = event.results && event.results[0] && event.results[0][0] && event.results[0][0].transcript;
+    if (!said) return;
+    $('#assistText').value = said;
+    submitAssist(said);
+  };
+  try { rec.start(); } catch (e) { $('#assistText').focus(); }
+});
+$('#assistClose').addEventListener('click', () => { $('#assist').hidden = true; });
+$('#assistForm').addEventListener('submit', (event) => {
+  event.preventDefault();
+  const text = $('#assistText').value;
+  $('#assistText').value = '';
+  submitAssist(text);
+});
+$('#aiCheck').addEventListener('click', async () => {
+  const settings = saveAiSettings();
+  if (!settings.url){ $('#aiStatus').textContent = tr('assistLocal'); paintAssistMode('local'); return; }
+  try {
+    const res = await fetch(settings.url + '/health');
+    const data = await res.json();
+    $('#aiStatus').textContent = data.ok ? tr('assistAi') + (data.model ? ' · ' + data.model : '') : tr('assistDown');
+    paintAssistMode(data.ok ? 'ai' : 'down');
+  } catch (e) {
+    $('#aiStatus').textContent = tr('assistDown');
+    paintAssistMode('down');
+  }
+});
+$('#aiSpeak').addEventListener('change', saveAiSettings);
+$('#aiUrl').addEventListener('change', saveAiSettings);
+$('#aiToken').addEventListener('change', saveAiSettings);
+
 /* boot */
 (function init(){
   CFG = Object.assign({token:'',gist:'',on:false}, Disk.get(CFGKEY)||{});
@@ -2124,6 +2377,11 @@ function persistTerms(){
   }catch(e){}
   const langSel = $('#itemLang');
   if (langSel) langSel.value = itemLang();
+  const ai = aiSettings();
+  if ($('#aiUrl')) $('#aiUrl').value = ai.url || '';
+  if ($('#aiToken')) $('#aiToken').value = ai.token || '';
+  if ($('#aiSpeak')) $('#aiSpeak').checked = !!ai.speak;
+  paintAssistMode(ai.url ? 'ai' : 'local');
   applyTheme(themeMode());
   showOnboard();
   if (seenOnboard() && !tourSeen()) showTour(0);

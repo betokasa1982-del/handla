@@ -225,6 +225,12 @@ try {
   assert.ok(offlineLines.some(t => /mjölk/.test(t) && /2 pcs/.test(t)), 'offline reload lost the piece line');
   await page.screenshot({ path: path.join(shotDir, 'offline.png') });
 
+  await page.evaluate(() => openAssist());
+  await page.type('#assistText', 'dois litros de leite e pão Hönö');
+  await page.click('#assistForm button');
+  await page.waitForFunction(() => /Adicionei/.test(document.getElementById('assistLog').innerText), { timeout: 8000 });
+  await page.screenshot({ path: path.join(shotDir, 'after-assistant.png') });
+
   const phone = await browser.newPage();
   await phone.setViewport({ width: 390, height: 844, deviceScaleFactor: 2 });
   await phone.evaluateOnNewDocument(() => {
