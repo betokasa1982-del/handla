@@ -94,6 +94,7 @@ body[data-view="shop"] .addbar,body[data-view="order"] .addbar,body[data-view="s
 ul{list-style:none;margin:0;padding:0}
 li.item{background:var(--surface);border:1px solid var(--line);border-radius:16px;margin:0 0 10px;box-shadow:var(--shadow)}
 .row{display:flex;align-items:flex-start;gap:10px;padding:12px}
+.thumb{width:46px;height:46px;object-fit:contain;border-radius:12px;background:var(--bg);flex:none}
 .tick{width:28px;height:28px;margin-top:2px;flex:none;border:1.5px solid var(--accent);border-radius:9px;background:transparent;
   cursor:pointer;display:grid;place-items:center;padding:0}
 .tick svg{width:16px;height:16px;opacity:0}
@@ -295,6 +296,12 @@ nav.tabs button[aria-selected="true"]{color:var(--accent);background:var(--accen
     </div>
 
     <div class="eyebrow" data-i18n="storesTitle">Your shops</div>
+    <button class="btn wide" id="repairApp" type="button" data-i18n="repairApp">Repair the app</button>
+    <div style="height:8px"></div>
+    <details class="card" id="diag">
+      <summary data-i18n="diagTitle">Diagnostics</summary>
+      <div id="diagBody"></div>
+    </details>
     <div id="storeList"></div>
     <button class="btn ghost wide" id="addStore" data-i18n="addStore">Add a shop</button>
     <div class="note" data-i18n="storeNote">Prices differ by shop.</div>
@@ -608,10 +615,7 @@ function defaultStores(){
       url:'https://handla.ica.se/sok?q={q}', home:'https://www.ica.se/butiker/kvantum/goteborg/ica-kvantum-sannegarden-1004293/', online:true, mt:t },
     { id:'coop-126350', name:'Coop Eriksberg', chain:'coop',
       address:'Kolhamnsgatan 7, 418 75 Göteborg', postcode:'418 75', city:'Göteborg', lat:57.708762, lon:11.919676,
-      url:'https://www.coop.se/handla/sok/?q={q}', home:'https://www.coop.se/butiker-erbjudanden/coop/coop-eriksberg/', online:true, mt:t },
-    { id:'xtra-136029', name:'X:-Tra Hisingen', chain:'xtra',
-      address:'Stackmolnsgatan 2, 418 42 Göteborg', postcode:'418 42', city:'Göteborg', lat:57.733036, lon:11.898301,
-      url:'', home:'https://x-tra.se/butiker/hisingen', online:false, mt:t }
+      url:'https://www.coop.se/handla/sok/?q={q}', home:'https://www.coop.se/butiker-erbjudanden/coop/coop-eriksberg/', online:true, mt:t }
   ];
 }
 const SEARCH_URL = {
@@ -627,6 +631,91 @@ const IDMAP = {
   'coop-eriksberg':'coop-126350',
   'xtra-hisingen':'xtra-136029'
 };
+const CANON_SHOPS = [
+  { id:'willys-2816', chain:'willys', prices:true, keys:['varvader','varvaderstorget'] },
+  { id:'ica-1004293', chain:'ica', prices:true, keys:['sannegarden'] },
+  { id:'coop-126350', chain:'coop', prices:true, keys:['eriksberg'] },
+  { id:'willys-2102', chain:'willys', prices:true, keys:['wieselgren'] },
+  { id:'hemkop-4146', chain:'hemkop', prices:true, keys:['kortedala'] },
+  { id:'xtra-136029', chain:'xtra', prices:false, keys:['hisingen','lansmanstorget','lansmansgarden'] }
+];
+function isPlaceholderStore(st){
+  const n = fold(st && st.name || '');
+  return !n || n === 'new store' || n === 'nova loja' || n === 'ny butik' || n === 'nuovo negozio';
+}
+function resolveShopId(st){
+  if (!st) return '';
+  const mapped = IDMAP[st.id] || st.id || '';
+  if (CANON_SHOPS.some(c => c.id === mapped)) return mapped;
+  const blob = fold((st.id||'')+' '+(st.name||'')+' '+(st.address||''));
+  const chain = fold(st.chain || '');
+  for (const c of CANON_SHOPS){
+    if (chain && chain !== 'other' && chain !== c.chain) continue;
+    if (c.keys.some(k => blob.includes(k))) return c.id;
+  }
+  const tokens = wordsOf((st.name||'')+' '+(st.address||'')).filter(w => w.length >= 8);
+  if (tokens.length && typeof DIRECTORY !== 'undefined'){
+    for (const s of DIRECTORY){
+      if (chain && chain !== 'other' && s.chain !== chain) continue;
+      const name = fold((s.name||'')+' '+(s.address||''));
+      if (tokens.some(t => name.includes(t))) return s.id;
+    }
+  }
+  return mapped;
+}
+function repairStores(state){
+  if (!state || !Array.isArray(state.stores)) return false;
+  let changed = false;
+  const idMap = {};
+  for (const st of state.stores){
+    if (!st || !st.id) continue;
+    if (isPlaceholderStore(st)){
+      if (!st.del){ st.del = true; st.mt = now(); changed = true; }
+      continue;
+    }
+    const next = resolveShopId(st);
+    if (next && next !== st.id){
+      idMap[st.id] = next;
+      st.id = next;
+      changed = true;
+    }
+    const canon = CANON_SHOPS.find(c => c.id === st.id);
+    if (canon && canon.prices === false) st.noPrices = true;
+  }
+  const seen = new Map();
+  for (const st of state.stores){
+    if (!st || st.del) continue;
+    const prev = seen.get(st.id);
+    if (!prev){ seen.set(st.id, st); continue; }
+    const drop = (st.mt||0) >= (prev.mt||0) ? prev : st;
+    drop.del = true;
+    drop.mt = now();
+    seen.set(st.id, drop === prev ? st : prev);
+    changed = true;
+  }
+  const shift = (obj) => {
+    if (!obj || typeof obj !== 'object') return obj;
+    let local = false;
+    const next = {};
+    for (const [k,v] of Object.entries(obj)){
+      const id = idMap[k] || k;
+      if (id !== k) local = true;
+      next[id] = v;
+    }
+    return local ? next : obj;
+  };
+  if (Object.keys(idMap).length){
+    for (const it of state.items || []){
+      if (it && it.prices) it.prices = shift(it.prices);
+      if (it && it.chosen) it.chosen = shift(it.chosen);
+    }
+    for (const entry of Object.values(state.book || {})){
+      if (entry && entry.prices) entry.prices = shift(entry.prices);
+    }
+    changed = true;
+  }
+  return changed;
+}
 const STEPS = {
   willys:['Copy the list above.','Open Willys and log in.','Go to the list search (Listsök) and paste everything at once.',
           'Match each row to a product — the list search proposes candidates.','Choose pickup at your Willys if the store offers it.'],
@@ -735,8 +824,9 @@ function sanitizeItem(raw){
         compare_unit: typeof v.compare_unit === 'string' ? v.compare_unit.slice(0, 12) : '',
         url: dangerousUrl(url) ? '' : url.slice(0, 300),
         offer: !!v.offer,
-        level: v.level === 'equivalent' ? 'equivalent' : 'exact',
-        brand: typeof v.brand === 'string' ? v.brand.slice(0, 40) : ''
+        level: v.level === 'equivalent' ? 'equivalent' : v.level === 'choice' ? 'choice' : 'exact',
+        brand: typeof v.brand === 'string' ? v.brand.slice(0, 40) : '',
+        image: safeUrl(v.image) || ''
       };
     }
     if (Object.keys(chosen).length) item.chosen = chosen;
@@ -1056,7 +1146,8 @@ function snapshotProduct(product, level){
     name: product.name, brand: product.brand || '', price: product.price,
     size: product.size, unit: product.unit, compare_price: product.compare_price,
     compare_unit: product.compare_unit, url: product.url || '', offer: !!product.offer,
-    level: level || 'exact', fat: traits.fat, variant: traits.variant, lactoseFree: traits.lactoseFree
+    level: level || 'exact', fat: traits.fat, variant: traits.variant, lactoseFree: traits.lactoseFree,
+    image: safeUrl(product.image) || ''
   };
 }
 function chosenProduct(item, sid){
@@ -1064,16 +1155,26 @@ function chosenProduct(item, sid){
   if (!c || !(Number(c.price) > 0)) return null;
   return c;
 }
+function pinMissing(item){
+  const have = item.chosen || {};
+  pinMatches(item);
+  if (!item.chosen) return;
+  for (const id of Object.keys(have)){
+    if (have[id]) item.chosen[id] = have[id];
+  }
+}
 function pinMatches(item){
   if (!item.chosen || typeof item.chosen !== 'object') item.chosen = {};
   const wish = wishFor(item);
-  if (!wishSpecific(wish)) return;
+  const specific = wishSpecific(wish);
   liveStores().forEach(st => {
     const rows = rankProducts(item, st.id);
     const exact = rows.filter(x => x.level === 'exact');
-    const pool = exact.length ? exact : rows.filter(x => x.level === 'equivalent');
+    const equiv = rows.filter(x => x.level === 'equivalent');
+    const choice = rows.filter(x => x.level === 'choice');
+    const pool = specific ? (exact.length ? exact : equiv) : choice;
     if (!pool.length) return;
-    item.chosen[st.id] = snapshotProduct(pool[0].p, pool[0].level);
+    item.chosen[st.id] = snapshotProduct(pool[0].p, specific ? pool[0].level : 'choice');
   });
   const sample = Object.values(item.chosen)[0];
   if (sample && wishSpecific(wishFromText((item.name || '') + ' ' + (item.sv || '')))) rememberFavorite(item, sample);
@@ -1150,29 +1251,90 @@ function priceFreshness(){
     return short+' '+ago(st.fetched_at)+(st.stale || old ? ' (stale)' : '');
   }).join(' · ');
 }
+let DIAG = [];
+function fileCandidates(st){
+  const ids = [st && st.id, st && IDMAP[st.id], st && resolveShopId(st)];
+  return [...new Set(ids.filter(Boolean))];
+}
 function loadAutoPrices(){
   try{
     const cached = Disk.get(PRICEKEY);
     if (cached && Array.isArray(cached.products)) AUTO = cached;
   }catch(e){}
   if (typeof fetch !== 'function') return Promise.resolve();
-  const ids = liveStores().map(s => s.id);
-  return Promise.all(ids.map(id =>
-    fetch('data/stores/'+encodeURIComponent(id)+'.json', {cache:'no-cache'})
-      .then(r => r.ok ? r.json() : null)
-      .catch(() => null)
-  )).then(files => {
-    const stores = [], products = [];
-    for (const file of files){
-      if (!file || !file.store) continue;
-      stores.push(file.store);
-      if (Array.isArray(file.products)) products.push.apply(products, file.products);
+  const shops = liveStores();
+  return Promise.all(shops.map(async st => {
+    const tried = [];
+    for (const id of fileCandidates(st)){
+      try {
+        const res = await fetch('data/stores/'+encodeURIComponent(id)+'.json', {cache:'no-cache'});
+        tried.push({ id, status: res.status });
+        if (!res.ok) continue;
+        const file = await res.json();
+        return { st, file, tried };
+      } catch (e) {
+        tried.push({ id, status: 0 });
+      }
     }
-    if (!stores.length) return;
-    AUTO = { stores, products };
-    Disk.set(PRICEKEY, AUTO);
+    return { st, file: null, tried };
+  })).then(rows => {
+    const stores = [], products = [];
+    DIAG = rows.map(row => {
+      const file = row.file;
+      const meta = file && file.store;
+      if (meta){
+        stores.push(meta);
+        if (Array.isArray(file.products)) products.push.apply(products, file.products);
+        if (meta.id && row.st.id !== meta.id){
+          const old = row.st.id;
+          row.st.id = meta.id;
+          for (const it of S.items || []){
+            if (it.prices && it.prices[old] && !it.prices[meta.id]) it.prices[meta.id] = it.prices[old];
+            if (it.chosen && it.chosen[old] && !it.chosen[meta.id]) it.chosen[meta.id] = it.chosen[old];
+          }
+        }
+      }
+      const hit = row.tried.filter(t => t.status === 200).slice(-1)[0];
+      return {
+        name: row.st.name,
+        id: row.st.id,
+        file: hit ? hit.id : '',
+        status: row.tried.length ? row.tried[row.tried.length-1].status : 0,
+        count: file && Array.isArray(file.products) ? file.products.length : 0,
+        note: meta ? (meta.status || '') : 'missing'
+      };
+    });
+    if (stores.length){
+      AUTO = { stores, products };
+      Disk.set(PRICEKEY, AUTO);
+      for (const it of liveItems()) pinMissing(it);
+    }
     renderAll();
   }).catch(()=>{});
+}
+function usePricedShops(){
+  const keep = ['willys-2816','ica-1004293','coop-126350'];
+  for (const st of S.stores){
+    if (st && !st.del && keep.indexOf(st.id) === -1){ st.del = true; st.mt = now(); }
+  }
+  for (const id of keep){
+    if (!S.stores.some(s => s.id === id && !s.del)){
+      const def = defaultStores().find(s => s.id === id);
+      if (def) S.stores.push(Object.assign({}, def, { mt: now() }));
+    }
+  }
+  save();
+  return loadAutoPrices();
+}
+function repairApp(){
+  repairStores(S);
+  save();
+  const done = function(){ location.reload(); };
+  const wipe = (caches && caches.keys) ? caches.keys().then(keys => Promise.all(keys.map(k => caches.delete(k)))) : Promise.resolve();
+  const regs = (navigator.serviceWorker && navigator.serviceWorker.getRegistrations)
+    ? navigator.serviceWorker.getRegistrations().then(list => Promise.all(list.map(r => r.unregister())))
+    : Promise.resolve();
+  Promise.all([wipe, regs]).then(done, done);
 }
 function storeTotals(){
   const items = activeItems();
@@ -1235,8 +1397,11 @@ async function syncNow(silent){
   try{
     const raw = await pull();
     const remote = raw ? sanitizeState(raw) : null;
+    repairStores(S);
+    if (remote) repairStores(remote);
     const before = JSON.stringify(S);
     S = mergeState(S, remote);
+    repairStores(S);
     const clean = sanitizeState(S);
     if (clean) S = clean;
     Disk.set(KEY, S);
@@ -1280,34 +1445,29 @@ function paintSync(){
 function renderPriceStatus(){
   const el = $('#priceStatus');
   const gaps = $('#storeGaps');
-  if (!el || !gaps) return;
-  if (!AUTO || !Array.isArray(AUTO.stores)){
-    el.hidden = false;
-    el.textContent = tr('looking');
-    gaps.innerHTML = '';
-    return;
-  }
-  const bits = [];
-  const gapHtml = [];
+  if (el) el.hidden = true;
+  if (!gaps) return;
+  const broken = [];
   for (const st of liveStores()){
-    const meta = AUTO.stores.find(s => s && s.id === st.id);
-    if (!meta){
-      gapHtml.push(`<div class="gap"><strong>${esc(tr('noAutoFor'))} ${esc(st.name)}</strong>${esc(tr('missingFile'))}</div>`);
-      continue;
-    }
-    if (meta.status === 'unsupported' || !(meta.product_count > 0)){
-      gapHtml.push(`<div class="gap"><strong>${esc(tr('noAutoFor'))} ${esc(st.name)}</strong>${esc(tr('noAutoWhy'))}</div>`);
-      continue;
-    }
-    const old = !meta.fetched_at || (Date.now() - Date.parse(meta.fetched_at) > 36*36e5);
-    const label = old || meta.stale ? ' ('+tr('stale')+')' : '';
-    bits.push(st.name+' · '+ago(meta.fetched_at)+label);
+    const row = DIAG.find(d => d.id === st.id || d.name === st.name);
+    const meta = AUTO && Array.isArray(AUTO.stores) && AUTO.stores.find(s => s && (s.id === st.id));
+    const unsupported = (meta && (meta.status === 'unsupported' || !(meta.product_count > 0))) || st.noPrices || (row && (row.note === 'unsupported' || row.note === 'missing'));
+    if (!meta || unsupported) broken.push(st.name);
   }
-  if (bits.length){
-    el.hidden = false;
-    el.innerHTML = '<strong>'+esc(tr('pricesFrom'))+'</strong> '+esc(bits.join(' · '));
-  } else el.hidden = true;
-  gaps.innerHTML = gapHtml.join('');
+  const names = broken.filter((n,i,a) => a.indexOf(n) === i);
+  if (!names.length){ gaps.innerHTML = ''; return; }
+  gaps.innerHTML = `<div class="gap"><strong>${esc(tr('noPriceBanner'))}</strong>
+    <span>${esc(names.join(', '))}</span>
+    <button type="button" class="btn" data-use-priced="1" style="margin-top:10px">${esc(tr('usePriced'))}</button></div>`;
+}
+function renderDiag(){
+  const box = $('#diagBody');
+  if (!box) return;
+  const rows = liveStores().map(st => {
+    const d = DIAG.find(x => x.id === st.id || x.name === st.name) || {};
+    return `<tr><td>${esc(st.name)}</td><td>${esc(st.id)}</td><td>${esc(d.file || '—')}</td><td>${esc(String(d.status || '—'))}</td><td>${esc(String(d.count || 0))}</td></tr>`;
+  }).join('');
+  box.innerHTML = `<table><thead><tr><th>Loja</th><th>id</th><th>arquivo</th><th>HTTP</th><th>itens</th></tr></thead><tbody>${rows || ''}</tbody></table>`;
 }
 function renderList(){
   renderPriceStatus();
@@ -1338,9 +1498,16 @@ function productLine(p){
 }
 function itemRow(it){
   const best = bestFor(it);
+  const picked = best ? chosenProduct(it, best.store.id) : null;
   const short = best ? best.store.name.split(' ')[0] : '';
   const note = best && best.equivalent ? ' · '+tr('equivalent') : '';
-  const badge = best ? `<span class="best">${kr(best.price)}${best.byUnit?'*':''}<small>${esc(short+note)}</small></span>` : '';
+  const unitTxt = picked && picked.compare_price > 0 ? kr(picked.compare_price)+' kr/'+picked.compare_unit : '';
+  const badge = best ? `<span class="best">${kr(best.price)}${best.byUnit?'*':''} kr<small>${esc(short+note)}${unitTxt?' · '+esc(unitTxt):''}</small></span>` : '';
+  const thumb = picked && safeUrl(picked.image) ? `<img class="thumb" alt="" src="${esc(safeUrl(picked.image))}">` : '';
+  const shops = liveStores();
+  const pricedN = shops.filter(st => payQuote(it, st.id)).length;
+  const cover = shops.length && pricedN && pricedN < shops.length
+    ? `<p class="muted">${esc(pricedN+' / '+shops.length+' '+tr('shopsPriced'))}</p>` : '';
   const offerBadge = itemOnOffer(it) ? `<span class="offer-tag">${esc(tr('offer'))}</span>` : '';
   const any = liveStores().some(st => suggestions(it, st.id).length || chosenProduct(it, st.id));
   const miss = !best ? `<p class="miss">${esc(any ? tr('pickProduct') : tr('oneMiss'))}</p>` : '';
@@ -1382,13 +1549,14 @@ function itemRow(it){
   const lead = any ? `<p class="muted">${esc(tr('pickProduct'))}</p>` : '';
   return `<li class="item${it.done?' done':''}${openId===it.id?' open':''}" data-id="${esc(it.id)}">
     <div class="row">
+      ${thumb}
       <button class="tick" data-toggle="${esc(it.id)}" aria-label="${esc(tr('ariaTick'))} ${esc(it.name)}">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M4 12l6 6L20 5"/></svg></button>
       <div class="grow">
         <div class="name-line"><span class="name">${esc(it.name)}</span><span class="qty">${fmtQty(it.qty)} ${esc(it.unit)}</span></div>
         <input class="svterm${needsSvHint(it)?' missing':''}" data-svterm="${esc(it.id)}" value="${esc(it.sv||'')}"
           placeholder="${esc(tr('svPh'))}" aria-label="${esc(tr('svPh'))} ${esc(it.name)}">
-        ${miss}
+        ${miss}${cover}
       </div>
       <div class="price-col">${offerBadge}${badge}</div>
       <button class="exp" data-exp="${esc(it.id)}" aria-label="${esc(tr('ariaPrices'))} ${esc(it.name)}">
@@ -1412,9 +1580,9 @@ function renderCompare(){
     tag.innerHTML = `<div class="tag empty"><div class="store">${esc(tr('shopEmptyTitle'))}</div><div class="amount">&mdash;</div>
       <div class="fine">${esc(tr('shopEmptyBody'))}</div></div>`;
   } else {
-    const next = rows.find(r=>r.store.id!==winner.store.id);
+    const next = rows.find(r => r.store.id !== winner.store.id && r.sum > winner.sum);
     const fine = [winner.priced+'/'+winner.count+' '+tr('priced')];
-    if (next && next.sum > winner.sum) fine.push(kr(next.sum-winner.sum)+' kr '+tr('lessThan')+' '+next.store.name);
+    if (next) fine.push(tr('saveBuy').replace('{n}', kr(next.sum-winner.sum)).replace('{store}', winner.store.name.split(' ')[0]));
     if (!winner.full) fine.push(tr('partial'));
     tag.innerHTML = `<div class="tag"><div class="store">${esc(winner.store.name)}</div>
       <div class="amount">${kr(winner.sum)}<span>kr</span></div>
@@ -1425,7 +1593,8 @@ function renderCompare(){
   $('#totals').innerHTML = ordered.map(r=>{
     const win = winner && r.store.id===winner.store.id;
     const sum = r.priced ? kr(r.sum)+' kr' : '—';
-    const extra = !r.priced ? '0/'+r.count : (win ? r.priced+'/'+r.count : '+'+kr(r.sum-winner.sum)+' kr');
+    const diff = winner ? r.sum - winner.sum : 0;
+    const extra = !r.priced ? '0/'+r.count : (win ? r.priced+'/'+r.count : (diff>0?'+':'')+kr(diff)+' kr');
     return `<div class="store-card${win?' win':''}"><div class="who">${esc(r.store.name)}</div>
       <div class="sum">${sum}<span>${esc(extra)}</span></div></div>`;
   }).join('') || `<p class="muted">${esc(tr('nothing'))}</p>`;
@@ -1486,7 +1655,7 @@ function renderStores(){
       <button class="trash" data-sdel="${esc(st.id)}">${esc(tr('remove'))} ${esc(st.name)}</button>
     </div>`).join('');
 }
-function renderAll(){ applyChrome(); renderList(); renderCompare(); renderOrder(); renderStores(); paintSync(); }
+function renderAll(){ applyChrome(); renderList(); renderCompare(); renderOrder(); renderStores(); renderDiag(); paintSync(); }
 
 /* ---------------- actions ---------------- */
 function searchName(item){
@@ -1566,6 +1735,7 @@ $('#addBtn').addEventListener('click', ()=>{
 $('#newName').addEventListener('keydown', e=>{ if (e.key==='Enter') $('#addBtn').click(); });
 
 document.addEventListener('click', e=>{
+  if (e.target.closest && e.target.closest('[data-use-priced]')){ usePricedShops(); return; }
   const pick = e.target.closest && e.target.closest('[data-pick]');
   if (pick){
     const it = S.items.find(i => i.id === pick.dataset.pick);
@@ -1776,6 +1946,7 @@ function loadDirectory(){
   if (typeof fetch !== 'function') return Promise.resolve();
   return fetch('data/stores_index.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : null).then(d => {
     if (d && Array.isArray(d.stores)) DIRECTORY = d.stores;
+    if (repairStores(S)){ Disk.set(KEY, S); loadAutoPrices(); }
   }).catch(()=>{});
 }
 function haversineKm(lat1, lon1, lat2, lon2){
@@ -1867,6 +2038,7 @@ $('#themeBtn').addEventListener('click', () => {
   applyChrome();
 });
 $('#helpBtn').addEventListener('click', () => showTour(0));
+$('#repairApp').addEventListener('click', repairApp);
 $('#tourNext').addEventListener('click', () => showTour(tourAt + 1));
 $('#tourSkip').addEventListener('click', () => showTour(-1));
 document.addEventListener('change', e => {
@@ -1942,7 +2114,7 @@ function persistTerms(){
     if (old && old.items){ S = migrate(old); Disk.set(KEY, S); }
   }
   if (!S.stores || !S.stores.length) S.stores = defaultStores();
-  if (remapStoreIds(S)) Disk.set(KEY, S);
+  if (remapStoreIds(S) || repairStores(S)) Disk.set(KEY, S);
   const clean = sanitizeState(S);
   if (clean && !sameData(clean, S)) { S = clean; Disk.set(KEY, S); }
 

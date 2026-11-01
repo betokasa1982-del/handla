@@ -355,7 +355,7 @@ test('a stored javascript link is dropped and the list is kept', () => {
 
 test('shell cache version was bumped with the app', () => {
   const sw = fs.readFileSync(new URL('../sw.js', import.meta.url), 'utf8');
-  assert.match(sw, /const CACHE = 'handla-v9'/);
+  assert.match(sw, /const CACHE = 'handla-v10'/);
   assert.match(html, /fetch\('data\/stores\//);
   assert.match(html, /fetch\('data\/stores_index.json'/);
   assert.doesNotMatch(html, /fetch\(['`]\/data\//);

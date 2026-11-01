@@ -1,6 +1,6 @@
 /* Handla service worker.
    Bump CACHE when you change any shell file — old caches are dropped on activate. */
-const CACHE = 'handla-v9';
+const CACHE = 'handla-v10';
 
 const SHELL = [
   './',
@@ -42,7 +42,7 @@ self.addEventListener('fetch', e => {
   if (url.hostname === 'api.github.com') return;
 
   // Shop directory and per-store prices: network first, cached copy when offline.
-  if (url.pathname.includes('/data/stores')) {
+  if (url.pathname.includes('/data/') && url.pathname.endsWith('.json')) {
     e.respondWith(
       fetch(req).then(res => {
         if (res.ok){
