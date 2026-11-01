@@ -1,0 +1,44 @@
+name: Directory
+
+on:
+  schedule:
+    # Sunday 03:00 UTC. Refreshes the Sweden-wide shop list, not prices.
+    - cron: '0 3 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  directory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Test
+        run: python -m unittest tests.test_prices
+
+      - name: Refresh the shop directory
+        id: directory
+        run: python -m fetcher directory
+
+      - name: Commit the directory when it changed
+        if: always()
+        run: |
+          git config user.name "handla-prices"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/stores_index.json
+          if git diff --cached --quiet; then
+            echo "Directory unchanged."
+          else
+            git commit -m "Update the shop directory"
+            git push
+          fi
+
+      - name: Report a chain that could not be listed
+        if: steps.directory.outcome == 'failure'
+        run: exit 1
