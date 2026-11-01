@@ -69,7 +69,9 @@ try {
   await page.select('#newUnit', 'g');
   await page.click('#addBtn');
 
+  await page.waitForFunction(() => document.body.innerText.includes('Auto prices'), { timeout: 8000 });
   const lines = await page.$$eval('li.item .row', rows => rows.map(r => r.innerText.replace(/\s+/g, ' ').trim()));
+  assert.ok(lines.some(t => /mjölk/.test(t) && /offer/.test(t)), 'expected an offer mark on mjölk, got ' + lines.join(' | '));
   assert.ok(lines.some(t => /mjölk/.test(t) && /1 l/.test(t)), 'expected 1 l of mjölk, got ' + lines.join(' | '));
   assert.ok(lines.some(t => /mjölk/.test(t) && /2 pcs/.test(t)), 'expected 2 pcs of mjölk, got ' + lines.join(' | '));
   assert.ok(lines.some(t => /mjöl/.test(t) && /1\.25 kg/.test(t)), 'expected 1.25 kg of mjöl, got ' + lines.join(' | '));
@@ -107,6 +109,22 @@ try {
   }
   const scriptURL = await page.evaluate(() => navigator.serviceWorker.controller && navigator.serviceWorker.controller.scriptURL);
   assert.ok(scriptURL && scriptURL.includes('sw.js'), 'service worker did not take control: ' + scriptURL);
+
+  await page.click('#tab-setup');
+  await page.type('#areaQuery', 'Kortedala');
+  await page.click('#areaSearch');
+  await page.waitForFunction(() => {
+    const box = document.getElementById('areaResults');
+    return box && box.innerText.includes('Kortedala');
+  }, { timeout: 8000 });
+  const areaText = await page.$eval('#areaResults', el => el.innerText);
+  assert.ok(/Hemköp/.test(areaText), areaText);
+  await page.evaluate(() => {
+    const label = [...document.querySelectorAll('#areaResults label')].find(el => el.textContent.includes('Hemköp'));
+    label.querySelector('input').click();
+  });
+  await page.click('#tab-list');
+  await page.waitForFunction(() => document.body.innerText.includes('Hemköp'), { timeout: 8000 });
 
   await page.setOfflineMode(true);
   await page.reload({ waitUntil: 'domcontentloaded' });
