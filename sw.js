@@ -1,6 +1,6 @@
 /* Handla service worker.
    Bump CACHE when you change any shell file — old caches are dropped on activate. */
-const CACHE = 'handla-v10';
+const CACHE = 'handla-v11';
 
 const SHELL = [
   './',
@@ -13,7 +13,8 @@ const SHELL = [
   './data/stores_index.json',
   './data/i18n/grocery-terms.json',
   './js/terms.cjs',
-  './js/ui.cjs'
+  './js/ui.cjs',
+  './js/assistant.cjs'
 ];
 
 self.addEventListener('install', e => {

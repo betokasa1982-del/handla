@@ -1,0 +1,13 @@
+name = "handla-ai"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+
+[vars]
+LLM_BASE_URL = "https://api.openai.com/v1"
+LLM_MODEL = "gpt-4o-mini"
+ALLOW_ORIGIN = "https://betokasa1982-del.github.io"
+MAX_OUTPUT_TOKENS = "400"
+
+# Secrets, set with wrangler, never committed:
+#   wrangler secret put LLM_API_KEY
+#   wrangler secret put APP_TOKEN
