@@ -75,6 +75,9 @@ li.item{border-bottom:1px dotted rgba(20,53,43,.28)}
 .name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .item.done .name{text-decoration:line-through;opacity:.42}
 .qty{font-family:var(--mono);font-size:13px;color:#5D6B64;flex:none}
+.svterm{display:block;width:calc(100% - 34px);margin:0 0 6px 32px;border:0;border-bottom:1px dotted rgba(20,53,43,.28);
+  background:transparent;font-family:var(--mono);font-size:12px;color:#5D6B64;padding:2px 0}
+.svterm.missing{color:var(--lingon)}
 .best{font-family:var(--mono);font-size:12px;color:var(--lingon);flex:none}
 .exp{background:none;border:0;padding:6px;cursor:pointer;color:var(--pine);flex:none;line-height:0}
 .exp svg{width:16px;height:16px;transition:transform .15s}
@@ -234,6 +237,15 @@ td.gap{color:#5D6B64;font-size:12px}
       <div style="height:8px"></div>
       <button class="btn ghost wide" id="areaGeo" type="button">Use my location</button>
       <div id="areaResults"></div>
+      <div class="field-label">Language of item names</div>
+      <select id="itemLang" aria-label="Language of item names">
+        <option value="auto">Auto</option>
+        <option value="pt">Português</option>
+        <option value="it">Italiano</option>
+        <option value="en">English</option>
+        <option value="sv">Svenska</option>
+      </select>
+      <p class="muted" style="margin:8px 0 0">The list keeps the word you type. A Swedish word is stored beside it so prices can be found. You can correct that word on each row.</p>
     </div>
 
     <div class="eyebrow">Your stores</div>
@@ -264,6 +276,7 @@ td.gap{color:#5D6B64;font-size:12px}
 </div>
 <div class="toast" id="toast"></div>
 
+<script src="js/terms.cjs"></script>
 <script>
 'use strict';
 
@@ -515,6 +528,7 @@ function sanitizeItem(raw){
     prices: sanitizePrices(raw.prices),
     mt: finiteNum(raw.mt) ?? 0
   };
+  if (typeof raw.sv === 'string' && raw.sv.trim()) item.sv = raw.sv.trim().slice(0, 80);
   if (raw.del) item.del = true;
   return item;
 }
@@ -683,7 +697,7 @@ function wordMatches(word, term){
 }
 function autoMatches(item, sid){
   if (!AUTO || !Array.isArray(AUTO.products)) return [];
-  const want = norm(item.name);
+  const want = norm(searchName(item));
   if (!want) return [];
   return AUTO.products.filter(p => {
     if (!p || p.store !== sid) return false;
@@ -937,7 +951,7 @@ function itemRow(it){
     const up = unitPrice(c.p, c.s);
     const auto = bestAuto(it, st.id);
     const low = best && best.store.id===st.id && liveStores().filter(s=>payQuote(it,s.id)).length>1;
-    const href = searchHref(st.url, it.name);
+    const href = searchHref(st.url, searchName(it));
     const link = href ? `<a href="${esc(href)}" target="_blank" rel="noopener">find</a>` : '';
     const price = (typeof c.p === 'number' && Number.isFinite(c.p)) ? String(c.p) : '';
     const placeholder = !price && auto ? String(Math.round(auto.price*100)/100) : 'kr';
@@ -961,6 +975,9 @@ function itemRow(it){
       <button class="exp" data-exp="${esc(it.id)}" aria-label="Prices for ${esc(it.name)}">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 9l7 7 7-7"/></svg></button>
     </div>
+    <input class="svterm${needsSvHint(it)?' missing':''}" data-svterm="${esc(it.id)}" value="${esc(it.sv||'')}"
+      placeholder="Swedish word for prices" aria-label="Swedish word for ${esc(it.name)}"
+      title="Swedish word used to find prices. Edit it if it is wrong.">
     <div class="prices">${rows}<button class="trash" data-del="${esc(it.id)}">remove item</button></div>
   </li>`;
 }
@@ -1053,6 +1070,33 @@ function renderStores(){
 function renderAll(){ renderList(); renderCompare(); renderOrder(); renderStores(); paintSync(); }
 
 /* ---------------- actions ---------------- */
+function searchName(item){
+  const sv = item && item.sv && String(item.sv).trim();
+  return sv || (item && item.name) || '';
+}
+function itemLang(){
+  try { return localStorage.getItem('handla:lang') || 'auto'; } catch(e) { return 'auto'; }
+}
+function needsSvHint(it){
+  if (!it || !it.sv) return true;
+  if (typeof Terms === 'undefined') return false;
+  return Terms.foldKey(it.sv) === Terms.foldKey(it.name) && !Terms.isSwedish(it.name);
+}
+function applySwedish(it){
+  if (typeof Terms === 'undefined') return;
+  const hit = Terms.lookup(it.name, itemLang());
+  if (hit){ it.sv = hit.sv; it.svSource = hit.source; return; }
+  it.svSource = 'missing';
+  Terms.translateOnline(it.name, itemLang()).then(found => {
+    const cur = S.items.find(x => x.id === it.id);
+    if (!cur || cur.svSource === 'user') return;
+    if (!found || !found.sv) return;
+    cur.sv = found.sv;
+    cur.svSource = 'online';
+    try { Disk.set('handla:mtcache', Terms.getOnlineCache()); } catch(e){}
+    save(); renderAll();
+  }).catch(()=>{});
+}
 function addItem(name, qty, unit){
   name = String(name).trim(); if (!name) return;
   qty = Number(qty);
@@ -1066,11 +1110,15 @@ function addItem(name, qty, unit){
     ex.unit = canonUnit(ex.unit);
     ex.done = false;
     ex.mt = now();
+    if (!ex.sv) applySwedish(ex);
   } else {
     const b = S.book[norm(name)];
-    S.items.push({ id:'i'+now().toString(36)+Math.random().toString(36).slice(2,6),
-      name, qty, unit, cat:guessCat(name), done:false,
-      prices: b ? JSON.parse(JSON.stringify(b.prices||{})) : {}, mt:now() });
+    const it = { id:'i'+now().toString(36)+Math.random().toString(36).slice(2,6),
+      name, qty, unit, cat:'other', done:false,
+      prices: b ? JSON.parse(JSON.stringify(b.prices||{})) : {}, mt:now() };
+    applySwedish(it);
+    it.cat = guessCat(searchName(it));
+    S.items.push(it);
   }
   save(); renderAll();
 }
@@ -1356,9 +1404,62 @@ $('#areaGeo').addEventListener('click', () => {
 });
 document.addEventListener('change', e => {
   const id = e.target && e.target.dataset && e.target.dataset.follow;
-  if (!id) return;
-  toggleFollow(DIRECTORY.find(s => s.id === id));
+  if (id){ toggleFollow(DIRECTORY.find(s => s.id === id)); return; }
+  const svId = e.target && e.target.dataset && e.target.dataset.svterm;
+  if (svId){
+    const it = S.items.find(i => i.id === svId);
+    if (!it) return;
+    it.sv = e.target.value.trim();
+    it.svSource = 'user';
+    it.mt = now();
+    it.cat = guessCat(searchName(it));
+    if (typeof Terms !== 'undefined'){
+      Terms.remember(it.name, it.sv);
+      persistTerms();
+    }
+    save(); renderAll();
+    return;
+  }
+  if (e.target && e.target.id === 'itemLang'){
+    try { localStorage.setItem(LANGKEY, e.target.value); } catch (err) {}
+  }
 });
+
+const LANGKEY = 'handla:lang';
+const TERMKEY = 'handla:terms';
+const MTKEY = 'handla:mtcache';
+function loadTerms(){
+  if (typeof Terms === 'undefined') return Promise.resolve();
+  try {
+    const corr = Disk.get(TERMKEY);
+    if (corr && typeof corr === 'object') Terms.setCorrections(corr);
+    const cache = Disk.get(MTKEY);
+    if (cache && typeof cache === 'object') Terms.setOnlineCache(cache);
+  } catch (e) {}
+  if (typeof fetch !== 'function') return Promise.resolve();
+  return fetch('data/i18n/grocery-terms.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : null).then(data => {
+    if (!data) return;
+    Terms.loadRows(data);
+    let changed = false;
+    for (const it of S.items || []){
+      if (!it || it.del || it.sv || it.svSource === 'user') continue;
+      const hit = Terms.lookup(it.name, itemLang());
+      if (!hit) continue;
+      it.sv = hit.sv;
+      it.svSource = hit.source;
+      if (!it.cat || it.cat === 'other') it.cat = guessCat(searchName(it));
+      changed = true;
+    }
+    if (changed) Disk.set(KEY, S);
+    renderAll();
+  }).catch(()=>{});
+}
+function persistTerms(){
+  try {
+    Disk.set(TERMKEY, Terms.getCorrections());
+    Disk.set(MTKEY, Terms.getOnlineCache());
+  } catch (e) {}
+}
 
 /* boot */
 (function init(){
@@ -1382,9 +1483,12 @@ document.addEventListener('change', e => {
     const cached = Disk.get(PRICEKEY);
     if (cached && Array.isArray(cached.products)) AUTO = cached;
   }catch(e){}
+  const langSel = $('#itemLang');
+  if (langSel) langSel.value = itemLang();
   renderAll();
   loadDirectory();
   loadAutoPrices();
+  loadTerms();
   if (CFG.on) syncNow(true);
 
   if ('serviceWorker' in navigator){

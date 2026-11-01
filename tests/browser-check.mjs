@@ -110,6 +110,16 @@ try {
   const scriptURL = await page.evaluate(() => navigator.serviceWorker.controller && navigator.serviceWorker.controller.scriptURL);
   assert.ok(scriptURL && scriptURL.includes('sw.js'), 'service worker did not take control: ' + scriptURL);
 
+  await page.waitForFunction(() => window.Terms && Terms.lookup('leite', 'pt'), { timeout: 8000 });
+  await page.type('#newName', 'leite');
+  await page.select('#newUnit', 'l');
+  await page.click('#addBtn');
+  const leiteSv = await page.evaluate(() => {
+    const row = [...document.querySelectorAll('li.item')].find(li => li.innerText.includes('leite'));
+    return row && row.querySelector('input.svterm').value;
+  });
+  assert.equal(leiteSv, 'mjölk');
+
   await page.click('#tab-setup');
   await page.type('#areaQuery', 'Kortedala');
   await page.click('#areaSearch');
