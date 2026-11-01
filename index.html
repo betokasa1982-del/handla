@@ -182,7 +182,18 @@ nav.tabs button[aria-selected="true"]{color:var(--accent);background:var(--accen
 .onboard-inner{max-width:480px;margin:0 auto;padding:calc(24px + env(safe-area-inset-top)) 18px calc(24px + env(safe-area-inset-bottom))}
 .onboard h2{font-size:32px;letter-spacing:-.04em;line-height:1.05;margin:6px 0 8px}
 .onboard input[type=text]{width:100%;min-height:52px;border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:0 14px}
-.onboard .kicker{font-weight:800;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;font-size:12px;margin:0}
+.onboard .kicker,.tour-card .kicker{font-weight:800;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;font-size:12px;margin:0}
+.tour{position:fixed;inset:0;z-index:70;background:rgba(10,16,14,.45);display:flex;align-items:flex-end;justify-content:center}
+.tour[hidden]{display:none}
+.tour-card{width:min(480px,100%);background:var(--surface);color:var(--ink);border-radius:22px 22px 0 0;padding:22px 18px calc(18px + env(safe-area-inset-bottom));box-shadow:var(--shadow)}
+.tour-card h2{margin:6px 0 8px;font-size:26px;letter-spacing:-.03em}
+.pick{display:block;width:100%;text-align:left;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:12px;padding:10px 12px;margin:0 0 8px;cursor:pointer;font:inherit}
+.pick .top{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.pick.on{border-color:var(--accent);background:var(--accent-soft)}
+.pick strong{font-variant-numeric:tabular-nums;white-space:nowrap}
+.pick small{color:var(--muted);font-size:12px}
+.store-label{font-size:12px;font-weight:700;color:var(--muted);margin:10px 0 4px}
+#tab-order{display:none}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -193,8 +204,9 @@ nav.tabs button[aria-selected="true"]{color:var(--accent);background:var(--accen
   <div class="brand">
     <h1>Handla</h1>
     <div class="brand-side">
-      <button type="button" class="iconbtn" id="themeBtn">Theme</button>
-      <div class="stamp"><b id="stamp">—</b><span id="syncline">not shared</span></div>
+      <button type="button" class="iconbtn" id="helpBtn" aria-label="Help">?</button>
+      <button type="button" class="iconbtn" id="themeBtn" data-i18n="theme">Tema</button>
+      <div class="stamp"><b id="stamp">—</b><span id="syncline">only on this phone</span></div>
     </div>
   </div>
 </header>
@@ -347,6 +359,16 @@ nav.tabs button[aria-selected="true"]{color:var(--accent);background:var(--accen
   </div>
 </div>
 
+<div class="tour" id="tour" hidden>
+  <div class="tour-card">
+    <p class="kicker" id="tourKicker"></p>
+    <h2 id="tourTitle"></h2>
+    <p id="tourBody"></p>
+    <button type="button" class="btn wide" id="tourNext">Next</button>
+    <div style="height:8px"></div>
+    <button type="button" class="btn ghost wide" id="tourSkip">Skip</button>
+  </div>
+</div>
 <div class="toast" id="toast"></div>
 
 <script src="js/ui.cjs"></script>
@@ -398,11 +420,9 @@ function applyChrome(){
     btn.setAttribute('aria-pressed', btn.getAttribute('data-uilang') === uiLang() ? 'true' : 'false');
   });
   const theme = $('#themeBtn');
-  if (theme){
-    const mode = themeMode();
-    theme.textContent = 'Aa';
-    theme.setAttribute('aria-label', tr('theme'));
-  }
+  if (theme) theme.setAttribute('aria-label', tr('theme'));
+  const help = $('#helpBtn');
+  if (help) help.setAttribute('aria-label', tr('help'));
   const add = $('#addBtn'); if (add) add.setAttribute('aria-label', tr('add'));
   const qty = $('#newQty'); if (qty) qty.setAttribute('aria-label', tr('ariaQty'));
   const unit = $('#newUnit'); if (unit) unit.setAttribute('aria-label', tr('ariaUnit'));
@@ -420,6 +440,7 @@ function finishOnboard(){
   try { localStorage.setItem('handla:onboarded', '1'); } catch (e) {}
   const el = $('#onboard');
   if (el) el.hidden = true;
+  showTour(0);
 }
 function showOnboard(){
   const el = $('#onboard');
@@ -621,6 +642,35 @@ const STEPS = {
 let S = { v:3, items:[], stores:defaultStores(), book:{}, recent:[] };
 let CFG = { token:'', gist:'', on:false };
 let openId = null;
+let manualId = null;
+let tourAt = -1;
+const TOUR = [
+  ['tour1t','tour1b'],
+  ['tour2t','tour2b'],
+  ['tour3t','tour3b'],
+  ['tour4t','tour4b']
+];
+function tourSeen(){
+  try { return localStorage.getItem('handla:tour') === '1'; } catch (e) { return true; }
+}
+function showTour(step){
+  const el = $('#tour');
+  if (!el) return;
+  if (step == null || step < 0 || step >= TOUR.length){
+    try { localStorage.setItem('handla:tour', '1'); } catch (e) {}
+    el.hidden = true;
+    tourAt = -1;
+    return;
+  }
+  tourAt = step;
+  const pair = TOUR[step];
+  $('#tourKicker').textContent = (step + 1) + ' / ' + TOUR.length;
+  $('#tourTitle').textContent = tr(pair[0]);
+  $('#tourBody').textContent = tr(pair[1]);
+  $('#tourNext').textContent = step === TOUR.length - 1 ? tr('tourDone') : tr('tourNext');
+  $('#tourSkip').textContent = tr('tourSkip');
+  el.hidden = false;
+}
 let dirty = false;
 let syncing = false;
 let lastSyncAt = 0;
@@ -667,6 +717,30 @@ function sanitizeItem(raw){
     mt: finiteNum(raw.mt) ?? 0
   };
   if (typeof raw.sv === 'string' && raw.sv.trim()) item.sv = raw.sv.trim().slice(0, 80);
+  if (raw.chosen && typeof raw.chosen === 'object' && !Array.isArray(raw.chosen)){
+    const chosen = {};
+    for (const sid of Object.keys(raw.chosen)){
+      if (badKey(sid)) continue;
+      const v = raw.chosen[sid];
+      if (!v || typeof v !== 'object') continue;
+      const price = finiteNum(v.price);
+      if (price === null || price <= 0) continue;
+      const url = typeof v.url === 'string' ? v.url : '';
+      chosen[sid] = {
+        name: typeof v.name === 'string' ? v.name.slice(0, 140) : '',
+        price,
+        size: finiteNum(v.size),
+        unit: typeof v.unit === 'string' ? v.unit.slice(0, 12) : '',
+        compare_price: finiteNum(v.compare_price),
+        compare_unit: typeof v.compare_unit === 'string' ? v.compare_unit.slice(0, 12) : '',
+        url: dangerousUrl(url) ? '' : url.slice(0, 300),
+        offer: !!v.offer,
+        level: v.level === 'equivalent' ? 'equivalent' : 'exact',
+        brand: typeof v.brand === 'string' ? v.brand.slice(0, 40) : ''
+      };
+    }
+    if (Object.keys(chosen).length) item.chosen = chosen;
+  }
   if (raw.del) item.del = true;
   return item;
 }
@@ -825,41 +899,197 @@ function priceOf(item, sid){
 const PRICEKEY = 'handla:prices';
 let AUTO = null;
 
+const HEADS = ['toalettpapper','hushallspapper','kottfars','vispgradde','filmjolk','mellanmjolk','lattmjolk','standardmjolk','fullkornsbrod','knackebrod','formbrod','ragbrod','brod','mjolk','ost','smor','kaffe','ris','pasta','agg','korv','kyckling','fisk','kott','juice','vatten','yoghurt','gradde','banan','tomat','papper','apple','lok','potatis'];
+const FAVKEY = 'handla:favs';
+function wordsOf(text){
+  return fold(text).split(/[^a-z0-9]+/).filter(Boolean);
+}
 function wordMatches(word, term){
+  word = fold(word); term = fold(term);
   if (!word || !term) return false;
   if (word === term) return true;
-  // Compounds: "gårdsägg", "mellanmjölk", "vetemjöl". "mjöl" must not hit "mjölk".
-  if (term.length >= 3 && word.endsWith(term)) return true;
-  if (term.length >= 4 && word.startsWith(term) && /^(ar|er|or|en|et|na|s)$/.test(word.slice(term.length))) return true;
+  if (term.length >= 3 && word.endsWith(term) && word.length >= term.length + 2) return true;
+  if (term.length >= 4 && word.startsWith(term) && word.length >= term.length + 2) return true;
   return false;
 }
-function autoMatches(item, sid){
-  if (!AUTO || !Array.isArray(AUTO.products)) return [];
-  const want = norm(searchName(item));
-  if (!want) return [];
-  return AUTO.products.filter(p => {
-    if (!p || p.store !== sid) return false;
-    if (norm(p.query || '') === want) return true;
-    return norm(p.name || '').split(/[^a-z0-9åäö]+/).some(w => wordMatches(w, want));
+function searchTerms(phrase){
+  const parts = wordsOf(phrase);
+  const out = [];
+  const add = (t, kind) => {
+    t = fold(t);
+    if (!t || t.length < 2 || out.some(x => x.t === t)) return;
+    out.push({ t, kind });
+  };
+  if (parts.length) add(parts.join(' '), 'full');
+  parts.forEach(part => {
+    add(part, 'word');
+    const head = HEADS.filter(h => part.endsWith(h) && part.length > h.length + 1)
+      .sort((a,b) => b.length - a.length)[0];
+    if (head) add(head, 'generic');
   });
+  HEADS.forEach(h => { if (parts.includes(h)) add(h, 'generic'); });
+  return out;
+}
+const BASE_WORDS = {
+  mjolk:'mjolk', leite:'mjolk', latte:'mjolk', milk:'mjolk',
+  brod:'brod', pao:'brod', pane:'brod', bread:'brod',
+  agg:'agg', ovo:'agg', uova:'agg', uovo:'agg', egg:'agg', eggs:'agg',
+  ris:'ris', arroz:'ris', riso:'ris', rice:'ris',
+  kaffe:'kaffe', cafe:'kaffe', caffe:'kaffe', coffee:'kaffe',
+  banan:'banan', banana:'banan',
+  ost:'ost', queijo:'ost', formaggio:'ost', cheese:'ost',
+  smor:'smor', manteiga:'smor', burro:'smor', butter:'smor',
+  kyckling:'kyckling', frango:'kyckling', pollo:'kyckling', chicken:'kyckling',
+  toalettpapper:'toalettpapper'
+};
+function baseOf(item){
+  const words = wordsOf((item && (item.sv || '')) + ' ' + (item && item.name || ''));
+  for (const w of words) if (BASE_WORDS[w]) return BASE_WORDS[w];
+  const terms = searchTerms(words.join(' '));
+  const head = terms.find(t => HEADS.includes(t.t));
+  return head ? head.t : '';
+}
+function wishFromText(text){
+  const raw = fold(text);
+  const wish = { lactoseFree: false, eko: false, fat: '', brand: '', variant: '' };
+  if (/sem lactose|lactose free|senza lattosio|laktosfri/.test(raw)) wish.lactoseFree = true;
+  if (/organic|organico|ekologisk|\beko\b|\bkrav\b|biologico/.test(raw)) wish.eko = true;
+  if (/semidesnatado|semi ?skim|mellanmjolk|\bmellan\b/.test(raw)) wish.fat = 'mellan';
+  else if (/desnatado|skim milk|lattmjolk|\blatt\b/.test(raw)) wish.fat = 'latt';
+  else if (/integral|whole milk|latte intero|standardmjolk/.test(raw)) wish.fat = 'standard';
+  if (/hono/.test(raw)) wish.variant = 'hono';
+  if (/pagen/.test(raw)) wish.brand = 'pagen';
+  else if (/\barla\b/.test(raw)) wish.brand = 'arla';
+  return wish;
+}
+function traitsOf(product){
+  const raw = fold((product.brand || '') + ' ' + (product.name || ''));
+  const traits = { lactoseFree: /laktosfri/.test(raw), eko: /ekologisk|\beko\b|\bkrav\b/.test(raw), fat: '', brand: '', variant: '' };
+  if (/mellanmjolk|1[,.]5%/.test(raw)) traits.fat = 'mellan';
+  else if (/lattmjolk|0[,.]5%|0[,.]1%/.test(raw)) traits.fat = 'latt';
+  else if (/standardmjolk|\b3%/.test(raw)) traits.fat = 'standard';
+  if (/hono/.test(raw)) traits.variant = 'hono';
+  if (/pagen/.test(raw)) traits.brand = 'pagen';
+  else if (/arla/.test(raw)) traits.brand = 'arla';
+  else if (product.brand) traits.brand = wordsOf(product.brand)[0] || '';
+  return traits;
+}
+function favorites(){
+  try { const v = Disk.get(FAVKEY); return v && typeof v === 'object' ? v : {}; } catch (e) { return {}; }
+}
+function rememberFavorite(item, product){
+  const base = baseOf(item);
+  if (!base) return;
+  const typed = wishFromText((item.name || '') + ' ' + (item.sv || ''));
+  const traits = product ? traitsOf(product) : { lactoseFree:false, eko:false, fat:'', brand:'', variant:'' };
+  const all = favorites();
+  all[base] = {
+    lactoseFree: typed.lactoseFree || !!traits.lactoseFree,
+    eko: typed.eko || !!traits.eko,
+    fat: typed.fat || traits.fat || '',
+    brand: typed.brand || traits.brand || '',
+    variant: typed.variant || traits.variant || ''
+  };
+  try { Disk.set(FAVKEY, all); } catch (e) {}
+}
+function wishFor(item){
+  const typed = wishFromText((item.name || '') + ' ' + (item.sv || ''));
+  const fav = favorites()[baseOf(item)] || {};
+  return {
+    lactoseFree: typed.lactoseFree || !!fav.lactoseFree,
+    eko: typed.eko || !!fav.eko,
+    fat: typed.fat || fav.fat || '',
+    brand: typed.brand || fav.brand || '',
+    variant: typed.variant || fav.variant || ''
+  };
+}
+function wishSpecific(wish){
+  return !!(wish && (wish.lactoseFree || wish.eko || wish.fat || wish.brand || wish.variant));
+}
+function productBaseHit(product, base, wish){
+  const words = wordsOf((product.brand || '') + ' ' + (product.name || '') + ' ' + (product.query || ''));
+  if (base && words.some(w => wordMatches(w, base))) return true;
+  if (wish && wish.variant && words.some(w => wordMatches(w, wish.variant))) return true;
+  return false;
+}
+function matchLevel(wish, traits, baseHit){
+  if (!baseHit) return 'no';
+  if (!wishSpecific(wish)) return 'choice';
+  if (wish.variant && traits.variant !== wish.variant) return 'no';
+  if (wish.lactoseFree && !traits.lactoseFree) return 'no';
+  if (wish.eko && !traits.eko) return 'no';
+  if (wish.fat && traits.fat && traits.fat !== wish.fat){
+    if (wish.lactoseFree || wish.eko || wish.variant) return 'equivalent';
+    return 'no';
+  }
+  const brandOk = !wish.brand || traits.brand === wish.brand;
+  const fatOk = !wish.fat || traits.fat === wish.fat;
+  if (brandOk && fatOk) return 'exact';
+  if (wish.variant || wish.lactoseFree || wish.fat) return 'equivalent';
+  return 'no';
+}
+function rankProducts(item, sid){
+  if (!AUTO || !Array.isArray(AUTO.products)) return [];
+  const base = baseOf(item);
+  const wish = wishFor(item);
+  return AUTO.products
+    .filter(p => p && p.store === sid && p.price > 0)
+    .map(p => ({ p, level: matchLevel(wish, traitsOf(p), productBaseHit(p, base, wish)), traits: traitsOf(p) }))
+    .filter(x => x.level === 'exact' || x.level === 'equivalent' || x.level === 'choice')
+    .sort((a,b) => {
+      const order = { exact: 0, equivalent: 1, choice: 2 };
+      const ua = a.p.compare_price > 0 ? a.p.compare_price : a.p.price;
+      const ub = b.p.compare_price > 0 ? b.p.compare_price : b.p.price;
+      return (order[a.level] - order[b.level]) || (ua - ub);
+    })
+    .slice(0, 6);
+}
+function suggestions(item, sid){
+  const wish = wishFor(item);
+  const rows = rankProducts(item, sid);
+  if (wishSpecific(wish)) return rows.filter(x => x.level === 'exact' || x.level === 'equivalent');
+  return rows.filter(x => x.level === 'choice');
+}
+function snapshotProduct(product, level){
+  const traits = traitsOf(product);
+  return {
+    name: product.name, brand: product.brand || '', price: product.price,
+    size: product.size, unit: product.unit, compare_price: product.compare_price,
+    compare_unit: product.compare_unit, url: product.url || '', offer: !!product.offer,
+    level: level || 'exact', fat: traits.fat, variant: traits.variant, lactoseFree: traits.lactoseFree
+  };
+}
+function chosenProduct(item, sid){
+  const c = item && item.chosen && item.chosen[sid];
+  if (!c || !(Number(c.price) > 0)) return null;
+  return c;
+}
+function pinMatches(item){
+  if (!item.chosen || typeof item.chosen !== 'object') item.chosen = {};
+  const wish = wishFor(item);
+  if (!wishSpecific(wish)) return;
+  liveStores().forEach(st => {
+    const rows = rankProducts(item, st.id);
+    const exact = rows.filter(x => x.level === 'exact');
+    const pool = exact.length ? exact : rows.filter(x => x.level === 'equivalent');
+    if (!pool.length) return;
+    item.chosen[st.id] = snapshotProduct(pool[0].p, pool[0].level);
+  });
+  const sample = Object.values(item.chosen)[0];
+  if (sample && wishSpecific(wishFromText((item.name || '') + ' ' + (item.sv || '')))) rememberFavorite(item, sample);
+}
+function autoMatches(item, sid){
+  const picked = chosenProduct(item, sid);
+  return picked ? [picked] : [];
 }
 function bestAuto(item, sid){
-  const hits = autoMatches(item, sid);
-  if (!hits.length) return null;
-  const iu = unitInfo(item.unit);
-  const comparable = hits.filter(h => {
-    const cu = unitInfo(h.compare_unit || '');
-    return h.compare_price > 0 && iu.dim && cu.dim && iu.dim === cu.dim;
-  });
-  const pool = comparable.length ? comparable : hits;
-  return pool.slice().sort((a,b) => {
-    const av = comparable.length ? a.compare_price : a.price;
-    const bv = comparable.length ? b.compare_price : b.price;
-    return av - bv;
-  })[0];
+  return chosenProduct(item, sid);
 }
 function itemOnOffer(item){
-  return liveStores().some(st => autoMatches(item, st.id).some(h => h.offer));
+  return liveStores().some(st => {
+    const picked = chosenProduct(item, st.id);
+    return picked && picked.offer;
+  });
 }
 function payQuote(item, sid){
   const manual = priceOf(item, sid);
@@ -873,7 +1103,7 @@ function payQuote(item, sid){
   if (auto.compare_price > 0 && auto.compare_unit){
     unit = { value: Number(auto.compare_price), base: canonUnit(auto.compare_unit) };
   }
-  return { price: Number(auto.price), manual: false, unit, offer: !!auto.offer, auto };
+  return { price: Number(auto.price), manual: false, unit, offer: !!auto.offer, equivalent: auto.level === 'equivalent', auto };
 }
 // A typed price is per one of this line's unit. An automatic price is a pack
 // price; when the list is in kg or litres we use the comparison price instead.
@@ -894,13 +1124,13 @@ function bestFor(item){
   const bases = new Set(withUnit.map(x=>x.q.unit.base));
   if (withUnit.length===quoted.length && bases.size===1){
     const w = withUnit.reduce((a,b)=> b.q.unit.value<a.q.unit.value?b:a);
-    return { store:w.st, price:w.q.price, unit:w.q.unit, byUnit:true, offer:w.q.offer };
+    return { store:w.st, price:w.q.price, unit:w.q.unit, byUnit:true, offer:w.q.offer, equivalent: !!w.q.equivalent };
   }
   const w = quoted.reduce((a,b)=>{
     const ta = lineTotal(item, a.st.id), tb = lineTotal(item, b.st.id);
     return tb!=null && (ta==null || tb<ta) ? b : a;
   });
-  return { store:w.st, price:w.q.price, unit:w.q.unit, byUnit:false, offer:w.q.offer };
+  return { store:w.st, price:w.q.price, unit:w.q.unit, byUnit:false, offer:w.q.offer, equivalent: !!w.q.equivalent };
 }
 function ago(iso){
   const t = Date.parse(iso);
@@ -958,7 +1188,7 @@ function save(){ Disk.set(KEY, S); dirty = true; stampNow(); scheduleSync(); }
 function stampNow(){
   const a = activeItems().length;
   const stamp = $('#stamp');
-  if (stamp) stamp.textContent = a ? a+' '+tr('toBuy') : tr('listClear');
+  if (stamp) stamp.textContent = a ? a+' '+tr('itemsWord') : tr('listClear');
 }
 function toast(m){ const t=$('#toast'); t.textContent=m; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),2200); }
 
@@ -1031,14 +1261,14 @@ function scheduleSync(){
 
 function paintSync(){
   const dot = $('#syncdot'), st = $('#syncstatus'), line = $('#syncline');
-  let cls = '', text = tr('notSetup'), short = tr('notShared');
+  let cls = '', text = tr('notSetup'), short = tr('onlyHere');
   if (CFG.on && CFG.token && CFG.gist){
     if (syncing){ cls='busy'; text=tr('syncing'); short=tr('syncing'); }
     else if (syncErr){ cls='bad'; text = syncErr; short = syncErr; }
     else if (lastSyncAt){
       cls='ok';
       const when = new Date(lastSyncAt).toLocaleTimeString('sv-SE',{hour:'2-digit',minute:'2-digit'});
-      text = tr('lastAt')+' '+when; short = when;
+      text = tr('syncedAt')+' '+when; short = tr('syncedAt')+' '+when;
     } else { cls='ok'; text=tr('ready'); short=tr('shared'); }
   } else if (CFG.token && CFG.gist){ text=tr('configuredOff'); short=tr('syncOff'); }
   if (dot) dot.className = 'dot '+cls;
@@ -1095,43 +1325,61 @@ function renderList(){
     body.appendChild(d);
     stampNow(); return;
   }
-  for (const [cat] of CATS){
-    const inCat = items.filter(i=>i.cat===cat);
-    if (!inCat.length) continue;
-    inCat.sort((a,b)=>(a.done-b.done)||a.name.localeCompare(b.name,'sv'));
-    const d = document.createElement('div');
-    d.innerHTML = `<div class="eyebrow">${esc(tr('cat_'+cat))}</div><ul>${inCat.map(itemRow).join('')}</ul>`;
-    body.appendChild(d);
-  }
+  const ordered = items.slice().sort((a,b)=>(a.done-b.done)||a.name.localeCompare(b.name,'sv'));
+  const d = document.createElement('div');
+  d.innerHTML = `<ul>${ordered.map(itemRow).join('')}</ul>`;
+  body.appendChild(d);
   stampNow();
+}
+function productLine(p){
+  const pack = (p.size && p.unit) ? (String(p.size).replace('.', ',')+' '+p.unit) : '';
+  const unit = (p.compare_price > 0 && p.compare_unit) ? kr(p.compare_price)+' kr/'+p.compare_unit : '';
+  return { pack, unit };
 }
 function itemRow(it){
   const best = bestFor(it);
   const short = best ? best.store.name.split(' ')[0] : '';
-  const badge = best ? `<span class="best">${kr(best.price)}${best.byUnit?'*':''}<small>${esc(short)}</small></span>` : '';
+  const note = best && best.equivalent ? ' · '+tr('equivalent') : '';
+  const badge = best ? `<span class="best">${kr(best.price)}${best.byUnit?'*':''}<small>${esc(short+note)}</small></span>` : '';
   const offerBadge = itemOnOffer(it) ? `<span class="offer-tag">${esc(tr('offer'))}</span>` : '';
-  const miss = !best ? `<p class="miss">${esc(needsSvHint(it) ? tr('svMissing') : tr('noPriceHere'))}</p>` : '';
-  const rows = liveStores().map(st=>{
-    const c = cell(it, st.id) || {};
-    const up = unitPrice(c.p, c.s);
-    const auto = bestAuto(it, st.id);
-    const low = best && best.store.id===st.id && liveStores().filter(s=>payQuote(it,s.id)).length>1;
-    const href = searchHref(st.url, searchName(it));
-    const link = href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(tr('find'))}</a>` : '';
-    const price = (typeof c.p === 'number' && Number.isFinite(c.p)) ? String(c.p) : '';
-    const placeholder = !price && auto ? String(Math.round(auto.price*100)/100) : 'kr';
-    const unitLabel = up ? kr(up.value)+'/'+esc(up.base)
-      : (auto && auto.compare_price>0 && auto.compare_unit ? kr(auto.compare_price)+'/'+esc(auto.compare_unit) : '');
-    const none = !price && !auto ? `<span class="unitp">${esc(tr('noPriceHere'))}</span>` : `<span class="unitp">${unitLabel}</span>`;
-    return `<div class="prow${low?' lowest':''}">
-      <span class="slab">${esc(st.name)}</span>
-      <input class="p" type="number" inputmode="decimal" step="0.01" min="0" placeholder="${esc(placeholder)}"
-             value="${esc(price)}" data-cell="${esc(it.id)}" data-store="${esc(st.id)}" data-f="p" aria-label="${esc(tr('priceAt'))} ${esc(st.name)}">
-      <input class="s" type="text" placeholder="${esc(tr('packPh'))}" value="${esc(c.s!=null?c.s:'')}"
-             data-cell="${esc(it.id)}" data-store="${esc(st.id)}" data-f="s" aria-label="${esc(tr('packAt'))} ${esc(st.name)}">
-      ${none}${link}
-    </div>`;
+  const any = liveStores().some(st => suggestions(it, st.id).length || chosenProduct(it, st.id));
+  const miss = !best ? `<p class="miss">${esc(any ? tr('pickProduct') : tr('oneMiss'))}</p>` : '';
+  const blocks = liveStores().map(st => {
+    const picks = suggestions(it, st.id);
+    const chosen = chosenProduct(it, st.id);
+    const rows = picks.map(x => {
+      const p = x.p;
+      const line = productLine(p);
+      const on = chosen && ((chosen.url && chosen.url === p.url) || (!p.url && norm(chosen.name) === norm(p.name)));
+      const mark = x.level === 'equivalent' ? tr('equivalent') : '';
+      const brand = p.brand || '';
+      return `<button type="button" class="pick${on?' on':''}" data-pick="${esc(it.id)}" data-store="${esc(st.id)}" data-url="${esc(p.url||'')}" data-name="${esc(p.name||'')}">
+        <span class="top"><span>${esc(brand ? brand+' · ' : '')}${esc(p.name||'')}</span><strong>${kr(p.price)} kr</strong></span>
+        <small>${esc([line.pack, line.unit, mark].filter(Boolean).join(' · '))}</small>
+      </button>`;
+    }).join('');
+    if (!rows) return '';
+    return `<div class="store-label">${esc(st.name)}</div>${rows}`;
   }).join('');
+  const hrefs = liveStores().map(st => {
+    const href = searchHref(st.url, searchName(it));
+    return href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(tr('find'))} · ${esc(st.name.split(' ')[0])}</a>` : '';
+  }).filter(Boolean).join(' ');
+  let manual = '';
+  if (manualId === it.id){
+    manual = liveStores().map(st => {
+      const c = cell(it, st.id) || {};
+      const price = (typeof c.p === 'number' && Number.isFinite(c.p)) ? String(c.p) : '';
+      return `<div class="prow">
+        <span class="slab">${esc(st.name)}</span>
+        <input class="p" type="number" inputmode="decimal" step="0.01" min="0" placeholder="kr"
+               value="${esc(price)}" data-cell="${esc(it.id)}" data-store="${esc(st.id)}" data-f="p" aria-label="${esc(tr('priceAt'))} ${esc(st.name)}">
+        <input class="s" type="text" placeholder="${esc(tr('packPh'))}" value="${esc(c.s!=null?c.s:'')}"
+               data-cell="${esc(it.id)}" data-store="${esc(st.id)}" data-f="s" aria-label="${esc(tr('packAt'))} ${esc(st.name)}">
+      </div>`;
+    }).join('');
+  }
+  const lead = any ? `<p class="muted">${esc(tr('pickProduct'))}</p>` : '';
   return `<li class="item${it.done?' done':''}${openId===it.id?' open':''}" data-id="${esc(it.id)}">
     <div class="row">
       <button class="tick" data-toggle="${esc(it.id)}" aria-label="${esc(tr('ariaTick'))} ${esc(it.name)}">
@@ -1146,7 +1394,11 @@ function itemRow(it){
       <button class="exp" data-exp="${esc(it.id)}" aria-label="${esc(tr('ariaPrices'))} ${esc(it.name)}">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 9l7 7 7-7"/></svg></button>
     </div>
-    <div class="prices">${rows}<button class="trash" data-del="${esc(it.id)}">${esc(tr('remove'))}</button></div>
+    <div class="prices">${lead}${blocks}${hrefs?`<p>${hrefs}</p>`:''}
+      <button type="button" class="trash" data-manual="${esc(it.id)}">${esc(tr('manualPrice'))}</button>
+      ${manual}
+      <button class="trash" data-del="${esc(it.id)}">${esc(tr('remove'))}</button>
+    </div>
   </li>`;
 }
 
@@ -1251,7 +1503,18 @@ function needsSvHint(it){
 }
 function applySwedish(it){
   if (typeof Terms === 'undefined') return;
-  const hit = Terms.lookup(it.name, itemLang());
+  const lang = itemLang();
+  let hit = Terms.lookup(it.name, lang);
+  if (!hit){
+    const parts = String(it.name).trim().split(/\s+/).filter(Boolean);
+    if (parts.length > 1){
+      const bits = parts.map(part => {
+        const one = Terms.lookup(part, lang);
+        return one ? one.sv : part;
+      });
+      if (bits.some((bit, i) => Terms.foldKey(bit) !== Terms.foldKey(parts[i]))) hit = { sv: bits.join(' '), source: 'dict' };
+    }
+  }
   if (hit){ it.sv = hit.sv; it.svSource = hit.source; return; }
   it.svSource = 'missing';
   Terms.translateOnline(it.name, itemLang()).then(found => {
@@ -1285,6 +1548,8 @@ function addItem(name, qty, unit){
       prices: b ? JSON.parse(JSON.stringify(b.prices||{})) : {}, mt:now() };
     applySwedish(it);
     it.cat = guessCat(searchName(it));
+    pinMatches(it);
+    if (liveStores().some(st => suggestions(it, st.id).length)) openId = it.id;
     S.items.push(it);
   }
   save(); renderAll();
@@ -1301,6 +1566,27 @@ $('#addBtn').addEventListener('click', ()=>{
 $('#newName').addEventListener('keydown', e=>{ if (e.key==='Enter') $('#addBtn').click(); });
 
 document.addEventListener('click', e=>{
+  const pick = e.target.closest && e.target.closest('[data-pick]');
+  if (pick){
+    const it = S.items.find(i => i.id === pick.dataset.pick);
+    const prod = (AUTO && AUTO.products || []).find(p => p && p.store === pick.dataset.store && (p.url || '') === (pick.dataset.url || '') && norm(p.name) === norm(pick.dataset.name || ''));
+    if (it && prod){
+      rememberFavorite(it, prod);
+      pinMatches(it);
+      it.chosen = it.chosen || {};
+      it.chosen[prod.store] = snapshotProduct(prod, 'exact');
+      it.mt = now();
+      save(); renderAll();
+    }
+    return;
+  }
+  const manual = e.target.closest && e.target.closest('[data-manual]');
+  if (manual){
+    manualId = manualId === manual.dataset.manual ? null : manual.dataset.manual;
+    openId = manual.dataset.manual;
+    renderList();
+    return;
+  }
   const t = e.target.closest('[data-toggle],[data-exp],[data-del],[data-quick],[data-sdel]');
   if (!t) return;
   if (t.dataset.quick){ addItem(t.dataset.quick,1,'pcs'); return; }
@@ -1580,6 +1866,9 @@ $('#themeBtn').addEventListener('click', () => {
   applyTheme(order[(order.indexOf(themeMode()) + 1) % order.length]);
   applyChrome();
 });
+$('#helpBtn').addEventListener('click', () => showTour(0));
+$('#tourNext').addEventListener('click', () => showTour(tourAt + 1));
+$('#tourSkip').addEventListener('click', () => showTour(-1));
 document.addEventListener('change', e => {
   const id = e.target && e.target.dataset && e.target.dataset.follow;
   if (id){ toggleFollow(DIRECTORY.find(s => s.id === id)); return; }
@@ -1665,6 +1954,7 @@ function persistTerms(){
   if (langSel) langSel.value = itemLang();
   applyTheme(themeMode());
   showOnboard();
+  if (seenOnboard() && !tourSeen()) showTour(0);
   renderAll();
   loadDirectory();
   loadAutoPrices();

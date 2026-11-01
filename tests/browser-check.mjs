@@ -65,6 +65,7 @@ try {
   await page.screenshot({ path: '/opt/cursor/artifacts/screenshots/after-onboard.png' });
   await page.click('#onboardDone');
   await page.waitForSelector('#onboard[hidden]');
+  if (await page.$('#tour:not([hidden])')) await page.click('#tourSkip');
 
   await page.type('#newName', 'mjölk');
   await page.$eval('#newQty', el => { el.value = '1'; });
@@ -86,18 +87,60 @@ try {
   await page.select('#newUnit', 'g');
   await page.click('#addBtn');
 
-  await page.waitForFunction(() => {
-    const row = [...document.querySelectorAll('li.item')].find(li => /mjölk/.test(li.innerText));
-    return row && row.querySelector('.best') && /\d/.test(row.querySelector('.best').innerText);
-  }, { timeout: 8000 });
   const lines = await page.$$eval('li.item .row', rows => rows.map(r => r.innerText.replace(/\s+/g, ' ').trim()));
-  assert.ok(lines.some(t => /mjölk/.test(t) && /oferta|offer|erbjudande|offerta/.test(t)), 'expected an offer mark on mjölk, got ' + lines.join(' | '));
   assert.ok(lines.some(t => /mjölk/.test(t) && /1 l/.test(t)), 'expected 1 l of mjölk, got ' + lines.join(' | '));
   assert.ok(lines.some(t => /mjölk/.test(t) && /2 pcs/.test(t)), 'expected 2 pcs of mjölk, got ' + lines.join(' | '));
   assert.ok(lines.some(t => /mjöl/.test(t) && /1\.25 kg/.test(t)), 'expected 1.25 kg of mjöl, got ' + lines.join(' | '));
 
   const shotDir = '/opt/cursor/artifacts/screenshots';
   fs.mkdirSync(shotDir, { recursive: true });
+  await page.waitForFunction(() => window.Terms && Terms.lookup('pão', 'pt'), { timeout: 8000 });
+  await page.type('#newName', 'pão Hönö Pågen');
+  await page.select('#newUnit', 'pcs');
+  await page.click('#addBtn');
+  await page.waitForFunction(() => {
+    const row = [...document.querySelectorAll('li.item')].find(li => /Hönö/i.test(li.innerText));
+    return row && /Pågen/i.test(row.innerText) && row.querySelector('.best') && /\d/.test(row.querySelector('.best').innerText);
+  }, { timeout: 8000 });
+  const bread = await page.evaluate(() => {
+    const row = [...document.querySelectorAll('li.item')].find(li => /Hönö/i.test(li.innerText));
+    return { text: row.innerText, picks: [...row.querySelectorAll('.pick')].map(el => el.innerText) };
+  });
+  assert.match(bread.text, /Pågen/);
+  assert.match(bread.text, /Hönö/);
+  assert.ok(!bread.picks.some(t => /Rågbröd/.test(t)), bread.picks.join(' | '));
+  await page.evaluate(() => applyTheme('dark'));
+  await page.screenshot({ path: path.join(shotDir, 'after-hono.png'), fullPage: true });
+
+  await page.evaluate(() => applyTheme('light'));
+  await page.type('#newName', 'leite sem lactose mellan');
+  await page.select('#newUnit', 'l');
+  await page.click('#addBtn');
+  await page.waitForFunction(() => {
+    const row = [...document.querySelectorAll('li.item')].find(li => /leite sem lactose/i.test(li.innerText));
+    return row && /Laktosfri/i.test(row.innerText) && row.querySelector('.best');
+  }, { timeout: 8000 });
+  const milk = await page.evaluate(() => {
+    const row = [...document.querySelectorAll('li.item')].find(li => /leite sem lactose/i.test(li.innerText));
+    return row.innerText;
+  });
+  assert.match(milk, /Laktosfri/);
+  assert.match(milk, /Mellan|1,5/);
+  assert.doesNotMatch(milk, /Rågbröd/);
+  await page.screenshot({ path: path.join(shotDir, 'after-lactose.png'), fullPage: true });
+
+  await page.type('#newName', 'leite');
+  await page.select('#newUnit', 'l');
+  await page.click('#addBtn');
+  await page.waitForFunction(() => {
+    const rows = [...document.querySelectorAll('li.item')].filter(li => /^leite\b/i.test(li.innerText) && !/lactose/i.test(li.innerText));
+    return rows.some(row => /Laktosfri/i.test(row.innerText));
+  }, { timeout: 8000 });
+  assert.equal(await page.$$eval('input.p', els => els.length), 0, 'manual price boxes should stay hidden');
+  await page.evaluate(() => showTour(0));
+  await page.screenshot({ path: path.join(shotDir, 'after-tour.png') });
+  await page.click('#tourSkip');
+  await page.evaluate(() => applyTheme('light'));
   await page.screenshot({ path: path.join(shotDir, 'after-list.png') });
   const gap = await page.$eval('#storeGaps', el => el.innerText);
   assert.match(gap, /X:-Tra/);

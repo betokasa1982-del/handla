@@ -52,26 +52,35 @@ def canon_unit(value):
     return _UNIT.get(key, '')
 
 
-def term_in_name(term, name):
-    """True when the search term is the product, not a different word inside it.
+def _word_in_name(term, name):
+    """True when one word of a search is the product, not a different word.
 
-    'ägg' matches 'Gårdsägg'. 'mjölk' matches 'Mellanmjölk'. 'mjöl' does not
-    match 'mjölk', and 'ägg' does not match mayonnaise.
+    'ägg' matches 'Gårdsägg'. 'hönö' matches 'Hönökaka'. 'mjöl' matches
+    'Vetemjöl' and does not match 'mjölk' (that leftover is a single letter).
     """
     term = (term or '').strip().casefold()
-    name = (name or '').casefold()
-    if not term or not name:
+    if not term:
         return False
-    for word in re.split(r'[^a-z0-9åäö]+', name):
+    for word in re.split(r'[^a-z0-9åäö]+', name.casefold()):
         if not word:
             continue
         if word == term:
             return True
         if len(term) >= 3 and word.endswith(term):
             return True
+        if len(term) >= 4 and word.startswith(term) and len(word) - len(term) >= 2:
+            return True
         if len(term) >= 4 and word.startswith(term) and re.fullmatch(r'(ar|er|or|en|et|na|s)', word[len(term):]):
             return True
     return False
+
+
+def term_in_name(term, name):
+    """Every word of the search must appear in the product name."""
+    parts = [p for p in re.split(r'[^a-z0-9åäö]+', (term or '').casefold()) if p]
+    if not parts or not name:
+        return False
+    return all(_word_in_name(part, name) for part in parts)
 
 
 def parse_size(text):
