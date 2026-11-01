@@ -67,24 +67,52 @@ class AxfoodAdapter(ChainAdapter):
     def __init__(self, client):
         super().__init__(client)
         self._active = None
+        self._warm = False
+
+    def _headers(self):
+        # Axfood's CDN answers 403 to a bare bot User-Agent from some networks
+        # (GitHub-hosted runners among them). The name and the repo URL stay in
+        # the header so the call is still identifiable.
+        return {
+            'User-Agent': (
+                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+                '(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 '
+                'HandlaPriceBot/1.0 (+https://github.com/betokasa1982-del/handla)'
+            ),
+            'Referer': self.host + '/',
+            'Origin': self.host,
+        }
+
+    def _warm_session(self):
+        if self._warm:
+            return
+        self.client.request(self.host + '/', accept='text/html', headers=self._headers())
+        self._warm = True
 
     def _activate(self, external_id):
         if self._active == str(external_id):
             return
-        token = self.client.request(f'{self.host}/axfood/rest/csrf-token', accept='*/*')
+        self._warm_session()
+        token = self.client.request(
+            f'{self.host}/axfood/rest/csrf-token', accept='*/*', headers=self._headers()
+        )
         token = str(token).strip().strip('"')
+        headers = self._headers()
+        headers['x-csrf-token'] = token
         self.client.request(
             f'{self.host}/axfood/rest/store/activate?storeId={quote(str(external_id))}'
             '&activelySelected=true&forceAsPickingStore=true',
             method='POST',
-            headers={'x-csrf-token': token},
+            headers=headers,
             body={},
         )
         self._active = str(external_id)
 
     def list_stores(self):
+        self._warm_session()
         payload = self.client.request(
-            f'{self.host}/axfood/rest/store?online=false&clickAndCollect=false&b2bClickAndCollect=false'
+            f'{self.host}/axfood/rest/store?online=false&clickAndCollect=false&b2bClickAndCollect=false',
+            headers=self._headers(),
         )
         rows = []
         for raw in payload or []:
@@ -116,7 +144,8 @@ class AxfoodAdapter(ChainAdapter):
     def search(self, store, term, limit, fetched_at):
         self._activate(store['external_id'])
         payload = self.client.request(
-            f'{self.host}/search?q={quote(term)}&page=0&size={limit}'
+            f'{self.host}/search?q={quote(term)}&page=0&size={limit}',
+            headers=self._headers(),
         )
         return self._rows(payload, store['id'], fetched_at, term)
 
@@ -125,7 +154,8 @@ class AxfoodAdapter(ChainAdapter):
         # Empty is a real answer for some Willys Hemma shops.
         payload = self.client.request(
             f'{self.host}/search/campaigns/online?q={quote(str(store["external_id"]))}'
-            f'&type=PERSONAL_GENERAL&page=0&size={limit}'
+            f'&type=PERSONAL_GENERAL&page=0&size={limit}',
+            headers=self._headers(),
         )
         return self._rows(payload, store['id'], fetched_at, '')
 
