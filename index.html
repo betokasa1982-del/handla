@@ -265,8 +265,53 @@ const $ = s => document.querySelector(s);
 const kr = n => new Intl.NumberFormat('sv-SE',{minimumFractionDigits:2,maximumFractionDigits:2}).format(n);
 const norm = s => String(s).trim().toLowerCase();
 const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const fmtQty = q => Number.isInteger(Number(q)) ? Number(q) : Number(q).toFixed(1);
+const fmtQty = q => {
+  const n = Number(q);
+  if (!Number.isFinite(n)) return '0';
+  if (Number.isInteger(n)) return String(n);
+  return String(Math.round(n * 1000) / 1000);
+};
 const now = () => Date.now();
+const badKey = k => k === '__proto__' || k === 'prototype' || k === 'constructor';
+
+/* Links typed, imported, or synced are only followed when they are http(s). */
+function safeUrl(raw){
+  const s = String(raw == null ? '' : raw).trim();
+  if (!s || /[\u0000-\u001F\u007F<>"'`\\\s]/.test(s)) return '';
+  let u;
+  try { u = new URL(s.replace(/\{q\}/g, 'q')); }
+  catch (e) { return ''; }
+  if (u.protocol !== 'http:' && u.protocol !== 'https:') return '';
+  return s;
+}
+function dangerousUrl(raw){
+  const s = String(raw == null ? '' : raw).trim();
+  if (!s) return false;
+  if (/[\u0000-\u001F\u007F<>"'`\\]/.test(s)) return true;
+  let u;
+  try { u = new URL(s.replace(/\{q\}/g, 'q')); }
+  catch (e) { return false; }
+  return u.protocol !== 'http:' && u.protocol !== 'https:';
+}
+function searchHref(url, name){
+  const tmpl = safeUrl(url);
+  if (!tmpl) return '';
+  const href = tmpl.replace('{q}', encodeURIComponent(name == null ? '' : String(name)));
+  return safeUrl(href) ? href : '';
+}
+function canon(v){
+  if (Array.isArray(v)) return v.map(canon);
+  if (v && typeof v === 'object'){
+    const o = {};
+    for (const k of Object.keys(v).sort()){
+      if (badKey(k)) continue;
+      o[k] = canon(v[k]);
+    }
+    return o;
+  }
+  return v;
+}
+function sameData(a, b){ return JSON.stringify(canon(a)) === JSON.stringify(canon(b)); }
 
 /* ---------------- local disk ---------------- */
 const Disk = {
@@ -332,6 +377,41 @@ function unitPrice(price, sizeTxt){
   return { value: price/s.v, base: s.base };
 }
 
+/* Quantity units. Mass and volume convert; pcs and pkg stay separate. */
+function canonUnit(u){
+  const s = String(u == null ? '' : u).trim().toLowerCase();
+  if (s === 'liter' || s === 'litre' || s === 'ltr') return 'l';
+  if (s === 'kilogram' || s === 'kilo') return 'kg';
+  if (s === 'gram' || s === 'grams') return 'g';
+  if (s === 'milliliter' || s === 'millilitre') return 'ml';
+  return s || 'pcs';
+}
+const UNIT_FACTOR = {
+  mass: { kg:1000, g:1 },
+  vol: { l:1000, dl:100, cl:10, ml:1 }
+};
+function unitInfo(u){
+  const c = canonUnit(u);
+  for (const dim of Object.keys(UNIT_FACTOR)){
+    const f = UNIT_FACTOR[dim][c];
+    if (f) return { dim, unit:c, f };
+  }
+  return { dim:'', unit:c, f:null };
+}
+function unitsCompatible(a, b){
+  const ua = unitInfo(a), ub = unitInfo(b);
+  if (ua.unit === ub.unit) return true;
+  return !!(ua.dim && ua.dim === ub.dim);
+}
+function roundQty(n){ return Math.round((n + Number.EPSILON) * 1e6) / 1e6; }
+function combineQty(q1, u1, q2, u2){
+  const ua = unitInfo(u1), ub = unitInfo(u2);
+  const a = Number(q1) || 0, b = Number(q2) || 0;
+  if (ua.unit === ub.unit) return { qty: roundQty(a + b), unit: u1 || ua.unit };
+  if (!ua.dim || ua.dim !== ub.dim) return null;
+  return { qty: roundQty((a * ua.f + b * ub.f) / ua.f), unit: u1 || ua.unit };
+}
+
 /* ---------------- defaults ---------------- */
 function defaultStores(){
   const t = now();
@@ -364,10 +444,113 @@ let syncing = false;
 let lastSyncAt = 0;
 let syncErr = '';
 
-/* ---------------- merge ---------------- */
-function mergeById(a, b){
+/* ---------------- sanitize imported / synced data ---------------- */
+function finiteNum(v){
+  if (typeof v === 'number') return Number.isFinite(v) ? v : null;
+  if (typeof v === 'string' && v.trim() !== ''){
+    const n = parseFloat(v.replace(',', '.'));
+    return Number.isFinite(n) ? n : null;
+  }
+  return null;
+}
+function sanitizePrices(obj){
+  const out = {};
+  if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return out;
+  for (const k of Object.keys(obj)){
+    if (badKey(k)) continue;
+    const v = obj[k];
+    if (!v || typeof v !== 'object' || Array.isArray(v)) continue;
+    const cell = {};
+    const p = finiteNum(v.p);
+    if (p !== null && p > 0) cell.p = p;
+    if (typeof v.s === 'string' && v.s) cell.s = v.s;
+    if (cell.p == null && cell.s == null) continue;
+    out[k] = cell;
+  }
+  return out;
+}
+function sanitizeItem(raw){
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return null;
+  if (typeof raw.id !== 'string' || !raw.id.trim()) return null;
+  const name = typeof raw.name === 'string' ? raw.name : '';
+  const qty = finiteNum(raw.qty);
+  const item = {
+    id: raw.id,
+    name,
+    qty: qty === null ? 1 : qty,
+    unit: typeof raw.unit === 'string' && raw.unit.trim() ? raw.unit : 'pcs',
+    cat: CATS.some(c => c[0] === raw.cat) ? raw.cat : guessCat(name),
+    done: !!raw.done,
+    prices: sanitizePrices(raw.prices),
+    mt: finiteNum(raw.mt) ?? 0
+  };
+  if (raw.del) item.del = true;
+  return item;
+}
+function sanitizeStore(raw){
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return null;
+  if (typeof raw.id !== 'string' || !raw.id.trim()) return null;
+  const chain = typeof raw.chain === 'string' ? raw.chain : 'other';
+  const url = typeof raw.url === 'string' ? raw.url : '';
+  const home = typeof raw.home === 'string' ? raw.home : '';
+  const st = {
+    id: raw.id,
+    name: typeof raw.name === 'string' ? raw.name : '',
+    chain: /^[a-z0-9_-]{1,32}$/i.test(chain) ? chain : 'other',
+    address: typeof raw.address === 'string' ? raw.address : '',
+    url: dangerousUrl(url) ? '' : url,
+    home: dangerousUrl(home) ? '' : home,
+    online: !!raw.online,
+    mt: finiteNum(raw.mt) ?? 0
+  };
+  if (raw.del) st.del = true;
+  return st;
+}
+function sanitizeBook(book){
+  const out = {};
+  if (!book || typeof book !== 'object' || Array.isArray(book)) return out;
+  for (const k of Object.keys(book)){
+    if (badKey(k)) continue;
+    const v = book[k];
+    if (!v || typeof v !== 'object' || Array.isArray(v)) continue;
+    const prices = (v.prices && typeof v.prices === 'object') ? v.prices : {};
+    out[k] = { mt: finiteNum(v.mt) ?? 0, prices: sanitizePrices(prices) };
+  }
+  return out;
+}
+function sanitizeRecent(list){
+  if (!Array.isArray(list)) return [];
+  const out = [];
+  for (const x of list){
+    if (!x || typeof x !== 'object' || Array.isArray(x)) continue;
+    if (typeof x.n !== 'string' || !x.n.trim()) continue;
+    out.push({ n: x.n, mt: finiteNum(x.mt) ?? 0 });
+  }
+  return out;
+}
+function sanitizeState(raw){
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return null;
+  if (!Array.isArray(raw.items) || !Array.isArray(raw.stores)) return null;
+  return {
+    v: 3,
+    items: raw.items.map(sanitizeItem).filter(Boolean),
+    stores: raw.stores.map(sanitizeStore).filter(Boolean),
+    book: sanitizeBook(raw.book),
+    recent: sanitizeRecent(raw.recent)
+  };
+}
+
+/* ---------------- merge ----------------
+   Shared rows keep the remote order and, on an equal timestamp, the remote
+   copy. Each phone used to keep its own order, so the text compare never
+   matched and both sides uploaded forever. */
+function mergeById(local, remote){
   const m = new Map();
-  for (const x of [...(a||[]), ...(b||[])]){
+  for (const x of (remote || [])){
+    if (!x || !x.id) continue;
+    m.set(x.id, x);
+  }
+  for (const x of (local || [])){
     if (!x || !x.id) continue;
     const cur = m.get(x.id);
     if (!cur || (x.mt||0) > (cur.mt||0)) m.set(x.id, x);
@@ -375,19 +558,32 @@ function mergeById(a, b){
   const cut = now() - 30*864e5;
   return [...m.values()].filter(x => !(x.del && (x.mt||0) < cut));
 }
-function mergeMap(a, b){
-  const out = Object.assign({}, a||{});
-  for (const [k,v] of Object.entries(b||{})) if (!out[k] || (v.mt||0) > (out[k].mt||0)) out[k] = v;
+function mergeMap(local, remote){
+  const out = {};
+  const keys = [];
+  const seen = new Set();
+  const add = k => {
+    if (typeof k !== 'string' || badKey(k) || seen.has(k)) return;
+    seen.add(k); keys.push(k);
+  };
+  for (const k of Object.keys(remote || {})) add(k);
+  for (const k of Object.keys(local || {})) add(k);
+  for (const k of keys){
+    const lv = local && Object.prototype.hasOwnProperty.call(local, k) ? local[k] : undefined;
+    const rv = remote && Object.prototype.hasOwnProperty.call(remote, k) ? remote[k] : undefined;
+    if (lv && rv) out[k] = (lv.mt||0) > (rv.mt||0) ? lv : rv;
+    else out[k] = lv || rv;
+  }
   return out;
 }
-function mergeRecent(a, b){
+function mergeRecent(local, remote){
   const m = new Map();
-  for (const x of [...(a||[]), ...(b||[])]){
+  for (const x of [...(remote||[]), ...(local||[])]){
     if (!x || !x.n) continue;
     const k = norm(x.n), cur = m.get(k);
-    if (!cur || (x.mt||0) > (cur.mt||0)) m.set(k, x);
+    if (!cur || (x.mt||0) > (cur.mt||0)) m.set(k, { n:x.n, mt:x.mt||0 });
   }
-  return [...m.values()].sort((p,q)=>(q.mt||0)-(p.mt||0)).slice(0,24);
+  return [...m.values()].sort((p,q)=>(q.mt||0)-(p.mt||0) || (p.n<q.n?-1:p.n>q.n?1:0)).slice(0,24);
 }
 function mergeState(local, remote){
   if (!remote || typeof remote !== 'object') return local;
@@ -406,7 +602,14 @@ const liveStores = () => S.stores.filter(s=>!s.del);
 const activeItems = () => liveItems().filter(i=>!i.done);
 
 function cell(item, sid){ return (item.prices && item.prices[sid]) || null; }
-function priceOf(item, sid){ const c = cell(item,sid); return c && c.p>0 ? c.p : null; }
+function priceOf(item, sid){
+  const c = cell(item, sid);
+  if (!c) return null;
+  const p = typeof c.p === 'number' ? c.p : finiteNum(c.p);
+  return p !== null && p > 0 ? p : null;
+}
+// Shelf price is per one of this line's unit. Quantities are only combined
+// inside one unit family, so a litre price is never multiplied by a piece count.
 function lineTotal(item, sid){ const p = priceOf(item,sid); return p===null?null:p*(Number(item.qty)||1); }
 
 function bestFor(item){
@@ -479,12 +682,16 @@ async function syncNow(silent){
   if (!navigator.onLine){ syncErr = 'offline'; paintSync(); return; }
   syncing = true; syncErr = ''; paintSync();
   try{
-    const remote = await pull();
+    const raw = await pull();
+    const remote = raw ? sanitizeState(raw) : null;
     const before = JSON.stringify(S);
     S = mergeState(S, remote);
+    const clean = sanitizeState(S);
+    if (clean) S = clean;
     Disk.set(KEY, S);
     const after = JSON.stringify(S);
-    if (dirty || after !== JSON.stringify(remote)) { await push(S); dirty = false; }
+    // Upload only when the merged list differs in content, not just in order.
+    if (dirty || !raw || !sameData(S, raw)) { await push(S); dirty = false; }
     lastSyncAt = now();
     if (after !== before) renderAll();
     if (!silent) toast('Synced');
@@ -550,26 +757,28 @@ function itemRow(it){
     const c = cell(it, st.id) || {};
     const up = unitPrice(c.p, c.s);
     const low = best && best.store.id===st.id && liveStores().filter(s=>priceOf(it,s.id)!==null).length>1;
-    const link = st.url ? `<a href="${esc(st.url.replace('{q}',encodeURIComponent(it.name)))}" target="_blank" rel="noopener">find</a>` : '';
+    const href = searchHref(st.url, it.name);
+    const link = href ? `<a href="${esc(href)}" target="_blank" rel="noopener">find</a>` : '';
+    const price = (typeof c.p === 'number' && Number.isFinite(c.p)) ? String(c.p) : '';
     return `<div class="prow${low?' lowest':''}">
       <span class="slab">${esc(st.name)}</span>
       <input class="p" type="number" inputmode="decimal" step="0.01" min="0" placeholder="kr"
-             value="${c.p!=null?c.p:''}" data-cell="${it.id}" data-store="${st.id}" data-f="p" aria-label="Price at ${esc(st.name)}">
+             value="${esc(price)}" data-cell="${esc(it.id)}" data-store="${esc(st.id)}" data-f="p" aria-label="Price at ${esc(st.name)}">
       <input class="s" type="text" placeholder="500 g" value="${esc(c.s!=null?c.s:'')}"
-             data-cell="${it.id}" data-store="${st.id}" data-f="s" aria-label="Pack size at ${esc(st.name)}">
-      <span class="unitp">${up ? kr(up.value)+'/'+up.base : ''}</span>${link}
+             data-cell="${esc(it.id)}" data-store="${esc(st.id)}" data-f="s" aria-label="Pack size at ${esc(st.name)}">
+      <span class="unitp">${up ? kr(up.value)+'/'+esc(up.base) : ''}</span>${link}
     </div>`;
   }).join('');
-  return `<li class="item${it.done?' done':''}${openId===it.id?' open':''}" data-id="${it.id}">
+  return `<li class="item${it.done?' done':''}${openId===it.id?' open':''}" data-id="${esc(it.id)}">
     <div class="row">
-      <button class="tick" data-toggle="${it.id}" aria-label="Mark ${esc(it.name)} as bought">
+      <button class="tick" data-toggle="${esc(it.id)}" aria-label="Mark ${esc(it.name)} as bought">
         <svg viewBox="0 0 24 24" fill="none" stroke="#F3EEE4" stroke-width="3.5"><path d="M4 12l6 6L20 5"/></svg></button>
       <span class="name">${esc(it.name)}</span>${badge}
       <span class="qty">${fmtQty(it.qty)} ${esc(it.unit)}</span>
-      <button class="exp" data-exp="${it.id}" aria-label="Prices for ${esc(it.name)}">
+      <button class="exp" data-exp="${esc(it.id)}" aria-label="Prices for ${esc(it.name)}">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 9l7 7 7-7"/></svg></button>
     </div>
-    <div class="prices">${rows}<button class="trash" data-del="${it.id}">remove item</button></div>
+    <div class="prices">${rows}<button class="trash" data-del="${esc(it.id)}">remove item</button></div>
   </li>`;
 }
 
@@ -602,7 +811,7 @@ function renderCompare(){
         <td>${kr(r.sum)}</td><td class="gap">${win?'&mdash;':'+'+kr(r.sum-winner.sum)}</td></tr>`;
     }).join('') || `<tr><td colspan="4" class="gap">Nothing on the list.</td></tr>`;
 
-  const byStore = {}; let splitSum=0, n=0;
+  const byStore = Object.create(null); let splitSum=0, n=0;
   for (const it of items){
     const b = bestFor(it); if (!b) continue;
     (byStore[b.store.id] = byStore[b.store.id] || []).push({ it, price:b.price });
@@ -629,15 +838,17 @@ function renderCompare(){
 function listText(){ return activeItems().map(i=>`${i.name} ${fmtQty(i.qty)} ${i.unit}`).join('\n'); }
 function renderOrder(){
   const sel = $('#orderStore'); const cur = sel.value;
-  sel.innerHTML = liveStores().map(st=>`<option value="${st.id}">${esc(st.name)}${st.online?'':' — in store only'}</option>`).join('');
+  sel.innerHTML = liveStores().map(st=>`<option value="${esc(st.id)}">${esc(st.name)}${st.online?'':' — in store only'}</option>`).join('');
   if (cur && liveStores().some(s=>s.id===cur)) sel.value = cur;
   const st = liveStores().find(s=>s.id===sel.value) || liveStores()[0];
   if (!st) return;
   $('#orderText').value = listText() || '(nothing on the list yet)';
   const link = $('#orderLink');
-  link.href = st.chain==='willys' ? 'https://www.willys.se/artikel/listsok' : (st.home || '#');
+  const home = safeUrl(st.home);
+  link.href = st.chain==='willys' ? 'https://www.willys.se/artikel/listsok' : (home || '#');
   link.textContent = st.chain==='willys' ? 'Open Willys list search' : 'Open '+st.name;
-  $('#orderSteps').innerHTML = (STEPS[st.chain] || STEPS.other).map(s=>`<li>${esc(s)}</li>`).join('');
+  const steps = Array.isArray(STEPS[st.chain]) ? STEPS[st.chain] : STEPS.other;
+  $('#orderSteps').innerHTML = steps.map(s=>`<li>${esc(s)}</li>`).join('');
 }
 
 /* ---------------- render: setup ---------------- */
@@ -645,13 +856,13 @@ function renderStores(){
   $('#storeList').innerHTML = liveStores().map(st=>`
     <div class="card">
       <div class="field-label">Store</div>
-      <input type="text" value="${esc(st.name)}" data-sf="name" data-sid="${st.id}">
+      <input type="text" value="${esc(st.name)}" data-sf="name" data-sid="${esc(st.id)}">
       <div class="field-label">Address</div>
-      <input type="text" value="${esc(st.address||'')}" data-sf="address" data-sid="${st.id}">
+      <input type="text" value="${esc(st.address||'')}" data-sf="address" data-sid="${esc(st.id)}">
       <div class="field-label">Search URL — {q} is the item</div>
-      <input type="text" class="url" value="${esc(st.url||'')}" data-sf="url" data-sid="${st.id}" spellcheck="false" placeholder="https://…?q={q}">
-      <label class="sw"><input type="checkbox" ${st.online?'checked':''} data-sf="online" data-sid="${st.id}"> Sells online / pickup</label>
-      <button class="trash" data-sdel="${st.id}">remove ${esc(st.name)}</button>
+      <input type="text" class="url" value="${esc(st.url||'')}" data-sf="url" data-sid="${esc(st.id)}" spellcheck="false" placeholder="https://…?q={q}">
+      <label class="sw"><input type="checkbox" ${st.online?'checked':''} data-sf="online" data-sid="${esc(st.id)}"> Sells online / pickup</label>
+      <button class="trash" data-sdel="${esc(st.id)}">remove ${esc(st.name)}</button>
     </div>`).join('');
 }
 function renderAll(){ renderList(); renderCompare(); renderOrder(); renderStores(); paintSync(); }
@@ -659,12 +870,21 @@ function renderAll(){ renderList(); renderCompare(); renderOrder(); renderStores
 /* ---------------- actions ---------------- */
 function addItem(name, qty, unit){
   name = String(name).trim(); if (!name) return;
-  const ex = liveItems().find(i=>norm(i.name)===norm(name));
-  if (ex){ ex.qty = (Number(ex.qty)||0)+(Number(qty)||1); ex.done=false; ex.mt=now(); }
-  else {
+  qty = Number(qty);
+  if (!Number.isFinite(qty) || qty <= 0) qty = 1;
+  unit = canonUnit(unit);
+  const same = liveItems().filter(i => norm(i.name)===norm(name));
+  const ex = same.find(i => canonUnit(i.unit)===unit) || same.find(i => unitsCompatible(i.unit, unit));
+  if (ex){
+    const combined = combineQty(ex.qty, ex.unit, qty, unit);
+    ex.qty = combined.qty;
+    ex.unit = canonUnit(ex.unit);
+    ex.done = false;
+    ex.mt = now();
+  } else {
     const b = S.book[norm(name)];
     S.items.push({ id:'i'+now().toString(36)+Math.random().toString(36).slice(2,6),
-      name, qty:Number(qty)||1, unit, cat:guessCat(name), done:false,
+      name, qty, unit, cat:guessCat(name), done:false,
       prices: b ? JSON.parse(JSON.stringify(b.prices||{})) : {}, mt:now() });
   }
   save(); renderAll();
@@ -729,7 +949,13 @@ document.addEventListener('input', e=>{
   if (el.dataset.sid){
     const st = S.stores.find(s=>s.id===el.dataset.sid); if (!st) return;
     const f = el.dataset.sf;
-    st[f] = f==='online' ? el.checked : el.value.trim();
+    let val = f==='online' ? el.checked : el.value.trim();
+    if ((f==='url' || f==='home') && dangerousUrl(val)){
+      val = '';
+      el.value = '';
+      toast('Only http and https links are kept');
+    }
+    st[f] = val;
     st.mt = now(); save(); renderList(); renderCompare(); renderOrder();
     return;
   }
@@ -776,8 +1002,12 @@ $('#exportBtn').addEventListener('click', ()=> copyText(JSON.stringify(S,null,2)
 $('#importBtn').addEventListener('click', ()=>{
   const raw = prompt('Paste an exported Handla JSON:'); if (!raw) return;
   try{
-    const p = JSON.parse(raw); if (!p.items || !p.stores) throw 0;
-    S = mergeState(S, p); save(); renderAll(); toast('Imported and merged');
+    const p = sanitizeState(JSON.parse(raw));
+    if (!p) throw 0;
+    S = mergeState(S, p);
+    const clean = sanitizeState(S);
+    if (clean) S = clean;
+    save(); renderAll(); toast('Imported and merged');
   }catch(e){ toast('That JSON did not parse'); }
 });
 $('#addStore').addEventListener('click', ()=>{
@@ -797,6 +1027,8 @@ $('#syncNow').addEventListener('click', ()=>{
 $('#makeGist').addEventListener('click', async ()=>{
   if (!CFG.token){ toast('Add a token first'); return; }
   try{
+    const clean = sanitizeState(S);
+    if (clean) S = clean;
     const g = await gh('/gists', { method:'POST', body: JSON.stringify({
       description:'Handla shared list', public:false,
       files:{ [GIST_FILE]: { content: JSON.stringify(S) } }
@@ -863,6 +1095,8 @@ function migrate(old){
     if (old && old.items){ S = migrate(old); Disk.set(KEY, S); }
   }
   if (!S.stores || !S.stores.length) S.stores = defaultStores();
+  const clean = sanitizeState(S);
+  if (clean && !sameData(clean, S)) { S = clean; Disk.set(KEY, S); }
 
   renderAll();
   if (CFG.on) syncNow(true);
