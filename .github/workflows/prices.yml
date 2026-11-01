@@ -2,10 +2,12 @@ name: Prices
 
 on:
   schedule:
+    # GitHub only runs this schedule from the default branch (main).
     # 02:00 UTC is 03:00 in Stockholm in winter and 04:00 in summer.
     - cron: '0 2 * * *'
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - 'fetcher/**'
       - 'config/fetch.json'

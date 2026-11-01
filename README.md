@@ -126,7 +126,11 @@ directory of shops in Sweden. No tokens and no API keys are stored in the repo.
 
 The price job runs at 02:00 UTC (03:00 Stockholm time in winter, 04:00 in
 summer). The directory runs on Sunday at 03:00 UTC. Both can be started by
-hand from the Actions tab.
+hand from the Actions tab. GitHub only runs the schedule from `main`, so the
+price files in this repo are what the site shows until the next night.
+
+The screens are in Portuguese, Swedish, English and Italian. The first open
+follows the phone language, and otherwise Portuguese. Setup can change it.
 
 You can type an item in Portuguese, Italian, English or Swedish. The list keeps
 that word. A Swedish word is stored under it and used to find prices
