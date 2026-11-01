@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test tests/bugs.test.mjs",
+    "test": "node --test tests/bugs.test.mjs tests/terms.test.mjs",
     "test:browser": "node tests/browser-check.mjs"
   },
   "devDependencies": {

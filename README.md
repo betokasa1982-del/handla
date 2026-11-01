@@ -128,6 +128,13 @@ The price job runs at 02:00 UTC (03:00 Stockholm time in winter, 04:00 in
 summer). The directory runs on Sunday at 03:00 UTC. Both can be started by
 hand from the Actions tab.
 
+You can type an item in Portuguese, Italian, English or Swedish. The list keeps
+that word. A Swedish word is stored under it and used to find prices
+(`leite` becomes `mjölk`). Setup → **Language of item names** is Auto unless
+you pick one. Words the built-in list does not know are sent to the free
+MyMemory translator when you are online, and remembered on the phone. If that
+fails, edit the Swedish word on the row. Details are in the section below.
+
 A price you type still wins. An automatic price only fills an empty box, as
 the grey hint, and the basket math uses it. Where the units differ it compares
 the jämförpris (kr per kilo or litre). Items on offer are marked **offer**.
