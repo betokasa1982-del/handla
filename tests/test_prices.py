@@ -21,6 +21,9 @@ class NormalizeTests(unittest.TestCase):
         self.assertFalse(term_in_name('banan', 'Proteinbar Delicat'))
         self.assertFalse(term_in_name('mjöl', 'Mellanmjölk 1,5%'))
         self.assertTrue(term_in_name('mjöl', 'Vetemjöl 2 kg'))
+        self.assertTrue(term_in_name('hönö', 'Pågen Hönökaka'))
+        self.assertTrue(term_in_name('laktosfri mjölk', 'Arla Laktosfri Mellanmjölk 1,5%'))
+        self.assertFalse(term_in_name('laktosfri mjölk', 'Laktosfri grädde'))
 
     def test_swedish_numbers_and_pack_size(self):
         self.assertEqual(parse_number('16,50 kr'), 16.5)

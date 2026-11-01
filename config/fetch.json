@@ -1,6 +1,6 @@
 {
   "offers_per_store": 30,
-  "matches_per_term": 3,
+  "matches_per_term": 6,
   "min_interval_seconds": 0.45,
   "notes": "These are the shops the nightly job prices. The app can show any shop in data/stores_index.json; only these get a price file. Eriksberg is the example area (Willys Vårväderstorget, ICA Sannegården, Coop Eriksberg, X:-tra Hisingen). Wieselgrensplatsen is a nearby full Willys with weekly offers. Hemköp Kortedala Torg shows another Gothenburg neighbourhood.",
   "store_ids": [

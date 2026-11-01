@@ -1,6 +1,6 @@
 /* Handla service worker.
    Bump CACHE when you change any shell file — old caches are dropped on activate. */
-const CACHE = 'handla-v8';
+const CACHE = 'handla-v9';
 
 const SHELL = [
   './',
