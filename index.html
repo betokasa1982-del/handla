@@ -225,6 +225,17 @@ td.gap{color:#5D6B64;font-size:12px}
     <button class="btn wide" id="installBtn" disabled>Add to home screen</button>
     <p class="muted" id="installHint" style="margin-top:8px">On iPhone: Share → Add to Home Screen.</p>
 
+    <div class="eyebrow">Your area</div>
+    <div class="card">
+      <p class="muted" style="margin:0 0 10px">The list starts with shops around Eriksberg as an example. Search any Swedish postcode or place, or use this phone's location, and tick the shops you actually use.</p>
+      <input type="text" id="areaQuery" placeholder="417 64, Kortedala, Malmö…" autocomplete="off">
+      <div style="height:8px"></div>
+      <button class="btn wide" id="areaSearch" type="button">Find shops</button>
+      <div style="height:8px"></div>
+      <button class="btn ghost wide" id="areaGeo" type="button">Use my location</button>
+      <div id="areaResults"></div>
+    </div>
+
     <div class="eyebrow">Your stores</div>
     <div id="storeList"></div>
     <button class="btn ghost wide" id="addStore">Add a store</button>
@@ -415,24 +426,44 @@ function combineQty(q1, u1, q2, u2){
 /* ---------------- defaults ---------------- */
 function defaultStores(){
   const t = now();
+  // Example set only: shops around Eriksberg, Göteborg. Any other area works from Setup.
   return [
-    { id:'willys-varvader', name:'Willys Vårväderstorget', chain:'willys', address:'Vårväderstorget 2, Biskopsgården',
+    { id:'willys-2816', name:'Willys Hemma Göteborg Vårväderstorget', chain:'willys',
+      address:'Vårväderstorget 2, 418 31 Göteborg', postcode:'418 31', city:'Göteborg', lat:57.7124, lon:11.8923,
       url:'https://www.willys.se/sok?q={q}', home:'https://www.willys.se/butik/2816', online:true, mt:t },
-    { id:'ica-sannegarden', name:'ICA Kvantum Sannegården', chain:'ica', address:'Vintergatan 4, Sannegården',
+    { id:'ica-1004293', name:'ICA Kvantum Sannegården', chain:'ica',
+      address:'Vintergatan 4, 417 58 Göteborg', postcode:'417 58', city:'Göteborg', lat:57.70838, lon:11.92852,
       url:'https://handla.ica.se/sok?q={q}', home:'https://www.ica.se/butiker/kvantum/goteborg/ica-kvantum-sannegarden-1004293/', online:true, mt:t },
-    { id:'coop-eriksberg', name:'Coop Eriksberg', chain:'coop', address:'Kolhamnsgatan 7, Eriksberg',
+    { id:'coop-126350', name:'Coop Eriksberg', chain:'coop',
+      address:'Kolhamnsgatan 7, 418 75 Göteborg', postcode:'418 75', city:'Göteborg', lat:57.708762, lon:11.919676,
       url:'https://www.coop.se/handla/sok/?q={q}', home:'https://www.coop.se/butiker-erbjudanden/coop/coop-eriksberg/', online:true, mt:t },
-    { id:'xtra-hisingen', name:'X:-tra Länsmanstorget', chain:'xtra', address:'Stackmolnsgatan 2, Länsmansgården',
+    { id:'xtra-136029', name:'X:-Tra Hisingen', chain:'xtra',
+      address:'Stackmolnsgatan 2, 418 42 Göteborg', postcode:'418 42', city:'Göteborg', lat:57.733036, lon:11.898301,
       url:'', home:'https://x-tra.se/butiker/hisingen', online:false, mt:t }
   ];
 }
+const SEARCH_URL = {
+  willys:'https://www.willys.se/sok?q={q}',
+  hemkop:'https://www.hemkop.se/sok?q={q}',
+  ica:'https://handla.ica.se/sok?q={q}',
+  coop:'https://www.coop.se/handla/sok/?q={q}',
+  xtra:''
+};
+const IDMAP = {
+  'willys-varvader':'willys-2816',
+  'ica-sannegarden':'ica-1004293',
+  'coop-eriksberg':'coop-126350',
+  'xtra-hisingen':'xtra-136029'
+};
 const STEPS = {
   willys:['Copy the list above.','Open Willys and log in.','Go to the list search (Listsök) and paste everything at once.',
-          'Match each row to a product — the list search proposes candidates.','Choose "Hämta i butik" and pick a slot at Vårväderstorget.'],
-  ica:   ['Copy the list above.','Open handla.ica.se and log in with your stammis account.','Pick Kvantum Sannegården as your store.',
+          'Match each row to a product — the list search proposes candidates.','Choose pickup at your Willys if the store offers it.'],
+  ica:   ['Copy the list above.','Open handla.ica.se and log in with your stammis account.','Pick your ICA store.',
           'Search and add each item — ICA has no bulk paste.','Choose pickup and a time slot at checkout.'],
-  coop:  ['Copy the list above.','Open coop.se and log in.','Set Coop Eriksberg as your store.',
+  coop:  ['Copy the list above.','Open coop.se and log in.','Set your Coop as the store.',
           'Search and add each item.','Choose pickup at checkout if the store offers it.'],
+  hemkop:['Copy the list above.','Open hemkop.se and log in.','Set your Hemköp as the store.',
+          'Search and add each item.','Choose pickup if the store offers it.'],
   other: ['This shop has no online ordering.','Use the list in the store — it is already sorted by aisle.']
 };
 
@@ -503,8 +534,37 @@ function sanitizeStore(raw){
     online: !!raw.online,
     mt: finiteNum(raw.mt) ?? 0
   };
+  if (typeof raw.lat === 'number' && Number.isFinite(raw.lat)) st.lat = raw.lat;
+  if (typeof raw.lon === 'number' && Number.isFinite(raw.lon)) st.lon = raw.lon;
+  if (typeof raw.postcode === 'string' && raw.postcode) st.postcode = raw.postcode.slice(0, 12);
+  if (typeof raw.city === 'string' && raw.city) st.city = raw.city.slice(0, 80);
   if (raw.del) st.del = true;
   return st;
+}
+function remapId(id){ return IDMAP[id] || id; }
+function remapStoreIds(state){
+  let changed = false;
+  for (const st of state.stores || []){
+    const next = remapId(st.id);
+    if (next !== st.id){ st.id = next; changed = true; }
+  }
+  const shift = (obj) => {
+    if (!obj || typeof obj !== 'object') return;
+    const next = {};
+    let local = false;
+    for (const [k,v] of Object.entries(obj)){
+      const id = remapId(k);
+      if (id !== k) local = true;
+      next[id] = v;
+    }
+    if (local){ changed = true; return next; }
+    return obj;
+  };
+  for (const it of state.items || []) if (it.prices) it.prices = shift(it.prices);
+  for (const entry of Object.values(state.book || {})){
+    if (entry && entry.prices) entry.prices = shift(entry.prices);
+  }
+  return changed;
 }
 function sanitizeBook(book){
   const out = {};
@@ -701,10 +761,11 @@ function ago(iso){
 function priceFreshness(){
   if (!AUTO || !Array.isArray(AUTO.stores) || !AUTO.stores.length) return '';
   return 'Auto prices — '+AUTO.stores.map(st=>{
-    const name = String(st.name||'').split(' ')[0] || 'Shop';
-    if (st.status==='unsupported') return name+': no auto prices';
+    const name = String(st.name || 'Shop');
+    const short = name.length > 32 ? name.slice(0, 30)+'…' : name;
+    if (st.status==='unsupported') return short+': no auto prices';
     const old = !st.fetched_at || (Date.now()-Date.parse(st.fetched_at) > 36*36e5);
-    return name+' '+ago(st.fetched_at)+(st.stale || old ? ' (stale)' : '');
+    return short+' '+ago(st.fetched_at)+(st.stale || old ? ' (stale)' : '');
   }).join(' · ');
 }
 function loadAutoPrices(){
@@ -713,8 +774,22 @@ function loadAutoPrices(){
     if (cached && Array.isArray(cached.products)) AUTO = cached;
   }catch(e){}
   if (typeof fetch !== 'function') return Promise.resolve();
-  return fetch('data/prices.json', {cache:'no-cache'}).then(r=>r.ok?r.json():null).then(d=>{
-    if (d && Array.isArray(d.products)){ AUTO = d; Disk.set(PRICEKEY, d); renderAll(); }
+  const ids = liveStores().map(s => s.id);
+  return Promise.all(ids.map(id =>
+    fetch('data/stores/'+encodeURIComponent(id)+'.json', {cache:'no-cache'})
+      .then(r => r.ok ? r.json() : null)
+      .catch(() => null)
+  )).then(files => {
+    const stores = [], products = [];
+    for (const file of files){
+      if (!file || !file.store) continue;
+      stores.push(file.store);
+      if (Array.isArray(file.products)) products.push.apply(products, file.products);
+    }
+    if (!stores.length) return;
+    AUTO = { stores, products };
+    Disk.set(PRICEKEY, AUTO);
+    renderAll();
   }).catch(()=>{});
 }
 function storeTotals(){
@@ -1193,6 +1268,98 @@ function migrate(old){
   return { v:3, items, stores: stores.length?stores:defaultStores(), book, recent };
 }
 
+/* ---------------- where you shop ---------------- */
+let DIRECTORY = [];
+function loadDirectory(){
+  if (typeof fetch !== 'function') return Promise.resolve();
+  return fetch('data/stores_index.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : null).then(d => {
+    if (d && Array.isArray(d.stores)) DIRECTORY = d.stores;
+  }).catch(()=>{});
+}
+function haversineKm(lat1, lon1, lat2, lon2){
+  const R = 6371;
+  const p1 = lat1*Math.PI/180, p2 = lat2*Math.PI/180;
+  const dphi = (lat2-lat1)*Math.PI/180, dl = (lon2-lon1)*Math.PI/180;
+  const a = Math.sin(dphi/2)**2 + Math.cos(p1)*Math.cos(p2)*Math.sin(dl/2)**2;
+  return 2*R*Math.asin(Math.min(1, Math.sqrt(a)));
+}
+function onlyDigits(s){ return String(s||'').replace(/\D/g,''); }
+function matchPlace(query){
+  const raw = String(query||'').trim();
+  const d = onlyDigits(raw);
+  if (d.length === 5){
+    const exact = [], area = [];
+    for (const s of DIRECTORY){
+      const c = onlyDigits(s.postcode);
+      if (c === d) exact.push(s);
+      else if (c.startsWith(d.slice(0,3))) area.push(s);
+    }
+    return exact.concat(area).slice(0, 30);
+  }
+  const needle = raw.toLowerCase();
+  if (needle.length < 2) return [];
+  return DIRECTORY.filter(s => (s.city+' '+s.name+' '+s.address).toLowerCase().includes(needle)).slice(0, 30);
+}
+function nearbyStores(lat, lon){
+  return DIRECTORY.filter(s => s.lat!=null && s.lon!=null)
+    .map(s => ({ km: Math.round(haversineKm(lat, lon, s.lat, s.lon)*10)/10, store: s }))
+    .filter(x => x.km <= 15)
+    .sort((a,b) => a.km-b.km)
+    .slice(0, 30)
+    .map(x => Object.assign({}, x.store, { km: x.km }));
+}
+function storeFromDir(s){
+  return {
+    id: s.id, name: s.name, chain: s.chain || 'other',
+    address: s.address || '', postcode: s.postcode || '', city: s.city || '',
+    lat: s.lat, lon: s.lon,
+    url: SEARCH_URL[s.chain] || '',
+    home: s.home || '',
+    online: s.chain !== 'xtra' && s.prices !== false,
+    mt: now()
+  };
+}
+function renderArea(list){
+  const box = $('#areaResults');
+  if (!box) return;
+  if (!DIRECTORY.length){
+    box.innerHTML = '<p class="muted">The shop directory has not loaded yet.</p>';
+    return;
+  }
+  if (!list.length){
+    box.innerHTML = '<p class="muted">No shops matched. Try a postcode or a city.</p>';
+    return;
+  }
+  box.innerHTML = list.map(s => {
+    const on = liveStores().some(x => x.id === s.id);
+    const km = s.km != null ? ' · '+s.km+' km' : '';
+    const note = s.prices === false ? ' · no auto prices' : '';
+    return `<label class="sw"><input type="checkbox" data-follow="${esc(s.id)}" ${on?'checked':''}> ${esc(s.name)}<span class="muted">${esc(km+note)}</span></label>`;
+  }).join('');
+}
+function toggleFollow(dir){
+  if (!dir) return;
+  const cur = S.stores.find(x => x.id === dir.id);
+  if (cur && !cur.del){ cur.del = true; cur.mt = now(); }
+  else if (cur){ Object.assign(cur, storeFromDir(dir)); cur.del = false; }
+  else S.stores.push(storeFromDir(dir));
+  save(); renderAll(); loadAutoPrices();
+}
+$('#areaSearch').addEventListener('click', () => renderArea(matchPlace($('#areaQuery').value)));
+$('#areaQuery').addEventListener('keydown', e => { if (e.key === 'Enter') $('#areaSearch').click(); });
+$('#areaGeo').addEventListener('click', () => {
+  if (!navigator.geolocation){ toast('Location is not available in this browser'); return; }
+  navigator.geolocation.getCurrentPosition(
+    pos => renderArea(nearbyStores(pos.coords.latitude, pos.coords.longitude)),
+    () => toast('Location permission was denied')
+  );
+});
+document.addEventListener('change', e => {
+  const id = e.target && e.target.dataset && e.target.dataset.follow;
+  if (!id) return;
+  toggleFollow(DIRECTORY.find(s => s.id === id));
+});
+
 /* boot */
 (function init(){
   CFG = Object.assign({token:'',gist:'',on:false}, Disk.get(CFGKEY)||{});
@@ -1207,6 +1374,7 @@ function migrate(old){
     if (old && old.items){ S = migrate(old); Disk.set(KEY, S); }
   }
   if (!S.stores || !S.stores.length) S.stores = defaultStores();
+  if (remapStoreIds(S)) Disk.set(KEY, S);
   const clean = sanitizeState(S);
   if (clean && !sameData(clean, S)) { S = clean; Disk.set(KEY, S); }
 
@@ -1215,6 +1383,7 @@ function migrate(old){
     if (cached && Array.isArray(cached.products)) AUTO = cached;
   }catch(e){}
   renderAll();
+  loadDirectory();
   loadAutoPrices();
   if (CFG.on) syncNow(true);
 

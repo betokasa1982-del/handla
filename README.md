@@ -104,7 +104,7 @@ Tokens are shared secrets, so it is worth being deliberate:
 
 Edit `index.html` in the GitHub web editor and commit — Pages redeploys in about
 a minute. If you change any file listed in `SHELL` inside `sw.js`, bump the
-`CACHE` constant (`handla-v5` → `handla-v6`) so phones drop the old cache
+`CACHE` constant (`handla-v6` → `handla-v7`) so phones drop the old cache
 instead of serving a stale copy.
 
 Store search URLs are editable in **Setup** without touching code. `{q}` is
@@ -113,56 +113,48 @@ breaks, fix it there.
 
 ## Automatic prices
 
-The shops do not offer a public price API. A small Python job in GitHub Actions
-reads the same JSON their own websites use, once a night, and commits
-`data/prices.json`. The app loads that file when it opens. No tokens and no API
-keys are stored in the repo.
+The app is not tied to one neighbourhood. Setup → **Your area** takes a
+postcode or a place name (Kortedala, Malmö, 415 10) or this phone's location,
+then lists Willys, Hemköp, ICA, Coop and X:-tra shops nearby. Tick the ones
+you follow. The list you first see is only an example: shops around Eriksberg
+in Göteborg.
 
-It runs at 02:00 UTC, which is 03:00 in Stockholm in the winter and 04:00 in the
-summer. You can also run it by hand: Actions → Prices → Run workflow.
+A nightly GitHub Action reads the JSON those chains already use and writes one
+file per shop, `data/stores/<chain>-<id>.json`. The phone only downloads the
+shops you follow. A weekly Action refreshes `data/stores_index.json`, the
+directory of shops in Sweden. No tokens and no API keys are stored in the repo.
 
-What it collects, for each shop in `data/stores.json`:
+The price job runs at 02:00 UTC (03:00 Stockholm time in winter, 04:00 in
+summer). The directory runs on Sunday at 03:00 UTC. Both can be started by
+hand from the Actions tab.
 
-- this week's offers, when the shop publishes them
-- current prices for the search terms in `data/watchlist.json`
+A price you type still wins. An automatic price only fills an empty box, as
+the grey hint, and the basket math uses it. Where the units differ it compares
+the jämförpris (kr per kilo or litre). Items on offer are marked **offer**.
+Under the list, each shop says when its file was updated, and **(stale)** if
+that copy is old or the last fetch failed.
 
-A price you type yourself still wins. An automatic price only fills in when
-that box is empty. It shows up as the grey placeholder in the price field, and
-the basket math uses it. If the same item is on offer at any shop, the row is
-marked **offer**. Under the list, each shop says when its prices were last
-updated, and **(stale)** if the last good copy is more than a day and a half
-old or the latest fetch failed.
+The nightly job prices the shops in `config/fetch.json` (the Eriksberg example
+plus Willys Wieselgrensplatsen and Hemköp Kortedala Torg). Add an id from the
+directory to that list and the next run will price it. Search words live in
+`data/watchlist.json`.
 
-The shops near Eriksberg that this is set up for:
-
-| Shop in the app | Where the prices come from |
-|---|---|
-| Willys Hemma Vårväderstorget | Willys store `2816`. Shelf prices work. This Willys Hemma shop does not publish a digital campaign list, so weekly offers are usually empty. The nearest full Willys with offers is Wieselgrensplatsen, store `2102` — change `external_id` if you would rather follow that shop. |
-| ICA Kvantum Sannegården | ICA online store `1004293`. |
-| Coop Eriksberg | Coop store `126350`. Prices here differ from other Coop shops. |
-| X:-tra Länsmanstorget | No public price feed. The job skips it and says so. It does not fail the run. |
-
-### Change a shop or the watchlist
-
-Edit `data/stores.json` or `data/watchlist.json` and commit. The next run picks
-it up. `id` must stay the same as the shop id in the app (`willys-varvader`,
-`ica-sannegarden`, `coop-eriksberg`, `xtra-hisingen`) or the prices will not
-line up with your list.
+X:-tra shops are in the directory so you can follow them, but they have no
+public prices. The job records that and does not fail.
 
 ### When a shop breaks
 
-Each shop is fetched on its own. If one returns nothing, or the prices are
-nonsense, that shop keeps its previous rows, the file marks it stale, and the
-Action fails so GitHub can email you. The other shops are still updated.
+Each shop is fetched on its own. Requests are one at a time, with a named
+User-Agent, a short pause, and a few retries. If a shop returns nothing, or
+the prices are nonsense, that file keeps its previous rows, marks them stale,
+and the Action fails so GitHub can email you. The other shops are still updated.
 
-The job is polite on purpose: one request at a time, a named User-Agent, and a
-short pause between calls. It retries a few times if a site answers with a
-temporary error. Coop's website prints a public subscription key in the page
-itself; the job reads that key when it runs and does not save it.
+Coop prints a public subscription key in its own web page. The job reads it
+when it runs and does not save it.
 
-If Willys, ICA or Coop change their site and the job starts failing every
-night, the thing to edit is `fetcher/sources.py`. The normalizer and the
-"keep the last good copy" rule are covered by `python3 -m unittest tests.test_prices.py`.
+How the pieces fit together, and the terms-of-service risk of selling this,
+is in `docs/ARCHITECTURE.md`. The normalizer is covered by
+`python3 -m unittest tests.test_prices.py`.
 
 ## Known limits
 

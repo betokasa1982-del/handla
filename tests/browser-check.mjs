@@ -110,6 +110,22 @@ try {
   const scriptURL = await page.evaluate(() => navigator.serviceWorker.controller && navigator.serviceWorker.controller.scriptURL);
   assert.ok(scriptURL && scriptURL.includes('sw.js'), 'service worker did not take control: ' + scriptURL);
 
+  await page.click('#tab-setup');
+  await page.type('#areaQuery', 'Kortedala');
+  await page.click('#areaSearch');
+  await page.waitForFunction(() => {
+    const box = document.getElementById('areaResults');
+    return box && box.innerText.includes('Kortedala');
+  }, { timeout: 8000 });
+  const areaText = await page.$eval('#areaResults', el => el.innerText);
+  assert.ok(/Hemköp/.test(areaText), areaText);
+  await page.evaluate(() => {
+    const label = [...document.querySelectorAll('#areaResults label')].find(el => el.textContent.includes('Hemköp'));
+    label.querySelector('input').click();
+  });
+  await page.click('#tab-list');
+  await page.waitForFunction(() => document.body.innerText.includes('Hemköp'), { timeout: 8000 });
+
   await page.setOfflineMode(true);
   await page.reload({ waitUntil: 'domcontentloaded' });
   assert.equal(await page.title(), 'Handla');

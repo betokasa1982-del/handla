@@ -320,7 +320,7 @@ test('existing local list is still there after load', () => {
 function keepCase(win){
   const items = itemsOf(win);
   assert.deepEqual(items, [{ name: 'kaffe', qty: 2, unit: 'pkg' }]);
-  const price = evalPage(win, 'liveItems()[0].prices["willys-varvader"].p');
+  const price = evalPage(win, 'liveItems()[0].prices["willys-2816"].p');
   assert.equal(price, 45);
   assert.equal(evalPage(win, 'S.v'), 3);
   assert.match(win.document.body.textContent, /kaffe/);
@@ -347,7 +347,7 @@ test('a stored javascript link is dropped and the list is kept', () => {
     assert.deepEqual(itemsOf(win), [{ name: 'kaffe', qty: 2, unit: 'pkg' }]);
     assert.equal(evalPage(win, 'liveStores()[0].url'), '');
     assert.equal(evalPage(win, 'liveStores()[0].home'), 'https://www.willys.se/butik/2816');
-    assert.equal(evalPage(win, 'liveItems()[0].prices["willys-varvader"].p'), 45);
+    assert.equal(evalPage(win, 'liveItems()[0].prices["willys-2816"].p'), 45);
     const hrefs = [...win.document.querySelectorAll('a')].map(a => a.getAttribute('href') || '');
     for (const href of hrefs) assert.doesNotMatch(href, /^\s*javascript:/i);
   } finally { win.close(); }
@@ -355,6 +355,6 @@ test('a stored javascript link is dropped and the list is kept', () => {
 
 test('shell cache version was bumped with the app', () => {
   const sw = fs.readFileSync(new URL('../sw.js', import.meta.url), 'utf8');
-  assert.match(sw, /const CACHE = 'handla-v5'/);
+  assert.match(sw, /const CACHE = 'handla-v6'/);
   assert.match(sw, /\.\/index\.html/);
 });

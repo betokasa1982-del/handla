@@ -6,8 +6,11 @@ from fetcher.normalize import (
     dedupe, iso_date, keep_sane, parse_number, parse_size, record, sane_price,
     term_in_name,
 )
+from fetcher.adapters.axfood import willys_product
+from fetcher.adapters.coop import coop_product
+from fetcher.adapters.ica import ica_product
+from fetcher.geo import haversine_km, match_place, nearby
 from fetcher.pipeline import merge_store
-from fetcher.sources import coop_product, ica_product, willys_product
 
 
 class NormalizeTests(unittest.TestCase):
@@ -128,22 +131,35 @@ class NormalizeTests(unittest.TestCase):
         self.assertEqual(rows[0]['offer_text'], '2 för 30')
 
 
+class PlaceTests(unittest.TestCase):
+    def test_nearby_and_postcode_are_not_tied_to_one_city(self):
+        stores = [
+            {'id': 'a', 'name': 'Near', 'city': 'Göteborg', 'address': 'Kortedala Torg',
+             'postcode': '415 10', 'lat': 57.75, 'lon': 12.03},
+            {'id': 'b', 'name': 'Far', 'city': 'Kiruna', 'address': 'Centrum',
+             'postcode': '981 30', 'lat': 67.86, 'lon': 20.22},
+        ]
+        close = nearby(stores, 57.74, 12.02, radius_km=15)
+        self.assertEqual([s['id'] for s in close], ['a'])
+        self.assertLess(haversine_km(57.74, 12.02, 57.75, 12.03), 5)
+        self.assertEqual([s['id'] for s in match_place(stores, '41510')], ['a'])
+        self.assertEqual([s['id'] for s in match_place(stores, 'Kortedala')], ['a'])
+
+
 class StaleTests(unittest.TestCase):
     def test_failure_keeps_last_good_rows(self):
         previous = {
             'products': [
-                record('coop-eriksberg', 'Milk', 'Coop', 16.5, '1.5 l', 11, 'l',
+                record('coop-126350', 'Milk', 'Coop', 16.5, '1.5 l', 11, 'l',
                        False, '', '', '', '', '2026-10-31T02:00:00+00:00', 'mjölk'),
-                record('ica-sannegarden', 'Bread', 'Pågen', 25, '500 g', 50, 'kg',
-                       False, '', '', '', '', '2026-10-31T02:00:00+00:00', 'bröd'),
             ],
-            'stores': [{
-                'id': 'coop-eriksberg', 'fetched_at': '2026-10-31T02:00:00+00:00', 'name': 'Coop',
-            }],
+            'store': {
+                'id': 'coop-126350', 'fetched_at': '2026-10-31T02:00:00+00:00', 'name': 'Coop',
+            },
         }
         rows, meta, failed = merge_store(
             previous,
-            {'id': 'coop-eriksberg', 'name': 'Coop Eriksberg', 'chain': 'coop'},
+            {'id': 'coop-126350', 'name': 'Coop Eriksberg', 'chain': 'coop'},
             {'ok': False, 'error': 'HTTP 503'},
             '2026-11-01T02:00:00+00:00',
         )
@@ -154,11 +170,11 @@ class StaleTests(unittest.TestCase):
         self.assertEqual([row['name'] for row in rows], ['Milk'])
 
     def test_success_replaces_rows(self):
-        fresh = record('coop-eriksberg', 'New milk', 'Coop', 15.95, '1.5 l', 10.63, 'l',
+        fresh = record('coop-126350', 'New milk', 'Coop', 15.95, '1.5 l', 10.63, 'l',
                        True, '2 för 30', '', '', '', '2026-11-01T02:00:00+00:00', 'mjölk')
         rows, meta, failed = merge_store(
             {'products': [], 'stores': []},
-            {'id': 'coop-eriksberg', 'name': 'Coop Eriksberg', 'chain': 'coop'},
+            {'id': 'coop-126350', 'name': 'Coop Eriksberg', 'chain': 'coop'},
             {'ok': True, 'products': [fresh], 'error': ''},
             '2026-11-01T02:00:00+00:00',
         )

@@ -1,6 +1,6 @@
 /* Handla service worker.
    Bump CACHE when you change any shell file — old caches are dropped on activate. */
-const CACHE = 'handla-v5';
+const CACHE = 'handla-v6';
 
 const SHELL = [
   './',
@@ -10,7 +10,7 @@ const SHELL = [
   './icon-512.png',
   './icon-maskable-512.png',
   './apple-touch-icon.png',
-  './data/prices.json'
+  './data/stores_index.json'
 ];
 
 self.addEventListener('install', e => {
@@ -38,8 +38,8 @@ self.addEventListener('fetch', e => {
   // Never cache the sync API or anything cross-origin that isn't a font.
   if (url.hostname === 'api.github.com') return;
 
-  // Nightly prices: try the network, fall back to the last copy when offline.
-  if (url.pathname.endsWith('/prices.json') || url.pathname.endsWith('/data/prices.json')) {
+  // Shop directory and per-store prices: network first, cached copy when offline.
+  if (url.pathname.includes('/data/stores')) {
     e.respondWith(
       fetch(req).then(res => {
         if (res.ok){
@@ -47,7 +47,7 @@ self.addEventListener('fetch', e => {
           caches.open(CACHE).then(c => c.put(req, copy));
         }
         return res;
-      }).catch(() => caches.match(req).then(hit => hit || caches.match('./data/prices.json')))
+      }).catch(() => caches.match(req))
     );
     return;
   }
