@@ -6,9 +6,9 @@
     "status": "ok",
     "stale": false,
     "error": "",
-    "fetched_at": "2026-11-01T08:15:23+00:00",
-    "checked_at": "2026-11-01T08:15:23+00:00",
-    "product_count": 28,
+    "fetched_at": "2026-11-01T08:16:13+00:00",
+    "checked_at": "2026-11-01T08:16:13+00:00",
+    "product_count": 25,
     "offer_count": 4
   },
   "products": [
@@ -26,7 +26,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/2095219",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/8978409f-3307-4dfe-ba6d-7eb8a91c6a20/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "mjölk"
     },
     {
@@ -43,7 +43,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/1520842",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/2f6a5112-6082-4cc3-b8da-b5d1bb2a3b8c/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "mjölk"
     },
     {
@@ -60,7 +60,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/1272664",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/05ba28ed-0acb-4669-870b-63f1806c66df/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "mjölk"
     },
     {
@@ -77,7 +77,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/1526635",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/58869c3d-ae67-465a-a78f-51e5cfc4d4fb/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "bröd"
     },
     {
@@ -94,7 +94,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/1423262",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/812ed23f-4a0b-401a-82a0-3cfdd74865d8/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "bröd"
     },
     {
@@ -111,7 +111,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/1256464",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/2f705a2e-61de-4fa9-82dd-34a5e85ac029/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "bröd"
     },
     {
@@ -128,7 +128,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/1455334",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/7af39ae5-00e7-4b29-af9a-227e0e98afc8/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "ägg"
     },
     {
@@ -145,7 +145,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/1515373",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/e08acbec-1ef6-4603-9e61-35e903a692d6/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "ägg"
     },
     {
@@ -162,7 +162,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/1203220",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/25d61f98-b6af-4403-805d-43e15a8fcb88/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "ägg"
     },
     {
@@ -179,7 +179,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/1477872",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/ba2f23d3-1525-45e7-9163-6a5671156f94/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "banan"
     },
     {
@@ -196,7 +196,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/4000203",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/07a1743b-da68-47e7-9d34-d23a8d264c1b/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "banan"
     },
     {
@@ -213,7 +213,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/4000231",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/2477f2e6-136f-462c-ac65-cfccc2422ed9/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "banan"
     },
     {
@@ -230,7 +230,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/1476452",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/88abe8b3-2ff2-425e-addd-a8c81684a9cd/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "kaffe"
     },
     {
@@ -247,7 +247,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/1374551",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/7782367c-5e0e-411d-b60c-2ad524b75653/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "kaffe"
     },
     {
@@ -264,7 +264,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/1476574",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/57840ca0-0fc9-4c08-880e-4a6824976dad/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "kaffe"
     },
     {
@@ -281,7 +281,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/2094155",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/fdfcb6f4-40c3-4ef7-8172-367b11a888ab/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "pasta"
     },
     {
@@ -298,7 +298,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/2116966",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/175c66f8-9b9f-4fa7-af66-e649661f00d1/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "pasta"
     },
     {
@@ -315,7 +315,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/2118838",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/6c2ee89f-c41c-4661-8b49-a582a7f6c719/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "pasta"
     },
     {
@@ -332,7 +332,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/1374144",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/f9ca924c-6ad9-436c-b17c-8907227e162a/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "ost"
     },
     {
@@ -349,7 +349,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/2044628",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/89cde1bb-4df8-43e3-ba38-65609dea073f/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "ost"
     },
     {
@@ -366,59 +366,8 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/1265125",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/181d1fd6-f0c2-4e46-9461-9768bb1bc57b/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": "ost"
-    },
-    {
-      "store": "ica-1004293",
-      "name": "Tomat rund ca 90g Klass 1",
-      "brand": ",",
-      "size": 88.0,
-      "unit": "g",
-      "price": 4.31,
-      "compare_price": 47.9,
-      "compare_unit": "kg",
-      "offer": false,
-      "offer_text": "",
-      "valid_until": "",
-      "url": "https://handlaprivatkund.ica.se/stores/1004293/products/2145855",
-      "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/8f040901-2866-4ce7-bd4a-83b1014a5c69/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
-      "query": "tomat"
-    },
-    {
-      "store": "ica-1004293",
-      "name": "Kvisttomat röd 4-pack Klass 1 ICA",
-      "brand": "ICA",
-      "size": 388.0,
-      "unit": "g",
-      "price": 23.95,
-      "compare_price": 49.9,
-      "compare_unit": "kg",
-      "offer": false,
-      "offer_text": "",
-      "valid_until": "",
-      "url": "https://handlaprivatkund.ica.se/stores/1004293/products/4000204",
-      "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/f8bebf36-e66d-428d-9f30-60e92bf4e293/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
-      "query": "tomat"
-    },
-    {
-      "store": "ica-1004293",
-      "name": "Tomat kvist röd Svensk ca 120g Klass 1",
-      "brand": ",",
-      "size": 96.0,
-      "unit": "g",
-      "price": 5.87,
-      "compare_price": 48.95,
-      "compare_unit": "kg",
-      "offer": false,
-      "offer_text": "",
-      "valid_until": "",
-      "url": "https://handlaprivatkund.ica.se/stores/1004293/products/1516224",
-      "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/dc0983c6-492b-4634-bec4-a9a45a917f4d/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
-      "query": "tomat"
     },
     {
       "store": "ica-1004293",
@@ -434,7 +383,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/1477188",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/b7b27091-db46-4ebc-8603-a76484c83f80/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": ""
     },
     {
@@ -451,7 +400,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/1411011",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/3ae1af3b-f782-4625-a8de-9fac783d743f/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": ""
     },
     {
@@ -468,7 +417,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/2017616",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/33e752fb-e7bd-46ef-a890-0f2baa71c914/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": ""
     },
     {
@@ -485,7 +434,7 @@
       "valid_until": "",
       "url": "https://handlaprivatkund.ica.se/stores/1004293/products/2044243",
       "image": "https://handlaprivatkund.ica.se/images-v3/bf7a00ca-390e-4769-865f-dc369586872e/6ecad039-84f3-4c85-9075-a04715a50934/300x300.jpg",
-      "fetched_at": "2026-11-01T08:15:23+00:00",
+      "fetched_at": "2026-11-01T08:16:13+00:00",
       "query": ""
     }
   ]
