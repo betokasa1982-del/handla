@@ -6,9 +6,9 @@
     "status": "ok",
     "stale": false,
     "error": "",
-    "fetched_at": "2026-11-08T08:27:58+00:00",
-    "checked_at": "2026-11-08T08:27:58+00:00",
-    "product_count": 106,
+    "fetched_at": "2026-11-09T08:57:40+00:00",
+    "checked_at": "2026-11-09T08:57:40+00:00",
+    "product_count": 105,
     "offer_count": 34
   },
   "products": [
@@ -26,7 +26,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101233933_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083443893_C1L1_s06",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "mjölk"
     },
     {
@@ -43,7 +43,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101476218_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311043002191_C1L1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "mjölk"
     },
     {
@@ -60,7 +60,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101205823_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083427299_C1L1_s04",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "mjölk"
     },
     {
@@ -77,7 +77,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101233931_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083443886_C1L1_s05",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "mjölk"
     },
     {
@@ -94,7 +94,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101276728_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083467875_C1L1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "mjölk"
     },
     {
@@ -111,7 +111,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101205891_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083427312_C1L1_s04",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "mjölk"
     },
     {
@@ -128,7 +128,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101291352_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07314320041074_C1L1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "bröd"
     },
     {
@@ -145,7 +145,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101291327_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07314320041067_C1L1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "bröd"
     },
     {
@@ -162,7 +162,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101852464_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07314320041371_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "bröd"
     },
     {
@@ -179,7 +179,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101852459_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07314320041364_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "bröd"
     },
     {
@@ -196,7 +196,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101893675_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07314320041401_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "bröd"
     },
     {
@@ -208,12 +208,12 @@
       "price": 19.9,
       "compare_price": 62.19,
       "compare_unit": "kg",
-      "offer": false,
-      "offer_text": "",
-      "valid_until": "",
+      "offer": true,
+      "offer_text": "Välj & blanda! 3 för Klubbpris",
+      "valid_until": "2026-11-15",
       "url": "https://www.willys.se/produkt/101285787_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083479496_C1L1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "bröd"
     },
     {
@@ -230,7 +230,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101718037_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311043019120_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "ägg"
     },
     {
@@ -247,7 +247,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101591614_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311043011742_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "ägg"
     },
     {
@@ -259,12 +259,12 @@
       "price": 37.9,
       "compare_price": 3.79,
       "compare_unit": "st",
-      "offer": false,
-      "offer_text": "",
-      "valid_until": "",
+      "offer": true,
+      "offer_text": "Spara 4,00 kr/st",
+      "valid_until": "2026-11-15",
       "url": "https://www.willys.se/produkt/101218667_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083434624_C1L1_s05",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "ägg"
     },
     {
@@ -281,7 +281,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101836357_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311043027781_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "ägg"
     },
     {
@@ -298,7 +298,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101716176_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311043018772_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "ägg"
     },
     {
@@ -315,7 +315,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101717679_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311043019069_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "ägg"
     },
     {
@@ -332,7 +332,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/100254920_KG",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311042002499_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "banan"
     },
     {
@@ -349,7 +349,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/100235247_KG",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311042004714_C1N1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "banan"
     },
     {
@@ -366,7 +366,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101845037_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/04062300482425_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "banan"
     },
     {
@@ -383,7 +383,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101542479_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07310130013409_C1R1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "banan"
     },
     {
@@ -400,7 +400,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101301719_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083477584_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "banan"
     },
     {
@@ -417,7 +417,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101840600_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07312060502527_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "banan"
     },
     {
@@ -429,12 +429,12 @@
       "price": 71.9,
       "compare_price": 159.78,
       "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Välj & blanda! 2 för Klubbpris",
-      "valid_until": "2026-11-08",
+      "offer": false,
+      "offer_text": "",
+      "valid_until": "",
       "url": "https://www.willys.se/produkt/101261204_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/08711000530085_C1C1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "kaffe"
     },
     {
@@ -451,7 +451,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/100002676_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07310760012896_C1N1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "kaffe"
     },
     {
@@ -468,7 +468,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101880385_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07310731103271_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "kaffe"
     },
     {
@@ -485,7 +485,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/100030869_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07310760012902_C1L1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "kaffe"
     },
     {
@@ -502,7 +502,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/100467228_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07310760012315_C1R1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "kaffe"
     },
     {
@@ -514,12 +514,12 @@
       "price": 71.9,
       "compare_price": 159.78,
       "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Välj & blanda! 2 för Klubbpris",
-      "valid_until": "2026-11-08",
+      "offer": false,
+      "offer_text": "",
+      "valid_until": "",
       "url": "https://www.willys.se/produkt/101759233_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/08711000591840_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "kaffe"
     },
     {
@@ -536,24 +536,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101240187_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07611612150729_C1N1_s03",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": "pasta"
-    },
-    {
-      "store": "willys-2102",
-      "name": "Penne Rigate Pasta",
-      "brand": "Monte Castello",
-      "size": 500.0,
-      "unit": "g",
-      "price": 7.9,
-      "compare_price": 15.8,
-      "compare_unit": "kg",
-      "offer": false,
-      "offer_text": "",
-      "valid_until": "",
-      "url": "https://www.willys.se/produkt/101240218_ST",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07611612150736_C1N1_s03",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "pasta"
     },
     {
@@ -570,7 +553,24 @@
       "valid_until": "2026-11-29",
       "url": "https://www.willys.se/produkt/101284620_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/08000139007095_C1L1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
+      "query": "pasta"
+    },
+    {
+      "store": "willys-2102",
+      "name": "Penne Rigate Pasta",
+      "brand": "Monte Castello",
+      "size": 500.0,
+      "unit": "g",
+      "price": 7.9,
+      "compare_price": 15.8,
+      "compare_unit": "kg",
+      "offer": false,
+      "offer_text": "",
+      "valid_until": "",
+      "url": "https://www.willys.se/produkt/101240218_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07611612150736_C1N1_s03",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "pasta"
     },
     {
@@ -587,7 +587,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101358836_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083494987_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "pasta"
     },
     {
@@ -604,7 +604,7 @@
       "valid_until": "2026-11-29",
       "url": "https://www.willys.se/produkt/101284490_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/08000139910258_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "pasta"
     },
     {
@@ -621,7 +621,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101531959_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/08004690053225_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "pasta"
     },
     {
@@ -633,12 +633,12 @@
       "price": 46.9,
       "compare_price": 117.25,
       "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Spara 7,00 kr/st",
-      "valid_until": "2026-11-08",
+      "offer": false,
+      "offer_text": "",
+      "valid_until": "",
       "url": "https://www.willys.se/produkt/101817373_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07331494129971_C1C1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "ost"
     },
     {
@@ -655,7 +655,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101886394_KG",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02399040000001_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "ost"
     },
     {
@@ -672,7 +672,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101296478_KG",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02351248900002_C1R1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "ost"
     },
     {
@@ -689,7 +689,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/100152282_KG",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311042002215_C1N0_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "tomat"
     },
     {
@@ -706,7 +706,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101267404_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311042006459_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "tomat"
     },
     {
@@ -723,7 +723,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/100152264_KG",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02359738200007_C1C0_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "tomat"
     },
     {
@@ -740,7 +740,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/100814709_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311042002246_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "tomat"
     },
     {
@@ -757,7 +757,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101267405_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311042006466_C1R1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "tomat"
     },
     {
@@ -774,7 +774,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101829539_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311042017363_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "tomat"
     },
     {
@@ -791,7 +791,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101220577_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083435232_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "ris"
     },
     {
@@ -808,7 +808,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101234821_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083444104_C1N1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "ris"
     },
     {
@@ -825,7 +825,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101352143_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/05410673005861_C1C1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "ris"
     },
     {
@@ -842,7 +842,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101277483_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083465260_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "ris"
     },
     {
@@ -859,7 +859,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101352142_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/05410673005847_C1C1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "ris"
     },
     {
@@ -876,7 +876,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101488798_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311043002528_C1L1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "ris"
     },
     {
@@ -893,7 +893,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101222270_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083434716_C1C1_s03",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "kyckling"
     },
     {
@@ -910,7 +910,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101222356_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083434723_C1C1_s03",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "kyckling"
     },
     {
@@ -927,7 +927,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101253220_KG",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02359634700007_C1L1_s05",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "kyckling"
     },
     {
@@ -944,7 +944,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/100323865_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07300322544002_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "kyckling"
     },
     {
@@ -961,7 +961,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101223961_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083435270_C1L1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "kyckling"
     },
     {
@@ -978,7 +978,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101273702_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083462207_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "kyckling"
     },
     {
@@ -995,7 +995,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101017249_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07310865005168_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "smör"
     },
     {
@@ -1012,7 +1012,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101017267_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07310865005250_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "smör"
     },
     {
@@ -1024,12 +1024,12 @@
       "price": 57.9,
       "compare_price": 115.8,
       "compare_unit": "kg",
-      "offer": false,
-      "offer_text": "",
-      "valid_until": "",
+      "offer": true,
+      "offer_text": "Välj & blanda! 2 för Klubbpris",
+      "valid_until": "2026-11-15",
       "url": "https://www.willys.se/produkt/101090926_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/06408432061233_C1R1_s03",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "smör"
     },
     {
@@ -1041,12 +1041,12 @@
       "price": 119.0,
       "compare_price": 119.0,
       "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Spara 29,10 kr/st",
-      "valid_until": "2026-11-08",
+      "offer": false,
+      "offer_text": "",
+      "valid_until": "",
       "url": "https://www.willys.se/produkt/101017301_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07310865005151_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "smör"
     },
     {
@@ -1063,7 +1063,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101017285_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07310865005496_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "smör"
     },
     {
@@ -1075,12 +1075,12 @@
       "price": 99.9,
       "compare_price": 51.18,
       "compare_unit": "kg",
-      "offer": false,
-      "offer_text": "",
-      "valid_until": "",
+      "offer": true,
+      "offer_text": "Spara 40,00 kr/st",
+      "valid_until": "2026-11-15",
       "url": "https://www.willys.se/produkt/101842099_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311043027798_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "toalettpapper"
     },
     {
@@ -1097,7 +1097,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101309671_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/06414301055531_C1C1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "toalettpapper"
     },
     {
@@ -1109,12 +1109,12 @@
       "price": 84.9,
       "compare_price": 39.71,
       "compare_unit": "kg",
-      "offer": false,
-      "offer_text": "",
-      "valid_until": "",
+      "offer": true,
+      "offer_text": "Spara 15,00 kr/st",
+      "valid_until": "2026-12-06",
       "url": "https://www.willys.se/produkt/101232355_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083440694_C1L1_s03",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "toalettpapper"
     },
     {
@@ -1131,7 +1131,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101842101_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311043027811_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "toalettpapper"
     },
     {
@@ -1148,7 +1148,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101842100_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311043027804_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "toalettpapper"
     },
     {
@@ -1165,7 +1165,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101277192_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/06414301028184_C1R1_s03",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "toalettpapper"
     },
     {
@@ -1182,7 +1182,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101203170_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311070337297_C1L1_s05",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "hönö"
     },
     {
@@ -1199,7 +1199,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101332489_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311070003567_C1L1_s03",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "hönö"
     },
     {
@@ -1216,7 +1216,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101332488_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311070003543_C1L1_s03",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "hönö"
     },
     {
@@ -1233,7 +1233,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101894106_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07313636800016_C1L1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "hönö"
     },
     {
@@ -1250,7 +1250,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101232592_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083440489_C1L1_s04",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "laktosfri mjölk"
     },
     {
@@ -1267,7 +1267,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101244263_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083447891_C1L1_s04",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "laktosfri mjölk"
     },
     {
@@ -1284,7 +1284,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101222585_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083435973_C1L1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "laktosfri mjölk"
     },
     {
@@ -1301,7 +1301,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101475990_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311043002184_C1L1_s03",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "laktosfri mjölk"
     },
     {
@@ -1318,7 +1318,7 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101222615_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083435966_C1L1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "laktosfri mjölk"
     },
     {
@@ -1335,381 +1335,296 @@
       "valid_until": "",
       "url": "https://www.willys.se/produkt/101222613_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083435980_C1L1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": "laktosfri mjölk"
     },
     {
       "store": "willys-2102",
-      "name": "Aladdin Choklad",
-      "brand": "Marabou",
-      "size": 410.0,
+      "name": "Laxfilé Fryst",
+      "brand": "Omega",
+      "size": 125.0,
       "unit": "g",
-      "price": 99.9,
-      "compare_price": 243.66,
+      "price": 93.9,
+      "compare_price": 187.8,
       "compare_unit": "kg",
       "offer": true,
-      "offer_text": "Spara 40,00 kr/st",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101777669_ST",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07622202281570_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "offer_text": "3 för Klubbpris",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/101804336_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07611612190374_C1N1_s03",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": ""
     },
     {
       "store": "willys-2102",
-      "name": "Kiwi Gul Klass 2",
+      "name": "Kyckling Klubba Fryst",
+      "brand": "Eldorado",
+      "size": 2.0,
+      "unit": "kg",
+      "price": 55.9,
+      "compare_price": 27.95,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "Spara 6,00 kr/st",
+      "valid_until": "2026-11-11",
+      "url": "https://www.willys.se/produkt/101266949_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083434983_C1C1_s01",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
+      "query": ""
+    },
+    {
+      "store": "willys-2102",
+      "name": "Satsumas Klass 1",
       "brand": "",
-      "size": 500.0,
-      "unit": "g",
-      "price": 26.9,
-      "compare_price": 53.8,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Spara 12,00 kr/st",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101125792_ST",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311042005117_C1L0_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": ""
-    },
-    {
-      "store": "willys-2102",
-      "name": "Säsongsbukett",
-      "brand": "",
-      "size": null,
-      "unit": "",
-      "price": 169.0,
-      "compare_price": null,
-      "compare_unit": "",
-      "offer": true,
-      "offer_text": "Spara 40,00 kr/st",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101248609_ST",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311042010852_C1N1_s10",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": ""
-    },
-    {
-      "store": "willys-2102",
-      "name": "Flankstek Irland",
-      "brand": "Premiumbutcher",
-      "size": 600.0,
-      "unit": "g",
-      "price": 185.0,
-      "compare_price": 185.0,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Spara 26,00 kr/kg",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101264066_KG",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02359752200007_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": ""
-    },
-    {
-      "store": "willys-2102",
-      "name": "Kladdkaka Fryst",
-      "brand": "Dazzley",
-      "size": 400.0,
-      "unit": "g",
-      "price": 23.5,
-      "compare_price": 58.75,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "2 för Klubbpris",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101259125_ST",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083453519_C1L1_s04",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": ""
-    },
-    {
-      "store": "willys-2102",
-      "name": "Handskalade Räkor",
-      "brand": "Marwi",
-      "size": 460.0,
-      "unit": "g",
-      "price": 79.9,
-      "compare_price": 173.69,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Spara 10,00 kr/st",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101690370_ST",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/04740173002260_C1C1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": ""
-    },
-    {
-      "store": "willys-2102",
-      "name": "Entrecôte Bit Sverige",
-      "brand": "Scan",
-      "size": 920.0,
-      "unit": "g",
-      "price": 349.0,
-      "compare_price": 349.0,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Spara 60,00 kr/kg",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/100243880_KG",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02320258600004_C1N1_s07",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": ""
-    },
-    {
-      "store": "willys-2102",
-      "name": "Äpple Ingrid Marie Klass 1",
-      "brand": "",
-      "size": 140.0,
+      "size": 100.0,
       "unit": "g",
       "price": 29.9,
       "compare_price": 29.9,
       "compare_unit": "kg",
       "offer": true,
       "offer_text": "Spara 10,00 kr/kg",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/100142800_KG",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311042005131_C1C0_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/100139878_KG",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311042006268_C1C0_s01",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": ""
     },
     {
       "store": "willys-2102",
-      "name": "Präst Mellanlagrad 31%",
-      "brand": "Arla Ko",
-      "size": 670.0,
-      "unit": "g",
-      "price": 109.9,
-      "compare_price": 109.9,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Spara 40,00 kr/kg",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/100143667_KG",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02340415200007_C1L1_s06",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": ""
-    },
-    {
-      "store": "willys-2102",
-      "name": "Fläskytterfilé Sverige",
-      "brand": "Nybergs Deli",
+      "name": "Blandfärs 20% Irland/danmark",
+      "brand": "",
       "size": 1.0,
       "unit": "kg",
-      "price": 99.9,
-      "compare_price": 99.9,
+      "price": 92.9,
+      "compare_price": 92.9,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "Spara 23,00 kr/kg",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/101203649_KG",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02355022800007_C1L1_s01",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
+      "query": ""
+    },
+    {
+      "store": "willys-2102",
+      "name": "Gouda 28%",
+      "brand": "Eldorado",
+      "size": 1.2,
+      "unit": "kg",
+      "price": 69.9,
+      "compare_price": 69.9,
       "compare_unit": "kg",
       "offer": true,
       "offer_text": "Spara 30,00 kr/kg",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101232055_KG",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02371580900003_C1L1_s05",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/101230572_KG",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02359742700005_C1L1_s02",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": ""
     },
     {
       "store": "willys-2102",
-      "name": "Fläskytterfilé",
-      "brand": "Nybergs Deli",
-      "size": 1.0,
+      "name": "Jättefranska",
+      "brand": "Pågen",
+      "size": 1.1,
       "unit": "kg",
-      "price": 89.9,
-      "compare_price": 89.9,
+      "price": 31.9,
+      "compare_price": 29.0,
       "compare_unit": "kg",
       "offer": true,
-      "offer_text": "Spara 30,00 kr/kg",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101290660_KG",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02371584000006_C1R1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "offer_text": "Spara 12,00 kr/st",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/101275233_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311070008463_C1L1_s06",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": ""
     },
     {
       "store": "willys-2102",
-      "name": "Våtservetter Baby Oparfymerade",
-      "brand": "Eldorado",
-      "size": 72.0,
-      "unit": "st",
-      "price": 11.9,
-      "compare_price": 0.17,
-      "compare_unit": "st",
-      "offer": true,
-      "offer_text": "24 för Klubbpris",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101353275_ST",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083492488_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": ""
-    },
-    {
-      "store": "willys-2102",
-      "name": "Mjölkchoklad Chokladkaka",
-      "brand": "Marabou",
-      "size": 160.0,
+      "name": "Mellan Smör & Rapsolja 57%",
+      "brand": "Bregott",
+      "size": 750.0,
       "unit": "g",
-      "price": 23.9,
-      "compare_price": 149.38,
+      "price": 65.9,
+      "compare_price": 87.86,
       "compare_unit": "kg",
       "offer": true,
-      "offer_text": "Välj & blanda! 5 för Klubbpris",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101773952_ST",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07622202238475_C1N1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "offer_text": "Spara 16,00 kr/st",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/101545075_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311870011083_C1L1_s01",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": ""
     },
     {
       "store": "willys-2102",
-      "name": "Jubileumskakor Vete",
-      "brand": "Polarbröd",
-      "size": 450.0,
-      "unit": "g",
-      "price": 25.5,
-      "compare_price": 56.67,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Spara 5,60 kr/st",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101278490_ST",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311800971005_C1N1_s07",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": ""
-    },
-    {
-      "store": "willys-2102",
-      "name": "Sportbröd Skivat",
-      "brand": "Östras Bröd",
-      "size": 800.0,
-      "unit": "g",
-      "price": 27.9,
-      "compare_price": 34.88,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Spara 5,00 kr/st",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101291325_ST",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07314320041036_C1L1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": ""
-    },
-    {
-      "store": "willys-2102",
-      "name": "Rökt Skinka Tunna Skivor",
-      "brand": "Garant",
-      "size": 200.0,
-      "unit": "g",
-      "price": 22.9,
-      "compare_price": 114.5,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Välj & blanda! 2 för",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101197307_ST",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083405822_C1L1_s03",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": ""
-    },
-    {
-      "store": "willys-2102",
-      "name": "Gouda Skivad 28%",
-      "brand": "Eldorado",
-      "size": 400.0,
-      "unit": "g",
-      "price": 39.9,
-      "compare_price": 99.75,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Spara 5,00 kr/st",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101224548_ST",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083435645_C1C1_s03",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": ""
-    },
-    {
-      "store": "willys-2102",
-      "name": "Special K Classic",
-      "brand": "Kellogg's",
-      "size": 600.0,
-      "unit": "g",
-      "price": 47.5,
-      "compare_price": 79.17,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Spara 3,60 kr/st",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101248060_ST",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/05053827153935_C1L1_s03",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": ""
-    },
-    {
-      "store": "willys-2102",
-      "name": "Chocolate Chokladpudding",
-      "brand": "Grand Dessert",
-      "size": 190.0,
-      "unit": "g",
-      "price": 8.9,
-      "compare_price": 46.84,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Välj & blanda! 3 för",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101276646_ST",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/04002971253009_C1C1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": ""
-    },
-    {
-      "store": "willys-2102",
-      "name": "Mild Vanilj Yoghurt 2%",
-      "brand": "Garant",
-      "size": 1.0,
-      "unit": "kg",
-      "price": 18.5,
-      "compare_price": 18.5,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Välj & blanda! 2 för",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101301720_ST",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083478178_C1L1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": ""
-    },
-    {
-      "store": "willys-2102",
-      "name": "Forest Fruit Black Tea Pyramid",
-      "brand": "Lipton",
-      "size": 20.0,
-      "unit": "st",
-      "price": 22.24,
-      "compare_price": 1.11,
-      "compare_unit": "st",
-      "offer": true,
-      "offer_text": "Välj & blanda! 2 för",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101584156_ST",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/05063270109557_C1R1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": ""
-    },
-    {
-      "store": "willys-2102",
-      "name": "Apelsinjuice med Fruktkött",
-      "brand": "Innocent",
-      "size": 1.5,
+      "name": "Apelsinjuice",
+      "brand": "Bravo",
+      "size": 2.0,
       "unit": "l",
-      "price": 49.9,
-      "compare_price": 33.27,
+      "price": 42.49,
+      "compare_price": 21.25,
       "compare_unit": "l",
       "offer": true,
+      "offer_text": "Välj & blanda! 2 för Klubbpris",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/100972930_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07310867561006_C1L1_s02",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
+      "query": ""
+    },
+    {
+      "store": "willys-2102",
+      "name": "Rågbröd Solros & Pumpa 6-pack",
+      "brand": "Garant",
+      "size": 340.0,
+      "unit": "g",
+      "price": 19.9,
+      "compare_price": 58.53,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "Välj & blanda! 3 för Klubbpris",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/101305324_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340083479519_C1L1_s04",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
+      "query": ""
+    },
+    {
+      "store": "willys-2102",
+      "name": "Ciabatta",
+      "brand": "Dafgårds",
+      "size": 150.0,
+      "unit": "g",
+      "price": 9.9,
+      "compare_price": 66.0,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "3 för Klubbpris",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/101776270_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07310960053071_C1L1_s01",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
+      "query": ""
+    },
+    {
+      "store": "willys-2102",
+      "name": "Sport Knäckebröd",
+      "brand": "Wasa",
+      "size": 550.0,
+      "unit": "g",
+      "price": 19.9,
+      "compare_price": 36.18,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "Välj & blanda! 2 för",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/100737892_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07300400114776_C1R1_s02",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
+      "query": ""
+    },
+    {
+      "store": "willys-2102",
+      "name": "Kalkon Rökt Tunna Skivor",
+      "brand": "Pärsons",
+      "size": 200.0,
+      "unit": "g",
+      "price": 33.9,
+      "compare_price": 169.5,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "Välj & blanda! 2 för",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/100585172_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07330797088954_C1N1_s01",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
+      "query": ""
+    },
+    {
+      "store": "willys-2102",
+      "name": "Julskinka Mor Matildas Skivad",
+      "brand": "Jakobsdals",
+      "size": 220.0,
+      "unit": "g",
+      "price": 62.9,
+      "compare_price": 285.91,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "Spara 13,00 kr/st",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/101244466_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07391196007922_C1N1_s06",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
+      "query": ""
+    },
+    {
+      "store": "willys-2102",
+      "name": "Vanilj Skyr Eko 0,2%",
+      "brand": "Dairy Food",
+      "size": 400.0,
+      "unit": "g",
+      "price": 19.9,
+      "compare_price": 49.75,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "Spara 3,00 kr/st",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/101708430_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311043018093_C1C1_s01",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
+      "query": ""
+    },
+    {
+      "store": "willys-2102",
+      "name": "Choklad Proteinshake",
+      "brand": "Arla",
+      "size": 500.0,
+      "unit": "g",
+      "price": 19.9,
+      "compare_price": 39.8,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "Välj & blanda! 2 för",
+      "valid_until": "2026-11-22",
+      "url": "https://www.willys.se/produkt/101545561_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/05711953068881_C1N1_s04",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
+      "query": ""
+    },
+    {
+      "store": "willys-2102",
+      "name": "Pannkakor 12p",
+      "brand": "Eldorado",
+      "size": 720.0,
+      "unit": "g",
+      "price": 34.9,
+      "compare_price": 48.47,
+      "compare_unit": "kg",
+      "offer": true,
       "offer_text": "Spara 5,00 kr/st",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101888779_ST",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/05038862017961_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "valid_until": "2026-11-22",
+      "url": "https://www.willys.se/produkt/101848438_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311043028672_C1N1_s01",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
+      "query": ""
+    },
+    {
+      "store": "willys-2102",
+      "name": "Nutella",
+      "brand": "Nutella",
+      "size": 350.0,
+      "unit": "g",
+      "price": 38.9,
+      "compare_price": 111.14,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "2 för",
+      "valid_until": "2026-12-25",
+      "url": "https://www.willys.se/produkt/100383381_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/00000080177173_C1L1_s01",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": ""
     },
     {
@@ -1726,92 +1641,160 @@
       "valid_until": "2026-11-29",
       "url": "https://www.willys.se/produkt/101307091_ST",
       "image": "https://assets.axfood.se/image/upload/f_auto,t_200/05411188130055_C1L1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": ""
     },
     {
       "store": "willys-2102",
-      "name": "Nötfärs 12% Sverige",
-      "brand": "Garant",
-      "size": 1.0,
-      "unit": "kg",
-      "price": 152.0,
-      "compare_price": 152.0,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Spara 23,00 kr/kg",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101203634_KG",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02355022200005_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": ""
-    },
-    {
-      "store": "willys-2102",
-      "name": "Entrecôte Bit Brasilien",
-      "brand": "Naturkött",
-      "size": 1.0,
-      "unit": "kg",
-      "price": 229.0,
-      "compare_price": 229.0,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Spara 41,00 kr/kg",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101070886_KG",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02373719300005_C1N1_s02",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
-      "query": ""
-    },
-    {
-      "store": "willys-2102",
-      "name": "Fläskytterfilé Sverige",
-      "brand": "Garant Eko",
-      "size": 800.0,
+      "name": "Pulled Chicken",
+      "brand": "Tulip",
+      "size": 450.0,
       "unit": "g",
-      "price": 155.0,
-      "compare_price": 155.0,
+      "price": 49.9,
+      "compare_price": 110.89,
       "compare_unit": "kg",
       "offer": true,
-      "offer_text": "Spara 16,00 kr/kg",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101206384_KG",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02313732000001_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "offer_text": "Välj & blanda! 2 för Klubbpris",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/101288417_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/05707196221008_C1R1_s01",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": ""
     },
     {
       "store": "willys-2102",
-      "name": "Lammframdel med Ben Fryst Nya Zeeland",
-      "brand": "Affco",
-      "size": 2.1,
-      "unit": "kg",
-      "price": 105.0,
-      "compare_price": 105.0,
+      "name": "Pulled Pork",
+      "brand": "Tulip",
+      "size": 500.0,
+      "unit": "g",
+      "price": 49.9,
+      "compare_price": 99.8,
       "compare_unit": "kg",
       "offer": true,
-      "offer_text": "Spara 15,10 kr/kg",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101218959_KG",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02359733200002_C1C1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "offer_text": "Välj & blanda! 2 för Klubbpris",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/101884899_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/05707196383720_C1R1_s01",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": ""
     },
     {
       "store": "willys-2102",
-      "name": "Short Ribs",
-      "brand": "Premiumbutcher",
-      "size": 1.2,
+      "name": "Fläskfilé Vakuumförpackad Sverige",
+      "brand": "",
+      "size": 500.0,
+      "unit": "g",
+      "price": 169.0,
+      "compare_price": 169.0,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "Spara 20,00 kr/kg",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/100748746_KG",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02385332900005_C1N1_s02",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
+      "query": ""
+    },
+    {
+      "store": "willys-2102",
+      "name": "Fläskkarré med Ben Skivad Sverige",
+      "brand": "Garant",
+      "size": 1.5,
       "unit": "kg",
-      "price": 135.0,
-      "compare_price": 135.0,
+      "price": 92.9,
+      "compare_price": 92.9,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "Spara 13,00 kr/kg",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/100942278_KG",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02355005700003_C1L1_s04",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
+      "query": ""
+    },
+    {
+      "store": "willys-2102",
+      "name": "Lammgrytbitar Fryst Nya Zeeland",
+      "brand": "Qibbla Halal",
+      "size": 2.2,
+      "unit": "kg",
+      "price": 109.0,
+      "compare_price": 109.0,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "Spara 10,10 kr/kg",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/100967045_KG",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02384123100006_C1N1_s01",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
+      "query": ""
+    },
+    {
+      "store": "willys-2102",
+      "name": "Majskyckling Bröstfilé Sverige",
+      "brand": "Garant",
+      "size": 750.0,
+      "unit": "g",
+      "price": 165.0,
+      "compare_price": 165.0,
       "compare_unit": "kg",
       "offer": true,
       "offer_text": "Spara 26,00 kr/kg",
-      "valid_until": "2026-11-08",
-      "url": "https://www.willys.se/produkt/101872722_KG",
-      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02331031800009_C1N1_s01",
-      "fetched_at": "2026-11-08T08:27:58+00:00",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/101232453_KG",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/02307983900005_C1L1_s03",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
+      "query": ""
+    },
+    {
+      "store": "willys-2102",
+      "name": "Salsicciakorv Färsk Sverige",
+      "brand": "Garant",
+      "size": 350.0,
+      "unit": "g",
+      "price": 48.9,
+      "compare_price": 139.71,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "Spara 9,00 kr/st",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/101236336_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07340045507885_C1N1_s02",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
+      "query": ""
+    },
+    {
+      "store": "willys-2102",
+      "name": "Burgare Nöt & Grönt",
+      "brand": "Garant",
+      "size": 226.0,
+      "unit": "g",
+      "price": 24.9,
+      "compare_price": 110.18,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "Spara 5,00 kr/st",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/101547588_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07311043007950_C1L1_s04",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
+      "query": ""
+    },
+    {
+      "store": "willys-2102",
+      "name": "Crispy Chicken Wings Vitlök/peppar",
+      "brand": "Lönneberga",
+      "size": 800.0,
+      "unit": "g",
+      "price": 62.9,
+      "compare_price": 78.63,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "Spara 13,00 kr/st",
+      "valid_until": "2026-11-15",
+      "url": "https://www.willys.se/produkt/101886898_ST",
+      "image": "https://assets.axfood.se/image/upload/f_auto,t_200/07391049004405_C1L1_s01",
+      "fetched_at": "2026-11-09T08:57:40+00:00",
       "query": ""
     }
   ]
