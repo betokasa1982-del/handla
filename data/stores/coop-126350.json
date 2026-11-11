@@ -6,8 +6,8 @@
     "status": "ok",
     "stale": false,
     "error": "",
-    "fetched_at": "2026-11-10T09:06:15+00:00",
-    "checked_at": "2026-11-10T09:06:15+00:00",
+    "fetched_at": "2026-11-11T08:44:35+00:00",
+    "checked_at": "2026-11-11T08:44:35+00:00",
     "product_count": 108,
     "offer_count": 41
   },
@@ -26,7 +26,7 @@
       "valid_until": "2027-10-03",
       "url": "https://www.coop.se/handla/sok/?q=7300156581006",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1779201102/cloud/683162.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "mjölk"
     },
     {
@@ -43,7 +43,7 @@
       "valid_until": "2027-10-03",
       "url": "https://www.coop.se/handla/sok/?q=7300156573186",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1780931497/cloud/700440.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "mjölk"
     },
     {
@@ -60,7 +60,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300156596451",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1779200607/cloud/683128.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "mjölk"
     },
     {
@@ -77,7 +77,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300156593528",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1780537442/cloud/696010.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "mjölk"
     },
     {
@@ -94,7 +94,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300156578143",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1726746384/cloud/387222.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "mjölk"
     },
     {
@@ -111,7 +111,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300156578129",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1726746366/cloud/387221.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "mjölk"
     },
     {
@@ -128,7 +128,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311070008708",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1661934051/cloud/258029.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "bröd"
     },
     {
@@ -145,7 +145,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311070004106",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1719294339/cloud/367043.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "bröd"
     },
     {
@@ -162,7 +162,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7391288218007",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1591104463/400920.jpg",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "bröd"
     },
     {
@@ -179,7 +179,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311070008494",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1716802108/cloud/358496.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "bröd"
     },
     {
@@ -196,7 +196,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311070008609",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1704186870/cloud/315258.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "bröd"
     },
     {
@@ -213,7 +213,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311073456780",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1647013873/cloud/249124.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "bröd"
     },
     {
@@ -230,7 +230,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300156503091",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1778678175/cloud/680698.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "ägg"
     },
     {
@@ -247,7 +247,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7332489005904",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1771357064/cloud/618544.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "ägg"
     },
     {
@@ -264,7 +264,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300156482679",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1760705270/cloud/544515.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "ägg"
     },
     {
@@ -281,7 +281,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7332489009025",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1705657310/cloud/320624.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "ägg"
     },
     {
@@ -298,7 +298,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7316840210077",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1759305687/cloud/529243.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "ägg"
     },
     {
@@ -315,7 +315,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7392765014280",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1611063124/417591.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "ägg"
     },
     {
@@ -332,7 +332,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2339401100001",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1634224873/cloud/224529.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "banan"
     },
     {
@@ -349,7 +349,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2317401100009",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1440062640/49613.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "banan"
     },
     {
@@ -366,7 +366,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7350000552935",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1765406216/cloud/580199.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "banan"
     },
     {
@@ -383,7 +383,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=4011800002077",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1747373884/cloud/480252.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "banan"
     },
     {
@@ -400,7 +400,7 @@
       "valid_until": "2026-12-20",
       "url": "https://www.coop.se/handla/sok/?q=7310760012896",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1676905402/cloud/274664.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "kaffe"
     },
     {
@@ -417,7 +417,7 @@
       "valid_until": "2026-12-20",
       "url": "https://www.coop.se/handla/sok/?q=7310760012315",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1676905217/cloud/274646.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "kaffe"
     },
     {
@@ -434,7 +434,7 @@
       "valid_until": "2026-12-20",
       "url": "https://www.coop.se/handla/sok/?q=7310760012919",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1676904843/cloud/274612.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "kaffe"
     },
     {
@@ -451,7 +451,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=8711000530085",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1762457505/cloud/551035.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "kaffe"
     },
     {
@@ -468,12 +468,12 @@
       "valid_until": "2026-12-20",
       "url": "https://www.coop.se/handla/sok/?q=7310760012902",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1676905322/cloud/274657.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "kaffe"
     },
     {
       "store": "coop-126350",
-      "name": "Bryggkaffe Mörkrost Wanyama",
+      "name": "Bryggkaffe Extra Mörkrost Festivita",
       "brand": "Arvid Nordquist",
       "size": 500.0,
       "unit": "g",
@@ -483,9 +483,9 @@
       "offer": true,
       "offer_text": "Bryggkaffe 2 för 140kr-2 för 140:-",
       "valid_until": "2026-12-20",
-      "url": "https://www.coop.se/handla/sok/?q=7310760012391",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1676904790/cloud/274608.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "url": "https://www.coop.se/handla/sok/?q=7310760012308",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1676904949/cloud/274622.tiff",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "kaffe"
     },
     {
@@ -502,7 +502,7 @@
       "valid_until": "2027-10-03",
       "url": "https://www.coop.se/handla/sok/?q=7340191165588",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1726149729/cloud/385426.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "pasta"
     },
     {
@@ -519,7 +519,7 @@
       "valid_until": "2027-10-03",
       "url": "https://www.coop.se/handla/sok/?q=7340191165649",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1726581648/cloud/386446.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "pasta"
     },
     {
@@ -536,7 +536,7 @@
       "valid_until": "2027-10-03",
       "url": "https://www.coop.se/handla/sok/?q=7340191165595",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1727349103/cloud/389764.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "pasta"
     },
     {
@@ -553,7 +553,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7340191144880",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1726737638/cloud/387075.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "pasta"
     },
     {
@@ -570,7 +570,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7350002407844",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1649072540/cloud/250646.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "pasta"
     },
     {
@@ -587,7 +587,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7350027797272",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1762468717/cloud/551135.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "pasta"
     },
     {
@@ -604,7 +604,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2340375400004",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1775645837/cloud/647078.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "ost"
     },
     {
@@ -621,7 +621,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2340420500000",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1759603208/cloud/533381.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "ost"
     },
     {
@@ -638,7 +638,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2340415200007",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1747652504/cloud/481520.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "ost"
     },
     {
@@ -655,7 +655,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311870011205",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1759602987/cloud/533367.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "ost"
     },
     {
@@ -672,7 +672,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2340375700005",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1775645849/cloud/647080.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "ost"
     },
     {
@@ -689,7 +689,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2317480600001",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1654157612/cloud/206103.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "tomat"
     },
     {
@@ -706,7 +706,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7340007915802",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1591770225/401222.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "tomat"
     },
     {
@@ -723,7 +723,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2317466400007",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1440063185/49690.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "tomat"
     },
     {
@@ -740,7 +740,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300156598929",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1736333735/cloud/421741.jpg",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "tomat"
     },
     {
@@ -757,7 +757,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300156598943",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1736345212/cloud/421813.jpg",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "tomat"
     },
     {
@@ -774,7 +774,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300156589637",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1725957725/cloud/384479.jpg",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "tomat"
     },
     {
@@ -791,7 +791,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7331217015734",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1709123008/cloud/331059.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "ris"
     },
     {
@@ -808,7 +808,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7331217015710",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1709122941/cloud/331050.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "ris"
     },
     {
@@ -825,7 +825,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7340011352228",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1734536729/cloud/417348.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "ris"
     },
     {
@@ -842,7 +842,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7340011495109",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1736245525/cloud/421359.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "ris"
     },
     {
@@ -859,7 +859,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=8680417214232",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1739203428/cloud/437390.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "ris"
     },
     {
@@ -876,7 +876,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=5410673006363",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1683524309/cloud/280333.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "ris"
     },
     {
@@ -893,7 +893,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300322544002",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1792585348/cloud/767780.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "kyckling"
     },
     {
@@ -910,7 +910,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2307116100005",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1580775841/392332.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "kyckling"
     },
     {
@@ -927,7 +927,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7313940580093",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1625957267/cloud/183958.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "kyckling"
     },
     {
@@ -944,7 +944,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2307136100009",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1723034371/cloud/376381.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "kyckling"
     },
     {
@@ -961,7 +961,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7340191176409",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1746023023/cloud/473940.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "kyckling"
     },
     {
@@ -978,7 +978,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2307116800004",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1677598501/cloud/275149.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "kyckling"
     },
     {
@@ -995,7 +995,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7310865005168",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1623365419/131876.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "smör"
     },
     {
@@ -1012,7 +1012,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311870010970",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1702637091/cloud/311430.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "smör"
     },
     {
@@ -1029,7 +1029,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7310865560759",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1631117773/cloud/233828.jpg",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "smör"
     },
     {
@@ -1046,7 +1046,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311870010987",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1702638576/cloud/311457.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "smör"
     },
     {
@@ -1063,7 +1063,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7310865561121",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1530307395/309788.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "smör"
     },
     {
@@ -1080,7 +1080,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7310865005304",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1530305614/309769.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "smör"
     },
     {
@@ -1097,7 +1097,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=6414301028283",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1733409211/cloud/414193.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "toalettpapper"
     },
     {
@@ -1114,7 +1114,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=6414301035038",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1738132418/cloud/428789.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "toalettpapper"
     },
     {
@@ -1131,7 +1131,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=6414301054060",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1733224402/cloud/412080.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "toalettpapper"
     },
     {
@@ -1148,7 +1148,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=6414301054169",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1768583754/cloud/599608.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "toalettpapper"
     },
     {
@@ -1165,7 +1165,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7340191169678",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1729694291/cloud/396541.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "toalettpapper"
     },
     {
@@ -1182,7 +1182,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7340191166851",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1724735073/cloud/380962.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "toalettpapper"
     },
     {
@@ -1199,7 +1199,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311070337297",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1772803187/cloud/625260.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "hönö"
     },
     {
@@ -1216,7 +1216,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311070003567",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1704186364/cloud/315234.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "hönö"
     },
     {
@@ -1233,7 +1233,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311070003543",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1704186808/cloud/315254.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "hönö"
     },
     {
@@ -1250,7 +1250,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7313636800016",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1791891898/cloud/763941.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "hönö"
     },
     {
@@ -1267,7 +1267,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7310865067883",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1747652271/cloud/481502.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "laktosfri mjölk"
     },
     {
@@ -1284,7 +1284,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7310865067944",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1747652274/cloud/481503.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "laktosfri mjölk"
     },
     {
@@ -1301,7 +1301,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7310865078216",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1777989398/cloud/671274.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "laktosfri mjölk"
     },
     {
@@ -1318,7 +1318,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7310865875020",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1747652491/cloud/481519.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "laktosfri mjölk"
     },
     {
@@ -1335,7 +1335,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=6408432086564",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1747741059/cloud/482313.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": "laktosfri mjölk"
     },
     {
@@ -1352,7 +1352,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=8719200052543",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1624280800/185107.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1369,7 +1369,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=7300156493934",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1727348980/cloud/389753.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1386,7 +1386,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=7340191148727",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1698681055/cloud/296407.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1403,7 +1403,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=7340191148741",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1698680913/cloud/296401.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1420,7 +1420,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=7340191148758",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1698680931/cloud/296402.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1437,7 +1437,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=7340191144651",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1692360039/cloud/288023.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1454,7 +1454,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=7300156498861",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1697461139/cloud/292957.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1471,7 +1471,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=7300156498878",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1697461159/cloud/292958.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1488,7 +1488,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=7340191168817",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1724337989/cloud/380275.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1505,7 +1505,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=7340191168824",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1724839168/cloud/381338.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1522,7 +1522,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=7340191172104",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1737110935/cloud/425101.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1539,7 +1539,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=1210002014519",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1781784934/cloud/710208.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1556,7 +1556,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=1210002014540",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1781784119/cloud/710146.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1573,7 +1573,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=1210002014601",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1781784947/cloud/710210.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1590,7 +1590,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=1210002014663",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1781775500/cloud/709376.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1607,7 +1607,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=1210002014694",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1781784956/cloud/710211.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1624,7 +1624,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=1210002014724",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1781010082/cloud/701796.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1641,7 +1641,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=2317466600001",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1440063196/49691.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1658,7 +1658,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=2320321600009",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1789460725/cloud/746817.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1675,7 +1675,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=2320523200007",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1777278795/cloud/662050.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1692,7 +1692,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=2320719100005",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1742480940/cloud/457132.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1709,7 +1709,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=2340302200004",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1578656404/389551.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1726,7 +1726,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=2340343600009",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1631194810/cloud/182207.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1743,7 +1743,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=2340443600008",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1634131700/cloud/236539.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1760,7 +1760,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=2340449300001",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1562746260/376044.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1777,7 +1777,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=4001724038900",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1674464916/cloud/272366.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1794,7 +1794,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=4001724039112",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1674464879/cloud/272362.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1811,7 +1811,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=4001724039655",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1740567133/cloud/445394.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1828,7 +1828,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=4001724048800",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1769683396/cloud/607207.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     },
     {
@@ -1845,7 +1845,7 @@
       "valid_until": "2026-11-15",
       "url": "https://www.coop.se/handla/sok/?q=4019709283535",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1764772142/cloud/568696.tiff",
-      "fetched_at": "2026-11-10T09:06:15+00:00",
+      "fetched_at": "2026-11-11T08:44:35+00:00",
       "query": ""
     }
   ]
