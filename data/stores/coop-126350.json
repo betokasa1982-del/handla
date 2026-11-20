@@ -6,10 +6,10 @@
     "status": "ok",
     "stale": false,
     "error": "",
-    "fetched_at": "2026-11-19T09:45:20+00:00",
-    "checked_at": "2026-11-19T09:45:20+00:00",
-    "product_count": 105,
-    "offer_count": 39
+    "fetched_at": "2026-11-20T09:33:19+00:00",
+    "checked_at": "2026-11-20T09:33:19+00:00",
+    "product_count": 108,
+    "offer_count": 41
   },
   "products": [
     {
@@ -26,7 +26,7 @@
       "valid_until": "2027-10-03",
       "url": "https://www.coop.se/handla/sok/?q=7300156581006",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1779201102/cloud/683162.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "mjölk"
     },
     {
@@ -43,7 +43,7 @@
       "valid_until": "2027-10-03",
       "url": "https://www.coop.se/handla/sok/?q=7300156573186",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1780931497/cloud/700440.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "mjölk"
     },
     {
@@ -60,7 +60,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300156596451",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1779200607/cloud/683128.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "mjölk"
     },
     {
@@ -77,7 +77,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300156593528",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1780537442/cloud/696010.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "mjölk"
     },
     {
@@ -94,7 +94,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300156578143",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1726746384/cloud/387222.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "mjölk"
     },
     {
@@ -111,7 +111,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300156578129",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1726746366/cloud/387221.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "mjölk"
     },
     {
@@ -128,7 +128,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311070008708",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1661934051/cloud/258029.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "bröd"
     },
     {
@@ -145,7 +145,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311070004106",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1719294339/cloud/367043.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "bröd"
     },
     {
@@ -162,7 +162,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311070008494",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1716802108/cloud/358496.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "bröd"
     },
     {
@@ -179,7 +179,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7391288218007",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1591104463/400920.jpg",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "bröd"
     },
     {
@@ -196,7 +196,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311073456780",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1647013873/cloud/249124.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "bröd"
     },
     {
@@ -213,7 +213,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311070008609",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1704186870/cloud/315258.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "bröd"
     },
     {
@@ -230,7 +230,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300156503091",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1778678175/cloud/680698.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "ägg"
     },
     {
@@ -247,7 +247,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7332489005904",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1771357064/cloud/618544.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "ägg"
     },
     {
@@ -264,7 +264,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300156482679",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1760705270/cloud/544515.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "ägg"
     },
     {
@@ -281,7 +281,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7332489009025",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1705657310/cloud/320624.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "ägg"
     },
     {
@@ -298,7 +298,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7316840210077",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1759305687/cloud/529243.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "ägg"
     },
     {
@@ -315,7 +315,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7392765014280",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1611063124/417591.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "ägg"
     },
     {
@@ -332,7 +332,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2339401100001",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1634224873/cloud/224529.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "banan"
     },
     {
@@ -349,7 +349,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2317401100009",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1440062640/49613.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "banan"
     },
     {
@@ -366,7 +366,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7350000552935",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1765406216/cloud/580199.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "banan"
     },
     {
@@ -383,7 +383,24 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=4011800002077",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1747373884/cloud/480252.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": "banan"
+    },
+    {
+      "store": "coop-126350",
+      "name": "Müslibar Choklad & banan",
+      "brand": "Corny",
+      "size": 50.0,
+      "unit": "g",
+      "price": 10.36,
+      "compare_price": 207.2,
+      "compare_unit": "kg",
+      "offer": false,
+      "offer_text": "",
+      "valid_until": "",
+      "url": "https://www.coop.se/handla/sok/?q=4011800564513",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1765962330/cloud/589330.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "banan"
     },
     {
@@ -400,7 +417,7 @@
       "valid_until": "2026-12-20",
       "url": "https://www.coop.se/handla/sok/?q=7310760012896",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1676905402/cloud/274664.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "kaffe"
     },
     {
@@ -417,7 +434,7 @@
       "valid_until": "2026-12-20",
       "url": "https://www.coop.se/handla/sok/?q=7310760012315",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1676905217/cloud/274646.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "kaffe"
     },
     {
@@ -434,7 +451,7 @@
       "valid_until": "2026-12-20",
       "url": "https://www.coop.se/handla/sok/?q=7310760012919",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1676904843/cloud/274612.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "kaffe"
     },
     {
@@ -451,7 +468,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=8711000530085",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1762457505/cloud/551035.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "kaffe"
     },
     {
@@ -468,7 +485,7 @@
       "valid_until": "2026-12-20",
       "url": "https://www.coop.se/handla/sok/?q=7310760012902",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1676905322/cloud/274657.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "kaffe"
     },
     {
@@ -485,7 +502,7 @@
       "valid_until": "2026-12-20",
       "url": "https://www.coop.se/handla/sok/?q=7310760012391",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1676904790/cloud/274608.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "kaffe"
     },
     {
@@ -502,7 +519,7 @@
       "valid_until": "2027-10-03",
       "url": "https://www.coop.se/handla/sok/?q=7340191165588",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1726149729/cloud/385426.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "pasta"
     },
     {
@@ -519,7 +536,7 @@
       "valid_until": "2027-10-03",
       "url": "https://www.coop.se/handla/sok/?q=7340191165649",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1726581648/cloud/386446.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "pasta"
     },
     {
@@ -536,7 +553,7 @@
       "valid_until": "2027-10-03",
       "url": "https://www.coop.se/handla/sok/?q=7340191165595",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1727349103/cloud/389764.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "pasta"
     },
     {
@@ -553,7 +570,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7340191144880",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1726737638/cloud/387075.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "pasta"
     },
     {
@@ -570,7 +587,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7350027797272",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1762468717/cloud/551135.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "pasta"
     },
     {
@@ -587,7 +604,7 @@
       "valid_until": "2027-10-03",
       "url": "https://www.coop.se/handla/sok/?q=7340191165663",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1726581865/cloud/386456.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "pasta"
     },
     {
@@ -604,7 +621,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2340375400004",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1775645837/cloud/647078.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "ost"
     },
     {
@@ -621,7 +638,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2340415200007",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1747652504/cloud/481520.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "ost"
     },
     {
@@ -638,7 +655,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311870011205",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1759602987/cloud/533367.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "ost"
     },
     {
@@ -647,15 +664,15 @@
       "brand": "Arla®",
       "size": null,
       "unit": "",
-      "price": 126.0,
-      "compare_price": 126.0,
+      "price": 114.0,
+      "compare_price": 114.0,
       "compare_unit": "kg",
       "offer": false,
       "offer_text": "",
       "valid_until": "",
-      "url": "https://www.coop.se/handla/sok/?q=2340375700005",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1775645849/cloud/647080.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "url": "https://www.coop.se/handla/sok/?q=2340375600008",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1775645841/cloud/647079.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "ost"
     },
     {
@@ -672,7 +689,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2317480600001",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1654157612/cloud/206103.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "tomat"
     },
     {
@@ -689,7 +706,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7340007915802",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1591770225/401222.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "tomat"
     },
     {
@@ -706,7 +723,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300156598929",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1736333735/cloud/421741.jpg",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "tomat"
     },
     {
@@ -723,7 +740,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300156598943",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1736345212/cloud/421813.jpg",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "tomat"
     },
     {
@@ -740,7 +757,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300156589637",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1725957725/cloud/384479.jpg",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "tomat"
     },
     {
@@ -757,7 +774,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7350018561462",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1761034577/cloud/545295.jpg",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "tomat"
     },
     {
@@ -774,7 +791,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7331217015734",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1709123008/cloud/331059.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "ris"
     },
     {
@@ -791,7 +808,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7331217015710",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1709122941/cloud/331050.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "ris"
     },
     {
@@ -808,7 +825,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7340011352228",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1734536729/cloud/417348.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "ris"
     },
     {
@@ -825,7 +842,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7340011495109",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1736245525/cloud/421359.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "ris"
     },
     {
@@ -842,7 +859,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=8680417214232",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1739203428/cloud/437390.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "ris"
     },
     {
@@ -859,7 +876,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=5410673005847",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1629705529/cloud/232697.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "ris"
     },
     {
@@ -876,7 +893,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7300322544002",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1792585348/cloud/767780.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "kyckling"
     },
     {
@@ -893,7 +910,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2307116100005",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1580775841/392332.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "kyckling"
     },
     {
@@ -910,7 +927,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7313940580093",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1625957267/cloud/183958.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "kyckling"
     },
     {
@@ -927,7 +944,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2307136100009",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1723034371/cloud/376381.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "kyckling"
     },
     {
@@ -944,7 +961,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7340191176409",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1746023023/cloud/473940.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "kyckling"
     },
     {
@@ -961,7 +978,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=2307116800004",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1677598501/cloud/275149.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "kyckling"
     },
     {
@@ -978,7 +995,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7310865005168",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1623365419/131876.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "smör"
     },
     {
@@ -995,7 +1012,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311870010970",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1702637091/cloud/311430.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "smör"
     },
     {
@@ -1012,7 +1029,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7310865560759",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1631117773/cloud/233828.jpg",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "smör"
     },
     {
@@ -1029,7 +1046,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7310865561121",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1530307395/309788.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "smör"
     },
     {
@@ -1046,7 +1063,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7310865005304",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1530305614/309769.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "smör"
     },
     {
@@ -1063,7 +1080,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311870010987",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1702638576/cloud/311457.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "smör"
     },
     {
@@ -1080,7 +1097,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=6414301028283",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1733409211/cloud/414193.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "toalettpapper"
     },
     {
@@ -1097,7 +1114,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=6414301035038",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1738132418/cloud/428789.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "toalettpapper"
     },
     {
@@ -1114,7 +1131,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=6414301054060",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1733224402/cloud/412080.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "toalettpapper"
     },
     {
@@ -1131,7 +1148,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=6414301054169",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1768583754/cloud/599608.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "toalettpapper"
     },
     {
@@ -1148,7 +1165,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7340191169678",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1729694291/cloud/396541.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "toalettpapper"
     },
     {
@@ -1165,7 +1182,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7340191166851",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1724735073/cloud/380962.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "toalettpapper"
     },
     {
@@ -1182,7 +1199,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311070337297",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1772803187/cloud/625260.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "hönö"
     },
     {
@@ -1199,7 +1216,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311070003567",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1704186364/cloud/315234.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "hönö"
     },
     {
@@ -1216,7 +1233,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7311070003543",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1704186808/cloud/315254.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "hönö"
     },
     {
@@ -1233,7 +1250,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7313636800016",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1791891898/cloud/763941.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "hönö"
     },
     {
@@ -1250,7 +1267,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7310865067883",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1747652271/cloud/481502.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "laktosfri mjölk"
     },
     {
@@ -1267,7 +1284,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7310865067944",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1747652274/cloud/481503.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "laktosfri mjölk"
     },
     {
@@ -1284,7 +1301,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7310865078216",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1777989398/cloud/671274.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "laktosfri mjölk"
     },
     {
@@ -1301,7 +1318,7 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=7310865875020",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1747652491/cloud/481519.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "laktosfri mjölk"
     },
     {
@@ -1318,483 +1335,517 @@
       "valid_until": "",
       "url": "https://www.coop.se/handla/sok/?q=6408432086564",
       "image": "https://res.cloudinary.com/coopsverige/image/upload/v1747741059/cloud/482313.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": "laktosfri mjölk"
     },
     {
       "store": "coop-126350",
-      "name": "Jordnötssmör Crunchy Eko",
-      "brand": "Änglamark",
-      "size": 350.0,
+      "name": "Pizza Ost & Skinka",
+      "brand": "Coop",
+      "size": 340.0,
       "unit": "g",
-      "price": 30.0,
-      "compare_price": 121.54,
+      "price": 32.13,
+      "compare_price": 94.5,
       "compare_unit": "kg",
       "offer": true,
-      "offer_text": "Jordnötssmör Crunchy Eko-30:- /st",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=7340191124394",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1652169580/cloud/251821.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "offer_text": "5 för 99kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=7340011445463",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1634806327/cloud/190699.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": ""
     },
     {
       "store": "coop-126350",
-      "name": "Jordnötssmör Smooth Eko",
-      "brand": "Änglamark",
+      "name": "Pizza Mozzarella",
+      "brand": "Coop",
       "size": 350.0,
       "unit": "g",
-      "price": 30.0,
-      "compare_price": 121.54,
+      "price": 32.13,
+      "compare_price": 91.8,
       "compare_unit": "kg",
       "offer": true,
-      "offer_text": "Jordnötssmör Smooth Eko-30:- /st",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=7340191124400",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1697615183/cloud/293027.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "offer_text": "5 för 99kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=7340011445470",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1632319185/cloud/190700.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": ""
     },
     {
       "store": "coop-126350",
-      "name": "Svart Te Tropisk 20-pack",
+      "name": "Pizza Hawaii",
       "brand": "Coop",
-      "size": 20.0,
-      "unit": "st",
-      "price": 16.56,
-      "compare_price": 0.83,
-      "compare_unit": "st",
-      "offer": true,
-      "offer_text": "Te 2 för 22kr-2 för 22:-",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=7300156495631",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1587456001/398681.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
-      "query": ""
-    },
-    {
-      "store": "coop-126350",
-      "name": "Svart te Söderfröjd 20-pack",
-      "brand": "Coop",
-      "size": 20.0,
-      "unit": "st",
-      "price": 16.56,
-      "compare_price": 0.83,
-      "compare_unit": "st",
-      "offer": true,
-      "offer_text": "Te 2 för 22kr-2 för 22:-",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=7300156582966",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1737975884/cloud/428235.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
-      "query": ""
-    },
-    {
-      "store": "coop-126350",
-      "name": "Rooibos te Naturell 20-pack",
-      "brand": "Coop",
-      "size": 30.0,
+      "size": 350.0,
       "unit": "g",
-      "price": 16.56,
-      "compare_price": 0.83,
-      "compare_unit": "g",
+      "price": 32.13,
+      "compare_price": 91.8,
+      "compare_unit": "kg",
       "offer": true,
-      "offer_text": "Te 2 för 22kr-2 för 22:-",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=7300156582973",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1737975736/cloud/428220.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "offer_text": "5 för 99kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=7340011445487",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1576668534/387750.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": ""
     },
     {
       "store": "coop-126350",
-      "name": "Svart te Rabarber & grädde 20-pack",
+      "name": "Pizza Salami",
       "brand": "Coop",
-      "size": 20.0,
-      "unit": "st",
-      "price": 16.56,
-      "compare_price": 0.83,
-      "compare_unit": "st",
+      "size": 350.0,
+      "unit": "g",
+      "price": 32.13,
+      "compare_price": 91.8,
+      "compare_unit": "kg",
       "offer": true,
-      "offer_text": "Te 2 för 22kr-2 för 22:-",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=7340191163959",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1737975799/cloud/428227.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "offer_text": "5 för 99kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=7340011445494",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1634806343/cloud/190702.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": ""
     },
     {
       "store": "coop-126350",
-      "name": "Grönt te Chai 20-pack",
-      "brand": "Coop",
-      "size": 20.0,
-      "unit": "st",
-      "price": 16.56,
-      "compare_price": 0.83,
-      "compare_unit": "st",
-      "offer": true,
-      "offer_text": "Te 2 för 22kr-2 för 22:-",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=7340191163966",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1728388004/cloud/392450.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
-      "query": ""
-    },
-    {
-      "store": "coop-126350",
-      "name": "Svart te Forest fruit 20-pack",
-      "brand": "Coop",
-      "size": 20.0,
-      "unit": "st",
-      "price": 16.56,
-      "compare_price": 0.83,
-      "compare_unit": "st",
-      "offer": true,
-      "offer_text": "Te 2 för 22kr-2 för 22:-",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=7340191163973",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1732201169/cloud/406452.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
-      "query": ""
-    },
-    {
-      "store": "coop-126350",
-      "name": "Grönt te Vanilj 20-pack",
-      "brand": "Coop",
-      "size": 20.0,
-      "unit": "st",
-      "price": 16.56,
-      "compare_price": 0.83,
-      "compare_unit": "st",
-      "offer": true,
-      "offer_text": "Te 2 för 22kr-2 för 22:-",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=7340191164307",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1737975840/cloud/428231.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
-      "query": ""
-    },
-    {
-      "store": "coop-126350",
-      "name": "Grönt te Citrus 20-pack",
-      "brand": "Coop",
-      "size": 20.0,
-      "unit": "st",
-      "price": 16.56,
-      "compare_price": 0.83,
-      "compare_unit": "st",
-      "offer": true,
-      "offer_text": "Te 2 för 22kr-2 för 22:-",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=7340191164345",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1732201024/cloud/406437.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
-      "query": ""
-    },
-    {
-      "store": "coop-126350",
-      "name": "Örtte Rooibos vanilj 20-pack",
-      "brand": "Coop",
-      "size": 20.0,
-      "unit": "st",
-      "price": 16.56,
-      "compare_price": 0.83,
-      "compare_unit": "st",
-      "offer": true,
-      "offer_text": "Te 2 för 22kr-2 för 22:-",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=7340191164376",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1728388015/cloud/392451.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
-      "query": ""
-    },
-    {
-      "store": "coop-126350",
-      "name": "Jordgubbste 20-pack",
-      "brand": "Coop",
-      "size": 20.0,
-      "unit": "st",
-      "price": 16.56,
-      "compare_price": 0.83,
-      "compare_unit": "st",
-      "offer": true,
-      "offer_text": "Te 2 för 22kr-2 för 22:-",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=7340191164420",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1719581688/cloud/368599.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
-      "query": ""
-    },
-    {
-      "store": "coop-126350",
-      "name": "Revbensspjäll",
-      "brand": "Coop",
+      "name": "Pizza Het Tex Mex",
+      "brand": "COOP",
       "size": null,
       "unit": "",
-      "price": 76.89,
-      "compare_price": 85.13,
+      "price": 32.13,
+      "compare_price": 94.5,
       "compare_unit": "kg",
       "offer": true,
-      "offer_text": "Revbensspjäll-69:90 /kg",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=2317258800008",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1730715833/cloud/399225.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "offer_text": "5 för 99kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=7340011459934",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1674215446/cloud/272288.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": ""
     },
     {
       "store": "coop-126350",
-      "name": "Fläskkarre",
+      "name": "Pizza Kebab",
+      "brand": "Coop",
+      "size": 370.0,
+      "unit": "g",
+      "price": 32.13,
+      "compare_price": 86.84,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "5 för 99kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=7340191140523",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1683810935/cloud/280594.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Äpple",
+      "brand": "",
+      "size": null,
+      "unit": "",
+      "price": 3.0,
+      "compare_price": 37.9,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "20 kr/kg",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=2317419500006",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1440401690/50187.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Fläskytterfilé",
       "brand": "Scan",
       "size": null,
       "unit": "",
-      "price": 95.88,
-      "compare_price": 95.0,
+      "price": 65.89,
+      "compare_price": 113.0,
       "compare_unit": "kg",
       "offer": true,
-      "offer_text": "Fläskkarre-79:90 /kg",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=2320051600003",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1606746183/413377.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "offer_text": "59,90 kr/kg",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=2320321600009",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1789460725/cloud/746817.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": ""
     },
     {
       "store": "coop-126350",
-      "name": "Fläskfärs",
-      "brand": "Scan",
-      "size": null,
-      "unit": "",
-      "price": 34.95,
-      "compare_price": 88.95,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Fläskfärs-69:90 /kg",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=2320675800001",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1777278804/cloud/662051.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
-      "query": ""
-    },
-    {
-      "store": "coop-126350",
-      "name": "Ost Familjefavoriter Edamer",
-      "brand": "Arla®",
-      "size": null,
-      "unit": "",
-      "price": 83.88,
-      "compare_price": 107.0,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "69,90 kr/kg",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=2340379300003",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1636245761/cloud/210650.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
-      "query": ""
-    },
-    {
-      "store": "coop-126350",
-      "name": "Ost Familjefavoriter Jämtgård",
-      "brand": "Arla®",
-      "size": null,
-      "unit": "",
-      "price": 83.88,
-      "compare_price": 107.0,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "69,90 kr/kg",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=2340379400000",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1604344323/411334.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
-      "query": ""
-    },
-    {
-      "store": "coop-126350",
-      "name": "Ost Familjefavoriter Gouda",
-      "brand": "Arla®",
-      "size": null,
-      "unit": "",
-      "price": 83.88,
-      "compare_price": 107.0,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "69,90 kr/kg",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=2340379500007",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1604344335/411336.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
-      "query": ""
-    },
-    {
-      "store": "coop-126350",
-      "name": "Ost Familjefavoriter Port Salut",
-      "brand": "Arla®",
-      "size": null,
-      "unit": "",
-      "price": 52.43,
-      "compare_price": 107.0,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "69,90 kr/kg",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=2340380200002",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1604344365/411341.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
-      "query": ""
-    },
-    {
-      "store": "coop-126350",
-      "name": "Ost Familjefavoriter Storsjö",
-      "brand": "Arla®",
-      "size": null,
-      "unit": "",
-      "price": 83.88,
-      "compare_price": 107.0,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "69,90 kr/kg",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=2340381700006",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1604344390/411343.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
-      "query": ""
-    },
-    {
-      "store": "coop-126350",
-      "name": "Ost Humlan Familjefavoriter Eko",
-      "brand": "Arla®",
-      "size": null,
-      "unit": "",
-      "price": 83.88,
-      "compare_price": 129.0,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "69,90 kr/kg",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=2340397400006",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1646291894/cloud/248366.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
-      "query": ""
-    },
-    {
-      "store": "coop-126350",
-      "name": "Ost Familjefavoriter Gräddis",
-      "brand": "Arla®",
-      "size": null,
-      "unit": "",
-      "price": 69.9,
-      "compare_price": 107.0,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "69,90 kr/kg",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=2340398000007",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1604344430/411345.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
-      "query": ""
-    },
-    {
-      "store": "coop-126350",
-      "name": "Borgmästarost",
-      "brand": "Boxholms®",
-      "size": null,
-      "unit": "",
-      "price": 87.2,
-      "compare_price": 150.48,
-      "compare_unit": "kg",
-      "offer": true,
-      "offer_text": "Borgmästarost-109:- /kg",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=2378065400003",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1640864750/cloud/242442.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
-      "query": ""
-    },
-    {
-      "store": "coop-126350",
-      "name": "Mörk Choklad Excellence Caramelized hazelnu",
-      "brand": "Lindt",
-      "size": 100.0,
+      "name": "Chokladkaka Hackad hasselnöt",
+      "brand": "Fazer",
+      "size": 145.0,
       "unit": "g",
-      "price": 43.55,
-      "compare_price": 435.5,
+      "price": 33.5,
+      "compare_price": 231.03,
       "compare_unit": "kg",
       "offer": true,
-      "offer_text": "Excellence 2 för 69kr-2 för 69:-",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=3046920020305",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1704155572/cloud/315190.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "offer_text": "2 för 35kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=6416453015425",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1655112013/cloud/253439.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": ""
     },
     {
       "store": "coop-126350",
-      "name": "Choklad Excellence Fusion 70% & Milk",
-      "brand": "Lindt",
-      "size": 100.0,
+      "name": "Chokladkaka Dumle",
+      "brand": "Fazer",
+      "size": 145.0,
       "unit": "g",
-      "price": 43.55,
-      "compare_price": 435.5,
+      "price": 33.5,
+      "compare_price": 231.03,
       "compare_unit": "kg",
       "offer": true,
-      "offer_text": "Excellence 2 för 69kr-2 för 69:-",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=3046920022422",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1758051044/cloud/516498.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "offer_text": "2 för 35kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=6416453015432",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1655111987/cloud/253437.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": ""
     },
     {
       "store": "coop-126350",
-      "name": "Choklad Excellence Fusion 70% & white",
-      "brand": "Lindt",
-      "size": 100.0,
+      "name": "Chokladkaka Mjölkchoklad",
+      "brand": "Fazer",
+      "size": 145.0,
       "unit": "g",
-      "price": 43.55,
-      "compare_price": 435.5,
+      "price": 33.5,
+      "compare_price": 231.03,
       "compare_unit": "kg",
       "offer": true,
-      "offer_text": "Excellence 2 för 69kr-2 för 69:-",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=3046920022439",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1757941514/cloud/515260.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "offer_text": "2 för 35kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=6416453015456",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1655191819/cloud/253522.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": ""
     },
     {
       "store": "coop-126350",
-      "name": "Choklad Excellence Fusion 85% & milk salt",
-      "brand": "Lindt",
-      "size": 100.0,
+      "name": "Chokladkaka Salty Toffe Crunch",
+      "brand": "Fazer",
+      "size": 145.0,
       "unit": "g",
-      "price": 43.55,
-      "compare_price": 435.5,
+      "price": 33.5,
+      "compare_price": 231.03,
       "compare_unit": "kg",
       "offer": true,
-      "offer_text": "Excellence 2 för 69kr-2 för 69:-",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=3046920022446",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1757987741/cloud/515860.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "offer_text": "2 för 35kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=6416453015463",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1655112005/cloud/253438.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": ""
     },
     {
       "store": "coop-126350",
-      "name": "Mörk choklad Excellence Pistachio",
-      "brand": "Lindt",
-      "size": 100.0,
+      "name": "Chokladkaka Tutti Frutti",
+      "brand": "Fazer",
+      "size": 145.0,
       "unit": "g",
-      "price": 43.55,
-      "compare_price": 435.5,
+      "price": 33.5,
+      "compare_price": 231.03,
       "compare_unit": "kg",
       "offer": true,
-      "offer_text": "Excellence 2 för 69kr-2 för 69:-",
-      "valid_until": "2026-11-22",
-      "url": "https://www.coop.se/handla/sok/?q=3046920023047",
-      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1734564666/cloud/418548.tiff",
-      "fetched_at": "2026-11-19T09:45:20+00:00",
+      "offer_text": "2 för 35kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=6416453015487",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1655112030/cloud/253440.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Chokladkaka Geisha",
+      "brand": "Fazer",
+      "size": 121.0,
+      "unit": "g",
+      "price": 33.5,
+      "compare_price": 276.86,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "2 för 35kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=6416453015562",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1612132668/419277.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Chokladkaka Salty Kina",
+      "brand": "Fazer",
+      "size": 120.0,
+      "unit": "g",
+      "price": 31.5,
+      "compare_price": 262.5,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "2 för 35kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=6416453056220",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1771960515/cloud/621210.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Chokladkaka Vanilla & Cocoa Fudge",
+      "brand": "Fazer",
+      "size": 145.0,
+      "unit": "g",
+      "price": 32.5,
+      "compare_price": 224.14,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "2 för 35kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=6416453056251",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1793716662/cloud/773374.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Pulled Pork",
+      "brand": "COOP",
+      "size": null,
+      "unit": "",
+      "price": 25.0,
+      "compare_price": 119.88,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "25 kr/st",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=7300156574992",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1693213997/cloud/288422.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Tortillachips Cheese",
+      "brand": "Santa Maria",
+      "size": 475.0,
+      "unit": "g",
+      "price": 35.95,
+      "compare_price": 75.68,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "2 för 40kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=7311312008138",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1700118206/cloud/301836.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Nachochips",
+      "brand": "Santa Maria",
+      "size": 475.0,
+      "unit": "g",
+      "price": 35.95,
+      "compare_price": 75.68,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "2 för 40kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=7311312008183",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1700118285/cloud/301843.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Glassbåtar 6-pack",
+      "brand": "SIA Glass",
+      "size": 6.0,
+      "unit": "st",
+      "price": 50.11,
+      "compare_price": 8.35,
+      "compare_unit": "st",
+      "offer": true,
+      "offer_text": "3 för 89kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=7312690800086",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1622032349/429723.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Glassbåt Hallon 6-pack",
+      "brand": "SIA Glass",
+      "size": 6.0,
+      "unit": "st",
+      "price": 50.11,
+      "compare_price": 8.35,
+      "compare_unit": "st",
+      "offer": true,
+      "offer_text": "3 för 89kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=7312690800291",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1705059965/cloud/318672.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Pinsa Mini",
+      "brand": "Zeta",
+      "size": 130.0,
+      "unit": "g",
+      "price": 26.45,
+      "compare_price": 203.46,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "2 för 39kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=7350027799153",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1720105474/cloud/370625.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Liba Original",
+      "brand": "Liba Bröd",
+      "size": null,
+      "unit": "",
+      "price": 11.31,
+      "compare_price": 34.27,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "2 för 10kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=7393145093604",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1793790885/cloud/773913.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Liba Bröd Grov",
+      "brand": "Liba Bröd",
+      "size": null,
+      "unit": "",
+      "price": 11.31,
+      "compare_price": 34.27,
+      "compare_unit": "kg",
+      "offer": true,
+      "offer_text": "2 för 10kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=7393145093659",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1658502413/cloud/255960.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Handtvål Mjölk & honung",
+      "brand": "GUNRY",
+      "size": 300.0,
+      "unit": "ml",
+      "price": 18.5,
+      "compare_price": 61.67,
+      "compare_unit": "l",
+      "offer": true,
+      "offer_text": "2 för 20kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=7393481009611",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1769597687/cloud/606331.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Handtvål Äpple",
+      "brand": "GUNRY",
+      "size": 300.0,
+      "unit": "ml",
+      "price": 18.5,
+      "compare_price": 61.67,
+      "compare_unit": "l",
+      "offer": true,
+      "offer_text": "2 för 20kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=7393481009628",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1769597705/cloud/606334.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Handtvål Körsbärsblomma",
+      "brand": "GUNRY",
+      "size": 300.0,
+      "unit": "ml",
+      "price": 18.5,
+      "compare_price": 61.67,
+      "compare_unit": "l",
+      "offer": true,
+      "offer_text": "2 för 20kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=7393481009635",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1769597832/cloud/606358.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Handtvål Hallon & rabarber",
+      "brand": "GUNRY",
+      "size": 300.0,
+      "unit": "ml",
+      "price": 18.5,
+      "compare_price": 61.67,
+      "compare_unit": "l",
+      "offer": true,
+      "offer_text": "2 för 20kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=7393481009642",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1769597836/cloud/606359.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Energidryck Red Bull",
+      "brand": "Red Bull",
+      "size": 250.0,
+      "unit": "ml",
+      "price": 15.62,
+      "compare_price": 62.48,
+      "compare_unit": "l",
+      "offer": true,
+      "offer_text": "24 för 199kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=9002490291228",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1772704907/cloud/624321.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
+      "query": ""
+    },
+    {
+      "store": "coop-126350",
+      "name": "Energidryck Red Bull Sockerfri",
+      "brand": "Red Bull",
+      "size": 250.0,
+      "unit": "ml",
+      "price": 15.62,
+      "compare_price": 62.48,
+      "compare_unit": "l",
+      "offer": true,
+      "offer_text": "24 för 199kr",
+      "valid_until": "2026-11-20",
+      "url": "https://www.coop.se/handla/sok/?q=9002490291235",
+      "image": "https://res.cloudinary.com/coopsverige/image/upload/v1772704911/cloud/624322.tiff",
+      "fetched_at": "2026-11-20T09:33:19+00:00",
       "query": ""
     }
   ]
