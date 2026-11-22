@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T10:06:19+00:00",
+  "generated_at": "2026-11-22T10:32:40+00:00",
   "stores": [
     {
       "id": "coop-126500",
@@ -13106,6 +13106,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003607",
+      "chain": "ica",
+      "external_id": "1003607",
+      "name": "ICA Barometern",
+      "address": "Simpnäsvägen 560, 76492 Väddö",
+      "postcode": "764 92",
+      "city": "Väddö",
+      "lat": 59.89501,
+      "lon": 18.95927,
+      "home": "https://www.ica.se/butiker/nara/norrtalje/ica-barometern-1003607/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004449",
       "chain": "ica",
       "external_id": "1004449",
@@ -13218,6 +13232,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004344",
+      "chain": "ica",
+      "external_id": "1004344",
+      "name": "ICA Dackehallen",
+      "address": "Storgatan 12, 34250 Vislanda",
+      "postcode": "342 50",
+      "city": "Vislanda",
+      "lat": 56.78717,
+      "lon": 14.44921,
+      "home": "https://www.ica.se/butiker/nara/alvesta/ica-nara-dackehallen-1004344/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003535",
       "chain": "ica",
       "external_id": "1003535",
@@ -13228,6 +13256,34 @@
       "lat": 59.34371,
       "lon": 18.04212,
       "home": "https://www.ica.se/butiker/nara/stockholm/ica-dalastan-1003535/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004146",
+      "chain": "ica",
+      "external_id": "1004146",
+      "name": "ICA E-Fyren Jävre",
+      "address": "Jävrevägen 200, 94494 Jävrebyn",
+      "postcode": "944 94",
+      "city": "Jävrebyn",
+      "lat": 65.14864,
+      "lon": 21.49333,
+      "home": "https://www.ica.se/butiker/nara/pitea/ica-e-fyren-javre-1004146/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003522",
+      "chain": "ica",
+      "external_id": "1003522",
+      "name": "ICA Ettan, Sundsvall",
+      "address": "Varbergsvägen 6, 85732 Sundsvall",
+      "postcode": "857 32",
+      "city": "Sundsvall",
+      "lat": 62.41013,
+      "lon": 17.26802,
+      "home": "https://www.ica.se/butiker/nara/sundsvall/ica-ettan-sundsvall-1003522/",
       "prices": true,
       "offers": true
     },
@@ -13316,6 +13372,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004713",
+      "chain": "ica",
+      "external_id": "1004713",
+      "name": "ICA Gärdet, Stockholm",
+      "address": "Smedsbacksgatan 1, 11539 Stockholm",
+      "postcode": "115 39",
+      "city": "Stockholm",
+      "lat": 59.34659,
+      "lon": 18.10015,
+      "home": "https://www.ica.se/butiker/nara/stockholm/ica-gardet-stockholm-1004713/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003542",
       "chain": "ica",
       "external_id": "1003542",
@@ -13354,6 +13424,20 @@
       "lat": 59.78371,
       "lon": 14.52133,
       "home": "https://www.ica.se/butiker/supermarket/hallefors/ica-hallen-hallefors-1004690/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004700",
+      "chain": "ica",
+      "external_id": "1004700",
+      "name": "ICA Handelsboden, Tärnsjö",
+      "address": "Norra Storgatan 6, 74045 Tärnsjö",
+      "postcode": "740 45",
+      "city": "Tärnsjö",
+      "lat": 60.15449,
+      "lon": 16.9299,
+      "home": "https://www.ica.se/butiker/nara/heby/ica-handelsboden-tarnsjo-1004700/",
       "prices": true,
       "offers": true
     },
@@ -13554,6 +13638,20 @@
       "offers": true
     },
     {
+      "id": "ica-1070002",
+      "chain": "ica",
+      "external_id": "1070002",
+      "name": "ICA Kvantum Danderyd",
+      "address": "Danderyd Centrum, 18231 Danderyd",
+      "postcode": "182 31",
+      "city": "Danderyd",
+      "lat": 59.39842,
+      "lon": 18.03618,
+      "home": "https://www.ica.se/butiker/kvantum/danderyd/ica-kvantum-danderyd-1070002/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004152",
       "chain": "ica",
       "external_id": "1004152",
@@ -13568,6 +13666,34 @@
       "offers": true
     },
     {
+      "id": "ica-1003936",
+      "chain": "ica",
+      "external_id": "1003936",
+      "name": "ICA Kvantum Emporia",
+      "address": "Hyllie stations väg 22, 21532 Malmö",
+      "postcode": "215 32",
+      "city": "Malmö",
+      "lat": 55.56426,
+      "lon": 12.97249,
+      "home": "https://www.ica.se/butiker/kvantum/malmo/ica-kvantum-emporia-1003936/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1106008",
+      "chain": "ica",
+      "external_id": "1106008",
+      "name": "ICA Kvantum Ersboda",
+      "address": "Formvägen 4, 90621 Umeå",
+      "postcode": "906 21",
+      "city": "Umeå",
+      "lat": 63.85177,
+      "lon": 20.2989,
+      "home": "https://www.ica.se/butiker/kvantum/umea/ica-kvantum-ersboda-1106008/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004163",
       "chain": "ica",
       "external_id": "1004163",
@@ -13578,20 +13704,6 @@
       "lat": 55.83719,
       "lon": 13.30701,
       "home": "https://www.ica.se/butiker/kvantum/eslov/ica-kvantum-eslov-1004163/",
-      "prices": true,
-      "offers": true
-    },
-    {
-      "id": "ica-1004170",
-      "chain": "ica",
-      "external_id": "1004170",
-      "name": "ICA Kvantum Falkenberg",
-      "address": "Sandgatan 34, 31175 Falkenberg",
-      "postcode": "311 75",
-      "city": "Falkenberg",
-      "lat": 56.90392,
-      "lon": 12.48271,
-      "home": "https://www.ica.se/butiker/kvantum/falkenberg/ica-kvantum-falkenberg-1004170/",
       "prices": true,
       "offers": true
     },
@@ -13666,6 +13778,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003656",
+      "chain": "ica",
+      "external_id": "1003656",
+      "name": "ICA Kvantum Färjestaden",
+      "address": "Ölands Köpstad, 38631 Färjestaden",
+      "postcode": "386 31",
+      "city": "Färjestaden",
+      "lat": 56.65185,
+      "lon": 16.46996,
+      "home": "https://www.ica.se/butiker/kvantum/morbylanga/ica-kvantum-farjestaden-1003656/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004214",
       "chain": "ica",
       "external_id": "1004214",
@@ -13736,6 +13862,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004584",
+      "chain": "ica",
+      "external_id": "1004584",
+      "name": "ICA Kvantum Hammarö",
+      "address": "Bivägen 11, 66341 Hammarö",
+      "postcode": "663 41",
+      "city": "Hammarö",
+      "lat": 59.34242,
+      "lon": 13.50446,
+      "home": "https://www.ica.se/butiker/kvantum/hammaro/ica-kvantum-hammaro-1004584/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004186",
       "chain": "ica",
       "external_id": "1004186",
@@ -13764,6 +13904,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003932",
+      "chain": "ica",
+      "external_id": "1003932",
+      "name": "ICA Kvantum Hovås",
+      "address": "Hovås Allé 10, 43653 Hovås",
+      "postcode": "436 53",
+      "city": "Hovås",
+      "lat": 57.59838,
+      "lon": 11.95351,
+      "home": "https://www.ica.se/butiker/kvantum/goteborg/ica-kvantum-hovas-1003932/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004221",
       "chain": "ica",
       "external_id": "1004221",
@@ -13774,6 +13928,20 @@
       "lat": 57.79059,
       "lon": 14.27068,
       "home": "https://www.ica.se/butiker/kvantum/jonkoping/ica-kvantum-huskvarna-1004221/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004586",
+      "chain": "ica",
+      "external_id": "1004586",
+      "name": "ICA Kvantum Hässleholm",
+      "address": "Kristianstadsvägen, 28133 Hässleholm",
+      "postcode": "281 33",
+      "city": "Hässleholm",
+      "lat": 56.15452,
+      "lon": 13.75948,
+      "home": "https://www.ica.se/butiker/kvantum/hassleholm/ica-kvantum-hassleholm-1004586/",
       "prices": true,
       "offers": true
     },
@@ -13876,6 +14044,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003420",
+      "chain": "ica",
+      "external_id": "1003420",
+      "name": "ICA Kvantum Klockaretorpet",
+      "address": "Folkborgsvägen 1, 60380 Norrköping",
+      "postcode": "603 80",
+      "city": "Norrköping",
+      "lat": 58.58211,
+      "lon": 16.14144,
+      "home": "https://www.ica.se/butiker/kvantum/norrkoping/ica-kvantum-klockaretorpet-1003420/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003416",
       "chain": "ica",
       "external_id": "1003416",
@@ -13928,6 +14110,20 @@
       "lat": 59.27094,
       "lon": 17.92077,
       "home": "http://www.ica-kungen.se/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003917",
+      "chain": "ica",
+      "external_id": "1003917",
+      "name": "ICA Kvantum Kungsbacka",
+      "address": "Varlagård 16, 43438 Kungsbacka",
+      "postcode": "434 38",
+      "city": "Kungsbacka",
+      "lat": 57.49342,
+      "lon": 12.074,
+      "home": "https://www.ica.se/butiker/kvantum/kungsbacka/ica-kvantum-kungsbacka-1003917/",
       "prices": true,
       "offers": true
     },
@@ -14002,6 +14198,20 @@
       "offers": true
     },
     {
+      "id": "ica-13418",
+      "chain": "ica",
+      "external_id": "13418",
+      "name": "ICA Kvantum Liljeholmen",
+      "address": "Liljeholmstorget 3, plan 1, 11763 Stockholm",
+      "postcode": "117 63",
+      "city": "Stockholm",
+      "lat": 59.30987,
+      "lon": 18.02243,
+      "home": "https://icaliljeholmen.se/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004224",
       "chain": "ica",
       "external_id": "1004224",
@@ -14068,6 +14278,20 @@
       "lat": 55.60662,
       "lon": 13.00726,
       "home": "https://www.ica.se/butiker/kvantum/malmo/ica-kvantum-malmborgs-caroli-1004490/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004409",
+      "chain": "ica",
+      "external_id": "1004409",
+      "name": "ICA Kvantum Malmborgs Clemenstorget",
+      "address": "Clemenstorget 5, 22221 Lund",
+      "postcode": "222 21",
+      "city": "Lund",
+      "lat": 55.70649,
+      "lon": 13.18801,
+      "home": "https://www.ica.se/butiker/kvantum/lund/ica-kvantum-malmborgs-clemenstorget-1004409/",
       "prices": true,
       "offers": true
     },
@@ -14152,6 +14376,20 @@
       "lat": 58.70996,
       "lon": 13.82784,
       "home": "https://www.ica.se/butiker/kvantum/mariestad/ica-kvantum-mariestad-1004044/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004499",
+      "chain": "ica",
+      "external_id": "1004499",
+      "name": "ICA Kvantum Markaryd",
+      "address": "Skulptörvägen 2, 28533 Markaryd",
+      "postcode": "285 33",
+      "city": "Markaryd",
+      "lat": 56.44983,
+      "lon": 13.59796,
+      "home": "https://www.ica.se/butiker/kvantum/markaryd/ica-kvantum-markaryd-1004499/",
       "prices": true,
       "offers": true
     },
@@ -14254,6 +14492,34 @@
       "offers": true
     },
     {
+      "id": "ica-1003661",
+      "chain": "ica",
+      "external_id": "1003661",
+      "name": "ICA Kvantum Nybro",
+      "address": "Bangatan 4, 38240 Nybro",
+      "postcode": "382 40",
+      "city": "Nybro",
+      "lat": 56.7419,
+      "lon": 15.9019,
+      "home": "https://www.ica.se/butiker/kvantum/nybro/ica-kvantum-nybro-1003661/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004590",
+      "chain": "ica",
+      "external_id": "1004590",
+      "name": "ICA Kvantum Nässjö",
+      "address": "Bandygatan 5, 57131 Nässjö",
+      "postcode": "571 31",
+      "city": "Nässjö",
+      "lat": 57.64941,
+      "lon": 14.70182,
+      "home": "https://www.ica.se/butiker/kvantum/nassjo/ica-kvantum-nassjo-1004590/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004716",
       "chain": "ica",
       "external_id": "1004716",
@@ -14296,6 +14562,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003471",
+      "chain": "ica",
+      "external_id": "1003471",
+      "name": "ICA Kvantum Rimbo",
+      "address": "Finstavägen 6, 76251 Rimbo",
+      "postcode": "762 51",
+      "city": "Rimbo",
+      "lat": 59.74457,
+      "lon": 18.37813,
+      "home": "https://www.ica.se/butiker/kvantum/norrtalje/ica-kvantum-rimbo-1003471/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004293",
       "chain": "ica",
       "external_id": "1004293",
@@ -14320,6 +14600,34 @@
       "lat": 59.30558,
       "lon": 18.12853,
       "home": "https://www.ica.se/butiker/kvantum/nacka/ica-kvantum-sickla-1004021/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004360",
+      "chain": "ica",
+      "external_id": "1004360",
+      "name": "ICA Kvantum Sjöbo",
+      "address": "Östergatan 3, 27532 Sjöbo",
+      "postcode": "275 32",
+      "city": "Sjöbo",
+      "lat": 55.63071,
+      "lon": 13.70876,
+      "home": "https://www.ica.se/butiker/kvantum/sjobo/ica-kvantum-sjobo-1004360/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004002",
+      "chain": "ica",
+      "external_id": "1004002",
+      "name": "ICA Kvantum Skellefteå",
+      "address": "Kronbodgatan 4, 93144 Skellefteå",
+      "postcode": "931 44",
+      "city": "Skellefteå",
+      "lat": 64.75563,
+      "lon": 20.91672,
+      "home": "https://www.ica.se/butiker/kvantum/skelleftea/ica-kvantum-skelleftea-1004002/",
       "prices": true,
       "offers": true
     },
@@ -14376,20 +14684,6 @@
       "lat": 59.35991,
       "lon": 18.00055,
       "home": "https://www.ica.se/butiker/kvantum/solna/ica-kvantum-solna-1003758/",
-      "prices": true,
-      "offers": true
-    },
-    {
-      "id": "ica-1003398",
-      "chain": "ica",
-      "external_id": "1003398",
-      "name": "ICA Kvantum Stenungsund",
-      "address": "Vassgatan 1, 44431 Stenungsund",
-      "postcode": "444 31",
-      "city": "Stenungsund",
-      "lat": 58.07509,
-      "lon": 11.82584,
-      "home": "https://www.ica.se/butiker/kvantum/stenungsund/ica-kvantum-stenungsund-1003398/",
       "prices": true,
       "offers": true
     },
@@ -14460,6 +14754,20 @@
       "lat": 59.31199,
       "lon": 18.06607,
       "home": "https://www.ica.se/butiker/kvantum/stockholm/ica-kvantum-sodermalm-1004222/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003452",
+      "chain": "ica",
+      "external_id": "1003452",
+      "name": "ICA Kvantum Södra Sandby",
+      "address": "Revingevägen 2, 24731 Södra Sandby",
+      "postcode": "247 31",
+      "city": "Södra Sandby",
+      "lat": 55.71702,
+      "lon": 13.34312,
+      "home": "https://www.ica.se/butiker/kvantum/lund/ica-kvantum-sodra-sandby-1003452/",
       "prices": true,
       "offers": true
     },
@@ -14544,6 +14852,34 @@
       "lat": 58.90659,
       "lon": 17.55111,
       "home": "https://www.ica.se/butiker/kvantum/trosa/ica-kvantum-trossen-16622/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004050",
+      "chain": "ica",
+      "external_id": "1004050",
+      "name": "ICA Kvantum Tumba",
+      "address": "Tumba Torg 7, 14730 Tumba",
+      "postcode": "147 30",
+      "city": "Tumba",
+      "lat": 59.19874,
+      "lon": 17.83374,
+      "home": "https://www.ica.se/butiker/kvantum/botkyrka/ica-kvantum-tumba-1004050/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003898",
+      "chain": "ica",
+      "external_id": "1003898",
+      "name": "ICA Kvantum Tyresö",
+      "address": "Östangränd 2, 13540 Tyresö",
+      "postcode": "135 40",
+      "city": "Tyresö",
+      "lat": 59.24492,
+      "lon": 18.22833,
+      "home": "https://www.ica.se/butiker/kvantum/tyreso/ica-kvantum-tyreso-1003898/",
       "prices": true,
       "offers": true
     },
@@ -14674,6 +15010,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004306",
+      "chain": "ica",
+      "external_id": "1004306",
+      "name": "ICA Kvantum Vänersborg",
+      "address": "Brogatan 4, 46238 Vänersborg",
+      "postcode": "462 38",
+      "city": "Vänersborg",
+      "lat": 58.38121,
+      "lon": 12.3173,
+      "home": "https://www.ica.se/butiker/kvantum/vanersborg/ica-kvantum-vanersborg-1004306/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004225",
       "chain": "ica",
       "external_id": "1004225",
@@ -14702,6 +15052,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003501",
+      "chain": "ica",
+      "external_id": "1003501",
+      "name": "ICA Kvantum Väsby",
+      "address": "Dragonvägen 86, 19470 Upplands Väsby",
+      "postcode": "194 70",
+      "city": "Upplands Väsby",
+      "lat": 59.51874,
+      "lon": 17.9139,
+      "home": "https://www.ica.se/butiker/kvantum/upplands-vasby/ica-kvantum-vasby-1003501/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003869",
       "chain": "ica",
       "external_id": "1003869",
@@ -14712,6 +15076,20 @@
       "lat": 59.63746,
       "lon": 16.54519,
       "home": "https://www.ica.se/butiker/kvantum/vasteras/ica-kvantum-vasteras-1003869/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1131001",
+      "chain": "ica",
+      "external_id": "1131001",
+      "name": "ICA Kvantum Vårgårda",
+      "address": "Wallentinsvägen, 44737 Vårgårda",
+      "postcode": "447 37",
+      "city": "Vårgårda",
+      "lat": 58.03903,
+      "lon": 12.80467,
+      "home": "https://www.ica.se/butiker/kvantum/vargarda/ica-kvantum-vargarda-1131001/",
       "prices": true,
       "offers": true
     },
@@ -14828,6 +15206,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004464",
+      "chain": "ica",
+      "external_id": "1004464",
+      "name": "ICA Lönashult",
+      "address": "Boklövsvägen 30, 34253 Lönashult",
+      "postcode": "342 53",
+      "city": "Lönashult",
+      "lat": 56.64999,
+      "lon": 14.51302,
+      "home": "https://www.ica.se/butiker/nara/alvesta/ica-nara-tommys-livs-1004464/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004361",
       "chain": "ica",
       "external_id": "1004361",
@@ -14856,6 +15248,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003865",
+      "chain": "ica",
+      "external_id": "1003865",
+      "name": "ICA Mathörnan, Stockholm",
+      "address": "Karlbergsvägen 46, 11337 Stockholm",
+      "postcode": "113 37",
+      "city": "Stockholm",
+      "lat": 59.34277,
+      "lon": 18.03798,
+      "home": "https://www.ica.se/butiker/nara/stockholm/ica-mathornan-stockholm-1003865/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004276",
       "chain": "ica",
       "external_id": "1004276",
@@ -14866,6 +15272,20 @@
       "lat": 58.35339,
       "lon": 11.80873,
       "home": "https://www.ica.se/butiker/kvantum/uddevalla/maxi-uddevalla-1004276/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003676",
+      "chain": "ica",
+      "external_id": "1003676",
+      "name": "ICA Norbergs Livs",
+      "address": "Odinsvägen 22, 13770 Dalarö",
+      "postcode": "137 70",
+      "city": "Dalarö",
+      "lat": 59.13384,
+      "lon": 18.40927,
+      "home": "https://www.ica.se/butiker/nara/haninge/norbergs-livs-1003676/",
       "prices": true,
       "offers": true
     },
@@ -14950,20 +15370,6 @@
       "lat": 58.88533,
       "lon": 11.02929,
       "home": "https://www.ica.se/butiker/nara/stromstad/ica-nara-affarn-sydkoster-1003964/",
-      "prices": true,
-      "offers": true
-    },
-    {
-      "id": "ica-1051006",
-      "chain": "ica",
-      "external_id": "1051006",
-      "name": "ICA Nära Ahlgrens Torg",
-      "address": "Ahlgrens torg 12, 80287 Gävle",
-      "postcode": "802 87",
-      "city": "Gävle",
-      "lat": 60.6765,
-      "lon": 17.16355,
-      "home": "https://www.ica.se/butiker/nara/gavle/ica-nara-ahlgrens-torg-1051006/",
       "prices": true,
       "offers": true
     },
@@ -15108,6 +15514,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004309",
+      "chain": "ica",
+      "external_id": "1004309",
+      "name": "ICA Nära Annedal",
+      "address": "Mariehällstorget 4, 16872 Bromma",
+      "postcode": "168 72",
+      "city": "Bromma",
+      "lat": 59.36106,
+      "lon": 17.94911,
+      "home": "https://www.ica.se/butiker/nara/stockholm/ica-nara-annedal-1004309/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004149",
       "chain": "ica",
       "external_id": "1004149",
@@ -15118,20 +15538,6 @@
       "lat": 66.05178,
       "lon": 17.8926,
       "home": "https://www.ica.se/butiker/nara/arjeplog/ica-nara-arjeplog-1004149/",
-      "prices": true,
-      "offers": true
-    },
-    {
-      "id": "ica-1004382",
-      "chain": "ica",
-      "external_id": "1004382",
-      "name": "ICA Nära Arkelstorp",
-      "address": "Allarpsvägen 11, 29155 Arkelstorp",
-      "postcode": "291 55",
-      "city": "Arkelstorp",
-      "lat": 56.17169,
-      "lon": 14.28329,
-      "home": "https://www.ica.se/butiker/nara/kristianstad/ica-nara-arkelstorp-1004382/",
       "prices": true,
       "offers": true
     },
@@ -15192,6 +15598,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003680",
+      "chain": "ica",
+      "external_id": "1003680",
+      "name": "ICA Nära Axéns",
+      "address": "Nykyrka, 59197 Motala",
+      "postcode": "591 97",
+      "city": "Motala",
+      "lat": 58.61512,
+      "lon": 14.97501,
+      "home": "https://www.ica.se/butiker/nara/motala/ica-nara-axens-lanthandel-1003680/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003707",
       "chain": "ica",
       "external_id": "1003707",
@@ -15220,6 +15640,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003699",
+      "chain": "ica",
+      "external_id": "1003699",
+      "name": "ICA Nära Bandhagen",
+      "address": "Bandhagsplan 5, 12434 Bandhagen",
+      "postcode": "124 34",
+      "city": "Bandhagen",
+      "lat": 59.26961,
+      "lon": 18.04972,
+      "home": "https://www.ica.se/butiker/nara/stockholm/ica-nara-bandhagen-1003699/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004414",
       "chain": "ica",
       "external_id": "1004414",
@@ -15230,20 +15664,6 @@
       "lat": 59.33232,
       "lon": 18.09076,
       "home": "https://www.ica.se/butiker/nara/stockholm/ica-nara-baner-1004414/",
-      "prices": true,
-      "offers": true
-    },
-    {
-      "id": "ica-1004310",
-      "chain": "ica",
-      "external_id": "1004310",
-      "name": "ICA Nära Bara",
-      "address": "Torggatan 23, 23361 Bara",
-      "postcode": "233 61",
-      "city": "Bara",
-      "lat": 55.57863,
-      "lon": 13.17566,
-      "home": "https://www.ica.se/butiker/nara/svedala/ica-nara-bara-1004310/",
       "prices": true,
       "offers": true
     },
@@ -15272,6 +15692,20 @@
       "lat": 56.91732,
       "lon": 13.98746,
       "home": "https://www.ica.se/butiker/nara/ljungby/ica-nara-bergahallen-lagan-1004086/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003692",
+      "chain": "ica",
+      "external_id": "1003692",
+      "name": "ICA Nära Bergby",
+      "address": "Vijvägen 38, 81740 Bergby",
+      "postcode": "817 40",
+      "city": "Bergby",
+      "lat": 60.92937,
+      "lon": 17.04085,
+      "home": "https://www.ica.se/butiker/nara/gavle/ica-nara-bergby-1003692/",
       "prices": true,
       "offers": true
     },
@@ -15486,6 +15920,20 @@
       "offers": true
     },
     {
+      "id": "ica-1007010",
+      "chain": "ica",
+      "external_id": "1007010",
+      "name": "ICA Nära Björlanda",
+      "address": "Linas Lycka 2, 42359 Torslanda",
+      "postcode": "423 59",
+      "city": "Torslanda",
+      "lat": 57.7594,
+      "lon": 11.83239,
+      "home": "https://www.ica.se/butiker/nara/goteborg/ica-nara-bjorlanda-1007010/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003749",
       "chain": "ica",
       "external_id": "1003749",
@@ -15524,6 +15972,34 @@
       "lat": 63.3788,
       "lon": 13.15154,
       "home": "https://www.ica.se/butiker/nara/are/ica-nara-bjornange-1004371/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003708",
+      "chain": "ica",
+      "external_id": "1003708",
+      "name": "ICA Nära Blattnicksele",
+      "address": "Strandvägen 13, 92492 Blattnicksele",
+      "postcode": "924 92",
+      "city": "Blattnicksele",
+      "lat": 65.34219,
+      "lon": 17.58615,
+      "home": "https://www.ica.se/butiker/nara/sorsele/ica-nara-blattnicksele-1003708/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004712",
+      "chain": "ica",
+      "external_id": "1004712",
+      "name": "ICA Nära Blecktornet",
+      "address": "Ringvägen 120, 11661 Stockholm",
+      "postcode": "116 61",
+      "city": "Stockholm",
+      "lat": 59.30824,
+      "lon": 18.08059,
+      "home": "https://www.ica.se/butiker/nara/stockholm/ica-lansen-1004712/",
       "prices": true,
       "offers": true
     },
@@ -15570,16 +16046,86 @@
       "offers": true
     },
     {
-      "id": "ica-1170011",
+      "id": "ica-1003717",
       "chain": "ica",
-      "external_id": "1170011",
-      "name": "ICA Nära Borgen",
-      "address": "Aschebergsgatan 3, 25439 Helsingborg",
-      "postcode": "254 39",
-      "city": "Helsingborg",
-      "lat": 56.05667,
-      "lon": 12.6902,
-      "home": "https://www.ica.se/butiker/nara/helsingborg/ica-nara-borgen-1170011/",
+      "external_id": "1003717",
+      "name": "ICA Nära Bodsjö Diverse",
+      "address": "Sidsjö 184, 84391 Bräcke",
+      "postcode": "843 91",
+      "city": "Bräcke",
+      "lat": 62.73062,
+      "lon": 15.15249,
+      "home": "https://www.ica.se/butiker/nara/bracke/bodsjo-diverse-1003717/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003718",
+      "chain": "ica",
+      "external_id": "1003718",
+      "name": "ICA Nära Bograngen",
+      "address": "Gränsvägen 18, 68061 Bograngen",
+      "postcode": "680 61",
+      "city": "Bograngen",
+      "lat": 60.70106,
+      "lon": 12.61715,
+      "home": "https://www.ica.se/butiker/nara/torsby/bograngens-lanthandel-1003718/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003509",
+      "chain": "ica",
+      "external_id": "1003509",
+      "name": "ICA Nära Boliden",
+      "address": "Finnforsvägen 34, 93632 Boliden",
+      "postcode": "936 32",
+      "city": "Boliden",
+      "lat": 64.8668,
+      "lon": 20.38883,
+      "home": "https://www.ica.se/butiker/nara/skelleftea/ica-nara-boliden-1003509/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004311",
+      "chain": "ica",
+      "external_id": "1004311",
+      "name": "ICA Nära Bollebygd",
+      "address": "Gästgifvaretorget 1, 51736 Bollebygd",
+      "postcode": "517 36",
+      "city": "Bollebygd",
+      "lat": 57.66879,
+      "lon": 12.5714,
+      "home": "https://www.ica.se/butiker/nara/bollebygd/ica-nara-bollebygd-1004311/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003587",
+      "chain": "ica",
+      "external_id": "1003587",
+      "name": "ICA Nära Bomhus",
+      "address": "Hövdingavägen 2, 80432 Gävle",
+      "postcode": "804 32",
+      "city": "Gävle",
+      "lat": 60.66555,
+      "lon": 17.22808,
+      "home": "https://www.ica.se/butiker/nara/gavle/ica-nara-bomhus-1003587/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003719",
+      "chain": "ica",
+      "external_id": "1003719",
+      "name": "ICA Nära Borgafjällens Lanthandel",
+      "address": "Centrumvägen 18, 91704 Borgafjäll",
+      "postcode": "917 04",
+      "city": "Borgafjäll",
+      "lat": 64.8349,
+      "lon": 15.08652,
+      "home": "https://www.ica.se/butiker/nara/dorotea/borgafjallens-lanthandel-1003719/",
       "prices": true,
       "offers": true
     },
@@ -15710,6 +16256,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003998",
+      "chain": "ica",
+      "external_id": "1003998",
+      "name": "ICA Nära Bron",
+      "address": "Tumbovägen 2, 63531 Kvicksund",
+      "postcode": "635 31",
+      "city": "Kvicksund",
+      "lat": 59.45095,
+      "lon": 16.32107,
+      "home": "https://www.ica.se/butiker/nara/eskilstuna/ica-nara-bron-1003998/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003729",
       "chain": "ica",
       "external_id": "1003729",
@@ -15720,6 +16280,20 @@
       "lat": 59.56034,
       "lon": 18.22681,
       "home": "https://www.ica.se/butiker/nara/vallentuna/ica-nara-brottbyhallen-1003729/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004056",
+      "chain": "ica",
+      "external_id": "1004056",
+      "name": "ICA Nära Bräkne-Hoby",
+      "address": "Bräknevägen 24, 37261 Bräkne-Hoby",
+      "postcode": "372 61",
+      "city": "Bräkne-Hoby",
+      "lat": 56.22529,
+      "lon": 15.11593,
+      "home": "https://www.ica.se/butiker/nara/ronneby/ica-nara-brakne-hoby-1004056/",
       "prices": true,
       "offers": true
     },
@@ -15878,6 +16452,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004085",
+      "chain": "ica",
+      "external_id": "1004085",
+      "name": "ICA Nära Carlssons livsmedel",
+      "address": "Skagersholmsvägen 49, 69550 Finnerödja",
+      "postcode": "695 50",
+      "city": "Finnerödja",
+      "lat": 58.92625,
+      "lon": 14.43991,
+      "home": "https://www.ica.se/butiker/nara/laxa/carlssons-livsmedel-1004085/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004047",
       "chain": "ica",
       "external_id": "1004047",
@@ -15934,20 +16522,6 @@
       "offers": true
     },
     {
-      "id": "ica-1003579",
-      "chain": "ica",
-      "external_id": "1003579",
-      "name": "ICA Nära Dalaberg",
-      "address": "Lövskogsgatan 8, 45172 Uddevalla",
-      "postcode": "451 72",
-      "city": "Uddevalla",
-      "lat": 58.37197,
-      "lon": 11.93522,
-      "home": "https://www.ica.se/butiker/nara/uddevalla/ica-nara-dalaberg-1003579/",
-      "prices": true,
-      "offers": true
-    },
-    {
       "id": "ica-1004710",
       "chain": "ica",
       "external_id": "1004710",
@@ -15990,6 +16564,34 @@
       "offers": true
     },
     {
+      "id": "ica-1004129",
+      "chain": "ica",
+      "external_id": "1004129",
+      "name": "ICA Nära Djupedalsäng",
+      "address": "Råstensvägen 1, 43541 Mölnlycke",
+      "postcode": "435 41",
+      "city": "Mölnlycke",
+      "lat": 57.64798,
+      "lon": 12.12295,
+      "home": "https://www.ica.se/butiker/nara/harryda/ica-nara-djupedalsang-1004129/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004217",
+      "chain": "ica",
+      "external_id": "1004217",
+      "name": "ICA Nära Djurgårdsgatan",
+      "address": "Djurgårdsgatan 16, 58229 Linköping",
+      "postcode": "582 29",
+      "city": "Linköping",
+      "lat": 58.40637,
+      "lon": 15.61689,
+      "home": "https://www.ica.se/butiker/nara/linkoping/ica-nara-djurgardsgatan-1004217/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004680",
       "chain": "ica",
       "external_id": "1004680",
@@ -16028,6 +16630,34 @@
       "lat": 60.50084,
       "lon": 15.45587,
       "home": "https://www.ica.se/butiker/nara/borlange/ica-nara-domnarvet-1003511/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003646",
+      "chain": "ica",
+      "external_id": "1003646",
+      "name": "ICA Nära Dorotea",
+      "address": "Storgatan 43, 91732 Dorotea",
+      "postcode": "917 32",
+      "city": "Dorotea",
+      "lat": 64.26195,
+      "lon": 16.41534,
+      "home": "https://www.ica.se/butiker/nara/dorotea/ica-nara-dorohallen-1003646/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003853",
+      "chain": "ica",
+      "external_id": "1003853",
+      "name": "ICA Nära Draken",
+      "address": "Bergsundsstrand 42, 11738 Stockholm",
+      "postcode": "117 38",
+      "city": "Stockholm",
+      "lat": 59.31574,
+      "lon": 18.03286,
+      "home": "https://www.ica.se/butiker/nara/stockholm/ica-nara-hornstull-1003853/",
       "prices": true,
       "offers": true
     },
@@ -16098,6 +16728,20 @@
       "lat": 63.39241,
       "lon": 12.91435,
       "home": "https://www.ica.se/butiker/nara/are/ica-nara-duved-1003980/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004135",
+      "chain": "ica",
+      "external_id": "1004135",
+      "name": "ICA Nära Dyröboden",
+      "address": "Hamnvägen 46, 47143 Dyrön",
+      "postcode": "471 43",
+      "city": "Dyrön",
+      "lat": 57.92698,
+      "lon": 11.61191,
+      "home": "https://www.ica.se/butiker/nara/tjorn/ica-nara-dyroboden-1004135/",
       "prices": true,
       "offers": true
     },
@@ -16182,6 +16826,20 @@
       "lat": 59.25152,
       "lon": 17.52463,
       "home": "https://www.ica.se/butiker/nara/sodertalje/ica-enhorna-sodertalje-1003510/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004137",
+      "chain": "ica",
+      "external_id": "1004137",
+      "name": "ICA Nära Eriks",
+      "address": "Byvägen 1, 26471 Östra Ljungby",
+      "postcode": "264 71",
+      "city": "Östra Ljungby",
+      "lat": 56.19255,
+      "lon": 13.07583,
+      "home": "https://www.ica.se/butiker/nara/klippan/ica-nara-eriks-1004137/",
       "prices": true,
       "offers": true
     },
@@ -16396,6 +17054,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004197",
+      "chain": "ica",
+      "external_id": "1004197",
+      "name": "ICA Nära Frykenhallen",
+      "address": "Nya torget, 68530 Torsby",
+      "postcode": "685 30",
+      "city": "Torsby",
+      "lat": 60.13529,
+      "lon": 13.00864,
+      "home": "https://www.ica.se/butiker/nara/torsby/frykenhallen-1004197/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004474",
       "chain": "ica",
       "external_id": "1004474",
@@ -16406,6 +17078,20 @@
       "lat": 62.49803,
       "lon": 16.17373,
       "home": "https://www.ica.se/butiker/nara/ange/ica-nara-fransta-1004474/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004416",
+      "chain": "ica",
+      "external_id": "1004416",
+      "name": "ICA Nära Frödinge",
+      "address": "Västerviksvägen 1, 59895 Vimmerby",
+      "postcode": "598 95",
+      "city": "Vimmerby",
+      "lat": 57.69949,
+      "lon": 16.00368,
+      "home": "https://www.ica.se/butiker/nara/vimmerby/ica-nara-frodinge-1004416/",
       "prices": true,
       "offers": true
     },
@@ -16522,6 +17208,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004401",
+      "chain": "ica",
+      "external_id": "1004401",
+      "name": "ICA Nära Ge-Ma Livs",
+      "address": "Stationsvägen 2, 27172 Köpingebro",
+      "postcode": "271 72",
+      "city": "Köpingebro",
+      "lat": 55.45626,
+      "lon": 13.93773,
+      "home": "https://www.ica.se/butiker/nara/ystad/ica-nara-ge-ma-livs-1004401/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004016",
       "chain": "ica",
       "external_id": "1004016",
@@ -16546,6 +17246,20 @@
       "lat": 59.3178,
       "lon": 15.40105,
       "home": "https://www.ica.se/butiker/nara/orebro/ica-nara-glansen-1003921/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003957",
+      "chain": "ica",
+      "external_id": "1003957",
+      "name": "ICA Nära Glava",
+      "address": "Sälgen, 67197 Glava",
+      "postcode": "671 97",
+      "city": "Glava",
+      "lat": 59.54831,
+      "lon": 12.56385,
+      "home": "https://www.ica.se/butiker/nara/arvika/ica-nara-glava-1003957/",
       "prices": true,
       "offers": true
     },
@@ -16662,20 +17376,6 @@
       "offers": true
     },
     {
-      "id": "ica-1004526",
-      "chain": "ica",
-      "external_id": "1004526",
-      "name": "ICA Nära Grundsund",
-      "address": "Lönndalsvägen 45, 45179 Grundsund",
-      "postcode": "451 79",
-      "city": "Grundsund",
-      "lat": 58.21363,
-      "lon": 11.42092,
-      "home": "https://www.ica.se/butiker/nara/lysekil/ica-nara-grundsund-1004526/",
-      "prices": true,
-      "offers": true
-    },
-    {
       "id": "ica-1003870",
       "chain": "ica",
       "external_id": "1003870",
@@ -16686,20 +17386,6 @@
       "lat": 59.76231,
       "lon": 19.03665,
       "home": "https://www.ica.se/butiker/nara/norrtalje/ica-nara-graddo-skargardshandel-1003870/",
-      "prices": true,
-      "offers": true
-    },
-    {
-      "id": "ica-1003462",
-      "chain": "ica",
-      "external_id": "1003462",
-      "name": "ICA Nära Grängesberg",
-      "address": "Stora Hagvägen 26, 77230 Grängesberg",
-      "postcode": "772 30",
-      "city": "Grängesberg",
-      "lat": 60.07756,
-      "lon": 15.00436,
-      "home": "https://www.ica.se/butiker/nara/ludvika/ica-nara-grangesberg-1003462/",
       "prices": true,
       "offers": true
     },
@@ -16760,20 +17446,6 @@
       "offers": true
     },
     {
-      "id": "ica-1003783",
-      "chain": "ica",
-      "external_id": "1003783",
-      "name": "ICA Nära Grönhögen",
-      "address": "Grönhögen, 38663 Degerhamn",
-      "postcode": "386 63",
-      "city": "Degerhamn",
-      "lat": 56.26577,
-      "lon": 16.40374,
-      "home": "https://www.ica.se/butiker/nara/morbylanga/ica-nara-gronhogen-1003783/",
-      "prices": true,
-      "offers": true
-    },
-    {
       "id": "ica-1004583",
       "chain": "ica",
       "external_id": "1004583",
@@ -16802,20 +17474,6 @@
       "offers": true
     },
     {
-      "id": "ica-1003610",
-      "chain": "ica",
-      "external_id": "1003610",
-      "name": "ICA Nära Gällstad",
-      "address": "Boråsvägen 40, 52360 Gällstad",
-      "postcode": "523 60",
-      "city": "Gällstad",
-      "lat": 57.66524,
-      "lon": 13.43078,
-      "home": "https://www.ica.se/butiker/nara/ulricehamn/ica-nara-gallstad-1003610/",
-      "prices": true,
-      "offers": true
-    },
-    {
       "id": "ica-1004529",
       "chain": "ica",
       "external_id": "1004529",
@@ -16840,6 +17498,34 @@
       "lat": 59.32324,
       "lon": 17.957,
       "home": "https://www.ica.se/butiker/nara/stockholm/hms-livs-1004374/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004491",
+      "chain": "ica",
+      "external_id": "1004491",
+      "name": "ICA Nära Haga",
+      "address": "Pilgatan 20, 41122 Göteborg",
+      "postcode": "411 22",
+      "city": "Göteborg",
+      "lat": 57.69731,
+      "lon": 11.95906,
+      "home": "https://www.ica.se/butiker/nara/goteborg/ica-nara-haga-1004491/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003976",
+      "chain": "ica",
+      "external_id": "1003976",
+      "name": "ICA Nära Hallsås",
+      "address": "Kring-alles väg 52, 44334 Lerum",
+      "postcode": "443 34",
+      "city": "Lerum",
+      "lat": 57.77505,
+      "lon": 12.27521,
+      "home": "https://www.ica.se/butiker/nara/lerum/ica-nara-hallsas-1003976/",
       "prices": true,
       "offers": true
     },
@@ -16882,20 +17568,6 @@
       "lat": 65.8555,
       "lon": 22.28839,
       "home": "https://www.ica.se/butiker/nara/lulea/ica-nara-handelsboden-ranea-1003492/",
-      "prices": true,
-      "offers": true
-    },
-    {
-      "id": "ica-1003451",
-      "chain": "ica",
-      "external_id": "1003451",
-      "name": "ICA Nära Handlarn, Påarp",
-      "address": "Lokföraregatan 20, 25353 Påarp",
-      "postcode": "253 53",
-      "city": "Påarp",
-      "lat": 56.02963,
-      "lon": 12.81541,
-      "home": "https://www.ica.se/butiker/nara/helsingborg/ica-nara-handlarn-paarp-1003451/",
       "prices": true,
       "offers": true
     },
@@ -16956,6 +17628,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003913",
+      "chain": "ica",
+      "external_id": "1003913",
+      "name": "ICA Nära Heden",
+      "address": "Sten Sturegatan 16, 41139 Göteborg",
+      "postcode": "411 39",
+      "city": "Göteborg",
+      "lat": 57.70201,
+      "lon": 11.98227,
+      "home": "https://www.ica.se/butiker/nara/goteborg/ica-nara-heden-1003913/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003914",
       "chain": "ica",
       "external_id": "1003914",
@@ -16984,6 +17670,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003918",
+      "chain": "ica",
+      "external_id": "1003918",
+      "name": "ICA Nära Hemlings",
+      "address": "Hemling 220, 89791 Långviksmon",
+      "postcode": "897 91",
+      "city": "Långviksmon",
+      "lat": 63.65287,
+      "lon": 18.53864,
+      "home": "https://www.ica.se/butiker/nara/ornskoldsvik/ica-nara-hemlings-1003918/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003765",
       "chain": "ica",
       "external_id": "1003765",
@@ -16998,6 +17698,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003926",
+      "chain": "ica",
+      "external_id": "1003926",
+      "name": "ICA Nära Hillerström",
+      "address": "Olebyn, 66196 Långserud",
+      "postcode": "661 96",
+      "city": "Långserud",
+      "lat": 59.27341,
+      "lon": 12.66071,
+      "home": "https://www.ica.se/butiker/nara/saffle/ica-nara-hillerstrom-1003926/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003995",
       "chain": "ica",
       "external_id": "1003995",
@@ -17008,6 +17722,20 @@
       "lat": 57.70469,
       "lon": 12.44795,
       "home": "https://www.ica.se/butiker/nara/harryda/ica-nara-hindas-1003995/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003618",
+      "chain": "ica",
+      "external_id": "1003618",
+      "name": "ICA Nära Hissjö",
+      "address": "Hissjö 75, 90591 Umeå",
+      "postcode": "905 91",
+      "city": "Umeå",
+      "lat": 63.93893,
+      "lon": 20.16034,
+      "home": "https://www.ica.se/butiker/nara/umea/hissjo-handel-1003618/",
       "prices": true,
       "offers": true
     },
@@ -17054,6 +17782,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004148",
+      "chain": "ica",
+      "external_id": "1004148",
+      "name": "ICA Nära Hoting",
+      "address": "Storgatan 20, 83351 Hoting",
+      "postcode": "833 51",
+      "city": "Hoting",
+      "lat": 64.11552,
+      "lon": 16.20289,
+      "home": "https://www.ica.se/butiker/nara/stromsund/ica-nara-hoting-1004148/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003919",
       "chain": "ica",
       "external_id": "1003919",
@@ -17078,6 +17820,34 @@
       "lat": 57.72142,
       "lon": 12.97993,
       "home": "https://www.ica.se/butiker/nara/boras/ica-nara-hulta-1004312/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004366",
+      "chain": "ica",
+      "external_id": "1004366",
+      "name": "ICA Nära Hultsfred",
+      "address": "Vagngatan 4, 57734 Hultsfred",
+      "postcode": "577 34",
+      "city": "Hultsfred",
+      "lat": 57.49753,
+      "lon": 15.85358,
+      "home": "https://www.ica.se/butiker/nara/hultsfred/ica-nara-hultsfred-1004366/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003770",
+      "chain": "ica",
+      "external_id": "1003770",
+      "name": "ICA Nära Humlegården",
+      "address": "Karlavägen 26, 11431 Stockholm",
+      "postcode": "114 31",
+      "city": "Stockholm",
+      "lat": 59.34235,
+      "lon": 18.06852,
+      "home": "https://www.ica.se/butiker/nara/stockholm/ica-nara-humlegarden-1003770/",
       "prices": true,
       "offers": true
     },
@@ -17124,6 +17894,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003623",
+      "chain": "ica",
+      "external_id": "1003623",
+      "name": "ICA Nära Häggs Livs",
+      "address": "Järnvägsgatan, 27261 Gärsnäs",
+      "postcode": "272 61",
+      "city": "Gärsnäs",
+      "lat": 55.54686,
+      "lon": 14.18171,
+      "home": "https://www.ica.se/butiker/nara/simrishamn/ica-nara-haggs-livs-1003623/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003984",
       "chain": "ica",
       "external_id": "1003984",
@@ -17166,6 +17950,20 @@
       "offers": true
     },
     {
+      "id": "ica-1022006",
+      "chain": "ica",
+      "external_id": "1022006",
+      "name": "ICA Nära Högsbohöjd",
+      "address": "Sjupundsgatan 4, 41481 Göteborg",
+      "postcode": "414 81",
+      "city": "Göteborg",
+      "lat": 57.673,
+      "lon": 11.91751,
+      "home": "https://www.ica.se/butiker/nara/goteborg/ica-nara-hogsbohojd-1022006/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003613",
       "chain": "ica",
       "external_id": "1003613",
@@ -17204,6 +18002,20 @@
       "lat": 61.88994,
       "lon": 12.8332,
       "home": "https://www.ica.se/butiker/nara/alvdalen/ica-nara-idre-fjall-1003965/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004313",
+      "chain": "ica",
+      "external_id": "1004313",
+      "name": "ICA Nära Iggesund",
+      "address": "Centralgatan 9, 82530 Iggesund",
+      "postcode": "825 30",
+      "city": "Iggesund",
+      "lat": 61.64237,
+      "lon": 17.07456,
+      "home": "https://www.ica.se/butiker/nara/hudiksvall/ica-nara-iggesund-1004313/",
       "prices": true,
       "offers": true
     },
@@ -17306,20 +18118,6 @@
       "offers": true
     },
     {
-      "id": "ica-1004264",
-      "chain": "ica",
-      "external_id": "1004264",
-      "name": "ICA Nära Junsele",
-      "address": "Köpmangatan 24, 88371 Junsele",
-      "postcode": "883 71",
-      "city": "Junsele",
-      "lat": 63.69476,
-      "lon": 16.88255,
-      "home": "https://www.ica.se/butiker/nara/solleftea/ica-nara-junsele-1004264/",
-      "prices": true,
-      "offers": true
-    },
-    {
       "id": "ica-1007011",
       "chain": "ica",
       "external_id": "1007011",
@@ -17334,6 +18132,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004475",
+      "chain": "ica",
+      "external_id": "1004475",
+      "name": "ICA Nära Jägaren, Lund",
+      "address": "Nöbbelövs torg 9, 22638 Lund",
+      "postcode": "226 38",
+      "city": "Lund",
+      "lat": 55.72799,
+      "lon": 13.17527,
+      "home": "https://www.ica.se/butiker/nara/lund/ica-nara-jagaren-lund-1004475/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003750",
       "chain": "ica",
       "external_id": "1003750",
@@ -17344,6 +18156,20 @@
       "lat": 60.71569,
       "lon": 16.59535,
       "home": "https://www.ica.se/butiker/nara/sandviken/ica-nara-jarbo-1003750/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004314",
+      "chain": "ica",
+      "external_id": "1004314",
+      "name": "ICA Nära Järvastaden",
+      "address": "Brogatan 1, 17441 Sundbyberg",
+      "postcode": "174 41",
+      "city": "Sundbyberg",
+      "lat": 59.38198,
+      "lon": 17.97873,
+      "home": "https://www.ica.se/butiker/nara/sundbyberg/ica-nara-jarvastaden-1004314/",
       "prices": true,
       "offers": true
     },
@@ -17390,6 +18216,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004022",
+      "chain": "ica",
+      "external_id": "1004022",
+      "name": "ICA Nära Kall",
+      "address": "Kall Västgård 10, 83793 Järpen",
+      "postcode": "837 93",
+      "city": "Järpen",
+      "lat": 63.47262,
+      "lon": 13.23335,
+      "home": "https://www.ica.se/butiker/nara/are/ica-nara-kall-1004022/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004315",
       "chain": "ica",
       "external_id": "1004315",
@@ -17428,6 +18268,20 @@
       "lat": 58.32544,
       "lon": 12.92168,
       "home": "https://www.ica.se/butiker/nara/vara/karl-akes-storkop-1004031/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004033",
+      "chain": "ica",
+      "external_id": "1004033",
+      "name": "ICA Nära Kastbergs Livs",
+      "address": "Edvallavägen 19, 81964 Hållnäs",
+      "postcode": "819 64",
+      "city": "Hållnäs",
+      "lat": 60.53533,
+      "lon": 17.87898,
+      "home": "https://www.ica.se/butiker/nara/tierp/ica-nara-kastbergs-livs-1004033/",
       "prices": true,
       "offers": true
     },
@@ -17484,20 +18338,6 @@
       "lat": 57.40086,
       "lon": 14.66397,
       "home": "https://www.ica.se/butiker/nara/savsjo/ica-nara-klingan-1004032/",
-      "prices": true,
-      "offers": true
-    },
-    {
-      "id": "ica-1003687",
-      "chain": "ica",
-      "external_id": "1003687",
-      "name": "ICA Nära Klingsta",
-      "address": "Edsviksvägen  31, 18233 Danderyd",
-      "postcode": "182 33",
-      "city": "Danderyd",
-      "lat": 59.40041,
-      "lon": 18.02571,
-      "home": "https://www.ica.se/butiker/nara/danderyd/ica-nara-klingsta-1003687/",
       "prices": true,
       "offers": true
     },
@@ -17596,6 +18436,20 @@
       "lat": 56.37728,
       "lon": 14.00727,
       "home": "https://www.ica.se/butiker/nara/osby/ica-nara-kometen-1004203/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004052",
+      "chain": "ica",
+      "external_id": "1004052",
+      "name": "ICA Nära Kometen, Visby",
+      "address": "Siriusgatan 2, 62141 Visby",
+      "postcode": "621 41",
+      "city": "Visby",
+      "lat": 57.64704,
+      "lon": 18.31063,
+      "home": "https://www.ica.se/butiker/nara/gotland/ica-nara-kometen-1004052/",
       "prices": true,
       "offers": true
     },
@@ -17810,6 +18664,34 @@
       "offers": true
     },
     {
+      "id": "ica-1004317",
+      "chain": "ica",
+      "external_id": "1004317",
+      "name": "ICA Nära Kärrtorp",
+      "address": "Kärrtorpsplan 16, 12155 Johanneshov",
+      "postcode": "121 55",
+      "city": "Johanneshov",
+      "lat": 59.28395,
+      "lon": 18.11398,
+      "home": "https://www.ica.se/butiker/nara/stockholm/ica-nara-karrtorp-1004317/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003805",
+      "chain": "ica",
+      "external_id": "1003805",
+      "name": "ICA Nära KåBe Hallen",
+      "address": "Arkitektvägen 20, 57260 Oskarshamn",
+      "postcode": "572 60",
+      "city": "Oskarshamn",
+      "lat": 57.25119,
+      "lon": 16.46743,
+      "home": "https://www.ica.se/butiker/nara/oskarshamn/ica-nara-kabe-hallen-1003805/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003672",
       "chain": "ica",
       "external_id": "1003672",
@@ -17834,6 +18716,20 @@
       "lat": 63.49186,
       "lon": 13.89706,
       "home": "https://www.ica.se/butiker/nara/krokom/ica-nara-ladan-1004353/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004007",
+      "chain": "ica",
+      "external_id": "1004007",
+      "name": "ICA Nära Lagahallen",
+      "address": "Sturegatan 25, 56832 Skillingaryd",
+      "postcode": "568 32",
+      "city": "Skillingaryd",
+      "lat": 57.43017,
+      "lon": 14.09124,
+      "home": "https://www.ica.se/butiker/nara/vaggeryd/ica-nara-lagahallen-1004007/",
       "prices": true,
       "offers": true
     },
@@ -17876,6 +18772,20 @@
       "lat": 56.19224,
       "lon": 14.74658,
       "home": "https://www.ica.se/butiker/nara/karlshamn/ica-nara-laxen-1004196/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003489",
+      "chain": "ica",
+      "external_id": "1003489",
+      "name": "ICA Nära Lekeberg",
+      "address": "Letstigen 25, 71631 Fjugesta",
+      "postcode": "716 31",
+      "city": "Fjugesta",
+      "lat": 59.17303,
+      "lon": 14.86914,
+      "home": "https://www.ica.se/butiker/nara/lekeberg/ica-nara-lekeberg-1003489/",
       "prices": true,
       "offers": true
     },
@@ -17960,6 +18870,20 @@
       "lat": 65.59028,
       "lon": 19.19503,
       "home": "https://www.ica.se/butiker/nara/arvidsjaur/ica-nara-lill-ica-1003227/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004140",
+      "chain": "ica",
+      "external_id": "1004140",
+      "name": "ICA Nära Limhamn",
+      "address": "Västra Bernadottesgatan 8, 21612 Limhamn",
+      "postcode": "216 12",
+      "city": "Limhamn",
+      "lat": 55.58196,
+      "lon": 12.92204,
+      "home": "https://www.ica.se/butiker/nara/malmo/ica-nara-limhamn-1004140/",
       "prices": true,
       "offers": true
     },
@@ -18202,6 +19126,48 @@
       "offers": true
     },
     {
+      "id": "ica-1003915",
+      "chain": "ica",
+      "external_id": "1003915",
+      "name": "ICA Nära Lundbergs",
+      "address": "Storgatan 8, 57032 Hjältevad",
+      "postcode": "570 32",
+      "city": "Hjältevad",
+      "lat": 57.62893,
+      "lon": 15.34323,
+      "home": "https://www.ica.se/butiker/nara/eksjo/ica-nara-lundbergs-1003915/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004454",
+      "chain": "ica",
+      "external_id": "1004454",
+      "name": "ICA Nära Lundby Livs",
+      "address": "Lundby, 67196 Mangskog",
+      "postcode": "671 96",
+      "city": "Mangskog",
+      "lat": 59.75306,
+      "lon": 12.82346,
+      "home": "https://www.ica.se/butiker/nara/arvika/lundby-livs-1004454/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004169",
+      "chain": "ica",
+      "external_id": "1004169",
+      "name": "ICA Nära Lunden, Göteborg",
+      "address": "S:t Pauligatan 42, 41660 Göteborg",
+      "postcode": "416 60",
+      "city": "Göteborg",
+      "lat": 57.70897,
+      "lon": 12.00338,
+      "home": "https://www.ica.se/butiker/nara/goteborg/ica-nara-lunden-1004169/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003899",
       "chain": "ica",
       "external_id": "1003899",
@@ -18240,6 +19206,20 @@
       "lat": 58.80291,
       "lon": 14.05888,
       "home": "https://www.ica.se/butiker/nara/mariestad/freijs-livsmedel-1004191/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004550",
+      "chain": "ica",
+      "external_id": "1004550",
+      "name": "ICA Nära Längbrotorg",
+      "address": "Längbrotorg 10, 70366 Örebro",
+      "postcode": "703 66",
+      "city": "Örebro",
+      "lat": 59.28238,
+      "lon": 15.22658,
+      "home": "https://www.ica.se/butiker/nara/orebro/ica-nara-langbrotorg-1004550/",
       "prices": true,
       "offers": true
     },
@@ -18370,30 +19350,16 @@
       "offers": true
     },
     {
-      "id": "ica-1004512",
+      "id": "ica-1003393",
       "chain": "ica",
-      "external_id": "1004512",
-      "name": "ICA Nära Matboden, Varberg",
-      "address": "Lindbergsvägen 18, 43232 Varberg",
-      "postcode": "432 32",
-      "city": "Varberg",
-      "lat": 57.12647,
-      "lon": 12.26831,
-      "home": "https://www.ica.se/butiker/nara/varberg/matboden-varberg-1004512/",
-      "prices": true,
-      "offers": true
-    },
-    {
-      "id": "ica-1004535",
-      "chain": "ica",
-      "external_id": "1004535",
-      "name": "ICA Nära Mathuset, Marieholm",
-      "address": "Storgatan 7, 24172 Marieholm",
-      "postcode": "241 72",
-      "city": "Marieholm",
-      "lat": 55.86354,
-      "lon": 13.15366,
-      "home": "https://www.ica.se/butiker/nara/eslov/ica-nara-mathuset-marieholm-1004535/",
+      "external_id": "1003393",
+      "name": "ICA Nära Matboa",
+      "address": "Tavelsjövägen 84, 92263 Tavelsjö",
+      "postcode": "922 63",
+      "city": "Tavelsjö",
+      "lat": 64.03826,
+      "lon": 20.05996,
+      "home": "https://www.ica.se/butiker/nara/umea/ica-nara-matboa-1003393/",
       "prices": true,
       "offers": true
     },
@@ -18408,6 +19374,20 @@
       "lat": 57.5364,
       "lon": 13.3544,
       "home": "https://www.ica.se/butiker/nara/tranemo/ica-nara-mathyttan-1003481/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004572",
+      "chain": "ica",
+      "external_id": "1004572",
+      "name": "ICA Nära Mathörnan, Mariannelund",
+      "address": "Lingströmsgatan 4, 59897 Mariannelund",
+      "postcode": "598 97",
+      "city": "Mariannelund",
+      "lat": 57.61603,
+      "lon": 15.57228,
+      "home": "https://www.ica.se/butiker/nara/eksjo/ica-nara-mathornan-mariannelund-1004572/",
       "prices": true,
       "offers": true
     },
@@ -18436,6 +19416,34 @@
       "lat": 56.15871,
       "lon": 13.60053,
       "home": "https://www.ica.se/butiker/nara/hassleholm/ica-nara-matlusten-1004059/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004161",
+      "chain": "ica",
+      "external_id": "1004161",
+      "name": "ICA Nära Matmästarn, Högsby",
+      "address": "Järnvägsgatan 8, 57930 Högsby",
+      "postcode": "579 30",
+      "city": "Högsby",
+      "lat": 57.16624,
+      "lon": 16.02593,
+      "home": "https://www.ica.se/butiker/nara/hogsby/ica-nara-matmastarn-hogsby-1004161/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004183",
+      "chain": "ica",
+      "external_id": "1004183",
+      "name": "ICA Nära Mockfjärd",
+      "address": "Tarkovägen 6, 78543 Mockfjärd",
+      "postcode": "785 43",
+      "city": "Mockfjärd",
+      "lat": 60.51292,
+      "lon": 14.96914,
+      "home": "https://www.ica.se/butiker/nara/gagnef/ica-nara-mockfjard-1004183/",
       "prices": true,
       "offers": true
     },
@@ -18622,6 +19630,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003536",
+      "chain": "ica",
+      "external_id": "1003536",
+      "name": "ICA Nära Norrviken",
+      "address": "Stationsallén 2, 19270 Sollentuna",
+      "postcode": "192 70",
+      "city": "Sollentuna",
+      "lat": 59.4586,
+      "lon": 17.92305,
+      "home": "https://www.ica.se/butiker/nara/sollentuna/ica-nara-norrviken-1003536/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004200",
       "chain": "ica",
       "external_id": "1004200",
@@ -18646,6 +19668,48 @@
       "lat": 57.31077,
       "lon": 13.88699,
       "home": "https://www.ica.se/butiker/nara/gnosjo/ica-nara-nyckeln-hillerstorp-1003992/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003895",
+      "chain": "ica",
+      "external_id": "1003895",
+      "name": "ICA Nära Nyköp",
+      "address": "Jupitervägen 21, 61160 Nyköping",
+      "postcode": "611 60",
+      "city": "Nyköping",
+      "lat": 58.75698,
+      "lon": 17.03798,
+      "home": "https://www.ica.se/butiker/nara/nykoping/ica-nara-nykop-1003895/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003806",
+      "chain": "ica",
+      "external_id": "1003806",
+      "name": "ICA Nära Nyplan",
+      "address": "Bläckhornsvägen 1, 82673 Sandarne",
+      "postcode": "826 73",
+      "city": "Sandarne",
+      "lat": 61.25997,
+      "lon": 17.15048,
+      "home": "https://www.ica.se/butiker/nara/soderhamn/ica-nara-nyplan-1003806/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004304",
+      "chain": "ica",
+      "external_id": "1004304",
+      "name": "ICA Nära Nyvalls Livs",
+      "address": "Öståsgatan 10, 68160 Kristinehamn",
+      "postcode": "681 60",
+      "city": "Kristinehamn",
+      "lat": 59.15916,
+      "lon": 14.18459,
+      "home": "https://www.ica.se/butiker/nara/kristinehamn/nyvalls-livs-1004304/",
       "prices": true,
       "offers": true
     },
@@ -18678,20 +19742,6 @@
       "offers": true
     },
     {
-      "id": "ica-1004337",
-      "chain": "ica",
-      "external_id": "1004337",
-      "name": "ICA Nära Nättran",
-      "address": "Havsgårdsvägen 2, 37330 Nättraby",
-      "postcode": "373 30",
-      "city": "Nättraby",
-      "lat": 56.19944,
-      "lon": 15.53585,
-      "home": "https://www.ica.se/butiker/nara/karlskrona/ica-nara-nattran-1004337/",
-      "prices": true,
-      "offers": true
-    },
-    {
       "id": "ica-1004345",
       "chain": "ica",
       "external_id": "1004345",
@@ -18716,6 +19766,20 @@
       "lat": 56.37344,
       "lon": 13.46672,
       "home": "https://www.ica.se/butiker/nara/orkelljunga/ica-nara-opdahls-1003615/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004349",
+      "chain": "ica",
+      "external_id": "1004349",
+      "name": "ICA Nära Optimisten",
+      "address": "Årjängsvägen 31, 66693 Gustavsfors",
+      "postcode": "666 93",
+      "city": "Gustavsfors",
+      "lat": 59.18515,
+      "lon": 12.11288,
+      "home": "https://www.ica.se/butiker/nara/bengtsfors/optimisten-lanthandel-1004349/",
       "prices": true,
       "offers": true
     },
@@ -18930,6 +19994,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004390",
+      "chain": "ica",
+      "external_id": "1004390",
+      "name": "ICA Nära Profilen",
+      "address": "Skolvägen 12, 69234 Kumla",
+      "postcode": "692 34",
+      "city": "Kumla",
+      "lat": 59.12668,
+      "lon": 15.13613,
+      "home": "https://www.ica.se/butiker/nara/kumla/ica-nara-profilen-1004390/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003378",
       "chain": "ica",
       "external_id": "1003378",
@@ -18940,6 +20018,20 @@
       "lat": 57.20425,
       "lon": 14.95195,
       "home": "https://www.ica.se/butiker/nara/vetlanda/ica-nara-puttes-lanthandel-1003378/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004321",
+      "chain": "ica",
+      "external_id": "1004321",
+      "name": "ICA Nära Pålsboda",
+      "address": "Köpmangatan 4, 69730 Pålsboda",
+      "postcode": "697 30",
+      "city": "Pålsboda",
+      "lat": 59.06473,
+      "lon": 15.33712,
+      "home": "https://www.ica.se/butiker/nara/hallsberg/ica-nara-palsboda-1004321/",
       "prices": true,
       "offers": true
     },
@@ -19010,6 +20102,20 @@
       "lat": 55.60247,
       "lon": 12.97996,
       "home": "https://www.ica.se/butiker/nara/malmo/ica-nara-ribersborg-1004327/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003470",
+      "chain": "ica",
+      "external_id": "1003470",
+      "name": "ICA Nära Riksgränsen",
+      "address": "Riksgränsvägen 2A, 98194 Riksgränsen",
+      "postcode": "981 94",
+      "city": "Riksgränsen",
+      "lat": 68.42836,
+      "lon": 18.11857,
+      "home": "https://www.ica.se/butiker/nara/kiruna/ica-nara-riksgransen-1003470/",
       "prices": true,
       "offers": true
     },
@@ -19094,6 +20200,34 @@
       "lat": 57.93905,
       "lon": 11.5946,
       "home": "https://www.ica.se/butiker/nara/tjorn/ica-nara-rorsman-1004246/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004328",
+      "chain": "ica",
+      "external_id": "1004328",
+      "name": "ICA Nära Rosendal",
+      "address": "Torgny Segerstedts allé 25, 75644 Uppsala",
+      "postcode": "756 44",
+      "city": "Uppsala",
+      "lat": 59.83235,
+      "lon": 17.63415,
+      "home": "https://www.ica.se/butiker/nara/uppsala/ica-nara-rosendal-1004328/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003482",
+      "chain": "ica",
+      "external_id": "1003482",
+      "name": "ICA Nära Roslagstull",
+      "address": "Birger Jarlsgatan 122, 11420 Stockholm",
+      "postcode": "114 20",
+      "city": "Stockholm",
+      "lat": 59.34915,
+      "lon": 18.05964,
+      "home": "https://www.ica.se/butiker/nara/stockholm/ica-nara-roslagstull-1003482/",
       "prices": true,
       "offers": true
     },
@@ -19266,6 +20400,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003963",
+      "chain": "ica",
+      "external_id": "1003963",
+      "name": "ICA Nära Råbyvägen",
+      "address": "Råbyvägen 61 c, 75429 Uppsala",
+      "postcode": "754 29",
+      "city": "Uppsala",
+      "lat": 59.87604,
+      "lon": 17.65543,
+      "home": "https://www.ica.se/butiker/nara/uppsala/ica-nara-rabyvagen-1003963/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003477",
       "chain": "ica",
       "external_id": "1003477",
@@ -19308,6 +20456,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003894",
+      "chain": "ica",
+      "external_id": "1003894",
+      "name": "ICA Nära Rörö Strandkassa",
+      "address": "Sörikringsvägen 16, 47553 Rörö",
+      "postcode": "475 53",
+      "city": "Rörö",
+      "lat": 57.77307,
+      "lon": 11.61784,
+      "home": "https://www.ica.se/butiker/nara/ockero/roro-strandkassa-1003894/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004094",
       "chain": "ica",
       "external_id": "1004094",
@@ -19318,6 +20480,20 @@
       "lat": 59.44421,
       "lon": 18.03188,
       "home": "https://www.ica.se/butiker/nara/taby/ica-nara-rosjohallen-1004094/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003496",
+      "chain": "ica",
+      "external_id": "1003496",
+      "name": "ICA Nära Röstånga",
+      "address": "Skäralidsvägen 1, 26868 Röstånga",
+      "postcode": "268 68",
+      "city": "Röstånga",
+      "lat": 55.99963,
+      "lon": 13.28856,
+      "home": "https://www.ica.se/butiker/nara/svalov/ica-nara-rostanga-1003496/",
       "prices": true,
       "offers": true
     },
@@ -19490,16 +20666,16 @@
       "offers": true
     },
     {
-      "id": "ica-1004001",
+      "id": "ica-1004330",
       "chain": "ica",
-      "external_id": "1004001",
-      "name": "ICA Nära Skeppet, Nyhamnsläge",
-      "address": "Eleshultsvägen, 26375 Nyhamnsläge",
-      "postcode": "263 75",
-      "city": "Nyhamnsläge",
-      "lat": 56.23994,
-      "lon": 12.54194,
-      "home": "https://www.ica.se/butiker/nara/hoganas/ica-nara-skeppet-nyhamnslage-1004001/",
+      "external_id": "1004330",
+      "name": "ICA Nära Skarpnäck",
+      "address": "Skarpnäcks Allé 24, 12833 Skarpnäck",
+      "postcode": "128 33",
+      "city": "Skarpnäck",
+      "lat": 59.26729,
+      "lon": 18.12798,
+      "home": "https://www.ica.se/butiker/nara/stockholm/ica-nara-skarpnack-1004330/",
       "prices": true,
       "offers": true
     },
@@ -19672,6 +20848,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003859",
+      "chain": "ica",
+      "external_id": "1003859",
+      "name": "ICA Nära Stabbetorget",
+      "address": "Stabbetorget 1, 41680 Göteborg",
+      "postcode": "416 80",
+      "city": "Göteborg",
+      "lat": 57.71473,
+      "lon": 12.04694,
+      "home": "https://www.ica.se/butiker/nara/goteborg/ica-nara-stabbetorget-1003859/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003386",
       "chain": "ica",
       "external_id": "1003386",
@@ -19728,16 +20918,16 @@
       "offers": true
     },
     {
-      "id": "ica-1004150",
+      "id": "ica-1003959",
       "chain": "ica",
-      "external_id": "1004150",
-      "name": "ICA Nära Stora Mellösa",
-      "address": "Alm, 71572 Stora Mellösa",
-      "postcode": "715 72",
-      "city": "Stora Mellösa",
-      "lat": 59.21188,
-      "lon": 15.50039,
-      "home": "https://www.ica.se/butiker/nara/orebro/ica-nara-stora-mellosa-1004150/",
+      "external_id": "1003959",
+      "name": "ICA Nära Stjärnan",
+      "address": "Stationsvägen 29, 82962 Gnarp",
+      "postcode": "829 62",
+      "city": "Gnarp",
+      "lat": 62.05367,
+      "lon": 17.23987,
+      "home": "https://www.ica.se/butiker/nara/nordanstig/ica-nara-stjarnan-1003959/",
       "prices": true,
       "offers": true
     },
@@ -19752,6 +20942,20 @@
       "lat": 59.27834,
       "lon": 16.11882,
       "home": "https://www.ica.se/butiker/nara/eskilstuna/ica-nara-stora-sundby-1004130/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003469",
+      "chain": "ica",
+      "external_id": "1003469",
+      "name": "ICA Nära Storebro",
+      "address": "Torgrundan 1, 59870 Storebro",
+      "postcode": "598 70",
+      "city": "Storebro",
+      "lat": 57.58828,
+      "lon": 15.84154,
+      "home": "https://www.ica.se/butiker/nara/vimmerby/ica-nara-storebro-1003469/",
       "prices": true,
       "offers": true
     },
@@ -19798,6 +21002,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003944",
+      "chain": "ica",
+      "external_id": "1003944",
+      "name": "ICA Nära Strandbergs Undersåker",
+      "address": "Byvägen 63, 83795 Undersåker",
+      "postcode": "837 95",
+      "city": "Undersåker",
+      "lat": 63.31612,
+      "lon": 13.24726,
+      "home": "https://www.ica.se/butiker/nara/are/ica-nara-strandbergs-undersaker-1003944/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004420",
       "chain": "ica",
       "external_id": "1004420",
@@ -19822,6 +21040,20 @@
       "lat": 62.86806,
       "lon": 18.09206,
       "home": "https://www.ica.se/butiker/nara/kramfors/ica-nara-strommen-1004162/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004556",
+      "chain": "ica",
+      "external_id": "1004556",
+      "name": "ICA Nära Strömmen, Norrköping",
+      "address": "Kungsgatan 41, 60220 Norrköping",
+      "postcode": "602 20",
+      "city": "Norrköping",
+      "lat": 58.59089,
+      "lon": 16.17878,
+      "home": "https://www.ica.se/butiker/nara/norrkoping/ica-nara-strommen-norrkoping-1004556/",
       "prices": true,
       "offers": true
     },
@@ -19854,6 +21086,34 @@
       "offers": true
     },
     {
+      "id": "ica-1003741",
+      "chain": "ica",
+      "external_id": "1003741",
+      "name": "ICA Nära Stugun",
+      "address": "Industrivägen 2, 83076 Stugun",
+      "postcode": "830 76",
+      "city": "Stugun",
+      "lat": 63.16548,
+      "lon": 15.59989,
+      "home": "https://www.ica.se/butiker/nara/ragunda/ica-nara-stugun-1003741/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004423",
+      "chain": "ica",
+      "external_id": "1004423",
+      "name": "ICA Nära Sturefors",
+      "address": "Näckrosvägen 148, 58961 Sturefors",
+      "postcode": "589 61",
+      "city": "Sturefors",
+      "lat": 58.33392,
+      "lon": 15.72409,
+      "home": "https://www.ica.se/butiker/nara/linkoping/ica-nara-sturefors-1004423/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003743",
       "chain": "ica",
       "external_id": "1003743",
@@ -19864,6 +21124,20 @@
       "lat": 56.11398,
       "lon": 15.67249,
       "home": "https://www.ica.se/butiker/nara/karlskrona/ica-nara-sturkohallen-1003743/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004419",
+      "chain": "ica",
+      "external_id": "1004419",
+      "name": "ICA Nära Stuvsta",
+      "address": "Stationsvägen 38-40, 14140 Huddinge",
+      "postcode": "141 40",
+      "city": "Huddinge",
+      "lat": 59.25216,
+      "lon": 17.99836,
+      "home": "https://www.ica.se/butiker/nara/huddinge/ica-nara-stuvsta-1004419/",
       "prices": true,
       "offers": true
     },
@@ -19882,16 +21156,16 @@
       "offers": true
     },
     {
-      "id": "ica-1003748",
+      "id": "ica-1003747",
       "chain": "ica",
-      "external_id": "1003748",
-      "name": "ICA Nära Sulvikingen",
-      "address": "Sulvik, 67193 Arvika",
-      "postcode": "671 93",
-      "city": "Arvika",
-      "lat": 59.68168,
-      "lon": 12.40757,
-      "home": "https://www.ica.se/butiker/nara/arvika/sulvikingen-1003748/",
+      "external_id": "1003747",
+      "name": "ICA Nära Sudrets Livs",
+      "address": "Ekevägen 1, 62341 Havdhem",
+      "postcode": "623 41",
+      "city": "Havdhem",
+      "lat": 57.16084,
+      "lon": 18.33369,
+      "home": "https://www.ica.se/butiker/nara/gotland/sudrets-livs-1003747/",
       "prices": true,
       "offers": true
     },
@@ -19906,6 +21180,20 @@
       "lat": 57.31929,
       "lon": 15.86369,
       "home": "https://www.ica.se/butiker/nara/hultsfred/ica-nara-sundbergs-morlunda-1003796/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003394",
+      "chain": "ica",
+      "external_id": "1003394",
+      "name": "ICA Nära Svens Livs, Skummesl",
+      "address": "Stora Strandv 4, Skummeslöv, 31272 Laholm",
+      "postcode": "312 72",
+      "city": "Laholm",
+      "lat": 56.46089,
+      "lon": 12.92145,
+      "home": "https://www.ica.se/butiker/nara/laholm/ica-nara-svens-livs-skummesl-1003394/",
       "prices": true,
       "offers": true
     },
@@ -20018,6 +21306,48 @@
       "lat": 55.69795,
       "lon": 13.19035,
       "home": "https://www.ica.se/butiker/nara/lund/ica-nara-soderlivs-lund-1004339/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004461",
+      "chain": "ica",
+      "external_id": "1004461",
+      "name": "ICA Nära Södermalm",
+      "address": "Linnévägen 3, 92134 Lycksele",
+      "postcode": "921 34",
+      "city": "Lycksele",
+      "lat": 64.58797,
+      "lon": 18.66232,
+      "home": "https://www.ica.se/butiker/nara/lycksele/ica-nara-sodermalm-1004461/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003671",
+      "chain": "ica",
+      "external_id": "1003671",
+      "name": "ICA Nära Södertorn",
+      "address": "Stengatan 58, 57258 Oskarshamn",
+      "postcode": "572 58",
+      "city": "Oskarshamn",
+      "lat": 57.25552,
+      "lon": 16.44674,
+      "home": "https://www.ica.se/butiker/nara/oskarshamn/ica-nara-sodertorn-1003671/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003491",
+      "chain": "ica",
+      "external_id": "1003491",
+      "name": "ICA Nära Södra Vi",
+      "address": "Norra Storgatan 7, 59871 Södra Vi",
+      "postcode": "598 71",
+      "city": "Södra Vi",
+      "lat": 57.74095,
+      "lon": 15.79901,
+      "home": "https://www.ica.se/butiker/nara/vimmerby/ica-nara-sodra-vi-1003491/",
       "prices": true,
       "offers": true
     },
@@ -20200,6 +21530,20 @@
       "lat": 58.52806,
       "lon": 13.75879,
       "home": "https://www.ica.se/butiker/nara/skovde/ica-nara-timmersdala-1003802/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004539",
+      "chain": "ica",
+      "external_id": "1004539",
+      "name": "ICA Nära Tjällmo handel",
+      "address": "Länsvägen 60, 59190 Tjällmo",
+      "postcode": "591 90",
+      "city": "Tjällmo",
+      "lat": 58.71484,
+      "lon": 15.35817,
+      "home": "https://www.ica.se/butiker/nara/motala/ica-nara-tjallmo-handel-1004539/",
       "prices": true,
       "offers": true
     },
@@ -20400,6 +21744,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004167",
+      "chain": "ica",
+      "external_id": "1004167",
+      "name": "ICA Nära Träffen, Göteborg",
+      "address": "Björcksgatan 53, 41651 Göteborg",
+      "postcode": "416 51",
+      "city": "Göteborg",
+      "lat": 57.71697,
+      "lon": 12.03307,
+      "home": "https://www.ica.se/butiker/nara/goteborg/ica-nara-traffen-goteborg-1004167/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003834",
       "chain": "ica",
       "external_id": "1003834",
@@ -20470,6 +21828,20 @@
       "offers": true
     },
     {
+      "id": "ica-1048002",
+      "chain": "ica",
+      "external_id": "1048002",
+      "name": "ICA Nära Träslövsläge",
+      "address": "Tångvägen 39, 43275 Träslövsläge",
+      "postcode": "432 75",
+      "city": "Träslövsläge",
+      "lat": 57.05648,
+      "lon": 12.29663,
+      "home": "https://www.ica.se/butiker/nara/varberg/ica-nara-traslovslage-1048002/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003455",
       "chain": "ica",
       "external_id": "1003455",
@@ -20498,6 +21870,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003836",
+      "chain": "ica",
+      "external_id": "1003836",
+      "name": "ICA Nära Tvärålund",
+      "address": "Storvägen 37, 92294 Tvärålund",
+      "postcode": "922 94",
+      "city": "Tvärålund",
+      "lat": 64.09449,
+      "lon": 19.66758,
+      "home": "https://www.ica.se/butiker/nara/vindeln/handelsboden-tvaralund-1003836/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004262",
       "chain": "ica",
       "external_id": "1004262",
@@ -20522,20 +21908,6 @@
       "lat": 56.15226,
       "lon": 12.57083,
       "home": "https://www.ica.se/butiker/nara/hoganas/ica-nara-u-p-hallen-viken-1003848/",
-      "prices": true,
-      "offers": true
-    },
-    {
-      "id": "ica-1003691",
-      "chain": "ica",
-      "external_id": "1003691",
-      "name": "ICA Nära Utby",
-      "address": "Hagbergsgatan 1, 41571 Göteborg",
-      "postcode": "415 71",
-      "city": "Göteborg",
-      "lat": 57.73532,
-      "lon": 12.04564,
-      "home": "https://www.ica.se/butiker/nara/goteborg/ica-nara-utby-1003691/",
       "prices": true,
       "offers": true
     },
@@ -20578,6 +21950,62 @@
       "lat": 59.62251,
       "lon": 16.50378,
       "home": "https://www.ica.se/butiker/nara/vasteras/ica-nara-vallby-1004356/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003533",
+      "chain": "ica",
+      "external_id": "1003533",
+      "name": "ICA Nära Varuhuset Rönneshytta",
+      "address": "Hyttvägen, 69497 Rönneshytta",
+      "postcode": "694 97",
+      "city": "Rönneshytta",
+      "lat": 58.92361,
+      "lon": 15.04165,
+      "home": "https://www.ica.se/butiker/nara/askersund/varuhuset-ronneshytta-1003533/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004476",
+      "chain": "ica",
+      "external_id": "1004476",
+      "name": "ICA Nära Vasavägen, Linköping",
+      "address": "Vasavägen 49, 58233 Linköping",
+      "postcode": "582 33",
+      "city": "Linköping",
+      "lat": 58.41507,
+      "lon": 15.60954,
+      "home": "https://www.ica.se/butiker/nara/linkoping/ica-nara-vasavagen-linkoping-1004476/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004268",
+      "chain": "ica",
+      "external_id": "1004268",
+      "name": "ICA Nära Veberöd",
+      "address": "Postgatan 3b, 24762 Veberöd",
+      "postcode": "247 62",
+      "city": "Veberöd",
+      "lat": 55.63681,
+      "lon": 13.49029,
+      "home": "https://www.ica.se/butiker/nara/lund/ica-nara-veberod-1004268/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1023006",
+      "chain": "ica",
+      "external_id": "1023006",
+      "name": "ICA Nära Vega",
+      "address": "Nordkapsvägen 3, 13657 Vega",
+      "postcode": "136 57",
+      "city": "Vega",
+      "lat": 59.18574,
+      "lon": 18.13433,
+      "home": "https://www.ica.se/butiker/nara/haninge/ica-nara-vega-1023006/",
       "prices": true,
       "offers": true
     },
@@ -20652,6 +22080,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003546",
+      "chain": "ica",
+      "external_id": "1003546",
+      "name": "ICA Nära Vikinghallen",
+      "address": "Nyströmsvägen 1, 66195 Värml Nysäter",
+      "postcode": "661 95",
+      "city": "Värml Nysäter",
+      "lat": 59.28304,
+      "lon": 12.77497,
+      "home": "https://www.ica.se/butiker/nara/saffle/vikinghallen-1003546/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003547",
       "chain": "ica",
       "external_id": "1003547",
@@ -20690,6 +22132,20 @@
       "lat": 58.45276,
       "lon": 13.26802,
       "home": "https://www.ica.se/butiker/nara/lidkoping/gunnarssons-1003634/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004023",
+      "chain": "ica",
+      "external_id": "1004023",
+      "name": "ICA Nära Vintrosa",
+      "address": "Skolgatan 4, 71930 Vintrosa",
+      "postcode": "719 30",
+      "city": "Vintrosa",
+      "lat": 59.25384,
+      "lon": 14.95634,
+      "home": "https://www.ica.se/butiker/nara/orebro/ica-nara-vintrosa-1004023/",
       "prices": true,
       "offers": true
     },
@@ -20810,8 +22266,8 @@
       "chain": "ica",
       "external_id": "1003559",
       "name": "ICA Nära Vårby Gård",
-      "address": "Vårby Allé 22, 14300 Vårby",
-      "postcode": "143 00",
+      "address": "Vårby Allé 22, 14340 Vårby",
+      "postcode": "143 40",
       "city": "Vårby",
       "lat": 59.26392,
       "lon": 17.88452,
@@ -20932,6 +22388,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003574",
+      "chain": "ica",
+      "external_id": "1003574",
+      "name": "ICA Nära Yngves Livs",
+      "address": "Donsö-Backe 3, 43082 Donsö",
+      "postcode": "430 82",
+      "city": "Donsö",
+      "lat": 57.59931,
+      "lon": 11.79487,
+      "home": "https://www.ica.se/butiker/nara/goteborg/yngves-livs-1003574/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004439",
       "chain": "ica",
       "external_id": "1004439",
@@ -20942,6 +22412,20 @@
       "lat": 62.17484,
       "lon": 14.93709,
       "home": "https://www.ica.se/butiker/nara/harjedalen/ica-nara-ytterhogdal-1004439/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004403",
+      "chain": "ica",
+      "external_id": "1004403",
+      "name": "ICA Nära Zachrisson",
+      "address": "Varbergsvägen 2, 43265 Väröbacka",
+      "postcode": "432 65",
+      "city": "Väröbacka",
+      "lat": 57.24962,
+      "lon": 12.1833,
+      "home": "https://www.ica.se/butiker/nara/varberg/ica-nara-zachrisson-1004403/",
       "prices": true,
       "offers": true
     },
@@ -21068,6 +22552,48 @@
       "lat": 60.51468,
       "lon": 16.73357,
       "home": "https://www.ica.se/butiker/nara/sandviken/ica-nara-arsunda-1004545/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004025",
+      "chain": "ica",
+      "external_id": "1004025",
+      "name": "ICA Nära Åseda",
+      "address": "Olofsgatan 12, 36430 Åseda",
+      "postcode": "364 30",
+      "city": "Åseda",
+      "lat": 57.17224,
+      "lon": 15.34437,
+      "home": "https://www.ica.se/butiker/nara/uppvidinge/ica-nara-aseda-1004025/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003589",
+      "chain": "ica",
+      "external_id": "1003589",
+      "name": "ICA Nära Åsele",
+      "address": "Centralgatan 32, 91931 Åsele",
+      "postcode": "919 31",
+      "city": "Åsele",
+      "lat": 64.16067,
+      "lon": 17.35393,
+      "home": "https://www.ica.se/butiker/nara/asele/ica-nara-asele-1003589/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003590",
+      "chain": "ica",
+      "external_id": "1003590",
+      "name": "ICA Nära Åtorp",
+      "address": "Torget, 69370 Åtorp",
+      "postcode": "693 70",
+      "city": "Åtorp",
+      "lat": 59.11686,
+      "lon": 14.36621,
+      "home": "https://www.ica.se/butiker/nara/degerfors/ica-nara-atorp-1003590/",
       "prices": true,
       "offers": true
     },
@@ -21212,6 +22738,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004235",
+      "chain": "ica",
+      "external_id": "1004235",
+      "name": "ICA Odenhallen, Odensbacken",
+      "address": "Valstavägen 1, 71531 Odensbacken",
+      "postcode": "715 31",
+      "city": "Odensbacken",
+      "lat": 59.1565,
+      "lon": 15.52554,
+      "home": "https://www.ica.se/butiker/supermarket/orebro/ica-odenhallen-odensbacken-1004235/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1007008",
       "chain": "ica",
       "external_id": "1007008",
@@ -21282,6 +22822,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004703",
+      "chain": "ica",
+      "external_id": "1004703",
+      "name": "ICA Sandviken Karlskoga",
+      "address": "Sandviksvägen 14, 69152 Karlskoga",
+      "postcode": "691 52",
+      "city": "Karlskoga",
+      "lat": 59.3294,
+      "lon": 14.56291,
+      "home": "https://www.ica.se/butiker/nara/karlskoga/ica-sandviken-karlskoga-1004703/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003520",
       "chain": "ica",
       "external_id": "1003520",
@@ -21338,6 +22892,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004441",
+      "chain": "ica",
+      "external_id": "1004441",
+      "name": "ICA Skansen",
+      "address": "Köpmangatan 21 C, 38650 Mörbylånga",
+      "postcode": "386 50",
+      "city": "Mörbylånga",
+      "lat": 56.5256,
+      "lon": 16.38561,
+      "home": "https://www.ica.se/butiker/nara/morbylanga/ica-nara-skansen-1004441/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1156005",
       "chain": "ica",
       "external_id": "1156005",
@@ -21376,6 +22944,34 @@
       "lat": 59.49443,
       "lon": 18.32758,
       "home": "https://www.ica.se/butiker/nara/osteraker/ica-skansta-1004456/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003608",
+      "chain": "ica",
+      "external_id": "1003608",
+      "name": "ICA Spegeln",
+      "address": "Drottninggatan 37 C, 80311 Gävle",
+      "postcode": "803 11",
+      "city": "Gävle",
+      "lat": 60.67615,
+      "lon": 17.14889,
+      "home": "https://www.ica.se/butiker/nara/gavle/ica-spegeln-1003608/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003663",
+      "chain": "ica",
+      "external_id": "1003663",
+      "name": "ICA Supermarket Alen",
+      "address": "Norra Hamngatan 11, 82630 Söderhamn",
+      "postcode": "826 30",
+      "city": "Söderhamn",
+      "lat": 61.30294,
+      "lon": 17.05849,
+      "home": "https://www.ica.se/butiker/supermarket/soderhamn/ica-supermarket-alen-1003663/",
       "prices": true,
       "offers": true
     },
@@ -21478,6 +23074,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003384",
+      "chain": "ica",
+      "external_id": "1003384",
+      "name": "ICA Supermarket Anderstorp",
+      "address": "Storgatan 18, 33421 Anderstorp",
+      "postcode": "334 21",
+      "city": "Anderstorp",
+      "lat": 57.28257,
+      "lon": 13.63284,
+      "home": "https://www.ica.se/butiker/supermarket/gislaved/ica-supermarket-anderstorp-1003384/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003666",
       "chain": "ica",
       "external_id": "1003666",
@@ -21576,16 +23186,30 @@
       "offers": true
     },
     {
-      "id": "ica-1003751",
+      "id": "ica-1004363",
       "chain": "ica",
-      "external_id": "1003751",
-      "name": "ICA Supermarket BBB Sunne",
-      "address": "Storgatan 32, 68630 Sunne",
-      "postcode": "686 30",
-      "city": "Sunne",
-      "lat": 59.83758,
-      "lon": 13.14503,
-      "home": "https://www.ica.se/butiker/supermarket/sunne/ica-supermarket-bbb-sunne-1003751/",
+      "external_id": "1004363",
+      "name": "ICA Supermarket Atterdags",
+      "address": "Söderväg 6, 62158 Visby",
+      "postcode": "621 58",
+      "city": "Visby",
+      "lat": 57.63339,
+      "lon": 18.28962,
+      "home": "https://www.ica.se/butiker/supermarket/gotland/ica-supermarket-atterdags-1004363/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003903",
+      "chain": "ica",
+      "external_id": "1003903",
+      "name": "ICA Supermarket Bagarmossen",
+      "address": "Lillåvägen 49, 12845 Bagarmossen",
+      "postcode": "128 45",
+      "city": "Bagarmossen",
+      "lat": 59.27701,
+      "lon": 18.13278,
+      "home": "https://www.ica.se/butiker/supermarket/stockholm/ica-supermarket-bagarmossen-1003903/",
       "prices": true,
       "offers": true
     },
@@ -21600,6 +23224,20 @@
       "lat": 57.86203,
       "lon": 14.12615,
       "home": "https://www.ica.se/butiker/supermarket/jonkoping/ica-supermarket-bankeryd-1003507/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004155",
+      "chain": "ica",
+      "external_id": "1004155",
+      "name": "ICA Supermarket Baronen, Stockholm",
+      "address": "Odengatan 40, 11351 Stockholm",
+      "postcode": "113 51",
+      "city": "Stockholm",
+      "lat": 59.3448,
+      "lon": 18.05786,
+      "home": "https://www.ica.se/butiker/supermarket/stockholm/ica-supermarket-baronen-stockholm-1004155/",
       "prices": true,
       "offers": true
     },
@@ -21772,6 +23410,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004503",
+      "chain": "ica",
+      "external_id": "1004503",
+      "name": "ICA Supermarket Björksätra",
+      "address": "Björksätra mitt, 81150 Sandviken",
+      "postcode": "811 50",
+      "city": "Sandviken",
+      "lat": 60.60564,
+      "lon": 16.74991,
+      "home": "https://www.ica.se/butiker/supermarket/sandviken/ica-supermarket-bjorksatra-1004503/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004295",
       "chain": "ica",
       "external_id": "1004295",
@@ -21912,6 +23564,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003763",
+      "chain": "ica",
+      "external_id": "1003763",
+      "name": "ICA Supermarket Brukskanonen",
+      "address": "Dannemoravägen 3, 74831 Österbybruk",
+      "postcode": "748 31",
+      "city": "Österbybruk",
+      "lat": 60.19593,
+      "lon": 17.89597,
+      "home": "https://www.ica.se/butiker/supermarket/osthammar/ica-supermarket-brukskanonen-1003763/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004418",
       "chain": "ica",
       "external_id": "1004418",
@@ -21996,6 +23662,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003943",
+      "chain": "ica",
+      "external_id": "1003943",
+      "name": "ICA Supermarket Byske",
+      "address": "Storgatan 3, 93451 Byske",
+      "postcode": "934 51",
+      "city": "Byske",
+      "lat": 64.95287,
+      "lon": 21.20232,
+      "home": "https://www.ica.se/butiker/supermarket/skelleftea/ica-supermarket-byske-1003943/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003625",
       "chain": "ica",
       "external_id": "1003625",
@@ -22020,6 +23700,20 @@
       "lat": 56.4269,
       "lon": 12.84892,
       "home": "https://www.ica.se/butiker/supermarket/bastad/ica-supermarket-bastad-1004269/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004302",
+      "chain": "ica",
+      "external_id": "1004302",
+      "name": "ICA Supermarket Böleäng",
+      "address": "Fruktvägen 1., 90436 Umeå",
+      "postcode": "904 36",
+      "city": "Umeå",
+      "lat": 63.81827,
+      "lon": 20.21204,
+      "home": "https://www.ica.se/butiker/supermarket/umea/ica-supermarket-boleang-1004302/",
       "prices": true,
       "offers": true
     },
@@ -22080,16 +23774,16 @@
       "offers": true
     },
     {
-      "id": "ica-1004362",
+      "id": "ica-1004103",
       "chain": "ica",
-      "external_id": "1004362",
-      "name": "ICA Supermarket Cityhallen Karlskrona",
-      "address": "Arklimästaregatan 40, 37136 Karlskrona",
-      "postcode": "371 36",
-      "city": "Karlskrona",
-      "lat": 56.16107,
-      "lon": 15.58253,
-      "home": "https://www.ica.se/butiker/supermarket/karlskrona/ica-supermarket-cityhallen-karlskrona-1004362/",
+      "external_id": "1004103",
+      "name": "ICA Supermarket City, Örebro",
+      "address": "Drottninggatan 29, 70222 Örebro",
+      "postcode": "702 22",
+      "city": "Örebro",
+      "lat": 59.26902,
+      "lon": 15.20976,
+      "home": "https://www.ica.se/butiker/supermarket/orebro/ica-supermarket-city-orebro-1004103/",
       "prices": true,
       "offers": true
     },
@@ -22192,6 +23886,34 @@
       "offers": true
     },
     {
+      "id": "ica-1004561",
+      "chain": "ica",
+      "external_id": "1004561",
+      "name": "ICA Supermarket Edsberg",
+      "address": "Edsbergs Torg 16, 19252 Sollentuna",
+      "postcode": "192 52",
+      "city": "Sollentuna",
+      "lat": 59.44525,
+      "lon": 17.96644,
+      "home": "https://www.ica.se/butiker/supermarket/sollentuna/ica-supermarket-edsberg-1004561/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004290",
+      "chain": "ica",
+      "external_id": "1004290",
+      "name": "ICA Supermarket Edsbyn",
+      "address": "Långgatan 19, 82832 Edsbyn",
+      "postcode": "828 32",
+      "city": "Edsbyn",
+      "lat": 61.37666,
+      "lon": 15.8175,
+      "home": "https://www.ica.se/butiker/supermarket/ovanaker/ica-supermarket-edsbyn-1004290/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003762",
       "chain": "ica",
       "external_id": "1003762",
@@ -22200,7 +23922,7 @@
       "postcode": "703 42",
       "city": "Örebro",
       "lat": 59.27664,
-      "lon": 15.2053,
+      "lon": 15.20531,
       "home": "https://www.ica.se/butiker/supermarket/orebro/ica-supermarket-ekershallen-1003762/",
       "prices": true,
       "offers": true
@@ -22244,6 +23966,20 @@
       "lat": 59.31195,
       "lon": 18.20318,
       "home": "https://www.ica.se/butiker/supermarket/nacka/ica-supermarket-ektorp-1003479/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004469",
+      "chain": "ica",
+      "external_id": "1004469",
+      "name": "ICA Supermarket Emmaboda",
+      "address": "Järnvägsgatan 28, 36130 Emmaboda",
+      "postcode": "361 30",
+      "city": "Emmaboda",
+      "lat": 56.63006,
+      "lon": 15.53666,
+      "home": "https://www.ica.se/butiker/supermarket/emmaboda/ica-supermarket-emmaboda-1004469/",
       "prices": true,
       "offers": true
     },
@@ -22388,6 +24124,34 @@
       "offers": true
     },
     {
+      "id": "ica-1004342",
+      "chain": "ica",
+      "external_id": "1004342",
+      "name": "ICA Supermarket Fisksätra",
+      "address": "Fisksätra Centrum, 13341 Saltsjöbaden",
+      "postcode": "133 41",
+      "city": "Saltsjöbaden",
+      "lat": 59.29329,
+      "lon": 18.25773,
+      "home": "https://www.ica.se/butiker/supermarket/nacka/ica-supermarket-fisksatra-1004342/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004124",
+      "chain": "ica",
+      "external_id": "1004124",
+      "name": "ICA Supermarket Floda",
+      "address": "Rurik Holms väg 8-10, 44830 Floda",
+      "postcode": "448 30",
+      "city": "Floda",
+      "lat": 57.80834,
+      "lon": 12.36219,
+      "home": "https://www.ica.se/butiker/supermarket/lerum/ica-supermarket-floda-1004124/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004336",
       "chain": "ica",
       "external_id": "1004336",
@@ -22444,6 +24208,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003449",
+      "chain": "ica",
+      "external_id": "1003449",
+      "name": "ICA Supermarket Frölunda",
+      "address": "Smyckegatan 1, 42650 Västra Frölunda",
+      "postcode": "426 50",
+      "city": "Västra Frölunda",
+      "lat": 57.65107,
+      "lon": 11.8978,
+      "home": "https://www.ica.se/butiker/supermarket/goteborg/ica-supermarket-frolunda-1003449/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004201",
       "chain": "ica",
       "external_id": "1004201",
@@ -22468,6 +24246,20 @@
       "lat": 58.20236,
       "lon": 16.60293,
       "home": "https://www.ica.se/butiker/supermarket/valdemarsvik/ica-supermarket-fyren-1003392/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004223",
+      "chain": "ica",
+      "external_id": "1004223",
+      "name": "ICA Supermarket Fäladstorget",
+      "address": "Fäladstorget 14, 22647 Lund",
+      "postcode": "226 47",
+      "city": "Lund",
+      "lat": 55.72373,
+      "lon": 13.20502,
+      "home": "https://www.ica.se/butiker/supermarket/lund/ica-supermarket-faladstorget-1004223/",
       "prices": true,
       "offers": true
     },
@@ -22500,6 +24292,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004505",
+      "chain": "ica",
+      "external_id": "1004505",
+      "name": "ICA Supermarket Färila",
+      "address": "Härjedalsvägen 166, 82762 Färila",
+      "postcode": "827 62",
+      "city": "Färila",
+      "lat": 61.79972,
+      "lon": 15.84613,
+      "home": "https://www.ica.se/butiker/supermarket/ljusdal/ica-supermarket-farila-1004505/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003698",
       "chain": "ica",
       "external_id": "1003698",
@@ -22524,6 +24330,48 @@
       "lat": 65.64135,
       "lon": 22.01424,
       "home": "https://www.ica.se/butiker/supermarket/lulea/ica-supermarket-gammelstad-1003874/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004213",
+      "chain": "ica",
+      "external_id": "1004213",
+      "name": "ICA Supermarket Gimo",
+      "address": "Köpmangatan 1, 74743 Gimo",
+      "postcode": "747 43",
+      "city": "Gimo",
+      "lat": 60.17269,
+      "lon": 18.18572,
+      "home": "https://www.ica.se/butiker/supermarket/osthammar/ica-supermarket-gimo-1004213/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003633",
+      "chain": "ica",
+      "external_id": "1003633",
+      "name": "ICA Supermarket Globen",
+      "address": "Arenaslingan 1, 12177 Stockholm Globen",
+      "postcode": "121 77",
+      "city": "Stockholm Globen",
+      "lat": 59.2925,
+      "lon": 18.08207,
+      "home": "https://www.ica.se/butiker/supermarket/stockholm/ica-supermarket-globen-1003633/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003406",
+      "chain": "ica",
+      "external_id": "1003406",
+      "name": "ICA Supermarket Glädjen",
+      "address": "Sandavägen 2, 19463 Upplands Väsby",
+      "postcode": "194 63",
+      "city": "Upplands Väsby",
+      "lat": 59.51367,
+      "lon": 17.92638,
+      "home": "https://www.ica.se/butiker/supermarket/upplands-vasby/ica-supermarket-gladjen-1003406/",
       "prices": true,
       "offers": true
     },
@@ -22570,6 +24418,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003407",
+      "chain": "ica",
+      "external_id": "1003407",
+      "name": "ICA Supermarket Grytan, Moheda",
+      "address": "Västra Järnvägsgatan 7, 34260 Moheda",
+      "postcode": "342 60",
+      "city": "Moheda",
+      "lat": 57.00234,
+      "lon": 14.57279,
+      "home": "https://www.ica.se/butiker/supermarket/alvesta/ica-supermarket-grytan-moheda-1003407/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004431",
       "chain": "ica",
       "external_id": "1004431",
@@ -22598,20 +24460,6 @@
       "offers": true
     },
     {
-      "id": "ica-1004528",
-      "chain": "ica",
-      "external_id": "1004528",
-      "name": "ICA Supermarket Gustavslund",
-      "address": "Mangårdsgatan 71, 25667 Helsingborg",
-      "postcode": "256 67",
-      "city": "Helsingborg",
-      "lat": 56.03755,
-      "lon": 12.75456,
-      "home": "https://www.ica.se/butiker/supermarket/helsingborg/ica-supermarket-gustavslund-1004528/",
-      "prices": true,
-      "offers": true
-    },
-    {
       "id": "ica-1003881",
       "chain": "ica",
       "external_id": "1003881",
@@ -22636,6 +24484,20 @@
       "lat": 57.90899,
       "lon": 14.07533,
       "home": "https://www.ica.se/butiker/supermarket/habo/ica-supermarket-habo-1004429/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004468",
+      "chain": "ica",
+      "external_id": "1004468",
+      "name": "ICA Supermarket Haga Centrum",
+      "address": "Vaktelvägen 2, 70348 Örebro",
+      "postcode": "703 48",
+      "city": "Örebro",
+      "lat": 59.27546,
+      "lon": 15.1649,
+      "home": "https://www.ica.se/butiker/supermarket/orebro/ica-supermarket-haga-centrum-1004468/",
       "prices": true,
       "offers": true
     },
@@ -22696,6 +24558,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004698",
+      "chain": "ica",
+      "external_id": "1004698",
+      "name": "ICA Supermarket Hammarn",
+      "address": "Centralgatan 20, 84431 Hammarstrand",
+      "postcode": "844 31",
+      "city": "Hammarstrand",
+      "lat": 63.10847,
+      "lon": 16.35476,
+      "home": "https://www.ica.se/butiker/supermarket/ragunda/ica-supermarket-hammarn-1004698/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003808",
       "chain": "ica",
       "external_id": "1003808",
@@ -22720,6 +24596,20 @@
       "lat": 55.60334,
       "lon": 13.00362,
       "home": "https://www.ica.se/butiker/supermarket/malmo/ica-supermarket-hansa-1004530/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003630",
+      "chain": "ica",
+      "external_id": "1003630",
+      "name": "ICA Supermarket Heby",
+      "address": "Brogatan 8, 74431 Heby",
+      "postcode": "744 31",
+      "city": "Heby",
+      "lat": 59.93838,
+      "lon": 16.86593,
+      "home": "https://www.ica.se/butiker/supermarket/heby/ica-supermarket-heby-1003630/",
       "prices": true,
       "offers": true
     },
@@ -22822,6 +24712,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004560",
+      "chain": "ica",
+      "external_id": "1004560",
+      "name": "ICA Supermarket Himnahallen",
+      "address": "Himnavägen 155, 58565 Linghem",
+      "postcode": "585 65",
+      "city": "Linghem",
+      "lat": 58.42971,
+      "lon": 15.77973,
+      "home": "https://www.ica.se/butiker/supermarket/linkoping/ica-supermarket-himnahallen-1004560/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004411",
       "chain": "ica",
       "external_id": "1004411",
@@ -22864,6 +24768,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003931",
+      "chain": "ica",
+      "external_id": "1003931",
+      "name": "ICA Supermarket Hofors",
+      "address": "Skolgatan 18, 81321 Hofors",
+      "postcode": "813 21",
+      "city": "Hofors",
+      "lat": 60.54608,
+      "lon": 16.28432,
+      "home": "https://www.ica.se/butiker/supermarket/hofors/ica-supermarket-hofors-1003931/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004240",
       "chain": "ica",
       "external_id": "1004240",
@@ -22888,6 +24806,20 @@
       "lat": 56.78767,
       "lon": 15.13163,
       "home": "https://www.ica.se/butiker/supermarket/lessebo/ica-supermarket-hovmantorp-1003996/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003792",
+      "chain": "ica",
+      "external_id": "1003792",
+      "name": "ICA Supermarket Hovshaga",
+      "address": "Pomonavägen 6, 35261 Växjö",
+      "postcode": "352 61",
+      "city": "Växjö",
+      "lat": 56.90931,
+      "lon": 14.79609,
+      "home": "https://www.ica.se/butiker/supermarket/vaxjo/ica-supermarket-hovshaga-1003792/",
       "prices": true,
       "offers": true
     },
@@ -22920,6 +24852,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004118",
+      "chain": "ica",
+      "external_id": "1004118",
+      "name": "ICA Supermarket Hyltebruk",
+      "address": "Storgatan 20, 31431 Hyltebruk",
+      "postcode": "314 31",
+      "city": "Hyltebruk",
+      "lat": 56.99831,
+      "lon": 13.2386,
+      "home": "https://www.ica.se/butiker/supermarket/hylte/ica-supermarket-hyltebruk-1004118/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003945",
       "chain": "ica",
       "external_id": "1003945",
@@ -22930,6 +24876,20 @@
       "lat": 59.29712,
       "lon": 17.98264,
       "home": "https://www.ica.se/butiker/supermarket/stockholm/ica-supermarket-hagerstensasen-1003945/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004531",
+      "chain": "ica",
+      "external_id": "1004531",
+      "name": "ICA Supermarket Hässelby Torg",
+      "address": "Hässelby Torg 18, 16555 Hässelby",
+      "postcode": "165 55",
+      "city": "Hässelby",
+      "lat": 59.36784,
+      "lon": 17.84369,
+      "home": "https://www.ica.se/butiker/supermarket/stockholm/ica-supermarket-hasselby-torg-1004531/",
       "prices": true,
       "offers": true
     },
@@ -22972,6 +24932,34 @@
       "lat": 59.31606,
       "lon": 18.03909,
       "home": "https://www.ica.se/butiker/supermarket/stockholm/ica-supermarket-hogalid-1004580/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004009",
+      "chain": "ica",
+      "external_id": "1004009",
+      "name": "ICA Supermarket Högbyhallen",
+      "address": "Storgatan 59, 62350 Hemse",
+      "postcode": "623 50",
+      "city": "Hemse",
+      "lat": 57.24001,
+      "lon": 18.37645,
+      "home": "https://www.ica.se/butiker/supermarket/gotland/ica-supermarket-hemse-1004009/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003514",
+      "chain": "ica",
+      "external_id": "1003514",
+      "name": "ICA Supermarket Högdalen",
+      "address": "Högdalens Centrum, 12454 Bandhagen",
+      "postcode": "124 54",
+      "city": "Bandhagen",
+      "lat": 59.26351,
+      "lon": 18.04341,
+      "home": "https://www.ica.se/butiker/supermarket/stockholm/ica-supermarket-hogdalen-1003514/",
       "prices": true,
       "offers": true
     },
@@ -23032,6 +25020,34 @@
       "offers": true
     },
     {
+      "id": "ica-1004255",
+      "chain": "ica",
+      "external_id": "1004255",
+      "name": "ICA Supermarket Idrebua",
+      "address": "HSB-vägen 1, 79771 Idre",
+      "postcode": "797 71",
+      "city": "Idre",
+      "lat": 61.85799,
+      "lon": 12.72002,
+      "home": "https://www.ica.se/butiker/supermarket/alvdalen/ica-supermarket-idrebua-1004255/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003928",
+      "chain": "ica",
+      "external_id": "1003928",
+      "name": "ICA Supermarket Ingelstad",
+      "address": "Gamla Växjövägen 38, 36044 Ingelstad",
+      "postcode": "360 44",
+      "city": "Ingelstad",
+      "lat": 56.74587,
+      "lon": 14.91827,
+      "home": "https://www.ica.se/butiker/supermarket/vaxjo/ica-supermarket-ingelstad-1003928/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003967",
       "chain": "ica",
       "external_id": "1003967",
@@ -23084,6 +25100,20 @@
       "lat": 63.34687,
       "lon": 13.45616,
       "home": "https://www.ica.se/butiker/supermarket/are/ica-supermarket-jarpen-1004014/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004514",
+      "chain": "ica",
+      "external_id": "1004514",
+      "name": "ICA Supermarket Järvsö",
+      "address": "Turistvägen 45, 82750 Järvsö",
+      "postcode": "827 50",
+      "city": "Järvsö",
+      "lat": 61.71534,
+      "lon": 16.16853,
+      "home": "https://www.ica.se/butiker/supermarket/ljusdal/ica-supermarket-jarvso-1004514/",
       "prices": true,
       "offers": true
     },
@@ -23298,6 +25328,48 @@
       "offers": true
     },
     {
+      "id": "ica-1003573",
+      "chain": "ica",
+      "external_id": "1003573",
+      "name": "ICA Supermarket Kronhallen",
+      "address": "Östra Storgatan 19, 61134 Nyköping",
+      "postcode": "611 34",
+      "city": "Nyköping",
+      "lat": 58.75497,
+      "lon": 17.01603,
+      "home": "https://www.ica.se/butiker/supermarket/nykoping/ica-supermarket-kronhallen-1003573/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003389",
+      "chain": "ica",
+      "external_id": "1003389",
+      "name": "ICA Supermarket Kryddan",
+      "address": "Billborgsgatan 7, 76130 Norrtälje",
+      "postcode": "761 30",
+      "city": "Norrtälje",
+      "lat": 59.75962,
+      "lon": 18.70231,
+      "home": "https://www.ica.se/butiker/supermarket/norrtalje/ica-supermarket-kryddan-1003389/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004026",
+      "chain": "ica",
+      "external_id": "1004026",
+      "name": "ICA Supermarket Kungsholmstorg",
+      "address": "Kungsholmstorg 14, 11221 Stockholm",
+      "postcode": "112 21",
+      "city": "Stockholm",
+      "lat": 59.32855,
+      "lon": 18.04334,
+      "home": "https://www.ica.se/butiker/supermarket/stockholm/ica-supermarket-kungsholmstorg-1004026/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003409",
       "chain": "ica",
       "external_id": "1003409",
@@ -23396,20 +25468,6 @@
       "offers": true
     },
     {
-      "id": "ica-1004547",
-      "chain": "ica",
-      "external_id": "1004547",
-      "name": "ICA Supermarket Kållekärr",
-      "address": "Kållekärr 50, 47193 Kållekärr",
-      "postcode": "471 93",
-      "city": "Kållekärr",
-      "lat": 58.02414,
-      "lon": 11.65471,
-      "home": "https://www.ica.se/butiker/supermarket/tjorn/ica-supermarket-kallekarr-1004547/",
-      "prices": true,
-      "offers": true
-    },
-    {
       "id": "ica-1003529",
       "chain": "ica",
       "external_id": "1003529",
@@ -23480,16 +25538,72 @@
       "offers": true
     },
     {
-      "id": "ica-1004319",
+      "id": "ica-1004544",
       "chain": "ica",
-      "external_id": "1004319",
-      "name": "ICA Supermarket Lindbacken",
-      "address": "Hagtorpsvägen 5, 75471 Uppsala",
-      "postcode": "754 71",
-      "city": "Uppsala",
-      "lat": 59.91124,
-      "lon": 17.73973,
-      "home": "https://www.ica.se/butiker/supermarket/uppsala/ica-supermarket-lindbacken-1004319/",
+      "external_id": "1004544",
+      "name": "ICA Supermarket Lejonet",
+      "address": "Mellanbrogatan 10, 66231 Åmål",
+      "postcode": "662 31",
+      "city": "Åmål",
+      "lat": 59.05177,
+      "lon": 12.70173,
+      "home": "https://www.ica.se/butiker/supermarket/amal/ica-supermarket-lejonet-1004544/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1130003",
+      "chain": "ica",
+      "external_id": "1130003",
+      "name": "ICA Supermarket Leksand",
+      "address": "Limsjöänget, 79331 Leksand",
+      "postcode": "793 31",
+      "city": "Leksand",
+      "lat": 60.73773,
+      "lon": 15.00219,
+      "home": "https://www.ica.se/butiker/supermarket/leksand/ica-supermarket-leksand-1130003/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003584",
+      "chain": "ica",
+      "external_id": "1003584",
+      "name": "ICA Supermarket Lessebo",
+      "address": "Bruksgatan 7, 36531 Lessebo",
+      "postcode": "365 31",
+      "city": "Lessebo",
+      "lat": 56.75069,
+      "lon": 15.27029,
+      "home": "https://www.ica.se/butiker/supermarket/lessebo/ica-supermarket-lessebo-1003584/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1051002",
+      "chain": "ica",
+      "external_id": "1051002",
+      "name": "ICA Supermarket Limhamns Sjöstad",
+      "address": "Geijersgatan 2E, 21618 Limhamn",
+      "postcode": "216 18",
+      "city": "Limhamn",
+      "lat": 55.59113,
+      "lon": 12.93936,
+      "home": "https://www.ica.se/butiker/supermarket/malmo/ica-supermarket-limhamns-sjostad-1051002/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004424",
+      "chain": "ica",
+      "external_id": "1004424",
+      "name": "ICA Supermarket Lindesberg",
+      "address": "Koppgatan 1, 71130 Lindesberg",
+      "postcode": "711 30",
+      "city": "Lindesberg",
+      "lat": 59.59481,
+      "lon": 15.22388,
+      "home": "https://www.ica.se/butiker/supermarket/lindesberg/ica-supermarket-lindesberg-1004424/",
       "prices": true,
       "offers": true
     },
@@ -23518,6 +25632,34 @@
       "lat": 56.73616,
       "lon": 16.29476,
       "home": "https://www.ica.se/butiker/supermarket/kalmar/ica-supermarket-lindsdal-1003696/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004707",
+      "chain": "ica",
+      "external_id": "1004707",
+      "name": "ICA Supermarket Lindvallen",
+      "address": "Lindvallens Handelsområde 1, 78067 Sälen",
+      "postcode": "780 67",
+      "city": "Sälen",
+      "lat": 61.16442,
+      "lon": 13.20277,
+      "home": "https://www.ica.se/butiker/supermarket/malung-salen/ica-supermarket-lindvallen-1004707/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004598",
+      "chain": "ica",
+      "external_id": "1004598",
+      "name": "ICA Supermarket Linero Torg",
+      "address": "Emblas gata 23, 22476 Lund",
+      "postcode": "224 76",
+      "city": "Lund",
+      "lat": 55.69464,
+      "lon": 13.24227,
+      "home": "https://www.ica.se/butiker/supermarket/lund/ica-supermarket-linero-torg-1004598/",
       "prices": true,
       "offers": true
     },
@@ -23634,6 +25776,34 @@
       "offers": true
     },
     {
+      "id": "ica-1004445",
+      "chain": "ica",
+      "external_id": "1004445",
+      "name": "ICA Supermarket Majorna",
+      "address": "Karl Johansgatan 21, 41459 Göteborg",
+      "postcode": "414 59",
+      "city": "Göteborg",
+      "lat": 57.69724,
+      "lon": 11.92714,
+      "home": "https://www.ica.se/butiker/supermarket/goteborg/ica-supermarket-majorna-1004445/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003755",
+      "chain": "ica",
+      "external_id": "1003755",
+      "name": "ICA Supermarket Malmslätt",
+      "address": "Norrmalmsvägen 11, 58662 Linköping",
+      "postcode": "586 62",
+      "city": "Linköping",
+      "lat": 58.41413,
+      "lon": 15.52054,
+      "home": "https://www.ica.se/butiker/supermarket/linkoping/ica-supermarket-malmslatt-1003755/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003614",
       "chain": "ica",
       "external_id": "1003614",
@@ -23690,6 +25860,48 @@
       "offers": true
     },
     {
+      "id": "ica-1003804",
+      "chain": "ica",
+      "external_id": "1003804",
+      "name": "ICA Supermarket Matfors",
+      "address": "Skölevägen 2-4, 86431 Matfors",
+      "postcode": "864 31",
+      "city": "Matfors",
+      "lat": 62.34743,
+      "lon": 17.02479,
+      "home": "https://www.ica.se/butiker/supermarket/sundsvall/ica-supermarket-matfors-1003804/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004297",
+      "chain": "ica",
+      "external_id": "1004297",
+      "name": "ICA Supermarket Mathyttan",
+      "address": "Hyttgatan 5, 77673 Långshyttan",
+      "postcode": "776 73",
+      "city": "Långshyttan",
+      "lat": 60.45014,
+      "lon": 16.03647,
+      "home": "https://www.ica.se/butiker/supermarket/hedemora/ica-supermarket-mathyttan-1004297/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-00966",
+      "chain": "ica",
+      "external_id": "00966",
+      "name": "ICA Supermarket Matkassen",
+      "address": "Hammartorget, 73430 Hallstahammar",
+      "postcode": "734 30",
+      "city": "Hallstahammar",
+      "lat": 59.61444,
+      "lon": 16.22841,
+      "home": "https://www.ica.se/butiker/supermarket/hallstahammar/ica-supermarket-matkassen-00966/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003388",
       "chain": "ica",
       "external_id": "1003388",
@@ -23732,6 +25944,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003941",
+      "chain": "ica",
+      "external_id": "1003941",
+      "name": "ICA Supermarket Medis",
+      "address": "Folkungagatan 56, 11622 Stockholm",
+      "postcode": "116 22",
+      "city": "Stockholm",
+      "lat": 59.31424,
+      "lon": 18.07555,
+      "home": "https://www.ica.se/butiker/supermarket/stockholm/ica-supermarket-medborgarplatsen-1003941/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003405",
       "chain": "ica",
       "external_id": "1003405",
@@ -23756,6 +25982,20 @@
       "lat": 61.00508,
       "lon": 14.53809,
       "home": "https://www.ica.se/butiker/supermarket/hedemora/ica-supermarket-mora-1004193/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004434",
+      "chain": "ica",
+      "external_id": "1004434",
+      "name": "ICA Supermarket Morön",
+      "address": "Myntgatan 7, 93148 Skellefteå",
+      "postcode": "931 48",
+      "city": "Skellefteå",
+      "lat": 64.75193,
+      "lon": 21.01202,
+      "home": "https://www.ica.se/butiker/supermarket/skelleftea/ica-supermarket-moron-1004434/",
       "prices": true,
       "offers": true
     },
@@ -23844,6 +26084,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004536",
+      "chain": "ica",
+      "external_id": "1004536",
+      "name": "ICA Supermarket Nora",
+      "address": "Storgatan 45, 71391 Nora",
+      "postcode": "713 91",
+      "city": "Nora",
+      "lat": 59.51215,
+      "lon": 15.02299,
+      "home": "https://www.ica.se/butiker/supermarket/nora/ica-supermarket-nora-1004536/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004261",
       "chain": "ica",
       "external_id": "1004261",
@@ -23886,6 +26140,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003619",
+      "chain": "ica",
+      "external_id": "1003619",
+      "name": "ICA Supermarket Nordmaling",
+      "address": "Butiksgatan 2, 91431 Nordmaling",
+      "postcode": "914 31",
+      "city": "Nordmaling",
+      "lat": 63.56665,
+      "lon": 19.4953,
+      "home": "https://www.ica.se/butiker/supermarket/nordmaling/ica-supermarket-nordmaling-1003619/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004294",
       "chain": "ica",
       "external_id": "1004294",
@@ -23910,6 +26178,48 @@
       "lat": 66.32278,
       "lon": 22.84709,
       "home": "https://www.ica.se/butiker/supermarket/overkalix/ica-supermarket-norrskenet-1003605/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004296",
+      "chain": "ica",
+      "external_id": "1004296",
+      "name": "ICA Supermarket Norsjö",
+      "address": "Kusforsvägen 3, 93531 Norsjö",
+      "postcode": "935 31",
+      "city": "Norsjö",
+      "lat": 64.91358,
+      "lon": 19.48114,
+      "home": "https://www.ica.se/butiker/supermarket/norsjo/ica-supermarket-norsjo-1004296/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004095",
+      "chain": "ica",
+      "external_id": "1004095",
+      "name": "ICA Supermarket Nossebro",
+      "address": "Sturegatan 9, 46530 Nossebro",
+      "postcode": "465 30",
+      "city": "Nossebro",
+      "lat": 58.19021,
+      "lon": 12.71708,
+      "home": "https://www.ica.se/butiker/supermarket/essunga/ica-supermarket-nossebro-1004095/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004537",
+      "chain": "ica",
+      "external_id": "1004537",
+      "name": "ICA Supermarket Nyfors",
+      "address": "Nyforsgatan 24, 63225 Eskilstuna",
+      "postcode": "632 25",
+      "city": "Eskilstuna",
+      "lat": 59.36852,
+      "lon": 16.50336,
+      "home": "https://www.ica.se/butiker/supermarket/eskilstuna/ica-supermarket-nyfors-1004537/",
       "prices": true,
       "offers": true
     },
@@ -23966,6 +26276,20 @@
       "lat": 63.1555,
       "lon": 14.68315,
       "home": "https://www.ica.se/butiker/supermarket/ostersund/ica-supermarket-odenhallen-1004597/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004576",
+      "chain": "ica",
+      "external_id": "1004576",
+      "name": "ICA Supermarket Olskroken",
+      "address": "Redbergsvägen 14, 41665 Göteborg",
+      "postcode": "416 65",
+      "city": "Göteborg",
+      "lat": 57.71475,
+      "lon": 11.99965,
+      "home": "https://www.ica.se/butiker/supermarket/goteborg/ica-supermarket-olskroken-1004576/",
       "prices": true,
       "offers": true
     },
@@ -24054,6 +26378,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004387",
+      "chain": "ica",
+      "external_id": "1004387",
+      "name": "ICA Supermarket Prima",
+      "address": "Skolvägen 7, 43361 Sävedalen",
+      "postcode": "433 61",
+      "city": "Sävedalen",
+      "lat": 57.73123,
+      "lon": 12.06895,
+      "home": "https://www.ica.se/butiker/supermarket/partille/ica-supermarket-prima-1004387/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003453",
       "chain": "ica",
       "external_id": "1003453",
@@ -24106,6 +26444,20 @@
       "lat": 59.30789,
       "lon": 18.07588,
       "home": "https://www.ica.se/butiker/supermarket/stockholm/ica-supermarket-ringen-sthlm-1003933/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003474",
+      "chain": "ica",
+      "external_id": "1003474",
+      "name": "ICA Supermarket Robertsfors",
+      "address": "Storgatan 30, 91532 Robertsfors",
+      "postcode": "915 32",
+      "city": "Robertsfors",
+      "lat": 64.19367,
+      "lon": 20.84633,
+      "home": "https://www.ica.se/butiker/supermarket/robertsfors/ica-supermarket-robertsfors-1003474/",
       "prices": true,
       "offers": true
     },
@@ -24176,6 +26528,34 @@
       "lat": 55.59513,
       "lon": 12.98115,
       "home": "https://www.ica.se/butiker/supermarket/malmo/ica-supermarket-ronneholm-1003622/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004134",
+      "chain": "ica",
+      "external_id": "1004134",
+      "name": "ICA Supermarket Sabbatsberg",
+      "address": "Dalagatan 9 N, 11361 Stockholm",
+      "postcode": "113 61",
+      "city": "Stockholm",
+      "lat": 59.33989,
+      "lon": 18.04712,
+      "home": "https://www.ica.se/butiker/supermarket/stockholm/ica-supermarket-sabbatsberg-1004134/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004689",
+      "chain": "ica",
+      "external_id": "1004689",
+      "name": "ICA Supermarket Salem",
+      "address": "Säby Torg 27, 14430 Rönninge",
+      "postcode": "144 30",
+      "city": "Rönninge",
+      "lat": 59.20167,
+      "lon": 17.76556,
+      "home": "https://www.ica.se/butiker/supermarket/salem/ica-supermarket-salem-1004689/",
       "prices": true,
       "offers": true
     },
@@ -24292,6 +26672,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003754",
+      "chain": "ica",
+      "external_id": "1003754",
+      "name": "ICA Supermarket Sjöstaden",
+      "address": "Hammarby Allé 49, 12030 Stockholm",
+      "postcode": "120 30",
+      "city": "Stockholm",
+      "lat": 59.3032,
+      "lon": 18.0895,
+      "home": "https://www.ica.se/butiker/supermarket/stockholm/ica-supermarket-sjostaden-1003754/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1109001",
       "chain": "ica",
       "external_id": "1109001",
@@ -24316,6 +26710,20 @@
       "lat": 55.41225,
       "lon": 12.84394,
       "home": "https://www.ica.se/butiker/supermarket/vellinge/ica-supermarket-skanor-1003974/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003498",
+      "chain": "ica",
+      "external_id": "1003498",
+      "name": "ICA Supermarket Skelleftehamn",
+      "address": "S:t Örjansvägen 6, 93232 Skelleftehamn",
+      "postcode": "932 32",
+      "city": "Skelleftehamn",
+      "lat": 64.6866,
+      "lon": 21.23755,
+      "home": "https://www.ica.se/butiker/supermarket/skelleftea/ica-supermarket-skelleftehamn-1003498/",
       "prices": true,
       "offers": true
     },
@@ -24348,6 +26756,34 @@
       "offers": true
     },
     {
+      "id": "ica-1003712",
+      "chain": "ica",
+      "external_id": "1003712",
+      "name": "ICA Supermarket Skeppet, Stallarholmen",
+      "address": "Ytterselövägen 4, 64562 Stallarholmen",
+      "postcode": "645 62",
+      "city": "Stallarholmen",
+      "lat": 59.36525,
+      "lon": 17.21124,
+      "home": "https://www.ica.se/butiker/supermarket/strangnas/ica-supermarket-skeppet-1003712/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004495",
+      "chain": "ica",
+      "external_id": "1004495",
+      "name": "ICA Supermarket Skiljebo",
+      "address": "Skiljeboplatsen 2, 72341 Västerås",
+      "postcode": "723 41",
+      "city": "Västerås",
+      "lat": 59.62031,
+      "lon": 16.59337,
+      "home": "https://www.ica.se/butiker/supermarket/vasteras/ica-supermarket-skiljebo-1004495/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003506",
       "chain": "ica",
       "external_id": "1003506",
@@ -24376,6 +26812,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004136",
+      "chain": "ica",
+      "external_id": "1004136",
+      "name": "ICA Supermarket Skrapan",
+      "address": "Skrapan 114, 72210 Västerås",
+      "postcode": "722 10",
+      "city": "Västerås",
+      "lat": 59.60923,
+      "lon": 16.54919,
+      "home": "https://www.ica.se/butiker/supermarket/vasteras/ica-supermarket-skrapan-1004136/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003688",
       "chain": "ica",
       "external_id": "1003688",
@@ -24400,6 +26850,20 @@
       "lat": 59.71881,
       "lon": 16.42689,
       "home": "https://www.ica.se/butiker/supermarket/vasteras/ica-supermarket-skultuna-1003436/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004591",
+      "chain": "ica",
+      "external_id": "1004591",
+      "name": "ICA Supermarket Skurup",
+      "address": "Korrehusgatan 1, 27430 Skurup",
+      "postcode": "274 30",
+      "city": "Skurup",
+      "lat": 55.49017,
+      "lon": 13.48703,
+      "home": "https://www.ica.se/butiker/supermarket/skurup/ica-supermarket-skurup-1004591/",
       "prices": true,
       "offers": true
     },
@@ -24470,6 +26934,34 @@
       "lat": 60.62082,
       "lon": 15.59653,
       "home": "https://www.ica.se/butiker/supermarket/falun/ica-supermarket-slatta-1004508/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003977",
+      "chain": "ica",
+      "external_id": "1003977",
+      "name": "ICA Supermarket Smedby, Kalmar",
+      "address": "Dörbyvägen 3, Smedby, 39470 Kalmar",
+      "postcode": "394 70",
+      "city": "Kalmar",
+      "lat": 56.67665,
+      "lon": 16.24094,
+      "home": "https://www.ica.se/butiker/supermarket/kalmar/ica-supermarket-smedby-kalmar-1003977/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003461",
+      "chain": "ica",
+      "external_id": "1003461",
+      "name": "ICA Supermarket Smedby, Norrköping",
+      "address": "Bigatan 101, 60361 Norrköping",
+      "postcode": "603 61",
+      "city": "Norrköping",
+      "lat": 58.57073,
+      "lon": 16.22955,
+      "home": "https://www.ica.se/butiker/supermarket/norrkoping/ica-supermarket-smedby-norrkoping-1003461/",
       "prices": true,
       "offers": true
     },
@@ -24572,6 +27064,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003906",
+      "chain": "ica",
+      "external_id": "1003906",
+      "name": "ICA Supermarket Spiralen",
+      "address": "S:t Persgatan 110, 60233 Norrköping",
+      "postcode": "602 33",
+      "city": "Norrköping",
+      "lat": 58.58613,
+      "lon": 16.19047,
+      "home": "https://www.ica.se/butiker/supermarket/norrkoping/ica-supermarket-spiralen-1003906/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004204",
       "chain": "ica",
       "external_id": "1004204",
@@ -24656,6 +27162,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003659",
+      "chain": "ica",
+      "external_id": "1003659",
+      "name": "ICA Supermarket Stinsen",
+      "address": "Mörevägen 22, 38830 Ljungbyholm",
+      "postcode": "388 30",
+      "city": "Ljungbyholm",
+      "lat": 56.63515,
+      "lon": 16.17419,
+      "home": "https://www.ica.se/butiker/supermarket/kalmar/ica-supermarket-stinsen-1003659/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004388",
       "chain": "ica",
       "external_id": "1004388",
@@ -24708,6 +27228,34 @@
       "lat": 59.95083,
       "lon": 17.69962,
       "home": "https://www.ica.se/butiker/supermarket/uppsala/ica-supermarket-storvreta-1105001/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004534",
+      "chain": "ica",
+      "external_id": "1004534",
+      "name": "ICA Supermarket Strömsbro",
+      "address": "Grönavägen 2, 80645 Gävle",
+      "postcode": "806 45",
+      "city": "Gävle",
+      "lat": 60.69969,
+      "lon": 17.17319,
+      "home": "https://www.ica.se/butiker/supermarket/gavle/ica-supermarket-stromsbro-1004534/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004579",
+      "chain": "ica",
+      "external_id": "1004579",
+      "name": "ICA Supermarket Sundbyberg",
+      "address": "Landsvägen 63, 17265 Sundbyberg",
+      "postcode": "172 65",
+      "city": "Sundbyberg",
+      "lat": 59.36133,
+      "lon": 17.96647,
+      "home": "https://www.ica.se/butiker/supermarket/sundbyberg/ica-supermarket-sundbyberg-1004579/",
       "prices": true,
       "offers": true
     },
@@ -24810,6 +27358,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004139",
+      "chain": "ica",
+      "external_id": "1004139",
+      "name": "ICA Supermarket Sävja",
+      "address": "Nämndemansvägen, 75752 Uppsala",
+      "postcode": "757 52",
+      "city": "Uppsala",
+      "lat": 59.82031,
+      "lon": 17.69795,
+      "home": "https://www.ica.se/butiker/supermarket/uppsala/ica-supermarket-savja-1004139/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004358",
       "chain": "ica",
       "external_id": "1004358",
@@ -24824,6 +27386,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004131",
+      "chain": "ica",
+      "external_id": "1004131",
+      "name": "ICA Supermarket Södercentrum",
+      "address": "Drottning Margaretas väg 25, 39246 Kalmar",
+      "postcode": "392 46",
+      "city": "Kalmar",
+      "lat": 56.66015,
+      "lon": 16.33893,
+      "home": "https://www.ica.se/butiker/supermarket/kalmar/ica-supermarket-sodercentrum-1004131/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004592",
       "chain": "ica",
       "external_id": "1004592",
@@ -24834,6 +27410,20 @@
       "lat": 58.47541,
       "lon": 16.33182,
       "home": "https://www.ica.se/butiker/supermarket/soderkoping/ica-supermarket-soderkoping-1004592/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004263",
+      "chain": "ica",
+      "external_id": "1004263",
+      "name": "ICA Supermarket Södra station",
+      "address": "Rosenlundsgatan 48 B, 11863 Stockholm",
+      "postcode": "118 63",
+      "city": "Stockholm",
+      "lat": 59.31217,
+      "lon": 18.05767,
+      "home": "https://www.ica.se/butiker/supermarket/stockholm/ica-supermarket-sodra-station-1004263/",
       "prices": true,
       "offers": true
     },
@@ -24866,6 +27456,34 @@
       "offers": true
     },
     {
+      "id": "ica-1003626",
+      "chain": "ica",
+      "external_id": "1003626",
+      "name": "ICA Supermarket Sörberge",
+      "address": "Mogatan 1, 86143 Sörberge",
+      "postcode": "861 43",
+      "city": "Sörberge",
+      "lat": 62.50973,
+      "lon": 17.37047,
+      "home": "https://www.ica.se/butiker/supermarket/timra/ica-supermarket-sorberge-1003626/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003503",
+      "chain": "ica",
+      "external_id": "1003503",
+      "name": "ICA Supermarket Tannefors",
+      "address": "Nya Tanneforsvägen 58, 58242 Linköping",
+      "postcode": "582 42",
+      "city": "Linköping",
+      "lat": 58.40592,
+      "lon": 15.64202,
+      "home": "https://www.ica.se/butiker/supermarket/linkoping/ica-supermarket-tannefors-1003503/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003876",
       "chain": "ica",
       "external_id": "1003876",
@@ -24894,6 +27512,34 @@
       "offers": true
     },
     {
+      "id": "ica-1004554",
+      "chain": "ica",
+      "external_id": "1004554",
+      "name": "ICA Supermarket Telefonplan",
+      "address": "Tellusborgsvägen 87, 12629 Hägersten",
+      "postcode": "126 29",
+      "city": "Hägersten",
+      "lat": 59.29662,
+      "lon": 18.00122,
+      "home": "https://www.ica.se/butiker/supermarket/stockholm/ica-supermarket-telefonplan-1004554/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004486",
+      "chain": "ica",
+      "external_id": "1004486",
+      "name": "ICA Supermarket Tibro",
+      "address": "Alletorget 8, 54330 Tibro",
+      "postcode": "543 30",
+      "city": "Tibro",
+      "lat": 58.42451,
+      "lon": 14.16328,
+      "home": "https://www.ica.se/butiker/supermarket/tibro/ica-supermarket-tibro-1004486/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003693",
       "chain": "ica",
       "external_id": "1003693",
@@ -24904,6 +27550,34 @@
       "lat": 60.34511,
       "lon": 17.49161,
       "home": "https://www.ica.se/butiker/supermarket/tierp/ica-supermarket-tierp-1003693/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003664",
+      "chain": "ica",
+      "external_id": "1003664",
+      "name": "ICA Supermarket Tingsryd",
+      "address": "Lokgatan 1B, 36230 Tingsryd",
+      "postcode": "362 30",
+      "city": "Tingsryd",
+      "lat": 56.52551,
+      "lon": 14.97268,
+      "home": "https://www.ica.se/butiker/supermarket/tingsryd/ica-supermarket-tingsryd-1003664/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003753",
+      "chain": "ica",
+      "external_id": "1003753",
+      "name": "ICA Supermarket Tollarp",
+      "address": "Polgatan 5, 29832 Tollarp",
+      "postcode": "298 32",
+      "city": "Tollarp",
+      "lat": 55.93284,
+      "lon": 13.97723,
+      "home": "https://www.ica.se/butiker/supermarket/kristianstad/ica-supermarket-tollarp-1003753/",
       "prices": true,
       "offers": true
     },
@@ -24978,6 +27652,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004541",
+      "chain": "ica",
+      "external_id": "1004541",
+      "name": "ICA Supermarket Tornet Ulricehamn",
+      "address": "Strandgatan 6, 52331 Ulricehamn",
+      "postcode": "523 31",
+      "city": "Ulricehamn",
+      "lat": 57.7925,
+      "lon": 13.41138,
+      "home": "https://www.ica.se/butiker/supermarket/ulricehamn/ica-supermarket-tornet-ulricehamn-1004541/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003789",
       "chain": "ica",
       "external_id": "1003789",
@@ -25016,20 +27704,6 @@
       "lat": 55.37443,
       "lon": 13.15763,
       "home": "https://www.ica.se/butiker/supermarket/trelleborg/ica-supermarket-trelleborg-1003658/",
-      "prices": true,
-      "offers": true
-    },
-    {
-      "id": "ica-1003831",
-      "chain": "ica",
-      "external_id": "1003831",
-      "name": "ICA Supermarket Trivselköp",
-      "address": "Solvägen 3, 71178 Guldsmedshyttan",
-      "postcode": "711 78",
-      "city": "Guldsmedshyttan",
-      "lat": 59.6998,
-      "lon": 15.0997,
-      "home": "https://www.ica.se/butiker/supermarket/lindesberg/ica-supermarket-trivselkop-1003831/",
       "prices": true,
       "offers": true
     },
@@ -25104,6 +27778,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004540",
+      "chain": "ica",
+      "external_id": "1004540",
+      "name": "ICA Supermarket Töcksfors",
+      "address": "Lindudden 3, 67241 Töcksfors",
+      "postcode": "672 41",
+      "city": "Töcksfors",
+      "lat": 59.50908,
+      "lon": 11.81838,
+      "home": "https://www.ica.se/butiker/supermarket/arjang/ica-supermarket-tocksfors-1004540/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003979",
       "chain": "ica",
       "external_id": "1003979",
@@ -25132,6 +27820,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003847",
+      "chain": "ica",
+      "external_id": "1003847",
+      "name": "ICA Supermarket Ullared",
+      "address": "Varbergsvägen 6, 31160 Ullared",
+      "postcode": "311 60",
+      "city": "Ullared",
+      "lat": 57.13678,
+      "lon": 12.71721,
+      "home": "https://www.ica.se/butiker/supermarket/falkenberg/ica-supermarket-ullared-1003847/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003785",
       "chain": "ica",
       "external_id": "1003785",
@@ -25156,6 +27858,20 @@
       "lat": 58.94565,
       "lon": 17.48768,
       "home": "https://www.ica.se/butiker/supermarket/trosa/ica-supermarket-vagnharad-1004281/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004379",
+      "chain": "ica",
+      "external_id": "1004379",
+      "name": "ICA Supermarket Vallda",
+      "address": "Egnahemsvägen 7, 43490 Vallda",
+      "postcode": "434 90",
+      "city": "Vallda",
+      "lat": 57.47302,
+      "lon": 11.99462,
+      "home": "https://www.ica.se/butiker/supermarket/kungsbacka/ica-supermarket-vallda-1004379/",
       "prices": true,
       "offers": true
     },
@@ -25216,16 +27932,16 @@
       "offers": true
     },
     {
-      "id": "ica-1004386",
+      "id": "ica-1003855",
       "chain": "ica",
-      "external_id": "1004386",
-      "name": "ICA Supermarket Vammar",
-      "address": "Vammars Köpcentrum, 61532 Valdemarsvik",
-      "postcode": "615 32",
-      "city": "Valdemarsvik",
-      "lat": 58.21601,
-      "lon": 16.57604,
-      "home": "https://www.ica.se/butiker/supermarket/valdemarsvik/ica-supermarket-vammar-1004386/",
+      "external_id": "1003855",
+      "name": "ICA Supermarket Vanadis",
+      "address": "Vanadisvägen 12 B, 11346 Stockholm",
+      "postcode": "113 46",
+      "city": "Stockholm",
+      "lat": 59.34753,
+      "lon": 18.04878,
+      "home": "https://www.ica.se/butiker/supermarket/stockholm/ica-supermarket-vanadis-1003855/",
       "prices": true,
       "offers": true
     },
@@ -25300,6 +28016,34 @@
       "offers": true
     },
     {
+      "id": "ica-1003550",
+      "chain": "ica",
+      "external_id": "1003550",
+      "name": "ICA Supermarket Vilbergen",
+      "address": "Vilbergens Centrum, 60356 Norrköping",
+      "postcode": "603 56",
+      "city": "Norrköping",
+      "lat": 58.57116,
+      "lon": 16.17006,
+      "home": "https://www.ica.se/butiker/supermarket/norrkoping/ica-supermarket-vilbergen-1003550/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004195",
+      "chain": "ica",
+      "external_id": "1004195",
+      "name": "ICA Supermarket Vimmerby",
+      "address": "Falkängsgatan, 59839 Vimmerby",
+      "postcode": "598 39",
+      "city": "Vimmerby",
+      "lat": 57.66409,
+      "lon": 15.85504,
+      "home": "https://www.ica.se/butiker/supermarket/vimmerby/ica-supermarket-vimmerby-1004195/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003553",
       "chain": "ica",
       "external_id": "1003553",
@@ -25324,6 +28068,20 @@
       "lat": 56.10199,
       "lon": 13.91233,
       "home": "https://www.ica.se/butiker/supermarket/hassleholm/ica-supermarket-vinslov-1004347/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003563",
+      "chain": "ica",
+      "external_id": "1003563",
+      "name": "ICA Supermarket Väddö",
+      "address": "Norrtäljevägen 10, 76430 Väddö",
+      "postcode": "764 30",
+      "city": "Väddö",
+      "lat": 59.96965,
+      "lon": 18.80637,
+      "home": "https://www.ica.se/butiker/supermarket/norrtalje/ica-supermarket-vaddo-1003563/",
       "prices": true,
       "offers": true
     },
@@ -25650,6 +28408,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003759",
+      "chain": "ica",
+      "external_id": "1003759",
+      "name": "ICA Supermarket Årjäng",
+      "address": "Kvarnåsgatan 8A, 67230 Årjäng",
+      "postcode": "672 30",
+      "city": "Årjäng",
+      "lat": 59.39332,
+      "lon": 12.13182,
+      "home": "https://www.ica.se/butiker/supermarket/arjang/ica-supermarket-arjang-1003759/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004165",
       "chain": "ica",
       "external_id": "1004165",
@@ -25688,6 +28460,20 @@
       "lat": 57.35108,
       "lon": 12.12277,
       "home": "https://www.ica.se/butiker/supermarket/kungsbacka/ica-supermarket-asa-1003526/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004254",
+      "chain": "ica",
+      "external_id": "1004254",
+      "name": "ICA Supermarket Åsen Ljusdal",
+      "address": "Verkstadsskolevägen 7, 82734 Ljusdal",
+      "postcode": "827 34",
+      "city": "Ljusdal",
+      "lat": 61.82946,
+      "lon": 16.11396,
+      "home": "https://www.ica.se/butiker/supermarket/ljusdal/ica-supermarket-asen-ljusdal-1004254/",
       "prices": true,
       "offers": true
     },
@@ -25860,6 +28646,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004132",
+      "chain": "ica",
+      "external_id": "1004132",
+      "name": "ICA Söder, Gävle",
+      "address": "Södra Kungsgatan 32, 80252 Gävle",
+      "postcode": "802 52",
+      "city": "Gävle",
+      "lat": 60.66942,
+      "lon": 17.14911,
+      "home": "https://www.ica.se/butiker/nara/gavle/ica-soder-gavle-1004132/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004585",
       "chain": "ica",
       "external_id": "1004585",
@@ -25916,6 +28716,20 @@
       "offers": true
     },
     {
+      "id": "ica-1004232",
+      "chain": "ica",
+      "external_id": "1004232",
+      "name": "ICA Tallkrogen",
+      "address": "Tallkrogsplan 96-98, 12260 Enskede",
+      "postcode": "122 60",
+      "city": "Enskede",
+      "lat": 59.27144,
+      "lon": 18.08405,
+      "home": "https://www.ica.se/butiker/nara/stockholm/ica-tallkrogen-1004232/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1168009",
       "chain": "ica",
       "external_id": "1168009",
@@ -25954,20 +28768,6 @@
       "lat": 59.55334,
       "lon": 16.5083,
       "home": "https://www.ica.se/butiker/nara/vasteras/ica-togo-barkaro-1093001/",
-      "prices": true,
-      "offers": true
-    },
-    {
-      "id": "ica-1068007",
-      "chain": "ica",
-      "external_id": "1068007",
-      "name": "ICA ToGo Bergvik Karlstad",
-      "address": "Bergviks Köpcentrum, 65346 Karlstad",
-      "postcode": "653 46",
-      "city": "Karlstad",
-      "lat": 59.37665,
-      "lon": 13.42972,
-      "home": "https://www.ica.se/butiker/maxi/karlstad/ica-togo-bergvik-karlstad-1068007/",
       "prices": true,
       "offers": true
     },
@@ -26280,20 +29080,6 @@
       "offers": true
     },
     {
-      "id": "ica-1097006",
-      "chain": "ica",
-      "external_id": "1097006",
-      "name": "ICA ToGo Önnestad",
-      "address": "Skolgatan 16, 29173 Önnestad",
-      "postcode": "291 73",
-      "city": "Önnestad",
-      "lat": 56.0535,
-      "lon": 14.02307,
-      "home": "https://www.ica.se/butiker/nara/kristianstad/ica-togo-onnestad-1097006/",
-      "prices": true,
-      "offers": true
-    },
-    {
       "id": "ica-1003956",
       "chain": "ica",
       "external_id": "1003956",
@@ -26346,6 +29132,20 @@
       "lat": 58.87958,
       "lon": 14.90291,
       "home": "https://www.ica.se/butiker/supermarket/askersund/ica-torghallen-askersund-1004685/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003862",
+      "chain": "ica",
+      "external_id": "1003862",
+      "name": "ICA Tornet, Stocksund",
+      "address": "Stockholmsvägen 43, 18278 Stocksund",
+      "postcode": "182 78",
+      "city": "Stocksund",
+      "lat": 59.38446,
+      "lon": 18.05741,
+      "home": "https://www.ica.se/butiker/nara/danderyd/ica-tornet-stocksund-1003862/",
       "prices": true,
       "offers": true
     },
@@ -26420,6 +29220,34 @@
       "offers": true
     },
     {
+      "id": "ica-1003558",
+      "chain": "ica",
+      "external_id": "1003558",
+      "name": "ICA Vretgränd",
+      "address": "Vretgränd 9, 75322 Uppsala",
+      "postcode": "753 22",
+      "city": "Uppsala",
+      "lat": 59.85621,
+      "lon": 17.64348,
+      "home": "https://www.ica.se/butiker/nara/uppsala/ica-vretgrand-1003558/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004245",
+      "chain": "ica",
+      "external_id": "1004245",
+      "name": "ICA Änge",
+      "address": "Centralvägen 20, 83597 Offerdal",
+      "postcode": "835 97",
+      "city": "Offerdal",
+      "lat": 63.45774,
+      "lon": 14.06427,
+      "home": "https://www.ica.se/butiker/nara/krokom/ica-ange-1004245/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003581",
       "chain": "ica",
       "external_id": "1003581",
@@ -26444,6 +29272,20 @@
       "lat": 59.23577,
       "lon": 14.43074,
       "home": "https://www.ica.se/butiker/supermarket/degerfors/kronhallen-ica-supermarket-degerfors-1004702/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004678",
+      "chain": "ica",
+      "external_id": "1004678",
+      "name": "Lilla ICA Lindvallen",
+      "address": "Hemfjällsvägen 24, 78067 Sälen",
+      "postcode": "780 67",
+      "city": "Sälen",
+      "lat": 61.15744,
+      "lon": 13.20383,
+      "home": "https://www.ica.se/butiker/supermarket/malung-salen/lilla-ica-lindvallen-1004678/",
       "prices": true,
       "offers": true
     },
@@ -26490,6 +29332,20 @@
       "offers": true
     },
     {
+      "id": "ica-1166011",
+      "chain": "ica",
+      "external_id": "1166011",
+      "name": "Maxi ICA Stormarknad Arvika",
+      "address": "Långvaksvägen 4, 67134 Arvika",
+      "postcode": "671 34",
+      "city": "Arvika",
+      "lat": 59.66304,
+      "lon": 12.62662,
+      "home": "https://www.ica.se/butiker/maxi/arvika/maxi-ica-stormarknad-arvika-1166011/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003408",
       "chain": "ica",
       "external_id": "1003408",
@@ -26500,6 +29356,20 @@
       "lat": 59.41407,
       "lon": 17.86371,
       "home": "https://www.ica.se/butiker/maxi/jarfalla/maxi-ica-stormarknad-barkarbystaden-1003408/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1051012",
+      "chain": "ica",
+      "external_id": "1051012",
+      "name": "Maxi ICA Stormarknad Bollnäs",
+      "address": "Handelsgatan 9, 82141 Bollnäs",
+      "postcode": "821 41",
+      "city": "Bollnäs",
+      "lat": 61.33917,
+      "lon": 16.39687,
+      "home": "https://www.ica.se/butiker/maxi/bollnas/maxi-ica-stormarknad-bollnas-1051012/",
       "prices": true,
       "offers": true
     },
@@ -26784,6 +29654,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003413",
+      "chain": "ica",
+      "external_id": "1003413",
+      "name": "Maxi ICA Stormarknad Haparanda",
+      "address": "Hästskovägen 2, 95336 Haparanda",
+      "postcode": "953 36",
+      "city": "Haparanda",
+      "lat": 65.84212,
+      "lon": 24.11929,
+      "home": "https://www.ica.se/butiker/maxi/haparanda/maxi-ica-stormarknad-haparanda-1003413/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1004084",
       "chain": "ica",
       "external_id": "1004084",
@@ -26854,20 +29738,6 @@
       "offers": true
     },
     {
-      "id": "ica-1003949",
-      "chain": "ica",
-      "external_id": "1003949",
-      "name": "Maxi ICA Stormarknad Härnösand",
-      "address": "Kaptensgatan 8, 87152 Härnösand",
-      "postcode": "871 52",
-      "city": "Härnösand",
-      "lat": 62.63669,
-      "lon": 17.92837,
-      "home": "https://www.ica.se/butiker/maxi/harnosand/maxi-ica-stormarknad-harnosand-1003949/",
-      "prices": true,
-      "offers": true
-    },
-    {
       "id": "ica-1003545",
       "chain": "ica",
       "external_id": "1003545",
@@ -26878,6 +29748,20 @@
       "lat": 56.16431,
       "lon": 13.78049,
       "home": "https://www.ica.se/butiker/maxi/hassleholm/maxi-ica-stormarknad-hassleholm-1003545/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003954",
+      "chain": "ica",
+      "external_id": "1003954",
+      "name": "Maxi ICA Stormarknad Högsbo, Göteborg",
+      "address": "Lona Knapes gata 1, 42132 Västra Frölunda",
+      "postcode": "421 32",
+      "city": "Västra Frölunda",
+      "lat": 57.65071,
+      "lon": 11.94889,
+      "home": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-hogsbo-1003954/",
       "prices": true,
       "offers": true
     },
@@ -26934,6 +29818,20 @@
       "lat": 56.19558,
       "lon": 14.84412,
       "home": "https://www.ica.se/butiker/maxi/karlshamn/maxi-ica-stormarknad-karlshamn-1004027/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004704",
+      "chain": "ica",
+      "external_id": "1004704",
+      "name": "Maxi ICA Stormarknad Karlskoga",
+      "address": "Gesällgatan 5, 69134 Karlskoga",
+      "postcode": "691 34",
+      "city": "Karlskoga",
+      "lat": 59.32823,
+      "lon": 14.50692,
+      "home": "https://www.ica.se/butiker/maxi/karlskoga/maxi-ica-stormarknad-karlskoga-1004704/",
       "prices": true,
       "offers": true
     },
@@ -27004,6 +29902,20 @@
       "lat": 59.31177,
       "lon": 14.12878,
       "home": "https://www.ica.se/butiker/maxi/kristinehamn/maxi-ica-stormarknad-kristinehamn-1004299/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1003562",
+      "chain": "ica",
+      "external_id": "1003562",
+      "name": "Maxi ICA Stormarknad Kumla",
+      "address": "Köpmangatan 18, 69230 Kumla",
+      "postcode": "692 30",
+      "city": "Kumla",
+      "lat": 59.12624,
+      "lon": 15.14178,
+      "home": "https://www.ica.se/butiker/maxi/kumla/maxi-ica-stormarknad-kumla-1003562/",
       "prices": true,
       "offers": true
     },
@@ -27116,6 +30028,20 @@
       "lat": 65.61757,
       "lon": 22.04802,
       "home": "https://www.ica.se/butiker/maxi/lulea/maxi-ica-stormarknad-lulea-1003382/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1004060",
+      "chain": "ica",
+      "external_id": "1004060",
+      "name": "Maxi ICA Stormarknad Löddeköpinge",
+      "address": "Marknadsvägen, Center Syd, 24642 Löddeköpinge",
+      "postcode": "246 42",
+      "city": "Löddeköpinge",
+      "lat": 55.76809,
+      "lon": 12.99096,
+      "home": "https://www.ica.se/butiker/maxi/kavlinge/maxi-ica-stormarknad-loddekopinge-1004060/",
       "prices": true,
       "offers": true
     },
@@ -27260,16 +30186,16 @@
       "offers": true
     },
     {
-      "id": "ica-1004365",
+      "id": "ica-1004340",
       "chain": "ica",
-      "external_id": "1004365",
-      "name": "Maxi ICA Stormarknad Partille",
-      "address": "Parallellvägen 1, 43335 Partille",
-      "postcode": "433 35",
-      "city": "Partille",
-      "lat": 57.73664,
-      "lon": 12.10508,
-      "home": "https://www.ica.se/butiker/maxi/partille/maxi-ica-stormarknad-partille-1004365/",
+      "external_id": "1004340",
+      "name": "Maxi ICA Stormarknad Oskarshamn",
+      "address": "Döderhultsvägen 26, 57231 Oskarshamn",
+      "postcode": "572 31",
+      "city": "Oskarshamn",
+      "lat": 57.26567,
+      "lon": 16.43306,
+      "home": "https://www.ica.se/butiker/maxi/oskarshamn/maxi-ica-stormarknad-oskarshamn-1004340/",
       "prices": true,
       "offers": true
     },
@@ -27568,6 +30494,20 @@
       "offers": true
     },
     {
+      "id": "ica-1003568",
+      "chain": "ica",
+      "external_id": "1003568",
+      "name": "Maxi ICA Stormarknad Västervik",
+      "address": "Ljunghedsvägen 2, 59362 Västervik",
+      "postcode": "593 62",
+      "city": "Västervik",
+      "lat": 57.76764,
+      "lon": 16.59636,
+      "home": "https://www.ica.se/butiker/maxi/vastervik/maxi-ica-stormarknad-vastervik-1003568/",
+      "prices": true,
+      "offers": true
+    },
+    {
       "id": "ica-1003569",
       "chain": "ica",
       "external_id": "1003569",
@@ -27610,16 +30550,16 @@
       "offers": true
     },
     {
-      "id": "ica-1003594",
+      "id": "ica-1004097",
       "chain": "ica",
-      "external_id": "1003594",
-      "name": "Maxi ICA Stormarknad Ängelholm",
-      "address": "Hugingatan 1, 26271 Ängelholm",
-      "postcode": "262 71",
-      "city": "Ängelholm",
-      "lat": 56.25209,
-      "lon": 12.89128,
-      "home": "https://www.ica.se/butiker/maxi/angelholm/maxi-ica-stormarknad-angelholm-1003594/",
+      "external_id": "1004097",
+      "name": "Maxi ICA Stormarknad Örebro Boglundsängen",
+      "address": "Boglundsgatan 2, 70374 Örebro",
+      "postcode": "703 74",
+      "city": "Örebro",
+      "lat": 59.29662,
+      "lon": 15.20606,
+      "home": "https://www.ica.se/butiker/maxi/orebro/maxi-ica-stormarknad-orebro-boglundsangen-1004097/",
       "prices": true,
       "offers": true
     },
@@ -27634,6 +30574,20 @@
       "lat": 63.19263,
       "lon": 14.65066,
       "home": "https://www.ica.se/butiker/maxi/ostersund/maxi-ica-stormarknad-ostersund-1003733/",
+      "prices": true,
+      "offers": true
+    },
+    {
+      "id": "ica-1051011",
+      "chain": "ica",
+      "external_id": "1051011",
+      "name": "Maxi ICA Stormarknad Österåker",
+      "address": "Långhundravägen 9, 18444 Åkersberga",
+      "postcode": "184 44",
+      "city": "Åkersberga",
+      "lat": 59.48926,
+      "lon": 18.27092,
+      "home": "https://www.ica.se/butiker/maxi/osteraker/maxi-ica-stormarknad-osteraker-1051011/",
       "prices": true,
       "offers": true
     },
